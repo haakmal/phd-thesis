@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 A Model for a Philosophical View of IoT | Design by Play</title>
+  <meta name="description" content="Chapter 7 A Model for a Philosophical View of IoT | Design by Play" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 A Model for a Philosophical View of IoT | Design by Play" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 A Model for a Philosophical View of IoT | Design by Play" />
+  
+  
+  
+
+<meta name="author" content="Haider Ali Akmal" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Chapter6.html"/>
+<link rel="next" href="Chapter8.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Design by Play</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Note from Author</a></li>
+<li class="part"><span><b>Preface</b></span></li>
+<li class="chapter" data-level="" data-path="declaration.html"><a href="declaration.html"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="dedication.html"><a href="dedication.html"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="quote.html"><a href="quote.html"><i class="fa fa-check"></i>Quote</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="Chapter1.html"><a href="Chapter1.html"><i class="fa fa-check"></i><b>1</b> An Unorthodox Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter1.html"><a href="Chapter1.html#a-starting-point"><i class="fa fa-check"></i><b>1.1</b> A starting point</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="Chapter1.html"><a href="Chapter1.html#fish-out-of-water"><i class="fa fa-check"></i><b>1.1.1</b> Fish out of water</a></li>
+<li class="chapter" data-level="1.1.2" data-path="Chapter1.html"><a href="Chapter1.html#surrounded-by-technology"><i class="fa fa-check"></i><b>1.1.2</b> Surrounded by technology</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="Chapter1.html"><a href="Chapter1.html#of-pasts-and-presents"><i class="fa fa-check"></i><b>1.2</b> Of Pasts and Presents</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="Chapter1.html"><a href="Chapter1.html#growing-up-around-play"><i class="fa fa-check"></i><b>1.2.1</b> Growing up around play</a></li>
+<li class="chapter" data-level="1.2.2" data-path="Chapter1.html"><a href="Chapter1.html#art-design-and-philosophy"><i class="fa fa-check"></i><b>1.2.2</b> Art, Design, and Philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="Chapter1.html"><a href="Chapter1.html#in-closing"><i class="fa fa-check"></i><b>1.3</b> In closing</a></li>
+</ul></li>
+<li class="part"><span><b>II Foundations</b></span></li>
+<li class="chapter" data-level="2" data-path="Chapter2.html"><a href="Chapter2.html"><i class="fa fa-check"></i><b>2</b> Scaffolding</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter2.html"><a href="Chapter2.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter2.html"><a href="Chapter2.html#steppingstones-into-post-modern-humanities"><i class="fa fa-check"></i><b>2.2</b> Steppingstones into post-modern humanities</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="Chapter2.html"><a href="Chapter2.html#transdisciplinary-design-research"><i class="fa fa-check"></i><b>2.2.1</b> Transdisciplinary Design Research</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Chapter2.html"><a href="Chapter2.html#crafting-trandisciplinary-assemblages"><i class="fa fa-check"></i><b>2.2.2</b> Crafting Trandisciplinary Assemblages</a></li>
+<li class="chapter" data-level="2.2.3" data-path="Chapter2.html"><a href="Chapter2.html#transcending-method-through-design"><i class="fa fa-check"></i><b>2.2.3</b> Transcending method through Design</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="Chapter2.html"><a href="Chapter2.html#how-to-use-this-thesis"><i class="fa fa-check"></i><b>2.3</b> How to use this Thesis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>3</b> Seeing Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter3.html"><a href="Chapter3.html#a-case-for-and-against-an-internet-of-things"><i class="fa fa-check"></i><b>3.1</b> A case for (and against) an Internet of Things</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="Chapter3.html"><a href="Chapter3.html#defining-iot"><i class="fa fa-check"></i><b>3.1.1</b> Defining IoT</a></li>
+<li class="chapter" data-level="3.1.2" data-path="Chapter3.html"><a href="Chapter3.html#interacting-with-iot"><i class="fa fa-check"></i><b>3.1.2</b> Interacting with IoT</a></li>
+<li class="chapter" data-level="3.1.3" data-path="Chapter3.html"><a href="Chapter3.html#the-disillusionment-of-living-in-iot"><i class="fa fa-check"></i><b>3.1.3</b> The disillusionment of living in IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="Chapter3.html"><a href="Chapter3.html#approaching-an-alternative-perspective-for-design-in-iot"><i class="fa fa-check"></i><b>3.2</b> Approaching an alternative perspective for Design in IoT</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="Chapter3.html"><a href="Chapter3.html#changing-perspectives"><i class="fa fa-check"></i><b>3.2.1</b> Changing perspectives</a></li>
+<li class="chapter" data-level="3.2.2" data-path="Chapter3.html"><a href="Chapter3.html#metaphorically-speaking"><i class="fa fa-check"></i><b>3.2.2</b> Metaphorically speaking</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="Chapter3.html"><a href="Chapter3.html#conclusion"><i class="fa fa-check"></i><b>3.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>4</b> Being Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Chapter4.html"><a href="Chapter4.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="Chapter4.html"><a href="Chapter4.html#a-philosophical-interlude"><i class="fa fa-check"></i><b>4.1.1</b> A Philosophical Interlude</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="Chapter4.html"><a href="Chapter4.html#understanding-things-on-and-not-on-the-internet"><i class="fa fa-check"></i><b>4.2</b> Understanding <em>Things</em> on (and not on) the Internet</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="Chapter4.html"><a href="Chapter4.html#phenomenologically-speaking"><i class="fa fa-check"></i><b>4.2.1</b> Phenomenologically speaking</a></li>
+<li class="chapter" data-level="4.2.2" data-path="Chapter4.html"><a href="Chapter4.html#towards-an-object-oriented-ontology"><i class="fa fa-check"></i><b>4.2.2</b> Towards an Object-Oriented Ontology</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="Chapter4.html"><a href="Chapter4.html#object-oriented-ontology"><i class="fa fa-check"></i><b>4.3</b> Object-Oriented Ontology</a></li>
+<li class="chapter" data-level="4.4" data-path="Chapter4.html"><a href="Chapter4.html#concluding-on-a-post-anthropocentric-perspective-for-design"><i class="fa fa-check"></i><b>4.4</b> Concluding on a post-anthropocentric perspective for Design</a></li>
+</ul></li>
+<li class="part"><span><b>Methodologies</b></span></li>
+<li class="chapter" data-level="5" data-path="Chapter5.html"><a href="Chapter5.html"><i class="fa fa-check"></i><b>5</b> Design Research</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Chapter5.html"><a href="Chapter5.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="Chapter5.html"><a href="Chapter5.html#doing-design-research"><i class="fa fa-check"></i><b>5.2</b> Doing Design Research</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="Chapter5.html"><a href="Chapter5.html#defining-design"><i class="fa fa-check"></i><b>5.2.1</b> Defining Design</a></li>
+<li class="chapter" data-level="5.2.2" data-path="Chapter5.html"><a href="Chapter5.html#defining-research"><i class="fa fa-check"></i><b>5.2.2</b> Defining Research</a></li>
+<li class="chapter" data-level="5.2.3" data-path="Chapter5.html"><a href="Chapter5.html#the-object-of-design"><i class="fa fa-check"></i><b>5.2.3</b> The Object of Design</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="Chapter5.html"><a href="Chapter5.html#research-through-design"><i class="fa fa-check"></i><b>5.3</b> Research through Design</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="Chapter5.html"><a href="Chapter5.html#approaching-research-through-design"><i class="fa fa-check"></i><b>5.3.1</b> Approaching Research through Design</a></li>
+<li class="chapter" data-level="5.3.2" data-path="Chapter5.html"><a href="Chapter5.html#practice-based-research"><i class="fa fa-check"></i><b>5.3.2</b> Practice-based Research</a></li>
+<li class="chapter" data-level="5.3.3" data-path="Chapter5.html"><a href="Chapter5.html#ideology-or-methodology"><i class="fa fa-check"></i><b>5.3.3</b> Ideology or Methodology?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="Chapter5.html"><a href="Chapter5.html#conclusions"><i class="fa fa-check"></i><b>5.4</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Chapter6.html"><a href="Chapter6.html"><i class="fa fa-check"></i><b>6</b> Playfully Designing for Things</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter6.html"><a href="Chapter6.html#defining-play"><i class="fa fa-check"></i><b>6.2</b> Defining Play</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="Chapter6.html"><a href="Chapter6.html#what-is-play"><i class="fa fa-check"></i><b>6.2.1</b> What is Play?</a></li>
+<li class="chapter" data-level="6.2.2" data-path="Chapter6.html"><a href="Chapter6.html#playgrounds-for-play"><i class="fa fa-check"></i><b>6.2.2</b> Playgrounds for Play</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="Chapter6.html"><a href="Chapter6.html#design-and-playfulness"><i class="fa fa-check"></i><b>6.3</b> Design and Playfulness</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="Chapter6.html"><a href="Chapter6.html#returning-to-playfulness"><i class="fa fa-check"></i><b>6.3.1</b> Returning to Playfulness</a></li>
+<li class="chapter" data-level="6.3.2" data-path="Chapter6.html"><a href="Chapter6.html#ludic-design"><i class="fa fa-check"></i><b>6.3.2</b> Ludic Design</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="Chapter6.html"><a href="Chapter6.html#designing-curious-philosophical-artefacts"><i class="fa fa-check"></i><b>6.4</b> Designing Curious Philosophical Artefacts</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter6.html"><a href="Chapter6.html#speculating-over-definitions"><i class="fa fa-check"></i><b>6.4.1</b> Speculating over definitions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="Chapter6.html"><a href="Chapter6.html#carpentry"><i class="fa fa-check"></i><b>6.5</b> Carpentry</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Chapter6.html"><a href="Chapter6.html#getting-your-hands-dirty-with-philosophy"><i class="fa fa-check"></i><b>6.5.1</b> Getting your hands dirty with philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="Chapter6.html"><a href="Chapter6.html#a-combined-methodological-framework"><i class="fa fa-check"></i><b>6.6</b> A combined methodological framework</a></li>
+<li class="chapter" data-level="6.7" data-path="Chapter6.html"><a href="Chapter6.html#conclusions-1"><i class="fa fa-check"></i><b>6.7</b> Conclusions</a></li>
+</ul></li>
+<li class="part"><span><b>III Doing Carpentry</b></span></li>
+<li class="chapter" data-level="7" data-path="Chapter7.html"><a href="Chapter7.html"><i class="fa fa-check"></i><b>7</b> A Model for a Philosophical View of IoT</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#introduction-4"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#iot-as-a-spatial-phenomenon"><i class="fa fa-check"></i><b>7.2</b> IoT as a spatial phenomenon</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="Chapter7.html"><a href="Chapter7.html#the-division-of-space"><i class="fa fa-check"></i><b>7.2.1</b> The division of space</a></li>
+<li class="chapter" data-level="7.2.2" data-path="Chapter7.html"><a href="Chapter7.html#reconfiguring-insides-and-outsides-as-heterotopia"><i class="fa fa-check"></i><b>7.2.2</b> Reconfiguring Insides and Outsides as Heterotopia</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#crafting-a-model-for-a-philosophical-view-of-iot"><i class="fa fa-check"></i><b>7.3</b> Crafting a Model for a Philosophical View of IoT</a></li>
+<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#discussion-and-conclusion"><i class="fa fa-check"></i><b>7.4</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> Playing with the IoT</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter8.html"><a href="Chapter8.html#introduction-5"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter8.html"><a href="Chapter8.html#creating-a-foundation-for-approaching-game-design"><i class="fa fa-check"></i><b>8.2</b> Creating a foundation for approaching Game Design</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="Chapter8.html"><a href="Chapter8.html#play-and-rhetoric"><i class="fa fa-check"></i><b>8.2.1</b> Play and Rhetoric</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="Chapter8.html"><a href="Chapter8.html#carpentering-the-internet-of-things-board-game"><i class="fa fa-check"></i><b>8.3</b> Carpentering the Internet of Things Board Game</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="Chapter8.html"><a href="Chapter8.html#exploration-phase"><i class="fa fa-check"></i><b>8.3.1</b> Exploration Phase</a></li>
+<li class="chapter" data-level="8.3.2" data-path="Chapter8.html"><a href="Chapter8.html#reflection-phase"><i class="fa fa-check"></i><b>8.3.2</b> Reflection Phase</a></li>
+<li class="chapter" data-level="8.3.3" data-path="Chapter8.html"><a href="Chapter8.html#redux"><i class="fa fa-check"></i><b>8.3.3</b> Redux</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="Chapter8.html"><a href="Chapter8.html#discussion-1"><i class="fa fa-check"></i><b>8.4</b> Discussion</a></li>
+<li class="chapter" data-level="8.5" data-path="Chapter8.html"><a href="Chapter8.html#wrapping-up"><i class="fa fa-check"></i><b>8.5</b> Wrapping Up</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="Chapter9.html"><a href="Chapter9.html"><i class="fa fa-check"></i><b>9</b> Predicting futures in the IoT</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter9.html"><a href="Chapter9.html#introduction-6"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter9.html"><a href="Chapter9.html#philosophical-foundations"><i class="fa fa-check"></i><b>9.2</b> Philosophical Foundations</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="Chapter9.html"><a href="Chapter9.html#the-perception-of-technology-and-post-phenomenology"><i class="fa fa-check"></i><b>9.2.1</b> The Perception of Technology and Post-Phenomenology</a></li>
+<li class="chapter" data-level="9.2.2" data-path="Chapter9.html"><a href="Chapter9.html#human-technology-relations-as-perceptual-illusions"><i class="fa fa-check"></i><b>9.2.2</b> Human-Technology Relations as Perceptual Illusions</a></li>
+<li class="chapter" data-level="9.2.3" data-path="Chapter9.html"><a href="Chapter9.html#quantum-causation-for-iot"><i class="fa fa-check"></i><b>9.2.3</b> Quantum Causation for IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="Chapter9.html"><a href="Chapter9.html#carpentering-the-supernatural-iot"><i class="fa fa-check"></i><b>9.3</b> Carpentering the Supernatural IoT</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="Chapter9.html"><a href="Chapter9.html#designing-the-deck"><i class="fa fa-check"></i><b>9.3.1</b> Designing the Deck</a></li>
+<li class="chapter" data-level="9.3.2" data-path="Chapter9.html"><a href="Chapter9.html#scanning-the-stars-with-software"><i class="fa fa-check"></i><b>9.3.2</b> Scanning the Stars with Software</a></li>
+<li class="chapter" data-level="9.3.3" data-path="Chapter9.html"><a href="Chapter9.html#a-tarot-of-things"><i class="fa fa-check"></i><b>9.3.3</b> A Tarot of Things</a></li>
+<li class="chapter" data-level="9.3.4" data-path="Chapter9.html"><a href="Chapter9.html#madame-bitsys-emporium"><i class="fa fa-check"></i><b>9.3.4</b> Madame Bitsy’s Emporium</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="Chapter9.html"><a href="Chapter9.html#feedback"><i class="fa fa-check"></i><b>9.4</b> Feedback</a></li>
+<li class="chapter" data-level="9.5" data-path="Chapter9.html"><a href="Chapter9.html#discussion-and-conclusion-1"><i class="fa fa-check"></i><b>9.5</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="part"><span><b>IV Moving Forwards</b></span></li>
+<li class="chapter" data-level="10" data-path="Chapter10.html"><a href="Chapter10.html"><i class="fa fa-check"></i><b>10</b> Discussions and Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter10.html"><a href="Chapter10.html#the-living-internet-of-things"><i class="fa fa-check"></i><b>10.1</b> The Living Internet of Things</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="Chapter10.html"><a href="Chapter10.html#is-this-discussion-about-privacy-and-security-in-iot"><i class="fa fa-check"></i><b>10.1.1</b> Is this discussion about privacy and security in IoT?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="Chapter10.html"><a href="Chapter10.html#going-beyond-human-centred-design"><i class="fa fa-check"></i><b>10.1.2</b> Going beyond Human-Centred Design</a></li>
+<li class="chapter" data-level="10.1.3" data-path="Chapter10.html"><a href="Chapter10.html#is-this-a-transhumanist-argument"><i class="fa fa-check"></i><b>10.1.3</b> Is this a transhumanist argument?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="Chapter10.html"><a href="Chapter10.html#the-mantra-of-playfulness"><i class="fa fa-check"></i><b>10.2</b> The Mantra of Playfulness</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="Chapter10.html"><a href="Chapter10.html#being-a-playful-philosopher-designer"><i class="fa fa-check"></i><b>10.2.1</b> Being a playful philosopher-designer</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="Chapter10.html"><a href="Chapter10.html#in-closing-1"><i class="fa fa-check"></i><b>10.3</b> In closing</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="AppendixA.html"><a href="AppendixA.html"><i class="fa fa-check"></i><b>A</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="AppendixA.html"><a href="AppendixA.html#game-design-definitions-and-terminologies"><i class="fa fa-check"></i><b>A.1</b> Game Design Definitions and Terminologies</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="AppendixB.html"><a href="AppendixB.html"><i class="fa fa-check"></i><b>B</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="AppendixB.html"><a href="AppendixB.html#the-internet-of-things-board-game-explored"><i class="fa fa-check"></i><b>B.1</b> The Internet of Things Board Game Explored</a></li>
+<li class="chapter" data-level="B.2" data-path="AppendixB.html"><a href="AppendixB.html#backstory91"><i class="fa fa-check"></i><b>B.2</b> Backstory</a></li>
+<li class="chapter" data-level="B.3" data-path="AppendixB.html"><a href="AppendixB.html#game-objective"><i class="fa fa-check"></i><b>B.3</b> Game Objective</a></li>
+<li class="chapter" data-level="B.4" data-path="AppendixB.html"><a href="AppendixB.html#setup"><i class="fa fa-check"></i><b>B.4</b> Play Setup</a></li>
+<li class="chapter" data-level="B.5" data-path="AppendixB.html"><a href="AppendixB.html#phases-of-play94"><i class="fa fa-check"></i><b>B.5</b> Phases of Play</a></li>
+<li class="chapter" data-level="B.6" data-path="AppendixB.html"><a href="AppendixB.html#tiles"><i class="fa fa-check"></i><b>B.6</b> Understanding the Tiles</a></li>
+<li class="chapter" data-level="B.7" data-path="AppendixB.html"><a href="AppendixB.html#avatars"><i class="fa fa-check"></i><b>B.7</b> Avatars</a></li>
+<li class="chapter" data-level="B.8" data-path="AppendixB.html"><a href="AppendixB.html#rolls"><i class="fa fa-check"></i><b>B.8</b> Rolling Dice</a>
+<ul>
+<li class="chapter" data-level="B.8.1" data-path="AppendixB.html"><a href="AppendixB.html#attack"><i class="fa fa-check"></i><b>B.8.1</b> Doing an Attack Roll</a></li>
+<li class="chapter" data-level="B.8.2" data-path="AppendixB.html"><a href="AppendixB.html#random"><i class="fa fa-check"></i><b>B.8.2</b> Randomisation</a></li>
+</ul></li>
+<li class="chapter" data-level="B.9" data-path="AppendixB.html"><a href="AppendixB.html#decks"><i class="fa fa-check"></i><b>B.9</b> Understanding and Reading Cards</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="AppendixB.html"><a href="AppendixB.html#items"><i class="fa fa-check"></i><b>B.9.1</b> Items Deck</a></li>
+<li class="chapter" data-level="B.9.2" data-path="AppendixB.html"><a href="AppendixB.html#risks"><i class="fa fa-check"></i><b>B.9.2</b> Risks Deck</a></li>
+<li class="chapter" data-level="B.9.3" data-path="AppendixB.html"><a href="AppendixB.html#privacy"><i class="fa fa-check"></i><b>B.9.3</b> Privacy Deck</a></li>
+<li class="chapter" data-level="B.9.4" data-path="AppendixB.html"><a href="AppendixB.html#daemons"><i class="fa fa-check"></i><b>B.9.4</b> Daemons Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="B.10" data-path="AppendixB.html"><a href="AppendixB.html#connections"><i class="fa fa-check"></i><b>B.10</b> Making Connections</a></li>
+<li class="chapter" data-level="B.11" data-path="AppendixB.html"><a href="AppendixB.html#risk-check"><i class="fa fa-check"></i><b>B.11</b> Conducting Risk Checks</a></li>
+<li class="chapter" data-level="B.12" data-path="AppendixB.html"><a href="AppendixB.html#tokens"><i class="fa fa-check"></i><b>B.12</b> Tokens</a></li>
+<li class="chapter" data-level="B.13" data-path="AppendixB.html"><a href="AppendixB.html#resolve"><i class="fa fa-check"></i><b>B.13</b> Resolves and Other Actions</a></li>
+<li class="chapter" data-level="B.14" data-path="AppendixB.html"><a href="AppendixB.html#delayed"><i class="fa fa-check"></i><b>B.14</b> Being Delayed</a></li>
+<li class="chapter" data-level="B.15" data-path="AppendixB.html"><a href="AppendixB.html#rest"><i class="fa fa-check"></i><b>B.15</b> Resting</a></li>
+<li class="chapter" data-level="B.16" data-path="AppendixB.html"><a href="AppendixB.html#databox"><i class="fa fa-check"></i><b>B.16</b> Databoxes</a></li>
+<li class="chapter" data-level="B.17" data-path="AppendixB.html"><a href="AppendixB.html#threat-tracker"><i class="fa fa-check"></i><b>B.17</b> Threat Tracker</a></li>
+<li class="chapter" data-level="B.18" data-path="AppendixB.html"><a href="AppendixB.html#end"><i class="fa fa-check"></i><b>B.18</b> End of the Game</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="AppendixC.html"><a href="AppendixC.html"><i class="fa fa-check"></i><b>C</b> Appendix C</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="AppendixC.html"><a href="AppendixC.html#the-tarot-of-things-deck"><i class="fa fa-check"></i><b>C.1</b> The Tarot of Things Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Design by Play</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter7" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> A Model for a Philosophical View of IoT<a href="Chapter7.html#Chapter7" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>“The trick to forgetting the big picture is to look at everything close up.”<br />
+</p>
+<p>— <span class="citation">Palahniuk (<a href="#ref-palahniuk2003" role="doc-biblioref">2003, chap. 3</a>, para. 73)</span></p>
+</blockquote>
+<div id="introduction-4" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Introduction<a href="Chapter7.html#introduction-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Having built a foundation for this research in its different areas of concern (IoT, Philosophy, Design) and established the applicability of RtD and playful speculation through carpentry as core methodologies, we can now begin crafting our artefacts. In total this research presents three artefacts each exploring a carpentered approach at viewing IoT through a lens of philosophy, each imagining alternative approaches towards the design of IoT systems. Metaphor plays a key role in understanding these artefacts, and after the previous chapters there should be an established familiarity with its presence in this thesis. I wish there was a better way to represent but since metaphors are a common occurrence in philosophy as an explanatory asset <span class="citation">(<a href="#ref-pepper1982" role="doc-biblioref">Pepper 1982</a>; <a href="#ref-johnson1995" role="doc-biblioref">Johnson 1995</a>)</span> it was difficult to divorce this work from its use.</p>
+<p>In <a href="Chapter3.html#Chapter3">Chapter 3</a>, I gave an introduction to why IoT was important, its place in this discourse with philosophy, and the potential use of constellations <span class="citation">(<a href="#ref-lindley2017" role="doc-biblioref">J. G. Lindley and Coulton 2017</a>)</span> as a metaphor for viewing how IoT systems function. In order to use this lens in practicing design this first artefact attempts to grasp the concept of what a philosophical approach at designing for IoT could be like, by presenting a potential framework around which such discourse may take place. This framework intends to guide the carpentry of further artefacts that may be understood in this manner, devised through a model of how IoT objects interact and where those interactions may happen. The act of creating this framework may itself be considered an attempt at carpentry for creating a means to understand the alien phenomenologies existing among digital interactions within IoT. As such, the model at the end of this chapter may aspire to be a secondary major contribution of this research allowing a potential representation of seeing IoT through a philosophical lens. It also is our first step towards addressing the first sub-question of this thesis:</p>
+<ol style="list-style-type: decimal">
+<li>Is it possible to highlight potential problematic effects emanating off IoT products and services approaches through an object-oriented lens?</li>
+</ol>
+<p>In order to address this question a base understanding of interactions occurring within IoT and between objects on and not on the Internet must be established. For the purposes of taking a non-anthropocentric perspective, this needs to be approached through relevant philosophical discourse or object-oriented-ness, and as explained in the previous chapter, this weaving of philosophical discourse within technology and design is done through an assemblage of methods (Fig. <a href="Chapter7.html#fig:7toolbox">7.1</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:7toolbox"></span>
+<img src="figures/ch7-toolbox.png" alt="The method assemblage for the carpentry of this artefact explores playful appropriations of object-oriented philosophies and the use of speculation through an understanding of spatial theories."  />
+<p class="caption">
+Figure 7.1: The method assemblage for the carpentry of this artefact explores playful appropriations of object-oriented philosophies and the use of speculation through an understanding of spatial theories.
+</p>
+</div>
+<p>Therefore, in this chapter I will be making a comparison between concepts from philosophy and spatial theories coming from geography and architecture. The reason for this is because IoT interactions occur in both physical and non-physical locations such as a living room and a digital wallet. This comparison is then applied using a philosophical perspective of phenomenological configurations and how they are understood through digital technologies and digital spaces, coming from a review of relevant literature and case studies. This presents an opportunity for exploring IoT’s ontology from human and non-human-centred perspectives in the different manners of interactions capable within it. As such, ludic design discussed in the previous chapter will not be explored in this artefact as this is more to establish a core understanding through playful appropriations of philosophy for further curious explorations in the subsequent chapters. Towards the end this artefacts contribution towards manifesting playfulness within the design process is also touched upon in light of the evidence presented in this chapter.</p>
+<p>The first portion of this chapter defines the logic behind how the framework is established followed by a detailed definition of the different elements that create the final model. The model itself becomes the presented artefact in this chapter. To begin I will define philosophical arguments used throughout building a case for seeing IoT interactions as phenomenon existing within multiple spatial configurations.</p>
+</div>
+<div id="iot-as-a-spatial-phenomenon" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> IoT as a spatial phenomenon<a href="Chapter7.html#iot-as-a-spatial-phenomenon" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>An earlier definition of IoT I gave was of an amalgamation of heterogeneous physical objects connected through the Internet. The Internet itself, I explored as a ‘space’ where unique non-physical interactions occurred. Colloquially when we refer to the Internet it takes the form of a <em>place</em> that was or will be visited. In this regard, we have seen both the Internet and IoT through phenomenology. To define a structure for our philosophical lens of IoT to sit upon, we need to go back to basics. For that I will be doing two things, <em>(a)</em> presenting a means for dividing digital/non-digital spaces in light of philosophical texts, and <em>(b)</em> mapping the rules that may define interactions that occur within these spaces.</p>
+<p>The discussion here is an expansion of the discourse presented in <a href="Chapter4.html#Chapter4">Chapter 4</a>. What we know is that phenomenological research attempts to understand the experience of things and events through the “perspectives and views of physical or social realities” <span class="citation">(<a href="#ref-leedy2016" role="doc-biblioref">Leedy and Ormrod 2016, 84</a>)</span>. It is in all respects a “first-personal mode of presentation” for any given phenomenon, defining unique meanings of things present in our experience <span class="citation">(<a href="#ref-smith2016" role="doc-biblioref">Smith 2016, 140</a>)</span>. As <span class="citation">Cole (<a href="#ref-cole2013" role="doc-biblioref">2013, 160</a>)</span> describes, OOO explores how objects “should be recognised for their indifference to us”, focusing on the things they do “behind our backs” <span class="citation">(<a href="#ref-cole2013" role="doc-biblioref">2013, 160</a>)</span>. This view sees the individual experiences of objects as actants moving in and out of their own made assemblages.</p>
+<p>So, how does phenomenology fit into this development of a framework? The idea of crafting models of realities is not alien to philosophy. When understanding phenomenon, a core axiom is presenting the relation between our senses and the experience with reality.</p>
+<div class="figure"><span style="display:block;" id="fig:four-fold"></span>
+<img src="figures/ch7-four_fold.png" alt=" @harman2011 presented the four-fold quadruple object model for understanding phenomenological perception and relations. Each line represents a possible means for causation defining a specific ontographical relationship."  />
+<p class="caption">
+Figure 7.2:  <span class="citation">Harman (<a href="#ref-harman2011" role="doc-biblioref">2011b</a>)</span> presented the four-fold quadruple object model for understanding phenomenological perception and relations. Each line represents a possible means for causation defining a specific ontographical relationship.
+</p>
+</div>
+<p>While explaining the philosophical grounding of this research, I ended <a href="Chapter4.html#Chapter4">Chapter 4</a> on OOO giving an introduction into my core philosophical approach. Expanding on that further in <em>The Quadruple Object</em>, <span class="citation">Harman (<a href="#ref-harman2011" role="doc-biblioref">2011b</a>)</span> presents OOO coupling Heidegger’s tool-analysis with Husserl’s phenomenological work presenting a framework for defining phenomenological experience. Harman’s four-fold model (Fig. <a href="Chapter7.html#fig:four-fold">7.2</a>) sees the presence of two kinds of objects having two kinds of qualities: <em>Real</em> and <em>Sensual</em>; or <em>Real-Objects (RO)</em> with <em>Real-Qualities (RQ)</em>, and <em>Sensual-Objects (SO)</em> with <em>Sensual-Qualities (SQ)</em> <a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>. This premise argues that objects may not exist without their defining qualities, and it is the interaction with our senses that creates the different modalities a phenomenon may have. This is very much Harman building upon the older model of experience which only viewed primary and secondary qualities for objects <span class="citation">(<a href="#ref-harman2011a" role="doc-biblioref">Harman 2011a</a>; <a href="#ref-smith2016" role="doc-biblioref">Smith 2016</a>)</span>.</p>
+<p>Harman defines RO as those objects that withdraw from experience having RQ which subsequently may only be understood via scrutiny. In the same note, SO are those that rely on experience to exist with SQ, being similarly experiential. This creates several possible combinations between pairing the different objects and qualities. The history of phenomenological research argues for the presence of rifts or tensions between the different combinations of phenomenon and Harman’s model is no different <span class="citation">(<a href="#ref-harman2018" role="doc-biblioref">Harman 2018</a>, <a href="#ref-harman2011" role="doc-biblioref">2011b</a>; <a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012</a>)</span>. It is the presence of this tension between the real and sensual that crafts OOO. <span class="citation">Harman (<a href="#ref-harman2018" role="doc-biblioref">2018, 150</a>)</span> defines this rift as “vicarious causation”, taking hints from the medieval Islamic and European philosophical concept of <em>Occasionalism</em> <a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
+<p>As an example of a rift in causation, he presents an old occasionalist argument for cotton and fire: “Fire does not burn cotton—it is merely the occasion for God to burn the cotton” <span class="citation">(<a href="#ref-harman2010b" role="doc-biblioref">Harman 2010a, 5</a>)</span>. What Harman is appropriating here is fire and cotton as real and sensual objects with real and sensual qualities. While intermingling fire does not contact all properties of cotton: smell, softness, etc. They are irrelevant to the flame instead cotton only encounters heat. This should not matter with cotton being non-human, but through the OOO lens there is no prejudice between humans and non-humans. Therefore, the simple fact Harman presents is that objects cannot exhaust the reality of other objects when their natures collide. The interaction between fire and cotton is happening on a level we are unable to view unless we see out from within, in other words through an object-oriented perspective. Harman’s view is this interaction happens on the interiors of the objects. In effect he asks, what are cotton and fire personally experiencing?</p>
+<p>I should mention here that Harman’s accounts do not argue for occasionalism, rather they argue for OOO as a perspective in viewing causation. OOO cannot agree to an occasionalist world view <span class="citation">(<a href="#ref-harman2018" role="doc-biblioref">Harman 2018, 150</a>)</span>. The overarching argument and connection I am presenting here certainly are for causation of a kind, vis-à-vis interactions in IoT. What should be taken from this is the use of OOO to create foundations for a framework that allows for things to be laid bare for scrutiny and possibly define them through spatial references of their insides and outsides. Before making the connection between the end model and viewing IoT in this manner, we must tackle the second part of this equation and understand what I mean by these spatial configurations.</p>
+<div id="the-division-of-space" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> The division of space<a href="Chapter7.html#the-division-of-space" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There have been moments when I’ve entered a room and thought, <em>“This is a big space!”</em>, or perhaps gestured to a friend in a movie theatre to say, <em>“There’s a space over here”</em>. Like many I’ve also encountered the idea of ‘personal space’ through proximity, such as in a crowded train. These are colloquial uses of the word <em>space</em> and although the concept involves intuitive use in our daily lives, a definition of space has seen philosophical contention for years <span class="citation">(<a href="#ref-tuan1977" role="doc-biblioref">Tuan 1977</a>; <a href="#ref-cresswell2008" role="doc-biblioref">Cresswell 2008</a>; <a href="#ref-wollan2003" role="doc-biblioref">Wollan 2003</a>; <a href="#ref-casey2001" role="doc-biblioref">Casey 2001</a>)</span>. However, one thing that all sources do agree upon is that <em>space</em> is different from what a <em>place</em> may be.</p>
+<p>Yi-Fu Tuan is often quoted as a key figure and influence in the study of human geography and in defining an argument for <em>space</em> and <em>place</em>. Space is described by <span class="citation">Tuan (<a href="#ref-tuan1977" role="doc-biblioref">1977, 34</a>)</span> as “an abstract term for a complex set of ideas”, which he says comes from how “people of different cultures differ in how they divide up their world, assign values to its parts, and measure them” <span class="citation">(<a href="#ref-tuan1977" role="doc-biblioref">1977, 34</a>)</span>. His definition assumes space in relation to an experience one has with their body and those of others that are intimate in nature, allowing one to arrange space in a manner that it “conforms with and caters to [ones] specific biological needs and social relations” <span class="citation">(<a href="#ref-tuan1977" role="doc-biblioref">1977, 34</a>)</span>.</p>
+<p>Architecturally space is seen through an idea of dimensionality, where it can be measured, yet Tuan is eager to point out that “spatial dimensions such as vertical and horizontal, mass and volume are experiences [also] known intimately to the body” <span class="citation">(<a href="#ref-tuan1977" role="doc-biblioref">Tuan 1977, 108</a>)</span>. This allows Architecture to traverse the boundary between <em>space</em> and <em>place</em> and interweave spatial theory with phenomenology.</p>
+<div id="insides-and-outsides" class="section level4 hasAnchor" number="7.2.1.1">
+<h4><span class="header-section-number">7.2.1.1</span> Insides and Outsides<a href="Chapter7.html#insides-and-outsides" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Both terms <span class="citation">Tuan (<a href="#ref-tuan1977" role="doc-biblioref">1977</a>)</span> argues denote common experiences but they expand on each other’s definitions. “Place is security, space is freedom: we are attached to the one and long for the other” <span class="citation">(<a href="#ref-tuan1977" role="doc-biblioref">1977, 3</a>)</span>. A home thus becomes a <em>place</em>, differentiating it from being just any space because of the meaning associated with it. Tuan’s exploration of spatial theory is more towards the study and experience of Geography as done by the human actant. But, this idea of a <em>kind-of spatial theory</em> can be appropriated to encompass non-physical locations as well:</p>
+<blockquote>
+<p>“Consider the sense of an ‘inside’ and an ‘outside’, of intimacy and exposure, of private life and public space. People everywhere recognise these distinctions, but the awareness may be quite vague.” <span class="citation">(<a href="#ref-tuan1977" role="doc-biblioref">Tuan 1977, 107</a>)</span></p>
+</blockquote>
+<p>The insides and outsides which Tuan refers to are in relation to private and public aspects of spaces and ones interaction with them. The level of interaction a person might have within an open town square compared to their own house would be very different, as different amounts of trust would be associated with these ‘inside’ and ‘outside’ spaces. This space/place relationship transcends into digital environments equally with the “conceiving of cyberspace as a social space” <span class="citation">(<a href="#ref-slane2007" role="doc-biblioref">Slane 2007, 86</a>)</span>.</p>
+<p>Social media may be seen as a prime example of present inside and outside interactions in digital spaces. On social networks audiences are imagined and interacted with in varying degrees to the extent where audiences are flattened into one singular unit in a phenomenon of “context collapse” <span class="citation">(<a href="#ref-marwick2011" role="doc-biblioref">Marwick and Boyd 2011, 122</a>)</span>. This means it becomes harder to juggle between the different manners of interactions we would want to facilitate within these digital spaces. For example, interacting with family and friends. The reference of private and public by <span class="citation">Tuan (<a href="#ref-tuan1977" role="doc-biblioref">1977</a>)</span> becomes very apparent in these spaces because of an inherent need for security. A physical diary and a web-log may thus be considered ‘insides’ in a manner rather than outsides. In this same light when considering OOO and the above four-fold model the inner workings of objects may equally constitute to existing within an inside-space of the object, even a digital space inside a digital object.</p>
+<p>I should make clear that when I say ‘digital space’ I refer to a non-physical location represented by signals of data (digital) and accessible only through mediums such as a computer or similar device. The Internet may be a digital space more easily understandable, as it can only be interacted with through a capable digital interface. The reason I say this is because many IoT interactions don’t necessarily occur over the Internet and may happen on the device themselves. Furthermore, the categorisation of <em>cyberspace</em> by <span class="citation">Slane (<a href="#ref-slane2007" role="doc-biblioref">2007</a>)</span> restricts it to a network of devices which for the purposes of this framework I must expand upon and also include an individual object-oriented perspective.</p>
+<p>Having said that, <span class="citation">Slane (<a href="#ref-slane2007" role="doc-biblioref">2007, 85</a>)</span> is of the opinion that cyberspace (or digital space) can be seen as being constructed through social contact and its meaning derived from “the uses to which it is put”. This subsequently also means that digital spaces are capable of “multiple simultaneous incarnations” <span class="citation">(<a href="#ref-slane2007" role="doc-biblioref">2007, 85</a>)</span> and with each incarnation a subsequent private/public aspect may be further imagined. Therefore from the above context, social may be taken liberally to include not only person to person interaction but also <em>thing to thing</em> interaction where digital terminals and objects would be included.</p>
+<p>Our IoT devices operate in <em>‘the cloud’</em>—a common way of expressing the operations of Internet-connected devices. The phrase embodies a physicality for an abstract construct such as the Internet. Verbs such as ‘browsing’, ‘surfing’, ‘streaming’, and ‘going online’ are used to express interacting with Internet-related material; websites, applications, devices, etc. Yet in truth, the Internet and IoT are a series of abstract algorithms operating on computers that execute an illusion of interaction. When you surf you feel the water and acknowledge the physics of the world the water, surfboard, and yourself exist in. The Internet posits the notion of entering a physical space much like entering the world of a book or surfing. Both the Internet and IoT are experiential but not necessarily similar to physical experience.</p>
+<p>The social aspect referred to above may thus be viewed from an object-oriented stance and imagined as being between digital and non-digital objects. Furthermore, by exercising insides/outsides of these objects within this object-social context, we enter a means of arguing for the private/public<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> aspects of these objects. Things that are not visible/tangible/approachable against those that are. If taking a further aggressive stance towards the object-perspective, this may be seen as a context-collapse of the social interaction of objects within the spaces they occupy.</p>
+</div>
+<div id="a-digital-configuration-of-space" class="section level4 hasAnchor" number="7.2.1.2">
+<h4><span class="header-section-number">7.2.1.2</span> A digital configuration of space<a href="Chapter7.html#a-digital-configuration-of-space" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is an argument in perception stemming from years of empirical studies and observations by philosophers around space, time, and the precedence of objects residing within; some of which I’ve explored in previous chapters. The simplest view is one of <em>Natural Realism</em> described by <span class="citation">Maund (<a href="#ref-maund2003" role="doc-biblioref">2003, 1</a>)</span> through perception as a method of acquiring knowledge of an “objective world” consisting of physical objects and occurrences with them. For instance, a red apple can be perceived sweet only if that knowledge exists a priori for the perceiver along with related knowledge such as it being an apple, red, etc.</p>
+<p>The physical objects or <em>‘things’</em> in IoT are perceived as objects of the physical world, and for the most part our interactions are predicated by our prior knowledge of interacting with them. Therefore, we <em>anticipate</em> an interaction from an IoT-enabled lightbulb to be similar to a non-IoT one. As seen with the constellation metaphor this is not necessarily always the case as the pressing of a physical button might lead to a chain of interactions happening beneath our level of perception. No amount of physical intervention may then alter that reality. As an example, take a <em>Phillips Hue Bulb</em> an IoT device whose colour of light can be changed by its app or a physical dial. It does not matter which is used for in truth the change happens through digital interactions. As non-digital human objects we interact with both the digital spaces of these IoT devices as well as the physical spaces in which they exist, making our interactions multidimensional happening inside and outside.</p>
+<p>By seeing these interactions in digital/non-digital<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a> spaces existing as a phenomenon, we may attempt to make sense of their complexity using philosophical references in tandem with real-life examples. The question phenomenology begs us to ask is, “What is it like to do or experience [something]?” <span class="citation">(<a href="#ref-muratovski2015" role="doc-biblioref">Muratovski 2015, 79</a>)</span> opening a platform for empathising with these objects and see from their perspective what these <em>inter-spatial interactions</em> are like (to us, and <em>them</em>).</p>
+<p>Returning to Harman’s four-fold model we can now juxtapose it with the formulated division of digital and non-digital space (Fig. <a href="Chapter7.html#fig:digitalfour">7.3</a>). As there may be no precedence between human interaction and non-human interaction through OOO, the four-fold model may be extrapolated for digital objects. Rather than consider their internal qualities which equate to phenomenological experience, what we are concerned with here is their spatial location to define where these interactions occur and their specific ontologies. Where Harman’s model acted upon individual ‘objects’ and experience, this version tackles objects and their locations but specific to an understanding of the digital/non-digital.</p>
+<div class="figure"><span style="display:block;" id="fig:digitalfour"></span>
+<img src="figures/ch7-digitalfourfold.png" alt="The appropriated four-fold model for digital/non-digital spaces suggests causality on the insides and outsides of digital/non-digital objects with the possibility of them occurring in tandem in both Real and Digital-Worlds."  />
+<p class="caption">
+Figure 7.3: The appropriated four-fold model for digital/non-digital spaces suggests causality on the insides and outsides of digital/non-digital objects with the possibility of them occurring in tandem in both Real and Digital-Worlds.
+</p>
+</div>
+<p>The actual space occupied by all our elements is now divided through concepts coming from the above defined perspective of spaces by <span class="citation">Tuan (<a href="#ref-tuan1977" role="doc-biblioref">1977</a>)</span>, of containing a sense of an ‘inside’ and an ‘outside’ presenting two realities. One becomes the non-digital reality that we have around us in which we interact (Real-World or RW), the other being a digital one where interactions through/with digital objects occur (Digital-World or DW). Within them exist both kinds of objects and spaces which exhibit a number of possible interactions. I remind you that the four-fold model is for understanding phenomenological experiences while this utilisation deals with a spatial categorisation of experiences. This juxtaposition captures a possibility of digital interactions existing within non-digital spaces, for instance when you receive a notification on your phone while on the street, or when an IoT lightbulb is switched on in the bedroom using a phone from another room. This model represents a way of categorising these broader experiences through both phenomenology and spatial theory.</p>
+<p>The idea of digital being present alongside the non-digital has been discussed by some seeing it as a “virtuality continuum” <span class="citation">(<a href="#ref-milgram1995" role="doc-biblioref">Milgram et al. 1995, 285</a>)</span>, whereas others consider a space in which “both the real and the virtual [digital] coexist” <span class="citation">(<a href="#ref-coulton2017" role="doc-biblioref">Coulton 2017, para. 1</a>)</span>. Digital worlds are also seen as literal places that, besides being interpreted as heterogenous global networks, may also be viewed in terms of “space, landscape, and localities” <span class="citation">(<a href="#ref-rymarczuk2014" role="doc-biblioref">Rymarczuk and Derksen 2014, para. 1</a>)</span>.</p>
+<p><span class="citation">Monk (<a href="#ref-monk1997" role="doc-biblioref">1997</a>)</span> presents Descartes’ mind/body split as a way to view the physical world through psychological realities such as the digital. These realities have no spatial configurations akin to physical spaces as their locations are “metaphorically ‘in the mind’” <span class="citation">(<a href="#ref-monk1997" role="doc-biblioref">1997, 46</a>)</span>. Concepts such as augmented reality or virtual reality might be easier to understand in this context. This logic may be similarly utilised to fathom the realities of digital experiences such as IoT that interweave between the physical and the digital. Therefore, the division of space can be justified through a philosophical embodiment of the virtual space as a similar yet altered parallel space to the physical residing within it.</p>
+</div>
+</div>
+<div id="reconfiguring-insides-and-outsides-as-heterotopia" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Reconfiguring Insides and Outsides as Heterotopia<a href="Chapter7.html#reconfiguring-insides-and-outsides-as-heterotopia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The above model now facilitates a phenomenon of IoT occurring through a kind-of spatial theory, it has a structure but lacks specific context. A more detailed characterisation of the inside/outside would help in grounding this framework better. At the moment this model explores individual interactions between unit entities (digital/non-digital to object/space). In most IoT interactions there occur moments where multiple modalities may exist, such as a digital object in a non-digital space interacting through digital space. Specifying how these spaces interact may solve this and propose further possible combinations. To do that though, I will need to return to philosophy.</p>
+<p>Michel Foucault once said: “what is interesting is always interconnection, not the primacy of this over that” <span class="citation">(<a href="#ref-foucault2000" role="doc-biblioref">Foucault 2000, 362</a>)</span>. In his essay <em>Des Espace Autres</em> (Of Other Spaces) <span class="citation">Foucault (<a href="#ref-foucault1967" role="doc-biblioref">1967, para. 7</a>)</span> introduced the concept of the <em>Heterotopia</em> (Greek for <em>‘other place’</em>), exploring how our lives are “governed by a certain number of [unalterable] oppositions”. These oppositions he sees as universally understood arising between different formats of spaces. Examples he gives are of between family and social spaces, or cultural spaces and useful spaces. Perhaps most significant for this work is the opposition he derives between private and public spaces <span class="citation">(<a href="#ref-foucault1967" role="doc-biblioref">1967, para. 7</a>)</span>.</p>
+<p>The crux of his essay is simple: the spaces we occupy follow certain rules. That said, his definition of what <em>space</em> constitutes is rather broad and consequently perfect for our needs. He explains these spaces as sacred idealisations calling them heterotopias or placeless places because of their tendency to deviate from the norm. <span class="citation">Foucault (<a href="#ref-foucault1967" role="doc-biblioref">1967, para. 9</a>)</span> goes on to assert that our lives are not in “voids” where the “individual and thing” may reside, rather the lives we live he contests are within sets of relations between unique moments we occupy. In his words these are “simultaneously mythic and real contestation of the space in which we live” <span class="citation">(<a href="#ref-foucault1967" role="doc-biblioref">1967, para. 13</a>)</span>. My intention thus of utilising the concept of heterotopias here is to formulate a series of rules that the spaces defined in the above framework may enforce.</p>
+<div id="how-are-heterotopias-formed" class="section level4 hasAnchor" number="7.2.2.1">
+<h4><span class="header-section-number">7.2.2.1</span> How are heterotopias formed?<a href="Chapter7.html#how-are-heterotopias-formed" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In <em>The Badlands of Modernity</em>, <span class="citation">Hetherington (<a href="#ref-hetherington2002" role="doc-biblioref">2002</a>)</span> approaches concepts of societal modernity considering Foucault’s writings on power and politics. He expands on the notion of heterotopia as:</p>
+<blockquote>
+<p>“Heterotopias are places of Otherness, whose Otherness is established through a relationship of difference with other sites, such that their presence either provides an unsettling of spatial and social relations or an alternative representation of spatial and social relations.” <span class="citation">(<a href="#ref-hetherington2002" role="doc-biblioref">Hetherington 2002, 8</a>)</span></p>
+</blockquote>
+<p>His definition explains how these spaces are created saying that they “bring together heterogeneous collections of unusual things” <span class="citation">(<a href="#ref-hetherington2002" role="doc-biblioref">Hetherington 2002, 43</a>)</span> as a deviation from the norm. More importantly his discussion focuses on how what matters in a heterotopia is seeing the relationship from an alternative perspective.</p>
+<p>This approach makes it safe to imagine unique interactions that may exist within the overlaps of an inter-spatial interactivity model for IoT, as residing within a heterotopia—or a series of heterotopias. Hetherington <span class="citation">(<a href="#ref-hetherington2002" role="doc-biblioref">Hetherington 2002, 8</a>)</span> goes on to explain a grounding factor of these places of Otherness wherein they occupy “unsettling juxtapositions” of objects. Each contesting established orders of thought, creating alternative hierarchies of an unsettling nature as they “appear out of place” <span class="citation">(<a href="#ref-hetherington2002" role="doc-biblioref">2002, 50</a>)</span>. This aspect allows us to view interactions in these spaces in a manner of urgency and thus challenging their meaningfulness towards the actors and the act.</p>
+<p>Although the concept of heterotopia has most commonly been used to define alternate physical spaces as those referenced by Foucault himself—such as the cemetery, a festival, or the library—it also is used to define more abstract structures. Examples of abstracted spaces given by <span class="citation">Foucault (<a href="#ref-foucault1967" role="doc-biblioref">1967, para. 30</a>)</span> are of the rug as a manner of garden, or a boat in water which he calls a “heterotopia par excellence”.</p>
+<p>What this asserts is that heterotopia exhibit rules which define the actions that may take place within them. The insides/outsides of our defined spaces and objects in the altered model above may thus be further worked upon to exhibit their own unique rules if imagined as heterotopias. <span class="citation">Rymarczuk and Derksen (<a href="#ref-rymarczuk2014" role="doc-biblioref">2014, para. 7</a>)</span> discuss how the boat as heterotopia analogy may be seen as a reflection of cyberspace as a placeless place. They point this out from the fact that digital spaces often involve networks where terminals are connected to operate in a unified manner, even though being separate entities in different locales and times. They echo the point of view by <span class="citation">Young (<a href="#ref-young1998" role="doc-biblioref">1998</a>)</span> where cyberspace can have further heterotopias residing within it <span class="citation">(<a href="#ref-rymarczuk2014" role="doc-biblioref">Rymarczuk and Derksen 2014, para. 7</a>)</span>. Furthermore, arguments have been presented suggesting smart cities <span class="citation">(<a href="#ref-wang2017" role="doc-biblioref">Wang 2017</a>; <a href="#ref-handlykken2011" role="doc-biblioref">Handlykken 2011</a>)</span> which are essentially IoT-enabled utopias, and the Internet <span class="citation">(<a href="#ref-warschauer1995" role="doc-biblioref">Warschauer 1995</a>; <a href="#ref-badulescu2012" role="doc-biblioref">B̆adulescu 2012</a>)</span> as modern imaginings of heterotopia.</p>
+</div>
+<div id="principles-of-heterotopia-in-action" class="section level4 hasAnchor" number="7.2.2.2">
+<h4><span class="header-section-number">7.2.2.2</span> Principles of Heterotopia in action<a href="Chapter7.html#principles-of-heterotopia-in-action" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Along with defining this idea of heterotopia, <span class="citation">Foucault (<a href="#ref-foucault1967" role="doc-biblioref">1967</a>)</span> established six principles to explain this further. As a philosopher historian Foucault’s explanation of heterotopia relates with society, power, and history. His broad approach at defining the characteristics of heterotopias make their concepts easily transferrable.</p>
+<p>To begin he affirms that all cultures display the ability to create (or have created) heterotopias. The form of these are varied and depend on causal relationships to the space they inhabit, the culture they are tethered to, and other factors.</p>
+<p>Second, society plays a role in altering “established heteortopias [to] change or adapt novel functions and new meanings” <span class="citation">(<a href="#ref-rymarczuk2014" role="doc-biblioref">Rymarczuk and Derksen 2014, para. 5</a>)</span>. <span class="citation">Foucault (<a href="#ref-foucault1967" role="doc-biblioref">1967, para. 20</a>)</span> explains this with an example of the cemetery which evolved to be a city of its own from prior ideas of sacredness to a “dark resting place” for our loved ones.</p>
+<p>Third, is how a single real space may be juxtaposed by several alternate spaces each with an apparent incompatibility to the original. <span class="citation">Rymarczuk and Derksen (<a href="#ref-rymarczuk2014" role="doc-biblioref">2014, para. 45</a>)</span> have expressed this to be a defining characteristic of heterotopias, wherein they allow a merger of spaces to exist; such as in our case, a merger of private/public or inside/outside.</p>
+<p>The fourth principle establishes a concept of <em>heterochronies</em>, a thought that these places of Otherness are moments in time or using Foucault’s words “linked to slices of time” <span class="citation">(<a href="#ref-foucault1967" role="doc-biblioref">Foucault 1967, para. 23</a>)</span>. This means entering a heterotopia forces a break in traditional understandings of time. For instance, Foucault’s examples of when entering a cemetery, library, or museum, describe how time is constantly built up in these spaces. Time has no limit in them in how they horde objects and artefacts that are ‘timeless’ in nature.</p>
+<p>Fifth, heterotopias have a manner of “opening and closing” allowing them to be at once isolated as well as be permeable <span class="citation">(<a href="#ref-foucault1967" role="doc-biblioref">Foucault 1967, para. 26</a>)</span>. A way of picturing this is through metaphorical gatekeepers entrusted with responsibilities to allow certain things to enter and exit the heterotopia. Digitally this can be imagined through payment, registration, and identification protocols.</p>
+<p>Finally, heterotopias do not exist on their own and instead have a function that is related to what is around them. The definition <span class="citation">Foucault (<a href="#ref-foucault1967" role="doc-biblioref">1967, para. 27</a>)</span> gives of this, is of seeing two extreme poles contesting each other in a bid to expose the space they occupy. Creating instead an illusory space that ironically defines the heterotopia as a compensation for the flaws of reality <span class="citation">(<a href="#ref-rymarczuk2014" role="doc-biblioref">Rymarczuk and Derksen 2014, para. 6</a>)</span>.</p>
+<p>To shed light on this rather broad and vague final principle and accumulate the other principles in one example, <span class="citation">Rymarczuk and Derksen (<a href="#ref-rymarczuk2014" role="doc-biblioref">2014</a>)</span> present <em>Facebook</em> as a digital heterotopia. The online website/service requires actors—or in its case <em>users</em>—to follow certain rules of conduct. In order to immerse themselves in this digital world they must agree upon set terms through Facebook as the gatekeeper. This also strips away their claims to the information they provide. <span class="citation">Rymarczuk and Derksen (<a href="#ref-rymarczuk2014" role="doc-biblioref">2014, para. 12</a>)</span> critique this aspect of the service saying that leaving the space entirely is rather difficult. Since publication later updates of Facebook have added a deletion option though the design of the feature arguably discourages such activity. Furthermore, this does not remove already present interactions done with other users, such as posts or messages which essentially aligns to the fifth principle of heterotopias. Moving on they affirm that Facebook shows the “distinct regime of time” <span class="citation">(<a href="#ref-rymarczuk2014" role="doc-biblioref">2014, para. 15</a>)</span>, that <span class="citation">Foucault (<a href="#ref-foucault1967" role="doc-biblioref">1967, para. 24</a>)</span> describes in his fourth principle comparing it to museums that “accumulate time”. This makes Facebook a <em>heterochrony</em> akin to a library, but instead of books a library of personal moments and data. “Facebook collapses past life, present life and afterlife into something very other” <span class="citation">(<a href="#ref-rymarczuk2014" role="doc-biblioref">Rymarczuk and Derksen 2014, para. 35</a>)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:facebook"></span>
+<img src="figures/ch7-facebook.png" alt="The digital entity that is Facebook may be viewed as a heterotopia as it facilitates and oversees the accumulation of time through the lives and data of its users."  />
+<p class="caption">
+Figure 7.4: The digital entity that is Facebook may be viewed as a heterotopia as it facilitates and oversees the accumulation of time through the lives and data of its users.
+</p>
+</div>
+<p>They converge on the third principle by explaining how <em>Facebook</em> views privacy, wherein the public domain is viewable to both <em>Facebook’s</em> owners and those constructing their social spheres. These create larger bubbles or networks, and though individuals are divided into seemingly personal spaces, what distinction should be present between private and public is blurred. This is because, the entity that is <em>Facebook</em> in its online presence as a whole “is not an undivided space” <span class="citation">(<a href="#ref-rymarczuk2014" role="doc-biblioref">Rymarczuk and Derksen 2014, para. 50</a>)</span>. Finally, the sixth principle is a discourse on the illusion that <em>Facebook</em> gives of connectivity which they present in the manner of performance. An attempt to return power through “inauthenticity”, having its users “rejoice in the fact that it gives them the ability to present themselves to the world” <span class="citation">(<a href="#ref-rymarczuk2014" role="doc-biblioref">2014, para. 54</a>)</span>. <em>Facebook</em> thus becomes a heterotopia existing within another heterotopia of the Internet (Fig. <a href="Chapter7.html#fig:facebook">7.4</a>).</p>
+<p>This adaptation of the principles of a heterotopia applied to a digital entity such as <em>Facebook</em> is a prime example of the above discussion of reframing digital spaces as possibly housing phenomenological insides and outsides. A spatial configuration enforced by heterotopic rules to guide the interactions possible within those spaces. With all of this information in hand I can now begin to craft a model for a philosophical view of IoT that inhibits the ability to see IoT interactions through a configuration of inter-spatiality.</p>
+</div>
+</div>
+</div>
+<div id="crafting-a-model-for-a-philosophical-view-of-iot" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Crafting a Model for a Philosophical View of IoT<a href="Chapter7.html#crafting-a-model-for-a-philosophical-view-of-iot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The toolbox is now laid out and contains philosophies of phenomenology and an understanding of spatial theory combined with the ability to define spatial rules through heterotopias. In this section I will attempt to adapt all of these findings together to reimagine the above adaptation of Harman’s four-fold model. Just like when a personal diary becomes a heterotopic space of relevance to its owner, so too does a smart phone. And while online services such as <em>Facebook</em> can be seen as heterotopias, it is with the ability of ontography afforded by OOO that we can lay bare these interactions happening within the heterotopias of IoT. To explain this, I left out one example of Foucault’s heterotopias till the very end. It is the most compelling and the inspiration for this model. In it, Foucault describes the interaction with a mirror:</p>
+<blockquote>
+<p>“The mirror is, after all, a utopia, since it is a placeless place. In the mirror, I see myself there where I am not, in an unreal, virtual space that opens up behind the surface…a sort of shadow that gives my own visibility to myself…But it is also a heterotopia in so far as the mirror does exist in reality, where it exerts a sort of counteraction on the position that I occupy. From the standpoint of the mirror I discover my absence from the place where I am…The mirror functions as a heterotopia in this respect: it makes this place that I occupy at the moment when I look at myself in the glass at once absolutely real, connected with all the space that surrounds it, and absolutely unreal, since in order to be perceived it has to pass through this virtual point which is over there.” <span class="citation">(<a href="#ref-foucault1967" role="doc-biblioref">Foucault 1967, para. 12</a>)</span></p>
+</blockquote>
+<p>What Foucault poetically describes is a parallel space which appears to have utopic traits since you see yourself as an illusion. Essentially, the space of the mirror which involves the reflection exists because there is something in the space <em>in front</em> of the mirror. A second example he gives in this same note is of a telephone-line. When speaking onto a telephone we acknowledge the existence of the other through their <em>voice-on-the-line</em>. Though the other is not physically present with us, their voice is enough to give the illusion of their presence. The voice-on-the-line thus occupies a heterotopic space. In both examples, neither space can exist without the other. This can further be explored through IoT as a heterotopia when considering our devices. The act of seeing your activities on a smart phone, such as while using <em>WhatsApp</em>, can be presented as a parallel to the <em>voice-on-the-line</em> example.</p>
+<div class="figure"><span style="display:block;" id="fig:iot-model"></span>
+<img src="figures/ch7-iot_model.png" alt="Model for a Philosophical View of IoT."  />
+<p class="caption">
+Figure 7.5: Model for a Philosophical View of IoT.
+</p>
+</div>
+<p>Thus, the following model now can be crafted (Fig. <a href="Chapter7.html#fig:iot-model">7.5</a>). It incorporates two spaces coexisting as one within the other each with its unique rules and regulations encompassing individual spheres of privacy and publicness. Our original adaptation of digital/non-digital objects/spaces is transformed to acknowledge the social nature of interactions occurring in these spaces by considering them as private/public or inside/outside bubbles. Though they still exist within the RW and DW larger ecology, they now converge to create overlaps collectively making a series of heterotopias. The overlaps created can be characterised as relating to Private–Non-Digital (P<sub>r</sub>ND), Public–Non-Digital (P<sub>u</sub>ND), Private–Digital (P<sub>r</sub>D), and Public–Digital (P<sub>u</sub>D) forming unique and albeit complex heterotopias (h<sub>1</sub> through h<sub>8</sub>).</p>
+<p><strong>Private–Non-Digital (P<sub>r</sub>ND):</strong> One of the two divisions of RW, it encompasses ideals and information that are most intimate to us forming our inherent acknowledgement of non-digital internal or private workings of spaces and objects within. For instance, the physical space of a bedroom could be considered a non-digital private space. Being a personal perspective it is hence of more importance to the individual to acknowledge it as such, but to function as a true ‘private’ it requires an understanding of a corresponding opposite.</p>
+<p><strong>Public–Non-Digital (P<sub>u</sub>ND):</strong> Opposing general notions of privacy it defines the private as much as it defines itself. An open reality that exists around us, governed by culture, society, government, policy, to name a few. The public exists as a platform of interaction that is open and valid for all to interfere/intersect with. Carrying on the example of a home, a communal living room could be accepted as a non-digital public space, and in a larger perspective a park where one can be easily seen and interacted with.</p>
+<p><strong>Private–Digital (P<sub>r</sub>D):</strong> First of the two counterparts in DW, it incorporates rules that are defined by the individual to replicate their real notions of privacy. In Varnelis and Friedberg’s words, “the always-on, always-accessible network produces a broad set of changes to our concept of place” <span class="citation">(<a href="#ref-varnelis2008" role="doc-biblioref">Varnelis and Friedberg 2008, para. 1</a>)</span>. They refer to the mobile phone as a “telecocoon” discussing how the device facilitates pseudo-private encounters in otherwise public spaces through distanced intimacy <span class="citation">(<a href="#ref-varnelis2008" role="doc-biblioref">2008, para. 22</a>)</span>. Therefore, creating the counter existence of the private in DW. A personal smart phone can be considered as a private digital space within a non-digital object <a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
+<p><strong>Public–Digital (P<sub>u</sub>D):</strong> Second of the two counterparts this facilitates the public sphere through digital interfaces. Interfaces here does not necessarily relate to physical interfaces such as smart phones rather those existing within the public ether. These are interactions that occur between digital objects within their digital spaces, think wireless transmission of data. The DW thus allows for a continuum of those interactions between P<sub>u</sub>ND through to the digital. Alternatively, the inclusion of a non-digital object allows for an extension of this space into RW. As DW is a subset of RW this is anticipated. A television set can be seen as a digital public space experienced through RW.</p>
+<p><strong>Heterotopia 1 (h<sub>1</sub>):</strong> The first overlap to occur is between Private Non-Digital and Public spheres. Here the interactions are those that happen in our daily physical lives influenced by non-digital elements in the world around us. As an aid to understanding the concept better, I will be using an example of fitness tracking to illustrate the differences within the model. An actor could imagine the physical steps taken inside a building as being a non-digital private interaction that in truth is also a public interaction as the steps could be visible to others in the same non-digital space. This is because of the earlier configuration of private/public through inside/outside. Remember that public refers to the tangible concepts such as physicality whereas private refers to intangible hidden elements such as digital data. To the actant, walking alone indoors may appear as a private interaction though with the gatekeeper of this space being the building and not in control of the actant, this space becomes less private. By taking a step they have others potentially be aware of it. Furthermore, an amount of time is accumulated to take each step and observe it, hence the acts are <em>heterochronic</em>. Each step is taken has an illusion of displacement which, in this instance, conform to the laws of physics and subsequently remove one from their initial stance (standing or moving) towards another.</p>
+<p><strong>Heterotopia 2 (h<sub>2</sub>):</strong> Moving anti-clockwise around the model, the next overlap is seen between P<sub>r</sub>ND and P<sub>r</sub>D. Using the same example of fitness tracking, this form can be seen when an actor uses a physical tracking device such as a <em>Fitbit</em> to represent real steps in an alternate state, in this case numeric data. Although the information is the same (they both represent physical steps) but due to the fact they are within two different spaces (RW and DW), they are visible in different ways. Variations of the Private clash together creating an alternate reality of privacy which exists only in DW, hence it is in many ways similar to the illusion in Foucault’s mirror; one version looks at the virtual version of themselves, and grounds the visibility of the other in their respective realms.</p>
+<p><strong>Heterotopia 3 (h<sub>3</sub>):</strong> Next, we see an overlap between P<sub>r</sub>D and P<sub>u</sub>D. The interaction here should abide primarily by rules in DW with little influence from RW. Continuing with our example, the steps saved to the fitness tracker are now allowed by the wearer to be stored on an online server. The reason this is a P<sub>u</sub>D interaction is because the server may be operated by other entities who could prescribe policies and regulations to oversee this information.</p>
+<p><strong>Heterotopia 4 (h<sub>4</sub>):</strong> The next overlap is between both iterations of Public. Many interactions tend to exist in this space which are free to access through open data creating a publicly viable connection between the non-digital and the digital. Looking back at the steps taken example, imagine a wearable device that doesn’t share data with its wearer, but instead saves it immediately to a public server. A service such as <em>If This Then That</em> (IFTTT)<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a> could then be used to parse this data and initiate some action. For example, the step data is sent from the device then parsed into an online spreadsheet. Another way of considering this is through the example of an IoT lightbulb. The bulb is connected to a digital interface allowing you to turn it on or off via a mobile device. By placing the bulb in a room that can be operated through a public link on <em>Facebook</em>, anyone with the link can access it digitally and change the status of this physical bulb. The bulb exists as a physical object and has a digital presence accessible through the mobile device making it exist there as an alternate of itself. When turning the bulb on from the mobile, there is no direct physical interaction being made with the bulb, yet a very physical alteration occurs in the state of the bulb wherein it turns on. This makes this interaction a very public one where even though physical contact is not happening a very visible physical change occurs.</p>
+<p><strong>Heterotopia 5 (h<sub>5</sub>):</strong> The inner overlaps of the model are where more complicated interactions begin to appear governed according to unique orders. The first of which occurs as a P<sub>r</sub>ND–P<sub>r</sub>D–P<sub>u</sub>ND interaction. As this occurs primarily in P<sub>r</sub>ND it would be more influential, but the interaction would have traits of the other spheres. Let’s take a look at our steps being saved from our <em>Fitbit</em>. What if that data were to be synced with another device of a partner? This would allow them the ability to scroll through digital data shared with them and vice versa. Although the information here is present in different versions (real steps and numeric iterations) the presence of another individual and their physical device can be taken as being in both non-digital and digital spaces simultaneously.</p>
+<p><strong>Heterotopia 6 (h<sub>6</sub>):</strong> Here we see a P<sub>r</sub>D–P<sub>r</sub>ND–P<sub>u</sub>D overlap with things primarily grounded by the P<sub>r</sub>D but influenced by others. This can be imagined very similar to our example in h<sub>5</sub> by substituting the second device with a website where all data is synced and shared with a wider community. The use of social media can also be imagined here. The fitness tracker saves physical data it interacts with and sends that to a server, which subsequently interacts with social networks such as <em>Facebook</em> sharing the information publicly. The movement of this information from RW to DW and then again into DW but as a very different version of itself shows how simple data collection can be repurposed in different spaces exponentially. Every jump changing the data to reaffirm according to the nature of the other space it inhabits.</p>
+<p><strong>Heterotopia 7 (h<sub>7</sub>):</strong> In a P<sub>u</sub>D–P<sub>r</sub>D–P<sub>u</sub>ND overlap a more digital approach of trust can be observed. The IFTTT protocol earlier imagined saving data on a spreadsheet can be reconsidered. This time though, instead of saving to a personal spreadsheet the data is visualised on a public device; perhaps on a digital display in an office. This display informs all employees about how many steps have been taken in the office, but only by the employees. Considerable trust must be given to the office servers with their personal data and devices to be able to accomplish this.</p>
+<p><strong>Heterotopia 8 (h<sub>8</sub>):</strong> Finally, in a P<sub>u</sub>ND–P<sub>u</sub>D–P<sub>r</sub>ND overlap one can see non-digital dominating the digital. A way to picture this interaction would be with a door that can monitor people going in and out of it using wearable RFID tags. The data is coming from a physical source and returning to a physical source by being displayed publicly. But what makes this unique from h<sub>7</sub>, is that here the data is taken directly from the physical source and not through any virtual channels. Alternatively, and to make it more interesting, the P<sub>u</sub>D can be a source of information that could be syncing an individual’s data according to their interaction with the door. Imagine a shoe with an RFID tag, it moves between the door and registers the wearer subsequently syncing fitness data that is tracked by the shoe. This in turn, is returned to physical output (like the same digital display), only this time through direct physical interaction.</p>
+<p>The complex list of overlaps above, map out the many heterotopias occurring within an IoT-enabled space. Jumping between RW and DW, the information must morph and accommodate to the new rules and hierarchies the heterotopias enforce. This overlapping model leaves one space in the middle though, where much more complex interactions take place. Taking from the mirror analogy of a utopia this space has been marked <em>u</em>, and here is where a <em>digital private-public</em> yet simultaneously <em>non-digital private-public</em> interaction takes place.</p>
+<p>To imagine this, deep levels of permission and trust need to be facilitated. That can only happen if the different interactions allow for major alterations in the nature of information handling. Therefore, some creativity is required. Imagine a scenario where your fitness data is tracked to your <em>Fitbit</em>. That in turn, sends data to a server which allows access to physical devices to relay that information when and where they wish. Now picture going into a gym and seeing a wall light up with your specific information. Your steps are being tracked and shared with you, but very openly. Others can see and possibly interact with it openly as well (perhaps via social media channels). Ignoring any personal concerns one might have with the public display of their gym performance, such an interaction can only take place when levels of permissions have been allowed over different spaces. These permissions will have to overlap with different policies, regulations, terms, and conditions, etc. By making this interaction between user-device-service-institute and so on, new heterotopias are dynamically created where the rules differ and thus the device must operate in that way. Any change happening in any of those rules reverberates through the entire constellation of tracking fitness through a <em>Fitbit</em>.</p>
+</div>
+<div id="discussion-and-conclusion" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Discussion and Conclusion<a href="Chapter7.html#discussion-and-conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The previously crafted model explores a kind-of spatial configuration for understanding the interactions that occur within IoT-enabled systems. It compares the phenomenology associated with OOO with spatial configurations coming from the field of human geography. It creates a series of spatial definitions that allow for interactions that occur within digital objects to be seen as phenomenological insides and outsides opening them up for scrutiny. It affords an open-ended approach at making visible the interactions of IoT through these philosophical concepts. That said, two questions can now be approached, <em>(a)</em> has this model answered the sub-question posited at the start, and <em>(b)</em> how has this model manifested playfulness within its design process?</p>
+<p>Regarding the first question this model does not immediately answer that question but creates a trajectory towards answering it. This model in many ways extends the works of <span class="citation">Boyd (<a href="#ref-boyd2008" role="doc-biblioref">2008</a>)</span> around concepts of “context collapse” <span class="citation">(<a href="#ref-marwick2011" role="doc-biblioref">Marwick and Boyd 2011, 122</a>)</span> and “social-mediated publicness” <span class="citation">(<a href="#ref-baym2012" role="doc-biblioref">Baym and Boyd 2012, 322</a>)</span>. Where her work focused on defining human interaction patterns occurring in social networks such as <em>Twitter</em> and <em>Facebook</em>, this model approaches a social networking of things by facilitating a similar discourse through heterotopias. Boyd’s <span class="citation">(<a href="#ref-boyd2008" role="doc-biblioref">2008</a>)</span> concept of mediated publics comes from the notion that social media complicates and blurs audiences and ideas of publicness affording alterations to public engagement within those spaces. Her argument is that in order to navigate these mediated spaces we must alter our behaviours allowing new controls and skills to form.</p>
+<p>The model approaches a similar construct by suggesting phenomenological object-spaces for digital objects and their interactions. These spaces are mediated just as Boyd’s view of social networks because through the object-oriented lens an object-geography is imagined. A social context collapse of digital/non-digital objects and their digital/non-digital spaces. To the digital objects the non-digital objects exist as equal to them on a level plane afforded by OOO. Because of this our interactions and the ways in which we must navigate them must be reimagined.</p>
+<p>Furthermore, it also extends the on-going debate in understanding object-oriented-ness or the ‘insides’ of objects coming from previous chapters. Through their various efforts both <span class="citation">Harman (<a href="#ref-harman2010" role="doc-biblioref">2010c</a>)</span> and <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012</a>)</span> have debated the possibility of quasi-interactions and spaces exploring new theories of causation and imagining alternative perspectives of being. Though not encompassing all manners of objects and spaces, the carpentered model affords viewing the digital-objects through an object-oriented perspective.</p>
+<p>Therefore, could this model highlight potential problematic effects within IoT? In some respects yes, through a playful appropriation of philosophical concepts using carpentry this model argues for an alternative perspective towards viewing IoT, and seeing the IoT object/device/thing as the ‘client’ in this design problem. <em>“What does this IoT toaster want/need as a client?”</em>, could be one way of viewing how this model helps understand the potential problematic effects within IoT because it attempts to lay bare an ontographical view of IoT interaction.</p>
+<p>Regarding the later question of how a playful attitude has manifested here, this model as artefact takes vast liberties with how philosophical discourse is conducted. In many ways this entire manuscript does that, by equating concepts as things that have play imbued within them akin to Bogost’s <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">2016a</a>)</span> view of play existing within things. Rather than the things being toasters, cars, screwdrivers, grass, etc., here the things become philosophical concepts such as sensual, real, heterotopias, space, and so on to approach a phenomenological understanding relevant to this research. Granted no physical <em>‘thing’</em> has been <em>‘made’</em> here instead this chapter explores the making of a conceptual framework upon which further making may be conducted. In that sense playfulness as an attitude exists in the design process for seeing these philosophical concepts as possible <em>play-things</em>.</p>
+<p>In <a href="Chapter2.html#Chapter2">Chapter 2</a> I expressed how while presenting a piece of my research at a conference to both philosophers and designers, I was met with a remark that this research would not bode well within philosophy circles but works for design. This model was that particular piece of research presented that day and remarked upon. It facilitates a designers playfulness with otherwise ominous philosophical constructs as if they were akin to <em>Lego<sup>®</sup></em>.</p>
+<p>It can be argued that this framework is still an anthropocentric perspective over an object-oriented one as I have used certain examples relating to human interaction in the model. The reason that was done was to create a relatable reference point for further non-human examples. True the heterotopias all exhibit information coming from gathered <em>human</em> related data (footsteps), it can still apply to non-human data. By substituting the <em>Fitbit</em> with a lightbulb existing on its own in its space a more object-oriented perspective may be achieved. The reason I keep the <em>Fitbit</em> example is because in the end we as humans share in these digital spaces as well. These objects are designed with the intention of being used by humans after all, so in a Catch-22-esque manner the human cannot be completely removed from this equation (at least not in this instance).</p>
+<p>A design question this model may ask is whether it’s necessary for an interaction to occur when it does? Alternatively, it effectively allows a way of characterising digital and physical interactions as relations. These relations are explored through varying levels of permissions defined by their heterotopic natures. The carpentered model thus places a philosophical lens above IoT-enabled systems, revealing IoT in phenomenological terms through spatial theory. What can be noted here is that the closer one gets to the centre of this inter-spatial interactivity model, the greater the complexity of interactions occur (Fig. <a href="Chapter7.html#fig:complexity">7.6</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:complexity"></span>
+<img src="figures/ch7-complexity.png" alt="Interactions become more complex as we close in on the centre of the model."  />
+<p class="caption">
+Figure 7.6: Interactions become more complex as we close in on the centre of the model.
+</p>
+</div>
+<p>The increased levels of complexity, which includes increasingly diffused relationships of trust, play a role in questioning the meaningfulness in how these interactions happen and are designed. The complexity that ensues from the ever-expanding interconnectivity of IoT means that a lot of information is either lost, ignored, or deliberately obfuscated. When various previously clear relationships of trust are being altered, is the interaction still worth it to the actor? Are there any measures that can be taken to renegotiate this trust, or, indicate that it has changed?</p>
+<p>The social geography imagined of objects allows for a framework upon which discussions and further artefacts around the notion of mediated spatial configurations for IoT interactions may rest. The coming chapters attempt to utilise this framework to understand this notion further. For now, using the above model in conjunction with philosophical constructs such as OOO, a path for using philosophy as a potential tool to help in design research for IoT may be imagined by presenting a novel means of dissecting the inevitable messiness associated with digital and physical interactions.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-badulescu2012" class="csl-entry">
+B̆adulescu, Dana. 2012. <span>“Heterotopia, <span>Liminality</span>, <span>Cyberspace</span> as <span>Marks</span> of <span>Contemporary</span> <span>Spatiality</span>.”</span> <a href="http://theroundtable.ro/Current/Cultural/Dana.Badulescu_Heterotopia,Liminality,Cyberspaceas_Marks_of_Contemporary_Spatiality.pdf">http://theroundtable.ro/Current/Cultural/Dana.Badulescu_Heterotopia,Liminality,Cyberspaceas_Marks_of_Contemporary_Spatiality.pdf</a>.
+</div>
+<div id="ref-baym2012" class="csl-entry">
+Baym, Nancy K., and Danah Boyd. 2012. <span>“Socially Mediated Publicness: <span>An</span> Introduction.”</span> <em>Journal of Broadcasting &amp; Electronic Media</em> 56 (3): 320–29.
+</div>
+<div id="ref-bogost2012" class="csl-entry">
+———. 2012. <em>Alien Phenomenology, or, <span>What</span> It’s Like to Be a Thing</em>. Posthumanities 20. Minneapolis: University of Minnesota Press.
+</div>
+<div id="ref-bogost2016" class="csl-entry">
+———. 2016a. <em>Play Anything: <span>The</span> Pleasure of Limits, the Uses of Boredom, and the Secret of Games</em>. New York: Basic Books.
+</div>
+<div id="ref-boyd2008" class="csl-entry">
+Boyd, Danah. 2008. <span>“Taken Out of Context: <span>American</span> Teen Sociality in Networked Publics.”</span> Dissertation, Berkeley: University of California,.
+</div>
+<div id="ref-casey2001" class="csl-entry">
+Casey, Edward S. 2001. <span>“Between Geography and Philosophy: <span>What</span> Does It Mean to Be in the Place-World?”</span>
+</div>
+<div id="ref-cole2013" class="csl-entry">
+Cole, Andrew. 2013. <span>“The <span>Call</span> of <span>Things</span> <span>A</span> <span>Critique</span> of <span>Object</span>-<span>Oriented</span> <span>Ontologies</span>.”</span> <em>The Minnesota Review</em> 2013 (80): 106–18.
+</div>
+<div id="ref-coulton2017" class="csl-entry">
+———. 2017. <span>“Sensing <span>Atoms</span> and Bits.”</span> In <em>Sensory <span>Arts</span> and <span>Design</span></em>, edited by I Heywood. Bloomsbury.
+</div>
+<div id="ref-cresswell2008" class="csl-entry">
+Cresswell, Tim. 2008. <span>“Place: <span>Encountering</span> Geography as Philosophy.”</span> <em>Geography (Sheffield, England)</em> 93 (September): 132–39. <a href="https://doi.org/10.1080/00167487.2008.12094234">https://doi.org/10.1080/00167487.2008.12094234</a>.
+</div>
+<div id="ref-foucault1967" class="csl-entry">
+Foucault, Michel. 1967. <em>Des <span>Espace</span> <span>Autres</span> (<span>Of</span> <span>Other</span> <span>Spaces</span>), <span>Heterotopias</span></em>. Architecture/Mouvement/Continuité. <a href="http://scholar.google.com/scholar?q=related:YOLKGE1nipgJ:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5">http://scholar.google.com/scholar?q=related:YOLKGE1nipgJ:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5</a>.
+</div>
+<div id="ref-foucault2000" class="csl-entry">
+———. 2000. <span>“Space, Knowledge, Power.”</span> In <em>Power: <span>Essential</span> Works of Foucault, 1954-1984</em>, edited by J. D. Fabion, 3:349–64. London: Penguin.
+</div>
+<div id="ref-handlykken2011" class="csl-entry">
+Handlykken, Asne Kvale. 2011. <span>“Digital <span>Cities</span> in the Making: <span>Exploring</span> Perceptions of Space, Agency of Actors and Heterotopia.”</span> <em>Ciberlegenda</em>. <a href="http://search.proquest.com/openview/6ffcfa876d555df4b37bcfccf376d1cd/1?pq-origsite=gscholar&amp;cbl=2034136">http://search.proquest.com/openview/6ffcfa876d555df4b37bcfccf376d1cd/1?pq-origsite=gscholar&amp;cbl=2034136</a>.
+</div>
+<div id="ref-harman2010b" class="csl-entry">
+———. 2010a. <span>“Asymmetrical Causation: <span>Influence</span> Without Recompense.”</span> <em>Parallax</em> 16 (1): 96–109.
+</div>
+<div id="ref-harman2010" class="csl-entry">
+———. 2010c. <span>“Time, Space, Essence, and Eidos: <span>A</span> New Theory of Causation.”</span> <em>Cosmos and History: The Journal of Natural and Social Philosophy</em> 6 (1): 1–17.
+</div>
+<div id="ref-harman2011a" class="csl-entry">
+———. 2011a. <em>Quentin Meillassoux: <span>Philosophy</span> in the Making</em>. Speculative Realism. Edinburgh: Edinburgh University Press.
+</div>
+<div id="ref-harman2011" class="csl-entry">
+———. 2011b. <em>The Quadruple Object</em>. Winchester, U.K. Washington, USA: Zero Books.
+</div>
+<div id="ref-harman2018" class="csl-entry">
+———. 2018. <em>Object-<span>Oriented</span> <span>Ontology</span>: <span>A</span> <span>New</span> <span>Theory</span> of <span>Everything</span></em>. 1st ed. Pelican Books.
+</div>
+<div id="ref-hetherington2002" class="csl-entry">
+Hetherington, Kevin. 2002. <em>The <span>Badlands</span> of <span>Modernity</span></em>. Heterotopia and <span>Social</span> <span>Ordering</span>. Routledge.
+</div>
+<div id="ref-johnson1995" class="csl-entry">
+Johnson, Mark. 1995. <span>“Introduction: <span>Why</span> Metaphor Matters to Philosophy.”</span> <em>Metaphor and Symbol</em> 10 (3): 157–62.
+</div>
+<div id="ref-leedy2016" class="csl-entry">
+Leedy, Paul D., and Jeanne Ellis Ormrod. 2016. <em>Practical Research: <span>Planning</span> and Design</em>. Eleventh edition. Boston: Pearson.
+</div>
+<div id="ref-lindley2017" class="csl-entry">
+Lindley, Joseph Galen, and Paul Coulton. 2017. <span>“On the <span>Internet</span> <span>Everybody</span> <span>Knows</span> <span>You</span>’re a <span>Whatchamacallit</span> (or a <span>Thing</span>).”</span> In <em><span>CHI</span> 2017 <span>Workshop</span></em>.
+</div>
+<div id="ref-marwick2011" class="csl-entry">
+Marwick, Alice E., and Danah Boyd. 2011. <span>“I Tweet Honestly, <span>I</span> Tweet Passionately: <span>Twitter</span> Users, Context Collapse, and the Imagined Audience.”</span> <em>New Media &amp; Society</em> 13 (1): 114–33.
+</div>
+<div id="ref-maund2003" class="csl-entry">
+Maund, Barry. 2003. <em>Perception (<span>Central</span> Problems of Philosophy)</em>. McGill-Queen’s University Press.
+</div>
+<div id="ref-milgram1995" class="csl-entry">
+Milgram, Paul, Haruo Takemura, Akira Utsumi, and Fumio Kishino. 1995. <span>“Augmented Reality: <span>A</span> Class of Displays on the Reality-Virtuality Continuum.”</span> In <em>Telemanipulator and Telepresence Technologies</em>, 2351:282–92. International Society for Optics; Photonics.
+</div>
+<div id="ref-monk1997" class="csl-entry">
+Monk, John. 1997. <span>“The <span>Digital</span> <span>Unconscious</span>.”</span> In <em>The <span>Virtual</span> <span>Embodied</span>: <span>Practices</span>, <span>Theories</span> and the <span>New</span> <span>Technologies</span></em>, edited by John Wood. <a href="http://scholar.google.com/scholar?q=related:x9PuS1pYZm8J:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5">http://scholar.google.com/scholar?q=related:x9PuS1pYZm8J:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5</a>.
+</div>
+<div id="ref-muratovski2015" class="csl-entry">
+———. 2015. <em>Research for Designers: <span>A</span> Guide to Methods and Practice</em>. Sage.
+</div>
+<div id="ref-palahniuk2003" class="csl-entry">
+Palahniuk, Chuck. 2003. <em>Lullaby</em>. Random House.
+</div>
+<div id="ref-pepper1982" class="csl-entry">
+Pepper, Stephen. 1982. <span>“Introduction: <span>Metaphor</span> in Philosophy.”</span> <em>The Journal of Mind and Behavior</em> 3 (3/4): 197–205.
+</div>
+<div id="ref-rymarczuk2014" class="csl-entry">
+Rymarczuk, Robin, and Maarten Derksen. 2014. <span>“Different Spaces: <span>Exploring</span> <span>Facebook</span> as Heterotopia.”</span> <em>First Monday</em> 19 (6). <a href="http://firstmonday.org/ojs/index.php/fm/article/view/5006">http://firstmonday.org/ojs/index.php/fm/article/view/5006</a>.
+</div>
+<div id="ref-slane2007" class="csl-entry">
+Slane, A. 2007. <span>“Democracy, Social Space, and the Internet.”</span> <em>The University of Toronto Law Journal</em> 57 (4): 81–104.
+</div>
+<div id="ref-smith2016" class="csl-entry">
+Smith, Joel Alexander. 2016. <em>Experiencing Phenomenology: <span>An</span> Introduction</em>. 1 [edition]. London ; New York: Routledge, Taylor &amp; Francis Group.
+</div>
+<div id="ref-tuan1977" class="csl-entry">
+Tuan, Yi-Fu. 1977. <em>Space and Place: <span>The</span> Perspective of Experience</em>. University of Minnesota Press.
+</div>
+<div id="ref-varnelis2008" class="csl-entry">
+Varnelis, Kazys, and Anne Friedberg. 2008. <span>“Place: <span>The</span> <span>Networking</span> of <span>Public</span> <span>Space</span>.”</span> In <em>Networked <span>Publics</span></em>, edited by Kazys Varnelis, 15–39. The MIT Press. <a href="http://mitpress.universitypressscholarship.com/view/10.7551/mitpress/9780262220859.001.0001/upso-9780262220859-chapter-2">http://mitpress.universitypressscholarship.com/view/10.7551/mitpress/9780262220859.001.0001/upso-9780262220859-chapter-2</a>.
+</div>
+<div id="ref-wang2017" class="csl-entry">
+Wang, Ding. 2017. <span>“Cities of Otherness: <span>The</span> Smart City as a Heterotopia.”</span> In <em>Proceedings of 15th <span>European</span> <span>Conference</span> on <span>Computer</span>-<span>Supported</span> <span>Cooperative</span> <span>Work</span> - <span>Exploratory</span> <span>Papers</span></em>, 256–73. Sheffield, UK: European Society for Socially Embedded Technologies (EUSSET). <a href="https://doi.org/10.18420/ecscw2017-11">https://doi.org/10.18420/ecscw2017-11</a>.
+</div>
+<div id="ref-warschauer1995" class="csl-entry">
+Warschauer, Mark. 1995. <span>“Heterotopias, Panopticons, and <span>Internet</span> Discourse.”</span> <em>University of Hawai’i Working Papers in ESL</em> 14 (1): 19–121. <a href="http://scholarspace.manoa.hawaii.edu/handle/10125/40767">http://scholarspace.manoa.hawaii.edu/handle/10125/40767</a>.
+</div>
+<div id="ref-wollan2003" class="csl-entry">
+Wollan, Gjermund. 2003. <span>“Heidegger’s Philosophy of Space and Place.”</span> <em>Norsk Geografisk Tidsskrift-Norwegian Journal of Geography</em> 57 (1): 31–39.
+</div>
+<div id="ref-young1998" class="csl-entry">
+Young, Sherman. 1998. <span>“Of Cyber Spaces: <span>The</span> <span>Internet</span> &amp; Heterotopias.”</span> <em>M/C Journal</em> 1 (4).
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="31">
+<li id="fn31"><p>The representation and usage of the four-fold model by <span class="citation">Harman (<a href="#ref-harman2011" role="doc-biblioref">2011b</a>)</span> here is done on a lower level understanding of object-oriented philosophy. This manuscript nor my expertise in philosophy are not sufficient to do justice to the amount of knowledge the four-fold model provides, and for that reason I will not be covering it in its entirety. For a detailed understanding of this model refer to works by <span class="citation">Harman (<a href="#ref-harman2011" role="doc-biblioref">2011b</a>, <a href="#ref-harman2018" role="doc-biblioref">2018</a>)</span> the original source.<a href="Chapter7.html#fnref31" class="footnote-back">↩︎</a></p></li>
+<li id="fn32"><p>Occasionalism is a medieval Islamic philosophy, also present in early modern European works, which follows a rhetoric that the presence of God is a necessity for causation in order to allow two objects to interact with each other.<a href="Chapter7.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn33"><p>I should point out that private here does not refer to any information relating to the ‘privacy’ of an IoT-enabled network or device. True, privacy is a common topic discussed around IoT but here private is taken in a much broader sense to facilitate the crafting of an open-ended framework that fits our purposes.<a href="Chapter7.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p>Though prior published versions of the model explore it through digital/physical references, for simplicity I will not be referring to it as digital/physical here on as that brings about alternative definitions which I would like to avoid. The terminology was altered because this artefact deals with multiple terminologies intermingling, and the simpler I can keep it the better I believe. That said, most of the usage of non-digital objects/spaces to come in this text is in relation to physical spaces and objects.<a href="Chapter7.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>Though it might sound strange to call a smart phone a ‘non-digital object’, that holds true to the framework established in this chapter. The smart phone enables interactions with the digital space, though itself it is an amalgamation of different non-digital materials such as glass, metal, silicone, plastics, etc. Furthermore, it exists not in the world of binary data that digital interactions concern with but in the non-digital world of atoms and molecules.<a href="Chapter7.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>An online protocol that allows you to interlink IoT services and devices through simple algorithms or <em>if-this-then-that</em> statements.<a href="Chapter7.html#fnref36" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Chapter6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter8.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/017-chapter7.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

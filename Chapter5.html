@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Design Research | Design by Play</title>
+  <meta name="description" content="Chapter 5 Design Research | Design by Play" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Design Research | Design by Play" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Design Research | Design by Play" />
+  
+  
+  
+
+<meta name="author" content="Haider Ali Akmal" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Chapter4.html"/>
+<link rel="next" href="Chapter6.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Design by Play</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Note from Author</a></li>
+<li class="part"><span><b>Preface</b></span></li>
+<li class="chapter" data-level="" data-path="declaration.html"><a href="declaration.html"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="dedication.html"><a href="dedication.html"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="quote.html"><a href="quote.html"><i class="fa fa-check"></i>Quote</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="Chapter1.html"><a href="Chapter1.html"><i class="fa fa-check"></i><b>1</b> An Unorthodox Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter1.html"><a href="Chapter1.html#a-starting-point"><i class="fa fa-check"></i><b>1.1</b> A starting point</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="Chapter1.html"><a href="Chapter1.html#fish-out-of-water"><i class="fa fa-check"></i><b>1.1.1</b> Fish out of water</a></li>
+<li class="chapter" data-level="1.1.2" data-path="Chapter1.html"><a href="Chapter1.html#surrounded-by-technology"><i class="fa fa-check"></i><b>1.1.2</b> Surrounded by technology</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="Chapter1.html"><a href="Chapter1.html#of-pasts-and-presents"><i class="fa fa-check"></i><b>1.2</b> Of Pasts and Presents</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="Chapter1.html"><a href="Chapter1.html#growing-up-around-play"><i class="fa fa-check"></i><b>1.2.1</b> Growing up around play</a></li>
+<li class="chapter" data-level="1.2.2" data-path="Chapter1.html"><a href="Chapter1.html#art-design-and-philosophy"><i class="fa fa-check"></i><b>1.2.2</b> Art, Design, and Philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="Chapter1.html"><a href="Chapter1.html#in-closing"><i class="fa fa-check"></i><b>1.3</b> In closing</a></li>
+</ul></li>
+<li class="part"><span><b>II Foundations</b></span></li>
+<li class="chapter" data-level="2" data-path="Chapter2.html"><a href="Chapter2.html"><i class="fa fa-check"></i><b>2</b> Scaffolding</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter2.html"><a href="Chapter2.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter2.html"><a href="Chapter2.html#steppingstones-into-post-modern-humanities"><i class="fa fa-check"></i><b>2.2</b> Steppingstones into post-modern humanities</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="Chapter2.html"><a href="Chapter2.html#transdisciplinary-design-research"><i class="fa fa-check"></i><b>2.2.1</b> Transdisciplinary Design Research</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Chapter2.html"><a href="Chapter2.html#crafting-trandisciplinary-assemblages"><i class="fa fa-check"></i><b>2.2.2</b> Crafting Trandisciplinary Assemblages</a></li>
+<li class="chapter" data-level="2.2.3" data-path="Chapter2.html"><a href="Chapter2.html#transcending-method-through-design"><i class="fa fa-check"></i><b>2.2.3</b> Transcending method through Design</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="Chapter2.html"><a href="Chapter2.html#how-to-use-this-thesis"><i class="fa fa-check"></i><b>2.3</b> How to use this Thesis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>3</b> Seeing Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter3.html"><a href="Chapter3.html#a-case-for-and-against-an-internet-of-things"><i class="fa fa-check"></i><b>3.1</b> A case for (and against) an Internet of Things</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="Chapter3.html"><a href="Chapter3.html#defining-iot"><i class="fa fa-check"></i><b>3.1.1</b> Defining IoT</a></li>
+<li class="chapter" data-level="3.1.2" data-path="Chapter3.html"><a href="Chapter3.html#interacting-with-iot"><i class="fa fa-check"></i><b>3.1.2</b> Interacting with IoT</a></li>
+<li class="chapter" data-level="3.1.3" data-path="Chapter3.html"><a href="Chapter3.html#the-disillusionment-of-living-in-iot"><i class="fa fa-check"></i><b>3.1.3</b> The disillusionment of living in IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="Chapter3.html"><a href="Chapter3.html#approaching-an-alternative-perspective-for-design-in-iot"><i class="fa fa-check"></i><b>3.2</b> Approaching an alternative perspective for Design in IoT</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="Chapter3.html"><a href="Chapter3.html#changing-perspectives"><i class="fa fa-check"></i><b>3.2.1</b> Changing perspectives</a></li>
+<li class="chapter" data-level="3.2.2" data-path="Chapter3.html"><a href="Chapter3.html#metaphorically-speaking"><i class="fa fa-check"></i><b>3.2.2</b> Metaphorically speaking</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="Chapter3.html"><a href="Chapter3.html#conclusion"><i class="fa fa-check"></i><b>3.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>4</b> Being Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Chapter4.html"><a href="Chapter4.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="Chapter4.html"><a href="Chapter4.html#a-philosophical-interlude"><i class="fa fa-check"></i><b>4.1.1</b> A Philosophical Interlude</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="Chapter4.html"><a href="Chapter4.html#understanding-things-on-and-not-on-the-internet"><i class="fa fa-check"></i><b>4.2</b> Understanding <em>Things</em> on (and not on) the Internet</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="Chapter4.html"><a href="Chapter4.html#phenomenologically-speaking"><i class="fa fa-check"></i><b>4.2.1</b> Phenomenologically speaking</a></li>
+<li class="chapter" data-level="4.2.2" data-path="Chapter4.html"><a href="Chapter4.html#towards-an-object-oriented-ontology"><i class="fa fa-check"></i><b>4.2.2</b> Towards an Object-Oriented Ontology</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="Chapter4.html"><a href="Chapter4.html#object-oriented-ontology"><i class="fa fa-check"></i><b>4.3</b> Object-Oriented Ontology</a></li>
+<li class="chapter" data-level="4.4" data-path="Chapter4.html"><a href="Chapter4.html#concluding-on-a-post-anthropocentric-perspective-for-design"><i class="fa fa-check"></i><b>4.4</b> Concluding on a post-anthropocentric perspective for Design</a></li>
+</ul></li>
+<li class="part"><span><b>Methodologies</b></span></li>
+<li class="chapter" data-level="5" data-path="Chapter5.html"><a href="Chapter5.html"><i class="fa fa-check"></i><b>5</b> Design Research</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Chapter5.html"><a href="Chapter5.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="Chapter5.html"><a href="Chapter5.html#doing-design-research"><i class="fa fa-check"></i><b>5.2</b> Doing Design Research</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="Chapter5.html"><a href="Chapter5.html#defining-design"><i class="fa fa-check"></i><b>5.2.1</b> Defining Design</a></li>
+<li class="chapter" data-level="5.2.2" data-path="Chapter5.html"><a href="Chapter5.html#defining-research"><i class="fa fa-check"></i><b>5.2.2</b> Defining Research</a></li>
+<li class="chapter" data-level="5.2.3" data-path="Chapter5.html"><a href="Chapter5.html#the-object-of-design"><i class="fa fa-check"></i><b>5.2.3</b> The Object of Design</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="Chapter5.html"><a href="Chapter5.html#research-through-design"><i class="fa fa-check"></i><b>5.3</b> Research through Design</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="Chapter5.html"><a href="Chapter5.html#approaching-research-through-design"><i class="fa fa-check"></i><b>5.3.1</b> Approaching Research through Design</a></li>
+<li class="chapter" data-level="5.3.2" data-path="Chapter5.html"><a href="Chapter5.html#practice-based-research"><i class="fa fa-check"></i><b>5.3.2</b> Practice-based Research</a></li>
+<li class="chapter" data-level="5.3.3" data-path="Chapter5.html"><a href="Chapter5.html#ideology-or-methodology"><i class="fa fa-check"></i><b>5.3.3</b> Ideology or Methodology?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="Chapter5.html"><a href="Chapter5.html#conclusions"><i class="fa fa-check"></i><b>5.4</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Chapter6.html"><a href="Chapter6.html"><i class="fa fa-check"></i><b>6</b> Playfully Designing for Things</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter6.html"><a href="Chapter6.html#defining-play"><i class="fa fa-check"></i><b>6.2</b> Defining Play</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="Chapter6.html"><a href="Chapter6.html#what-is-play"><i class="fa fa-check"></i><b>6.2.1</b> What is Play?</a></li>
+<li class="chapter" data-level="6.2.2" data-path="Chapter6.html"><a href="Chapter6.html#playgrounds-for-play"><i class="fa fa-check"></i><b>6.2.2</b> Playgrounds for Play</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="Chapter6.html"><a href="Chapter6.html#design-and-playfulness"><i class="fa fa-check"></i><b>6.3</b> Design and Playfulness</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="Chapter6.html"><a href="Chapter6.html#returning-to-playfulness"><i class="fa fa-check"></i><b>6.3.1</b> Returning to Playfulness</a></li>
+<li class="chapter" data-level="6.3.2" data-path="Chapter6.html"><a href="Chapter6.html#ludic-design"><i class="fa fa-check"></i><b>6.3.2</b> Ludic Design</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="Chapter6.html"><a href="Chapter6.html#designing-curious-philosophical-artefacts"><i class="fa fa-check"></i><b>6.4</b> Designing Curious Philosophical Artefacts</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter6.html"><a href="Chapter6.html#speculating-over-definitions"><i class="fa fa-check"></i><b>6.4.1</b> Speculating over definitions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="Chapter6.html"><a href="Chapter6.html#carpentry"><i class="fa fa-check"></i><b>6.5</b> Carpentry</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Chapter6.html"><a href="Chapter6.html#getting-your-hands-dirty-with-philosophy"><i class="fa fa-check"></i><b>6.5.1</b> Getting your hands dirty with philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="Chapter6.html"><a href="Chapter6.html#a-combined-methodological-framework"><i class="fa fa-check"></i><b>6.6</b> A combined methodological framework</a></li>
+<li class="chapter" data-level="6.7" data-path="Chapter6.html"><a href="Chapter6.html#conclusions-1"><i class="fa fa-check"></i><b>6.7</b> Conclusions</a></li>
+</ul></li>
+<li class="part"><span><b>III Doing Carpentry</b></span></li>
+<li class="chapter" data-level="7" data-path="Chapter7.html"><a href="Chapter7.html"><i class="fa fa-check"></i><b>7</b> A Model for a Philosophical View of IoT</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#introduction-4"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#iot-as-a-spatial-phenomenon"><i class="fa fa-check"></i><b>7.2</b> IoT as a spatial phenomenon</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="Chapter7.html"><a href="Chapter7.html#the-division-of-space"><i class="fa fa-check"></i><b>7.2.1</b> The division of space</a></li>
+<li class="chapter" data-level="7.2.2" data-path="Chapter7.html"><a href="Chapter7.html#reconfiguring-insides-and-outsides-as-heterotopia"><i class="fa fa-check"></i><b>7.2.2</b> Reconfiguring Insides and Outsides as Heterotopia</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#crafting-a-model-for-a-philosophical-view-of-iot"><i class="fa fa-check"></i><b>7.3</b> Crafting a Model for a Philosophical View of IoT</a></li>
+<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#discussion-and-conclusion"><i class="fa fa-check"></i><b>7.4</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> Playing with the IoT</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter8.html"><a href="Chapter8.html#introduction-5"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter8.html"><a href="Chapter8.html#creating-a-foundation-for-approaching-game-design"><i class="fa fa-check"></i><b>8.2</b> Creating a foundation for approaching Game Design</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="Chapter8.html"><a href="Chapter8.html#play-and-rhetoric"><i class="fa fa-check"></i><b>8.2.1</b> Play and Rhetoric</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="Chapter8.html"><a href="Chapter8.html#carpentering-the-internet-of-things-board-game"><i class="fa fa-check"></i><b>8.3</b> Carpentering the Internet of Things Board Game</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="Chapter8.html"><a href="Chapter8.html#exploration-phase"><i class="fa fa-check"></i><b>8.3.1</b> Exploration Phase</a></li>
+<li class="chapter" data-level="8.3.2" data-path="Chapter8.html"><a href="Chapter8.html#reflection-phase"><i class="fa fa-check"></i><b>8.3.2</b> Reflection Phase</a></li>
+<li class="chapter" data-level="8.3.3" data-path="Chapter8.html"><a href="Chapter8.html#redux"><i class="fa fa-check"></i><b>8.3.3</b> Redux</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="Chapter8.html"><a href="Chapter8.html#discussion-1"><i class="fa fa-check"></i><b>8.4</b> Discussion</a></li>
+<li class="chapter" data-level="8.5" data-path="Chapter8.html"><a href="Chapter8.html#wrapping-up"><i class="fa fa-check"></i><b>8.5</b> Wrapping Up</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="Chapter9.html"><a href="Chapter9.html"><i class="fa fa-check"></i><b>9</b> Predicting futures in the IoT</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter9.html"><a href="Chapter9.html#introduction-6"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter9.html"><a href="Chapter9.html#philosophical-foundations"><i class="fa fa-check"></i><b>9.2</b> Philosophical Foundations</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="Chapter9.html"><a href="Chapter9.html#the-perception-of-technology-and-post-phenomenology"><i class="fa fa-check"></i><b>9.2.1</b> The Perception of Technology and Post-Phenomenology</a></li>
+<li class="chapter" data-level="9.2.2" data-path="Chapter9.html"><a href="Chapter9.html#human-technology-relations-as-perceptual-illusions"><i class="fa fa-check"></i><b>9.2.2</b> Human-Technology Relations as Perceptual Illusions</a></li>
+<li class="chapter" data-level="9.2.3" data-path="Chapter9.html"><a href="Chapter9.html#quantum-causation-for-iot"><i class="fa fa-check"></i><b>9.2.3</b> Quantum Causation for IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="Chapter9.html"><a href="Chapter9.html#carpentering-the-supernatural-iot"><i class="fa fa-check"></i><b>9.3</b> Carpentering the Supernatural IoT</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="Chapter9.html"><a href="Chapter9.html#designing-the-deck"><i class="fa fa-check"></i><b>9.3.1</b> Designing the Deck</a></li>
+<li class="chapter" data-level="9.3.2" data-path="Chapter9.html"><a href="Chapter9.html#scanning-the-stars-with-software"><i class="fa fa-check"></i><b>9.3.2</b> Scanning the Stars with Software</a></li>
+<li class="chapter" data-level="9.3.3" data-path="Chapter9.html"><a href="Chapter9.html#a-tarot-of-things"><i class="fa fa-check"></i><b>9.3.3</b> A Tarot of Things</a></li>
+<li class="chapter" data-level="9.3.4" data-path="Chapter9.html"><a href="Chapter9.html#madame-bitsys-emporium"><i class="fa fa-check"></i><b>9.3.4</b> Madame Bitsy’s Emporium</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="Chapter9.html"><a href="Chapter9.html#feedback"><i class="fa fa-check"></i><b>9.4</b> Feedback</a></li>
+<li class="chapter" data-level="9.5" data-path="Chapter9.html"><a href="Chapter9.html#discussion-and-conclusion-1"><i class="fa fa-check"></i><b>9.5</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="part"><span><b>IV Moving Forwards</b></span></li>
+<li class="chapter" data-level="10" data-path="Chapter10.html"><a href="Chapter10.html"><i class="fa fa-check"></i><b>10</b> Discussions and Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter10.html"><a href="Chapter10.html#the-living-internet-of-things"><i class="fa fa-check"></i><b>10.1</b> The Living Internet of Things</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="Chapter10.html"><a href="Chapter10.html#is-this-discussion-about-privacy-and-security-in-iot"><i class="fa fa-check"></i><b>10.1.1</b> Is this discussion about privacy and security in IoT?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="Chapter10.html"><a href="Chapter10.html#going-beyond-human-centred-design"><i class="fa fa-check"></i><b>10.1.2</b> Going beyond Human-Centred Design</a></li>
+<li class="chapter" data-level="10.1.3" data-path="Chapter10.html"><a href="Chapter10.html#is-this-a-transhumanist-argument"><i class="fa fa-check"></i><b>10.1.3</b> Is this a transhumanist argument?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="Chapter10.html"><a href="Chapter10.html#the-mantra-of-playfulness"><i class="fa fa-check"></i><b>10.2</b> The Mantra of Playfulness</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="Chapter10.html"><a href="Chapter10.html#being-a-playful-philosopher-designer"><i class="fa fa-check"></i><b>10.2.1</b> Being a playful philosopher-designer</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="Chapter10.html"><a href="Chapter10.html#in-closing-1"><i class="fa fa-check"></i><b>10.3</b> In closing</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="AppendixA.html"><a href="AppendixA.html"><i class="fa fa-check"></i><b>A</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="AppendixA.html"><a href="AppendixA.html#game-design-definitions-and-terminologies"><i class="fa fa-check"></i><b>A.1</b> Game Design Definitions and Terminologies</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="AppendixB.html"><a href="AppendixB.html"><i class="fa fa-check"></i><b>B</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="AppendixB.html"><a href="AppendixB.html#the-internet-of-things-board-game-explored"><i class="fa fa-check"></i><b>B.1</b> The Internet of Things Board Game Explored</a></li>
+<li class="chapter" data-level="B.2" data-path="AppendixB.html"><a href="AppendixB.html#backstory91"><i class="fa fa-check"></i><b>B.2</b> Backstory</a></li>
+<li class="chapter" data-level="B.3" data-path="AppendixB.html"><a href="AppendixB.html#game-objective"><i class="fa fa-check"></i><b>B.3</b> Game Objective</a></li>
+<li class="chapter" data-level="B.4" data-path="AppendixB.html"><a href="AppendixB.html#setup"><i class="fa fa-check"></i><b>B.4</b> Play Setup</a></li>
+<li class="chapter" data-level="B.5" data-path="AppendixB.html"><a href="AppendixB.html#phases-of-play94"><i class="fa fa-check"></i><b>B.5</b> Phases of Play</a></li>
+<li class="chapter" data-level="B.6" data-path="AppendixB.html"><a href="AppendixB.html#tiles"><i class="fa fa-check"></i><b>B.6</b> Understanding the Tiles</a></li>
+<li class="chapter" data-level="B.7" data-path="AppendixB.html"><a href="AppendixB.html#avatars"><i class="fa fa-check"></i><b>B.7</b> Avatars</a></li>
+<li class="chapter" data-level="B.8" data-path="AppendixB.html"><a href="AppendixB.html#rolls"><i class="fa fa-check"></i><b>B.8</b> Rolling Dice</a>
+<ul>
+<li class="chapter" data-level="B.8.1" data-path="AppendixB.html"><a href="AppendixB.html#attack"><i class="fa fa-check"></i><b>B.8.1</b> Doing an Attack Roll</a></li>
+<li class="chapter" data-level="B.8.2" data-path="AppendixB.html"><a href="AppendixB.html#random"><i class="fa fa-check"></i><b>B.8.2</b> Randomisation</a></li>
+</ul></li>
+<li class="chapter" data-level="B.9" data-path="AppendixB.html"><a href="AppendixB.html#decks"><i class="fa fa-check"></i><b>B.9</b> Understanding and Reading Cards</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="AppendixB.html"><a href="AppendixB.html#items"><i class="fa fa-check"></i><b>B.9.1</b> Items Deck</a></li>
+<li class="chapter" data-level="B.9.2" data-path="AppendixB.html"><a href="AppendixB.html#risks"><i class="fa fa-check"></i><b>B.9.2</b> Risks Deck</a></li>
+<li class="chapter" data-level="B.9.3" data-path="AppendixB.html"><a href="AppendixB.html#privacy"><i class="fa fa-check"></i><b>B.9.3</b> Privacy Deck</a></li>
+<li class="chapter" data-level="B.9.4" data-path="AppendixB.html"><a href="AppendixB.html#daemons"><i class="fa fa-check"></i><b>B.9.4</b> Daemons Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="B.10" data-path="AppendixB.html"><a href="AppendixB.html#connections"><i class="fa fa-check"></i><b>B.10</b> Making Connections</a></li>
+<li class="chapter" data-level="B.11" data-path="AppendixB.html"><a href="AppendixB.html#risk-check"><i class="fa fa-check"></i><b>B.11</b> Conducting Risk Checks</a></li>
+<li class="chapter" data-level="B.12" data-path="AppendixB.html"><a href="AppendixB.html#tokens"><i class="fa fa-check"></i><b>B.12</b> Tokens</a></li>
+<li class="chapter" data-level="B.13" data-path="AppendixB.html"><a href="AppendixB.html#resolve"><i class="fa fa-check"></i><b>B.13</b> Resolves and Other Actions</a></li>
+<li class="chapter" data-level="B.14" data-path="AppendixB.html"><a href="AppendixB.html#delayed"><i class="fa fa-check"></i><b>B.14</b> Being Delayed</a></li>
+<li class="chapter" data-level="B.15" data-path="AppendixB.html"><a href="AppendixB.html#rest"><i class="fa fa-check"></i><b>B.15</b> Resting</a></li>
+<li class="chapter" data-level="B.16" data-path="AppendixB.html"><a href="AppendixB.html#databox"><i class="fa fa-check"></i><b>B.16</b> Databoxes</a></li>
+<li class="chapter" data-level="B.17" data-path="AppendixB.html"><a href="AppendixB.html#threat-tracker"><i class="fa fa-check"></i><b>B.17</b> Threat Tracker</a></li>
+<li class="chapter" data-level="B.18" data-path="AppendixB.html"><a href="AppendixB.html#end"><i class="fa fa-check"></i><b>B.18</b> End of the Game</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="AppendixC.html"><a href="AppendixC.html"><i class="fa fa-check"></i><b>C</b> Appendix C</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="AppendixC.html"><a href="AppendixC.html#the-tarot-of-things-deck"><i class="fa fa-check"></i><b>C.1</b> The Tarot of Things Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Design by Play</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter5" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Design Research<a href="Chapter5.html#Chapter5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>“A designer is a thinker whose job it is to move from thought to action.”</p>
+<p>— <span class="citation">Friedman (<a href="#ref-friedman2000" role="doc-biblioref">2000, 37</a>)</span></p>
+</blockquote>
+<div id="introduction-2" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introduction<a href="Chapter5.html#introduction-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The previous chapters have slowly been setting the foundations of this thesis. Starting with what it means to have things around us that connect to the Internet our discussion moved on towards embodying these objects to ‘see through their eyes’, so to speak. In order to explore these concepts through design this and the coming chapter define the methodologies used throughout this research. Since the concerns of this research are to do with alternative approaches to design and incorporates tangential topics of a transdisciplinary nature, a unique methodological approach capable of justifying the use of philosophy for design of IoT must be developed. As such this is developed across the subsequent two chapters, the first deals with the overarching design approach and the second with accompanying internal methodologies, linkages, and manifested attitude of playfulness. What I intend to do is present a combined methodological framework at the end of this section that inherits attributes from its constituent methodologies and concepts.</p>
+<p>This chapter discusses iterative Research through Design (RtD) as an overarching methodology used throughout this research. The topic of design appears in various forms in this manuscript, mostly as crafted prototypes of ideas (physical, digital, or on paper) but also in the manner of its discourse. As such, I hope that this research may feed the greater knowledge of practice-based design research. In <a href="Chapter1.html#Chapter1">Chapter 1</a>, I mentioned how doing an MA in Design Management opened me up to the potential of design research. It also reminded me how much I missed practising art and design in general. The presence of practice-based research is thus very important to me and contributed to the decisions made in the course of this work.</p>
+<p>A number of different design approaches are utilised in the coming chapters, which is why the activities mentioned here on represent a predominant RtD ideology. It also presents the argument both for and against the suggestion of RtD as a methodology, which I go into more detail later. This is why even though it is present in the methodologies section of my research, I refer to it as an ideology instead as I see it as an overarching structure to support further methodologies that I use in my research owing to the playful attitude towards research I present throughout. These intercept design problems using creative and philosophical appropriations of designed artefacts.</p>
+<p>Thus, to ease the discussion further, this section is divided into two chapters. The first addresses approaches for design research moving towards the application of RtD as a methodology in this manuscript with a review of relevant literature. The second, explores accompanying methods to add to a design and philosophy toolkit of sorts used in chapters discussing my practice. For now, in this chapter I intend to lay out why RtD is the methodological framework of this research. For that I will focus my discussion on doing design research for solving wicked problems such as those associated with IoT.</p>
+</div>
+<div id="doing-design-research" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Doing Design Research<a href="Chapter5.html#doing-design-research" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When considering a starting point for the discussion of design research, I realised it to be the most challenging aspect of compiling this document. Ironic as it is, the question of what design research is never truly came up while doing a PhD in Design. It was inherently understood. Perhaps this has to do with the fact that one explores these notions earlier on in their academic life. I touched upon it in my MA, but the idea ingrained in my mind then was a definition of design research specific to Design Management. Since then my understanding of what is <em>research</em>, <em>design</em>, and <em>design research</em> have evolved. The term ‘design research’ is often used in industry practice and academia alike. The following account of design research is thus influenced by my earlier understandings of design, and a new founded knowledge into the greater expanse of design research as a discipline. So where does one begin when discussing what is design research?</p>
+<p><span class="citation">Edelson (<a href="#ref-edelson2002" role="doc-biblioref">2002, 106</a>)</span> describe the role of a design researcher as one who passes through “iterative cycles of design and implementation”, with the intent of collecting and processing data to generate information. This collection of information is sifted and prodded to form hypotheses that further reflect upon crafting theories and artefacts, which in turn, are presented as outcomes of a ‘design experience’. <span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012</a>)</span> attempt to demystify the usage of the term ‘design research’, to describe the myriad viewpoints that emerge while practising design in varying capacities. These include but are not limited to the various philosophies, methods, or approaches one may adopt or unearth while <em>‘designing’</em>.</p>
+<p>The term is formed by combining two very distinct words—design and research—both having their own definitions. Where the core idea behind both is the generation of new or refined knowledge in some form, there is a general differentiation between the two that has become accepted over time. I will begin by defining what design is in the context of this research and move on from there.</p>
+<div id="defining-design" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Defining Design<a href="Chapter5.html#defining-design" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Design is a word used to express a multitude of meanings stemming from its nature in the English language as at times being a verb <em>(to design)</em>, a noun <em>(a design)</em>, and an adjective <em>(by design)</em> <span class="citation">(<a href="#ref-glanville1999" role="doc-biblioref">Glanville 1999</a>; <a href="#ref-julier2013" role="doc-biblioref">Julier 2013</a>; <a href="#ref-lawson1990" role="doc-biblioref">Lawson 1990</a>; <a href="#ref-frankel2010" role="doc-biblioref">Frankel and Racine 2010</a>)</span>. The term encompasses a broad spectrum of disciplines that associate different meaning to it according to its varying nature, from being a process or a tangible outcome of a process <span class="citation">(<a href="#ref-cooper1995" role="doc-biblioref">Cooper and Press 1995</a>; <a href="#ref-friedman2000" role="doc-biblioref">Friedman 2000</a>)</span>, to a psychological perspective taken by an individual <span class="citation">(<a href="#ref-thomas1979" role="doc-biblioref">J. C. Thomas and Carroll 1979</a>)</span>.</p>
+<p><span class="citation">Friedman (<a href="#ref-friedman2000" role="doc-biblioref">2000, 32</a>)</span> traces the creation of design knowledge throughout history as a systemic evolution of toolmaking dating back to <em>homo habilis</em>. This view of the “acts of design” <span class="citation">(<a href="#ref-friedman2000" role="doc-biblioref">2000, 34</a>)</span> embodies the rich heritage of craft making, which emerged out of a need for tools in human history. It also places design as both a vocation of trades and crafts, as well as a contemporary profession having evolved over centuries.</p>
+<p>He presents a taxonomy of design knowledge as seen through core domains of inquiry that a designer is faced with. These include various skills for learning and leading, a view of the world we occupy, the artefact of intention, and knowledge of the environment and surroundings <span class="citation">(<a href="#ref-friedman1992" role="doc-biblioref">Friedman 1992</a>)</span>. Collectively this taxonomy establishes a range of activities designers intend to partake in. What he refers to is how fundamentally design occupies multiple disciplines, thus, having designers require a breadth of knowledge to exercise design practice.</p>
+<p><span class="citation">Cooper and Press (<a href="#ref-cooper1995" role="doc-biblioref">1995</a>)</span> attempt to refine the many definitions of design into different perspectives and core functions established in industry and society. This refinement sees design as a form of modern art, a problem-solving activity, an act for manifesting creative thought, a family of professions that include its craft heritage, an industry in its own right, and above all a process for accomplishing particular goals.</p>
+<p>For the intentions of this work two definitions of design will be built upon. Design here is both a process and an act of problem-solving. It is together used to establish a structure for discourse, as well as a means of manifesting creative thought. The <em>act of designing</em> is important here due to the practice-based nature of this research. There are elements where design is used as a craft for aesthetic purposes, but at the same time, these don’t impair the quality of design as a process in achieving a specific goal. These two aspects of design relate to the core ideology of RtD present throughout this work.</p>
+<div id="design-as-a-problem-solving-activity" class="section level4 hasAnchor" number="5.2.1.1">
+<h4><span class="header-section-number">5.2.1.1</span> Design as a problem-solving activity<a href="Chapter5.html#design-as-a-problem-solving-activity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="citation">Don A. Norman (<a href="#ref-norman2002" role="doc-biblioref">2002</a>)</span> view of design may be summed up as a process that makes the world more usable; or not if that is the desire. Though the general consensus is that a designed object is intended to present a level of craftsmanship above similar less-designed objects, what Norman suggests is that design inherently possesses the ability to craft usability. Implying designed objects intend to do something—as in, exercise what they are designed for—fulfilling specific functions. This ability affords design practice the oft-quoted title of a <em>problem-solving</em> activity, at least in part <span class="citation">(<a href="#ref-cooper1995" role="doc-biblioref">Cooper and Press 1995, 16</a>)</span>.</p>
+<p><span class="citation">Simon (<a href="#ref-simon1995" role="doc-biblioref">1995, 246</a>)</span> describes design as a “complement for analysis”, where analysis is the processing of information regarding any given intended object. Adding to Norman’s view of design as capable of crafting usability, this brings design to being also “inherently computational” <span class="citation">(<a href="#ref-simon1995" role="doc-biblioref">1995, 247</a>)</span>. Simon compared design to a problem-solving activity equivalent to logic but involving the imagination (creativity).</p>
+<p>Though this contribution has been referenced over time to attest to design’s ability to do just that, one cannot resort to this definition dogmatically <span class="citation">(<a href="#ref-hatchuel2002" role="doc-biblioref">Hatchuel and Weil 2002, 19</a>)</span>. Design includes problem-solving but cannot be simply reduced to it. Doing so would deprive design of everything else it is capable of, such as its influence on aesthetics. “There is no doubt that problem-solving is part of a design process, yet it is not the whole process” <span class="citation">(<a href="#ref-hatchuel2001" role="doc-biblioref">Hatchuel 2001, 10</a>)</span>. Manufacturers or clients that present designers with ‘design problems’ to be ‘solved’, approach them with more than mere logical problem-solving in mind.</p>
+<div class="figure"><span style="display:block;" id="fig:design-square"></span>
+<img src="figures/ch5-design_square.png" alt="The Design Square by @hatchuel2004 explores the problem-solving process of design moving between spaces of concept (C) and knowledge (K)."  />
+<p class="caption">
+Figure 5.1: The Design Square by <span class="citation">Hatchuel, Le Masson, and Weil (<a href="#ref-hatchuel2004" role="doc-biblioref">2004</a>)</span> explores the problem-solving process of design moving between spaces of concept (C) and knowledge (K).
+</p>
+</div>
+<p>As the act of designing through creation is a key actant in this research, knowledge generated through the process of designing cannot be defined in strict terms of problem-solving. <span class="citation">Pye (<a href="#ref-pye1978" role="doc-biblioref">1978</a>)</span> asserts that the decision to what form a designed thing may take is done either by choice or chance. Having a critical view of representing design as problem-solving or as an art form, he resorts to expressing how design manifests both attributes <span class="citation">(<a href="#ref-cooper1995" role="doc-biblioref">Cooper and Press 1995, 18</a>)</span>. A better explanation of the view of design asserted here is that of <span class="citation">Hatchuel, Le Masson, and Weil (<a href="#ref-hatchuel2004" role="doc-biblioref">2004</a>)</span>, which they present in a cyclic model of the design process (Fig. <a href="Chapter5.html#fig:design-square">5.1</a>). Here information is shared between spaces of concept and knowledge. Through a series of disjunctions and conjunctions gathered information is co-expanded, resulting in a designed object of intention.</p>
+<p>Where Simon’s view of design defined it strictly as a mechanism for problem-solving similar to logic, the design process does not afford a singular format of logic assertion (such as mathematics or sciences) to solve problems. Rather, multiple formats are presented from social contexts to crafting and technological, benefiting both concept and knowledge spaces with generated information.</p>
+</div>
+<div id="design-as-a-process" class="section level4 hasAnchor" number="5.2.1.2">
+<h4><span class="header-section-number">5.2.1.2</span> Design as a process<a href="Chapter5.html#design-as-a-process" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Design may be defined as a series of steps designers undertake, to achieve or balance specified goals and constraints <span class="citation">(<a href="#ref-edelson2002" role="doc-biblioref">Edelson 2002, 109</a>)</span>. These goals may or may not include the potential of solving a given design problem, but certainly involves the presence of <em>designerly</em> intent. Iterative processes of design, development, and implementation are often associated when practising design—mentions of which appear throughout this text as well—making design a procedural activity. <span class="citation">Edelson (<a href="#ref-edelson2002" role="doc-biblioref">2002, 109</a>)</span> defines the ‘design process’ as open-ended and complex invoking creativity, which in his view, presents a challenging space for researchers to characterise. He attempts to characterise the design process through the decisions made in iterative cycles he calls procedure, analysis, and solution. <span class="citation">Cooper and Press (<a href="#ref-cooper1995" role="doc-biblioref">1995, 36</a>)</span> explore this through the definitions of process present in design management, a field that heavily utilises design process paradigms. In their opinion, a process in a design context is either a means for designers to exercise their skills in expanding on a problem space to achieve a relevant solution or, it may describe strategic planning invoked in the design and development. Advising against taking either definition to its extreme, they suggest achieving a balance to benefit from the idea of design as a process better.</p>
+<p>Cooper and Press quote <span class="citation">Lawson (<a href="#ref-lawson1990" role="doc-biblioref">1990</a>)</span> stages of the creative process for design as one that hinges on “imaginative, intuitive or divergent thinking” to formulate solutions <span class="citation">(<a href="#ref-cooper1995" role="doc-biblioref">Cooper and Press 1995, 22</a>)</span>. They simplify it into a journey that starts from defining the problem to developing ideas and testing (Fig. <a href="Chapter5.html#fig:design-process">5.2</a>). However, due to the nature of design as a fluid concept allowing the meshing of a multitude of disciplines, different variants of explaining the design process exist <span class="citation">(<a href="#ref-hollins1991" role="doc-biblioref">Hollins and Hollins 1991</a>; <a href="#ref-walker1989" role="doc-biblioref">Walker, Dagger, and Roy 1989</a>; <a href="#ref-roy1986" role="doc-biblioref">Roy 1986</a>; <a href="#ref-fairhead1988" role="doc-biblioref">Fairhead 1988</a>; <a href="#ref-sanders2008" role="doc-biblioref">L. Sanders 2008</a>; <a href="#ref-frankel2010" role="doc-biblioref">Frankel and Racine 2010</a>)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:design-process"></span>
+<img src="figures/ch5-design_process.png" alt=" @cooper1995 present a simplified model of design as a process in the form a journey."  />
+<p class="caption">
+Figure 5.2:  <span class="citation">Cooper and Press (<a href="#ref-cooper1995" role="doc-biblioref">1995</a>)</span> present a simplified model of design as a process in the form a journey.
+</p>
+</div>
+<p>No matter how one defines the design process, all design moves in task-oriented iterations of development <span class="citation">(<a href="#ref-cooper1995" role="doc-biblioref">Cooper and Press 1995</a>; <a href="#ref-edelson2002" role="doc-biblioref">Edelson 2002</a>)</span>. These iterations craft out the design procedures required to specify domain interests, processes, and people involved in the development, and may present the creation of theories, frameworks, and methodologies for research <span class="citation">(<a href="#ref-edelson2002" role="doc-biblioref">Edelson 2002, 113</a>)</span>.</p>
+<p>Be it the crafting of a product, a service, or a business model, an iterative nature is fundamental to any design. When seen as a process, design allows the intermingling of varying disciplines to interject into other layers of information that may be arranged within the design. It further allows for a systemic investigation akin to that of research. The design process itself thus becomes a form of research conducted to achieve specified goals.</p>
+</div>
+</div>
+<div id="defining-research" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Defining Research<a href="Chapter5.html#defining-research" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Having defined Design to our needs, we can now explore the second half of ‘Design Research’. Research is commonly understood as a systemic investigation intended towards generating new knowledge and usually involves proving/disproving hypothesis, the formulating of theories, facts, and accompanies a heavy association towards science and technology <span class="citation">(<a href="#ref-frayling1993" role="doc-biblioref">Frayling 1993</a>; <a href="#ref-faste2012" role="doc-biblioref">Faste and Faste 2012</a>)</span>. <span class="citation">Friedman (<a href="#ref-friedman2000" role="doc-biblioref">2000, 48</a>)</span> asserts, the meaning of research stems from its Latin roots as an activity involving search and exploration. Common misunderstandings assume research has little to do with creative thought or practice and is solely a retrospective activity of formulating knowledge, compared to design <span class="citation">(<a href="#ref-friedman2000" role="doc-biblioref">2000, 47</a>)</span>. This, of course, is not the case as the activity of research associated with design is exploratory and concerned with both inquiry and the production of new knowledge <span class="citation">(<a href="#ref-frankel2010" role="doc-biblioref">Frankel and Racine 2010</a>; <a href="#ref-cross2007" role="doc-biblioref">Cross 2007</a>)</span>. Three forms of research may be identified here, and thus, compared to design in this manner: basic research, clinical research, and applied research <span class="citation">(<a href="#ref-friedman2000" role="doc-biblioref">Friedman 2000</a>; <a href="#ref-frankel2010" role="doc-biblioref">Frankel and Racine 2010</a>; <a href="#ref-buchanan2001" role="doc-biblioref">Buchanan 2001</a>)</span>.</p>
+<div id="basic-applied-and-clinical-research" class="section level4 hasAnchor" number="5.2.2.1">
+<h4><span class="header-section-number">5.2.2.1</span> Basic, Applied, and Clinical Research<a href="Chapter5.html#basic-applied-and-clinical-research" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Basic research focuses on empirical investigations into general principles that may cover a wide variety of situations and is intended to generate knowledge on several levels <span class="citation">(<a href="#ref-buchanan2001" role="doc-biblioref">Buchanan 2001</a>; <a href="#ref-friedman2000" role="doc-biblioref">Friedman 2000</a>)</span>. Comparatively, applied research attempts to adapt the findings from basic research into “classes of problems” <span class="citation">(<a href="#ref-friedman2000" role="doc-biblioref">Friedman 2000, 48</a>)</span> which may feed the generation of hypotheses, furthering knowledge creation. <span class="citation">Frankel and Racine (<a href="#ref-frankel2010" role="doc-biblioref">2010, 4</a>)</span> second Buchanan and Friedman’s opinions that applied research may be critical to understanding design due to its traits of systemic inquiry.</p>
+<p>Finally, clinical research regards itself with specific cases and involves the application of both basic and applied research findings <span class="citation">(<a href="#ref-friedman2000" role="doc-biblioref">Friedman 2000, 49</a>)</span>. <span class="citation">Frankel and Racine (<a href="#ref-frankel2010" role="doc-biblioref">2010, 3</a>)</span> give the example of the design of a walking aid, which would incorporate the collection of a wide array of information from different sources such as users, environments, materials and exploration of similar products. Several factors would need to be considered in the design of this product, which would only be assessed through the collected information. Such research takes on the form of documented case studies, and gives insight into problems that expand on the original matter of concern <span class="citation">(<a href="#ref-frankel2010" role="doc-biblioref">Frankel and Racine 2010</a>; <a href="#ref-buchanan2001" role="doc-biblioref">Buchanan 2001</a>)</span>.</p>
+<p>In this manner, design research involves a systemic usage of basic, applied, and clinical research. It also encompasses the analysis of information through lenses of various disciplines that may be utilised or appropriated to achieve the <em>object of design</em>. Friedman thus defines the role of designers, which mirrors the role of design researchers, thoroughly as such:</p>
+<blockquote>
+<p>“Today’s designer works on several levels. The designer is an analyst who discovers problems. The designer is a synthesist who helps to solve problems and a generalist who understands the range of talents that must be engaged to realize solutions. The designer is a leader who organizes teams when one range of talents is not enough. Moreover, the designer is a critic whose post-solution analysis ensures that the right problem has been solved.” <span class="citation">(<a href="#ref-friedman2000" role="doc-biblioref">Friedman 2000, 49</a>)</span></p>
+</blockquote>
+</div>
+</div>
+<div id="the-object-of-design" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> The Object of Design<a href="Chapter5.html#the-object-of-design" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In either case design as a process/tool for research or design as an act of creation, a fundamental notion associated with design is that it intends to draw things together in what <span class="citation">Binder et al. (<a href="#ref-binder2012" role="doc-biblioref">2012, 26</a>)</span> call the “object of design”. Their definition of design is an activity that involves a gathering of cooperation and imagination. They explore the design process as one that requires a sense of openness and evolution that is free to end at “novel, and sometimes unexpected, solutions” <span class="citation">(<a href="#ref-binder2012" role="doc-biblioref">2012, 22</a>)</span>. The notion they present is of design and research co-mingling, echoing the thoughts of <span class="citation">Schön (<a href="#ref-schon1983" role="doc-biblioref">1983</a>)</span> for whom the role of a reflective practitioner was paramount to conducting design practice. They summarise his works by explaining how “knowing and doing are inseparable” <span class="citation">(<a href="#ref-binder2012" role="doc-biblioref">Binder et al. 2012, 24</a>)</span>; a key aspect of design where reflection occurs in the act of designing.</p>
+<p>This philosophy is influenced by the works of <span class="citation">Dewey (<a href="#ref-dewey1938" role="doc-biblioref">1938</a>)</span>, who explored the epistemology of creative processes. For Dewey, experiences grew out of daily encounters and became the foundation for understanding. He took this forward to explore the role of aesthetics and logic, which Binder et al. explain as so:</p>
+<blockquote>
+<p>“According to Dewey, all creative activities show a pattern of controlled inquiry: framing situations, searching, experimenting, and experiencing, where both the development of hypothesis and the judgment of experienced aesthetic qualities are important aspects within this process.” <span class="citation">(<a href="#ref-binder2012" role="doc-biblioref">Binder et al. 2012, 25</a>)</span></p>
+</blockquote>
+<p>This exploration of the object of design takes design into the philosophical space of phenomenology; a concept we explored in the last chapter. <span class="citation">Binder et al. (<a href="#ref-binder2012" role="doc-biblioref">2012, 26</a>)</span> place this idea on par with Latour’s object-oriented politics <span class="citation">(<a href="#ref-weibel2005" role="doc-biblioref">Weibel and Latour 2005</a>)</span>. They propose viewing design as capable of “accessing, aligning, and navigating among the ‘constituents’ of the object of design” <span class="citation">(<a href="#ref-binder2012" role="doc-biblioref">Binder et al. 2012, 26</a>)</span>. Whereby the ‘constituents’ they are referring to are the modalities through which interactions take place with the object of design; vis-à-vis, things or representations of things. As such, they argue that design is challenged to contend not merely with designing things, but also with matters of concern relating to socio-material assemblages of what the designed thing implies. This makes design as a construct a phenomenological enterprise that deals with knowledge creation through its many constituents, such as aesthetics, logic, experience, tactility, craftsmanship, etc.</p>
+<div id="research-as-a-kind-of-design" class="section level4 hasAnchor" number="5.2.3.1">
+<h4><span class="header-section-number">5.2.3.1</span> Research as a ‘kind’ of Design<a href="Chapter5.html#research-as-a-kind-of-design" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Where <span class="citation">Binder et al. (<a href="#ref-binder2012" role="doc-biblioref">2012</a>)</span> define the object of design to bring things together, their concern is with the use of design practice as a research analytic in participatory settings. This phenomenological extension of design may be equally explored through other avenues of design research. By now one may accept design research to be a subset of design, though the nature of research conducted as <em>design research</em> is not conventional <span class="citation">(<a href="#ref-faste2012" role="doc-biblioref">Faste and Faste 2012, para. 15</a>)</span>.</p>
+<p>Design by nature requires certain kinds of knowledge to intermingle amongst each other <span class="citation">(<a href="#ref-friedman2000" role="doc-biblioref">Friedman 2000</a>)</span>. There is a consensus among practitioners and academics alike that design, and many of its varieties, may be classified as practice-based as they are oft realised through their execution <span class="citation">(<a href="#ref-zimmerman2010" role="doc-biblioref">J. Zimmerman, Stolterman, and Forlizzi 2010</a>; <a href="#ref-faste2012" role="doc-biblioref">Faste and Faste 2012</a>; <a href="#ref-findeli2008" role="doc-biblioref">Alain Findeli et al. 2008</a>; <a href="#ref-frayling1993" role="doc-biblioref">Frayling 1993</a>; <a href="#ref-cooper1995" role="doc-biblioref">Cooper and Press 1995</a>)</span>. This entire chapter so far has been about exploring this very nature of design. As an accumulative discipline containing knowledge and information from a variety of sources understood by practice. This act of designing that is pertinent to design itself, contains all the ingredients required to fulfil it as a ‘kind of’ research-practice.</p>
+<p><span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012, para. 15</a>)</span> propose an alternative view (Fig. <a href="Chapter5.html#fig:alternative-view">5.3</a>) where rather than seeing design research as a ‘kind’ of research, one may see “research [as] always a ‘kind’ of design”. They place the practice of design as a super-set encompassing design and research:</p>
+<blockquote>
+<p>“Clearly scientists”practice" research just as designers naturally practice design…This model makes clear that all research is a subset of design practice at large, and that design research is simply the set of such methods not conventionally considered to be research." <span class="citation">(<a href="#ref-faste2012" role="doc-biblioref">Faste and Faste 2012, para. 15</a>)</span></p>
+</blockquote>
+<div class="figure"><span style="display:block;" id="fig:alternative-view"></span>
+<img src="figures/ch5-alternative_view.png" alt="By seeing research as a subset of design @faste2012 propose a view that design embodies research."  />
+<p class="caption">
+Figure 5.3: By seeing research as a subset of design <span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012</a>)</span> propose a view that design embodies research.
+</p>
+</div>
+<p>Their definition of research as a ‘kind’ of design allows for a broader acceptance of what constitutes for <em>design research</em>. This makes the act of designing itself a type of research, as much as, the act of researching (within the context of design) a type of design. Both views generate new knowledge through some manner of practice-based execution. Over the years, design has evolved from being a craft-oriented profession, into a multidisciplinary information-oriented engine, implementing meaningful socio-economic services, systems, and interactions <span class="citation">(<a href="#ref-muratovski2010" role="doc-biblioref">Muratovski 2010, 378</a>)</span>. Therefore, this practice-based element of design becomes a pertinent aspect of the design process. One that allows for designers to push the boundaries of what may be catalogued as research, unearth potential problem solving and open up new meanings and understandings for knowledge generation.</p>
+</div>
+<div id="wicked-problems" class="section level4 hasAnchor" number="5.2.3.2">
+<h4><span class="header-section-number">5.2.3.2</span> Wicked Problems<a href="Chapter5.html#wicked-problems" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Earlier on I pointed out how design involves problem-solving. The problems design attempts to address though are not conventional, as they rarely fall within the strict structures of scientific research. <span class="citation">Rittel and Webber (<a href="#ref-rittel1973" role="doc-biblioref">1973, 160</a>)</span> introduced the term “wicked problems” to define complex problems within urban planning, which due to their complexity had implausible or otherwise unattainable solutions. The term was later appropriated to acknowledge design’s ability to function within complexity through design thinking by <span class="citation">Buchanan (<a href="#ref-buchanan1992" role="doc-biblioref">1992</a>)</span>.</p>
+<p>Earlier attempts at defining design research involved attributing scientific research approaches to design <span class="citation">(<a href="#ref-frankel2010" role="doc-biblioref">Frankel and Racine 2010</a>)</span>. This meant design was explored in a sequential methodology, similar to science. <span class="citation">Rittel and Webber (<a href="#ref-rittel1973" role="doc-biblioref">1973, 160</a>)</span> attempted to differentiate societal problems from scientific ones by presenting them as “wicked” and “tame” problems respectively. Ergo, explaining how problems relating to human experience are not the same as those relating to nature, or science. As these problems tend to be more complex in nature, involving multiple facets and consequences, a sequential methodology for understanding such complexity was thus inadequate <span class="citation">(<a href="#ref-cross2007" role="doc-biblioref">Cross 2007</a>; <a href="#ref-gedenryd1998" role="doc-biblioref">Gedenryd 1998</a>)</span>.</p>
+<p>Since design relates to matters of human experience, these <em>wicked problems</em> transcend naturally into concerns of design. An example of a wicked problem hard-pressed for a scientific solution alone would be climate change. An intermingling of multiple disciplines is required to facilitate scientific solutions, which would further need to be exercised through some manner of design.</p>
+<p><span class="citation">Buchanan (<a href="#ref-buchanan1992" role="doc-biblioref">1992, 17</a>)</span> speaks of the designer as one who is concerned with quasi-subject matters which exist within the problems they explore. Essentially, their understanding of a problem defines further problems as they are revealed. The quasi-subject matter is “indeterminate” and awaiting to be made specific through its acknowledgement. Buchanan goes ahead to explain how by doing this, the wickedness of the problem is removed. Giving the example of a client brief he says:</p>
+<blockquote>
+<p>“A client’s brief does not present a definition of the subject matter of a particular design application. It presents a problem and a set of issues to be considered in resolving that problem. In situations where a brief specifies in great detail the particular features of the product to be planned, it often does so because an owner, corporate executive, or manager has attempted to perform the critical task of transforming problems and issues into a working hypothesis about the particular features of the product to be designed. In effect, someone has attempted to take the ‘wickedness’ out.” <span class="citation">(<a href="#ref-buchanan1992" role="doc-biblioref">Buchanan 1992, 19</a>)</span></p>
+</blockquote>
+<p>Wicked problems require to be resolved as a collective of exchanged thoughts, ideas, artefacts, and services <span class="citation">(<a href="#ref-dubberly2017" role="doc-biblioref">Dubberly 2017, 162</a>)</span>. This is perhaps why design functions so well with wicked problems. It is, after all, the object of design to gather together necessary elements to facilitate a design agenda.</p>
+<p>Therefore, when considering what is design research, one may see it as a systemic inquiry into the object of design enacted through a process of design. This inquiry involves investigating the myriad problem spaces within an area of focus with the intention of resolution, and usually tends to wicked problems. Furthermore, due to the nature of design as a practice-based activity, the act of designing is a pertinent element that allows for research to be embodied within the object of design.</p>
+</div>
+</div>
+</div>
+<div id="research-through-design" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Research through Design<a href="Chapter5.html#research-through-design" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The previous lengthy definition of design research was necessary to establish a baseline for why RtD as a methodological framework was utilised for this research. I will now define RtD and its place in this work. As an ideology RtD comes from one of three categorisations of design research presented by <span class="citation">Frayling (<a href="#ref-frayling1993" role="doc-biblioref">1993</a>)</span>. His <em>Research in Art and Design</em> is by far the most cited document in design research <span class="citation">(<a href="#ref-friedman2008" role="doc-biblioref">Friedman 2008, 154</a>)</span>, with many academics using his categories and debating over formulating further design theory and methodologies <span class="citation">(<a href="#ref-godin2014" role="doc-biblioref">Godin and Zahedi 2014</a>; <a href="#ref-faste2012" role="doc-biblioref">Faste and Faste 2012</a>; <a href="#ref-bardzell2015" role="doc-biblioref">J. Bardzell, Bardzell, and Koefoed Hansen 2015</a>; <a href="#ref-cross2007" role="doc-biblioref">Cross 2007</a>; <a href="#ref-downton2003" role="doc-biblioref">Downton 2003</a>; <a href="#ref-jonas2007" role="doc-biblioref">Jonas 2007</a>; <a href="#ref-friedman2003" role="doc-biblioref">Friedman 2003</a>)</span>. In the document <span class="citation">Frayling (<a href="#ref-frayling1993" role="doc-biblioref">1993</a>)</span> attempts to differentiate between the role of a researcher in science and that in the arts, all the while comparing against what it means to <em>research within the context of design</em>.</p>
+<p>For him, an artist is one that works in an expressive form rather than a cognitive one. The artist works towards personal development, rather than understanding the nature of things. Designers, he defines, are concerned with craftwork and <em>doing</em> things instead; through hands-on experimentation, involving a level of aesthetic appreciation, and imagining things to achieve a certain effect. Researchers, on the other hand, rely on critical rationalisation to formulise or refute hypotheses through defined methodologies. Using this, he argues for a linkage between science and art—which is seen in design practice—and suggests, adjusting the way research is conducted within these disciplines to accommodate the overlap.</p>
+<p>Frayling’s three categories focused on both art and design in this way. Many have since appropriated and/or reworded them to fit better with design research <span class="citation">(<a href="#ref-cross2007" role="doc-biblioref">Cross 2007</a>; <a href="#ref-faste2012" role="doc-biblioref">Faste and Faste 2012</a>; <a href="#ref-jonas2007" role="doc-biblioref">Jonas 2007</a>; <a href="#ref-findeli1999" role="doc-biblioref">A. Findeli 1999</a>)</span>. As such, the general three categories of design research are as follows:</p>
+<ul>
+<li><p><strong>Research about/into Design</strong> generally occurs in academia where the focus is to contribute towards the greater knowledge of design research and its implications as a scientific study into design. It incorporates documentation of design history, phenomena, and what the object of design contends to.</p></li>
+<li><p><strong>Research for Design</strong> focuses on guiding the practice of design by documenting processes done by professionals and practitioners. Here the designer is treated as the subject matter as opposed to the designed object, where research is intended to aid in the development of design.</p></li>
+<li><p><strong>Research through Design</strong> comes closest to the practice of design itself as it combines processes in practice to embody the knowledge generated from design research within a designed artefact. Here the designer/researcher practices design to enact their research through iterative experimentation associated with the design process.</p></li>
+</ul>
+<p>As design has evolved into an industrial discipline, compared to earlier definitions of it as a supplement to art, Frayling’s proposal to establish new categories of design research aided in future probing and inquiry <span class="citation">(<a href="#ref-friedman2008" role="doc-biblioref">Friedman 2008, 157</a>)</span>. Friedman has been critical of this though, exclaiming that some of these categorisations of design should not be mistaken for a factual representation of design practice. That said, as a probe into the possibilities of design research, <span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012</a>)</span> present a clearer account of defining design research categories that better fit with the three kinds of research (basic, applied, and clinical). They do this through an understanding of how research approaches design and vice versa.</p>
+<div id="approaching-research-through-design" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Approaching Research through Design<a href="Chapter5.html#approaching-research-through-design" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012, para. 17</a>)</span> present four modes of design research (Fig. <a href="Chapter5.html#fig:approach-rtd">5.4</a>) where two they consider a “hands-off” approach and two a “hands-on” approach. They acknowledge both the iterative nature of design and the sequential nature of research in their model, incorporating them in their hands-off/hands-on paradigm. The four categories they present are: Design of Research and Research on Design (as hands-off), Design through Research and Research through Design (as hands-on).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="Chapter5.html#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">rep</span>(<span class="st">&quot;figures/ch5-approaching_rtd.png&quot;</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:approach-rtd"></span>
+<img src="figures/ch5-approaching_rtd.png" alt="Expanding on Frayling's earlier classifications @faste2012 present four modalities of design research each representing Frayling's view of design research as either being a hands-off or hands-on approach."  />
+<p class="caption">
+Figure 5.4: Expanding on Frayling’s earlier classifications <span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012</a>)</span> present four modalities of design research each representing Frayling’s view of design research as either being a hands-off or hands-on approach.
+</p>
+</div>
+<p>Though I could explore all the modes presented by Faste and Faste in more detail, as this work focuses on RtD deviating towards these other areas of design research is beyond the scope of this thesis. What should be noted is that they are all, essentially, are expanded appropriations of <span class="citation">Frayling (<a href="#ref-frayling1993" role="doc-biblioref">1993</a>)</span> original categories. The comparison between them and RtD is what makes it more important to our discussion.</p>
+<p><span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012, para. 23</a>)</span> rename RtD as “embedded design research”, because of its approach to conducting ‘research’. Where the others deal with the broader perspective of design as a discipline, RtD relates with the core rhetoric of the design process as a practised activity. One where knowledge is embedded as much in the designer’s design as it is in the world the design occupies <span class="citation">(<a href="#ref-faste2012" role="doc-biblioref">2012, para. 21</a>)</span>. Many academics and designers associate RtD, with creating designed artefacts that indulge in societal change through their enactment <span class="citation">(<a href="#ref-zimmerman2010" role="doc-biblioref">J. Zimmerman, Stolterman, and Forlizzi 2010</a>; <a href="#ref-swann2002" role="doc-biblioref">Swann 2002</a>; <a href="#ref-binder2006" role="doc-biblioref">Binder and Redström 2006</a>)</span>. <span class="citation">J. Zimmerman, Stolterman, and Forlizzi (<a href="#ref-zimmerman2010" role="doc-biblioref">2010</a>)</span> catalogue a background of RtD by referencing its different considerations over time, along with its heavy association with wicked problems. <span class="citation">Alain Findeli et al. (<a href="#ref-findeli2008" role="doc-biblioref">2008</a>)</span> present RtD as having traits of the other forms of design research (<em>about</em> and <em>for</em>):</p>
+<blockquote>
+<p>“Proper research through design could thence be defined as a kind of research about design [more] relevant for design, or as a kind of research for design that produces original knowledge with as rigorous [and demanding] standards as research about design” <span class="citation">(<a href="#ref-findeli2008" role="doc-biblioref">Alain Findeli et al. 2008, 71</a>)</span></p>
+</blockquote>
+<p><span class="citation">Basballe and Halskov (<a href="#ref-basballe2012" role="doc-biblioref">2012, 59</a>)</span> understand RtD as an activity affording researcher’s active engagement with the design process. An activity that is further communicated to feed the greater expanse of design theory and knowledge through academic ventures. <span class="citation">Godin and Zahedi (<a href="#ref-godin2014" role="doc-biblioref">2014</a>)</span> discuss the many faces of RtD as named by different authors. Some of the more common comparisons are with constructive design research or practice-led research. They express discontent towards these different definitions of RtD as, in their opinion, they lack a consensus towards how RtD and its effects should be discussed.</p>
+<div class="figure"><span style="display:block;" id="fig:research-types"></span>
+<img src="figures/ch5-research_types.png" alt=" @frankel2010 present a cyclic relationship between the different kinds of design research exploring how design is exercised in different manners moving between theory and practice"  />
+<p class="caption">
+Figure 5.5:  <span class="citation">Frankel and Racine (<a href="#ref-frankel2010" role="doc-biblioref">2010</a>)</span> present a cyclic relationship between the different kinds of design research exploring how design is exercised in different manners moving between theory and practice
+</p>
+</div>
+<p>In an attempt to map a relation between the different design research categories, <span class="citation">Frankel and Racine (<a href="#ref-frankel2010" role="doc-biblioref">2010, para. 40</a>)</span> build upon Friedman’s work and illustrate a flow of information between research for design, research about design, and research through design, occurring in a cyclic manner (Fig. <a href="Chapter5.html#fig:research-types">5.5</a>). Their illustration aligns the three categories as vertices on a triangle with clinical, basic, and applied research alongside their respective categories. The alignment of RtD, to no surprise, is as an applied research approach enacting action-reflection methods. Thus, the readiest comparison can be made between RtD and Action Research methods commonly used in social sciences, as they both incur iterative procedures that include stages of planning, acting, observation, and reflection <span class="citation">(<a href="#ref-zimmerman2010" role="doc-biblioref">J. Zimmerman, Stolterman, and Forlizzi 2010</a>; <a href="#ref-long1991" role="doc-biblioref">Long 1991</a>; <a href="#ref-binder2009" role="doc-biblioref">Binder, Koskinen, and Redström 2009</a>)</span>. <span class="citation">Swann (<a href="#ref-swann2002" role="doc-biblioref">2002</a>)</span> acknowledges research through practicing design to invoke nearly identical procedures to those of Action Research, implying design research to have appropriated RtD from the more common methodology.</p>
+<p>There is a consensus among these researchers though, that RtD has the ability of “broadening the scope and focus of designers” <span class="citation">(<a href="#ref-zimmerman2010" role="doc-biblioref">J. Zimmerman, Stolterman, and Forlizzi 2010, 311</a>)</span>, allowing them to challenge constructs more readily in light of given technologies and practices. Another thing many researchers agree upon irrespective of the end intentions or goal of research, is how RtD tends to matters of the future <span class="citation">(<a href="#ref-binder2006" role="doc-biblioref">Binder and Redström 2006</a>; <a href="#ref-zimmerman2007" role="doc-biblioref">J. Zimmerman, Forlizzi, and Evenson 2007</a>; <a href="#ref-godin2014" role="doc-biblioref">Godin and Zahedi 2014</a>; <a href="#ref-swann2002" role="doc-biblioref">Swann 2002</a>; <a href="#ref-faste2012" role="doc-biblioref">Faste and Faste 2012</a>)</span>.</p>
+<p>The variant definitions of RtD assume a common similarity where they all assert the physical practising of design as a form of research and knowledge generation. This is conducted through the creation, execution, and collection of artefacts, prototypes, models, and/or portfolios; often in a practice-oriented format of research.</p>
+</div>
+<div id="practice-based-research" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Practice-based Research<a href="Chapter5.html#practice-based-research" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As discussed above and repeatedly, design is very much entranced with the <em>act of designing</em>. As such, a wide array of examples can be found that utilise the practising of design as an activity within research in the manner of an engine for knowledge generation <span class="citation">(<a href="#ref-rose2015" role="doc-biblioref">Rose 2015</a>; <a href="#ref-zimmerman2010" role="doc-biblioref">J. Zimmerman, Stolterman, and Forlizzi 2010</a>; <a href="#ref-coulton2019a" role="doc-biblioref">Coulton et al. 2019</a>; <a href="#ref-encinas2016" role="doc-biblioref">Encinas and Blythe 2016</a>; <a href="#ref-toeters2013" role="doc-biblioref">Toeters et al. 2013</a>; <a href="#ref-cila2017" role="doc-biblioref">Cila et al. 2017</a>; <a href="#ref-lindley2020" role="doc-biblioref">J. Lindley, Akmal, and Coulton 2020</a>; <a href="#ref-bardzell2015" role="doc-biblioref">J. Bardzell, Bardzell, and Koefoed Hansen 2015</a>)</span>. <span class="citation">J. Zimmerman, Forlizzi, and Evenson (<a href="#ref-zimmerman2007" role="doc-biblioref">2007, 497</a>)</span> tout the designers’ ability to create products capable of transforming worlds from their “current state to a preferred state”, they also agree that RtD involves an integration of multiple disciplines. The point raised here is that these newer states are opened to an empirical investigation that is influenced by transdisciplinary viewpoints and interventions. Regarding the construction of ideas in the process of design, <span class="citation">Stappers (<a href="#ref-stappers2007" role="doc-biblioref">2007</a>)</span> indicates the ‘act of designing’ itself as a core conduit, utilising a procedural confronting of present technologies, theories, phenomenon, and other elements to build towards a testable <em>designerly</em> artefact.</p>
+<p>On this very note, as findings of their work using RtD, participants in a study conducted by Zimmerman et al. concluded how “RtD lead to new artefacts (products, environments, services, and systems) where the artefact itself [became] a type of implicit, theoretical contribution” <span class="citation">(<a href="#ref-zimmerman2010" role="doc-biblioref">J. Zimmerman, Stolterman, and Forlizzi 2010, 314</a>)</span>. Moving on they explain how these artefacts invoked a power that allowed a codification of the designer’s intents and understandings.</p>
+<p><span class="citation">Stappers, Sleeswijk Visser, and Keller (<a href="#ref-stappers2014" role="doc-biblioref">2014</a>)</span> explore the role of prototyping in practice-based design research, comparing it to design-inclusive research methods. They conclude that where one involves the design as a necessary in-between step of research and hypothesis, it effectively separates the designer from being an active part of knowledge generation. Compared to that, RtD makes the act of designing an essential element of knowledge generation conducted by the designer. In their opinion, one approach thus becomes theory-driven hence stunted, while the other is driven by phenomenon thus more explorative. They agree that practice-based research in this regard, stresses a designed object to be more “communicative” <span class="citation">(<a href="#ref-stappers2014" role="doc-biblioref">2014, para. 7</a>)</span>.</p>
+<p>Design strives to synthesise different concerns in an investigation of “disparate forms of knowledge”, essentially necessitating research <span class="citation">(<a href="#ref-faste2012" role="doc-biblioref">Faste and Faste 2012, sec. 4</a>, para. 1)</span>. As a discipline rooted in craftsmanship and a history of creation, the <em>practice</em> of design cannot be removed from the <em>discipline</em> of Design. <span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012</a>)</span> argue that generated designs facilitate and further acknowledge the presence of design process knowledge that is embedded in the designer, and the world the design exists in. They further argue, that in this manner RtD when compared to traditional research methods “disseminate knowledge through broader means” <span class="citation">(<a href="#ref-faste2012" role="doc-biblioref">2012, sec. 2.4</a>, para. 2)</span>. They quote observations by <span class="citation">Biggs (<a href="#ref-biggs2002" role="doc-biblioref">2002</a>)</span> regarding the role of the artefact in design research, as “embody[ing] the answer to the research question” <span class="citation">(<a href="#ref-faste2012" role="doc-biblioref">Faste and Faste 2012, sec. 2.4</a>, para. 2)</span>. Essentially, by embedding knowledge into the activity by design, the research and information extracted from the activity are only more enriched.</p>
+</div>
+<div id="ideology-or-methodology" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Ideology or Methodology?<a href="Chapter5.html#ideology-or-methodology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Praise for RtD as an approach aside, there is a level of contention that must be addressed as well. To begin with, RtD as a research paradigm is not as mature <span class="citation">(<a href="#ref-findeli2008" role="doc-biblioref">Alain Findeli et al. 2008</a>; <a href="#ref-stappers2014" role="doc-biblioref">Stappers, Sleeswijk Visser, and Keller 2014</a>; <a href="#ref-hook2012" role="doc-biblioref">Höök and Löwgren 2012</a>; <a href="#ref-brandt2007" role="doc-biblioref">Brandt 2007</a>; <a href="#ref-bardzell2012" role="doc-biblioref">S. Bardzell et al. 2012</a>)</span>. Though progress in design research is indeed amplified beyond publications when prototypes, frameworks, and artefacts allow new paths for observing phenomenon <span class="citation">(<a href="#ref-stappers2014" role="doc-biblioref">Stappers, Sleeswijk Visser, and Keller 2014, 166</a>)</span>, RtD and similar practice-based research lack “methodological soundness and scientific recognition” <span class="citation">(<a href="#ref-findeli2008" role="doc-biblioref">Alain Findeli et al. 2008, 72</a>)</span>. <span class="citation">Alain Findeli et al. (<a href="#ref-findeli2008" role="doc-biblioref">2008, 73</a>)</span> present the relationship between theory and practice as the culprit for this. Where on the one hand the claim is for practice to be an important aspect to the building of theory, it becomes significantly more challenging to define practice as a repeatable and redistributable process.</p>
+<div class="figure"><span style="display:block;" id="fig:coupling"></span>
+<img src="figures/ch5-coupling.png" alt=" @basballe2012 see the RtD process as a sequence of dynamic stages interweaving design and research practices that start with gathering information and ordering them in a way that areas of interest overlap to focus on individual areas of design and research"  />
+<p class="caption">
+Figure 5.6:  <span class="citation">Basballe and Halskov (<a href="#ref-basballe2012" role="doc-biblioref">2012</a>)</span> see the RtD process as a sequence of dynamic stages interweaving design and research practices that start with gathering information and ordering them in a way that areas of interest overlap to focus on individual areas of design and research
+</p>
+</div>
+<p><span class="citation">Basballe and Halskov (<a href="#ref-basballe2012" role="doc-biblioref">2012, 65</a>)</span> attempt to break down the RtD process as three dynamics that appear in sequence through every project: coupling, interweaving, and decoupling (fig. <a href="Chapter5.html#fig:coupling">5.6</a>). Their opinion is that every RtD project undergoes an initial coupling stage that involves framing levels of constraints to be exercised throughout. This is followed by an interweaving of research and design interests which are intended to influence each other as processes and validations of methods are exercised. Finally, the project enters a decoupling phase where the design researcher focuses on a specific area of interest extracted from the process; this could be either design or research, depending on what is of interest and at what stage the decoupling occurs. Thus, in appearance RtD is very similar to a regular design project executed by practising design <span class="citation">(<a href="#ref-godin2014" role="doc-biblioref">Godin and Zahedi 2014, 1677</a>)</span>. On that, addressing the problems in design research Friedman expresses:</p>
+<blockquote>
+<p>“One of the deep problems in design research is the failure to engage in grounded theory, developing theory out of practice. Instead, many designers confuse practice with research. Rather than developing theory from practice through articulation and inductive inquiry, some designers mistakenly argue that practice is research.” <span class="citation">(<a href="#ref-friedman2008" role="doc-biblioref">Friedman 2008, 154</a>)</span></p>
+</blockquote>
+<p>Designers, practitioners, researchers, and participants of design research alike experience the interplay of practice and theory differently. The bane of RtD in this regard is the fact that it is an applied research paradigm. The earlier stages of RtD are often referred to as <em>‘the fuzzy front end’</em> due to its association with different levels of creativity, analysis, making, dissecting, and processing. This presents RtD as a non-linear approach compared to the logical linear approaches required for forming many methodologies <span class="citation">(<a href="#ref-stappers2014" role="doc-biblioref">Stappers, Sleeswijk Visser, and Keller 2014, 174</a>)</span>.</p>
+<p>In his original document, <span class="citation">Frayling (<a href="#ref-frayling1993" role="doc-biblioref">1993</a>)</span> distinguished RtD from the other research categories, particularly considering art and design. Where the goal for researched design is understanding the design over knowledge, RtD instead, must be about understanding knowledge over the design. <span class="citation">Godin and Zahedi (<a href="#ref-godin2014" role="doc-biblioref">2014, 1670</a>)</span> argue for the contention here, that in RtD knowledge and understanding is the result of exercising design-practice and making that is embodied in the design artefact.</p>
+<p><span class="citation">Godin and Zahedi (<a href="#ref-godin2014" role="doc-biblioref">2014, 1676</a>)</span> further give a compelling definition of RtD in that it can be defined “by what it is not”. They argue that the artefact is not the goal of an RtD project, rather, it is and should be the generation of knowledge. Secondly, they claim RtD may not provide a level of predictability that is oft required for traditional research; though, that is also a contention associated with other avenues of design research. Therefore, classifying RtD as a methodology at this stage is too early as the field itself is not mature enough. At the same time, the practice of <em>design</em> is inevitable within design research, ergo, an essence of RtD is present in almost all forms of design research. As an ideological stance within design research, it makes more sense to execute RtD rather than proclaim it as a bonified methodology.</p>
+</div>
+</div>
+<div id="conclusions" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Conclusions<a href="Chapter5.html#conclusions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The above definitions of both design research and RtD intend to highlight their unique potentials in executing the object of design. The mapping presented by <span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012</a>)</span> of research as a kind of design towards a definition of hands-on researching through the application of design methods, suggests that RtD artefacts inhibit a cyclic generation of unique knowledge. Artefacts or concepts that emerge from this process are enriched through a broader understanding of ideologies embedded in the given problems and from those acquired in the process of understanding those problems. Though towards the end of the last section I refrained from classifying RtD as a methodology, for the purposes of this research it is utilised as a methodological framework for the reasons defined in this chapter.</p>
+<p>Building upon all presented above, this research attempts to represent RtD as <span class="citation">Gaver (<a href="#ref-gaver2012" role="doc-biblioref">2012</a>)</span> defines it. His opinion is that RtD should be “appreciated for its proliferation of new realities” <span class="citation">(<a href="#ref-gaver2012" role="doc-biblioref">2012, 941</a>)</span>, and ability to annotate the artefacts it creates. Explaining what research should expect from RtD, he goes on to say that artefacts created by design are embodied with the myriad choices taken by their designers, which would otherwise be impossible to acquire in non-practice-based formats (such as writing). This makes the design artefact, and the information extractable from them, “indispensable to design theory” <span class="citation">(<a href="#ref-gaver2012" role="doc-biblioref">2012, 945</a>)</span>.</p>
+<p>Regarding the contention between theory and practice, <span class="citation">Gaver (<a href="#ref-gaver2012" role="doc-biblioref">2012, 939</a>)</span> contrasts designs concern with finding the ultimate solution or particularly with sciences association to the ‘truth’. By doing this he raises a point, that when practising design the search for the ultimate truth is extracted from the artefact as annotations. Compared to science which relies on the presence of facts, these annotations build a case for design theory that explain and reference “features of ‘ultimate particulars’, the truths of design” <span class="citation">(<a href="#ref-gaver2012" role="doc-biblioref">2012, 939</a>)</span>.</p>
+<p>As this research contends with understanding concepts of an unorthodox nature through philosophical inquiry into the phenomenon of human to non-human interactions, an iterative RtD process of design research is most applicable. It is capable of enriching the discussion of designing for IoT through the application of philosophical discourse and practice-based design research.</p>
+<p>Gaver’s expectation of RtD is of mutual collaboration between academics, designers, and researchers. Whereas as a research approach, perspective, or potential methodology, it is afforded a level of elaboration between practitioners that is both critical and discursive. That said, the level of research conducted in and around RtD contend to its benefits outweighing the potential conflations in arguments. <span class="citation">Alain Findeli et al. (<a href="#ref-findeli2008" role="doc-biblioref">2008, 82</a>)</span> argue for design research to be transdisciplinary to be able to nourish the design project. RtD has been known to exercise the object of design clearly and effortlessly through processes of “composition and integration”, making it suitable for both early stages of forming nascent theory, and developing later comprehensive constructs <span class="citation">(<a href="#ref-zimmerman2010" role="doc-biblioref">J. Zimmerman, Stolterman, and Forlizzi 2010, 317</a>)</span>.</p>
+<p>This research takes on a transdisciplinary approach at combining applied design knowledge and practices with theories of philosophy and technical understandings of IoT. In that sense, the framework presented by RtD as a research methodology allows for an expansion of knowledge into different areas of design, philosophy, and technology. Though an overarching methodology in this research, it becomes more enriched when the freedoms of an attitude of playfulness are incorporated as the next chapter highlights.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-bardzell2015" class="csl-entry">
+Bardzell, Jeffrey, Shaowen Bardzell, and Lone Koefoed Hansen. 2015. <span>“Immodest Proposals: <span>Research</span> Through Design and Knowledge.”</span> In <em>Proceedings of the 33rd <span>Annual</span> <span>ACM</span> <span>Conference</span> on <span>Human</span> <span>Factors</span> in <span>Computing</span> <span>Systems</span></em>, 2093–2102.
+</div>
+<div id="ref-bardzell2012" class="csl-entry">
+Bardzell, Shaowen, Jeffrey Bardzell, Jodi Forlizzi, John Zimmerman, and John Antanitis. 2012. <span>“Critical Design and Critical Theory: <span>The</span> Challenge of Designing for Provocation.”</span> In <em>Proceedings of the <span>Designing</span> <span>Interactive</span> <span>Systems</span> <span>Conference</span></em>, 288–97.
+</div>
+<div id="ref-basballe2012" class="csl-entry">
+Basballe, Ditte Amund, and Kim Halskov. 2012. <span>“Dynamics of Research Through Design.”</span> In <em>Proceedings of the <span>Designing</span> <span>Interactive</span> <span>Systems</span> <span>Conference</span></em>, 58–67.
+</div>
+<div id="ref-biggs2002" class="csl-entry">
+Biggs, Michael. 2002. <span>“The Role of the Artefact in Art and Design Research.”</span> <em>International Journal of Design Sciences and Technology</em>.
+</div>
+<div id="ref-binder2012" class="csl-entry">
+Binder, Thomas, Giorgio De Michelis, Pelle Ehn, Giulio Jacucci, Per Linde, and Ina Wagner. 2012. <span>“What Is the Object of Design?”</span> In <em><span>CHI</span>’12 <span>Extended</span> <span>Abstracts</span> on <span>Human</span> <span>Factors</span> in <span>Computing</span> <span>Systems</span></em>, 21–30. ACM.
+</div>
+<div id="ref-binder2009" class="csl-entry">
+Binder, Thomas, Ilpo Koskinen, and Johan Redström. 2009. <span>“Lab, <span>Field</span>, <span>Gallery</span> and <span>Beyond</span>.”</span> <em>Artifact</em> 2 (1).
+</div>
+<div id="ref-binder2006" class="csl-entry">
+Binder, Thomas, and Johan Redström. 2006. <span>“Exemplary Design Research.”</span> In <em>Proceedings of <span>DRS2006</span> <span>Wonderground</span></em>. Lisbon.
+</div>
+<div id="ref-brandt2007" class="csl-entry">
+Brandt, Eva. 2007. <span>“How <span>Tangible</span> <span>Mock</span>-<span>Ups</span> <span>Support</span> <span>Design</span> <span>Collaboration</span>.”</span> <em>Knowledge, Technology &amp; Policy</em> 20 (3): 179–92. <a href="https://doi.org/10.1007/s12130-007-9021-9">https://doi.org/10.1007/s12130-007-9021-9</a>.
+</div>
+<div id="ref-buchanan1992" class="csl-entry">
+———. 1992. <span>“Wicked Problems in Design Thinking.”</span> <em>Design Issues</em> 8 (2): 5–21.
+</div>
+<div id="ref-buchanan2001" class="csl-entry">
+———. 2001. <span>“Design Research and the New Learning.”</span> <em>Design Issues</em> 17 (4): 3–23.
+</div>
+<div id="ref-cila2017" class="csl-entry">
+Cila, Nazli, Iskander Smit, Elisa Giaccardi, and Ben Kröse. 2017. <span>“Products as Agents: <span>Metaphors</span> for Designing the Products of the <span>IoT</span> Age.”</span> In <em>Proceedings of the 2017 <span>CHI</span> <span>Conference</span> on <span>Human</span> <span>Factors</span> in <span>Computing</span> <span>Systems</span></em>, 448–59.
+</div>
+<div id="ref-cooper1995" class="csl-entry">
+Cooper, Rachel, and Mike Press. 1995. <em>The Design Agenda: <span>A</span> Guide to Successful Design Management</em>. Chichester ; New York: Wiley.
+</div>
+<div id="ref-coulton2019a" class="csl-entry">
+Coulton, Paul, Josepth Lindley, Adrian Gradinar, James Colley, Neelima Sailaja, Andy Crabtree, Ian Forrester, and Lianne Kerlin. 2019. <span>“Experiencing the Future Mundane.”</span> <a href="https://doi.org/10.6084/m9.figshare.7855790.v1">https://doi.org/10.6084/m9.figshare.7855790.v1</a>.
+</div>
+<div id="ref-cross2007" class="csl-entry">
+Cross, Nigel. 2007. <span>“Designerly Ways of Knowing. <span>Board</span> of International Research in Design.”</span> <em>Basel: Birkhiuser</em> 41.
+</div>
+<div id="ref-dewey1938" class="csl-entry">
+Dewey, John. 1938. <em>Logic: <span>The</span> Theory of Inquiry</em>. Henry Holt.
+</div>
+<div id="ref-downton2003" class="csl-entry">
+Downton, Peter. 2003. <em>Design Research</em>. Melbourne: RMIT Publishing.
+</div>
+<div id="ref-dubberly2017" class="csl-entry">
+Dubberly, Hugh. 2017. <span>“Connecting Things: <span>Broadening</span> Design to Include Systems, Platforms, and Product-Service Ecologies.”</span> In <em>Encountering <span>Things</span>: <span>Design</span> and <span>Theories</span> of <span>Things</span></em>, edited by Leslie Atzmon and Prasad Boradkar, 153–65. London Oxford New York: Bloomsbury Academic, an Imprint of Bloomsbury Publishing Plc.
+</div>
+<div id="ref-edelson2002" class="csl-entry">
+Edelson, Daniel C. 2002. <span>“Design <span>Research</span>: <span>What</span> <span>We</span> <span>Learn</span> <span>When</span> <span>We</span> <span>Engage</span> in <span>Design</span>.”</span> <em>Journal of the Learning Sciences</em> 11 (1): 105–21. <a href="https://doi.org/10.1207/S15327809JLS1101_4">https://doi.org/10.1207/S15327809JLS1101_4</a>.
+</div>
+<div id="ref-encinas2016" class="csl-entry">
+Encinas, Enrique, and Mark Blythe. 2016. <span>“The Solution Printer: <span>Magic</span> Realist Design Fiction.”</span> In <em>Proceedings of the 2016 <span>CHI</span> <span>Conference</span> <span>Extended</span> <span>Abstracts</span> on <span>Human</span> <span>Factors</span> in <span>Computing</span> <span>Systems</span></em>, 387–96. ACM.
+</div>
+<div id="ref-fairhead1988" class="csl-entry">
+Fairhead, James. 1988. <em>Design for <span>Corporate</span> <span>Culture</span>: <span>How</span> to <span>Build</span> a <span>Design</span> and <span>Innovation</span> <span>Culture</span> <span>Using</span> the <span>Practice</span> of <span>Leading</span> <span>International</span> <span>Companies</span> as <span>Examples</span>: <span>A</span> <span>Report</span></em>. National Economic Development Office.
+</div>
+<div id="ref-faste2012" class="csl-entry">
+Faste, Trygve, and Haakon Faste. 2012. <span>“Demystifying <span>‘<span>Design</span> Research’</span>: <span>Design</span> Is Not Research, Research Is Design.”</span> In <em><span>IDSA</span> <span>Education</span> <span>Symposium</span></em>, 2012:15.
+</div>
+<div id="ref-findeli1999" class="csl-entry">
+Findeli, A. 1999. <span>“Introduction: <span>Design</span> <span>Research</span> <span>Special</span> <span>Edition</span>.”</span> <em>Design Issues</em> 15 (2): 1–4.
+</div>
+<div id="ref-findeli2008" class="csl-entry">
+Findeli, Alain, Denis Brouillet, Sophie Martin, Christophe Moineau, and Richard Tarrago. 2008. <span>“Research Through Design and Transdisciplinarity: <span>A</span> Tentative Contribution to the Methodology of Design Research.”</span> In <em>Swiss <span>Design</span> <span>Network</span> <span>Symposium</span></em>, 67.
+</div>
+<div id="ref-frankel2010" class="csl-entry">
+Frankel, Lois, and Martin Racine. 2010. <span>“The Complex Field of Research: <span>For</span> Design, Through Design, and about Design.”</span> In <em>Proceedings of the <span>Design</span> <span>Research</span> <span>Society</span> (<span>DRS</span>) <span>International</span> <span>Conference</span></em>.
+</div>
+<div id="ref-frayling1993" class="csl-entry">
+Frayling, Christopher. 1993. <span>“Research in Art and Design.”</span> <em>Royal College of Art Research Papers</em> 1 (1): 1–5.
+</div>
+<div id="ref-friedman1992" class="csl-entry">
+Friedman, Ken. 1992. <span>“Strategic Design Taxonomy.”</span> <em>Oslo: Oslo Business School</em>.
+</div>
+<div id="ref-friedman2000" class="csl-entry">
+———. 2000. <span>“Creating Design Knowledge: <span>From</span> Research into Practice.”</span> <em>IDATER 2000</em> 1: 28.
+</div>
+<div id="ref-friedman2003" class="csl-entry">
+———. 2003. <span>“Theory Construction in Design Research: <span>Criteria</span>: <span>Approaches</span>, and Methods.”</span> <em>Design Studies</em> 24 (6): 507–22.
+</div>
+<div id="ref-friedman2008" class="csl-entry">
+———. 2008. <span>“Research into, by and for <span>Design</span>.”</span> <em>Journal of Visual Art Practice</em> 7 (2): 153–60.
+</div>
+<div id="ref-gaver2012" class="csl-entry">
+———. 2012. <span>“What Should We Expect from Research Through Design?”</span> In <em>Proceedings of the <span>SIGCHI</span> Conference on Human Factors in Computing Systems</em>, 937–46. ACM.
+</div>
+<div id="ref-gedenryd1998" class="csl-entry">
+Gedenryd, Henrik. 1998. <span>“How Designers Work: <span>Making</span> Sense of Authentic Cognitive Activities.”</span> PhD thesis, Sweden: Lund University.
+</div>
+<div id="ref-glanville1999" class="csl-entry">
+Glanville, Ranulph. 1999. <span>“Researching Design and Designing Research.”</span> <em>Design Issues</em> 15 (2): 80–91.
+</div>
+<div id="ref-godin2014" class="csl-entry">
+Godin, Danny, and Mithra Zahedi. 2014. <span>“Aspects of Research Through Design.”</span> <em>Proceedings of DRS 2014: Design’s Big Debates</em> 1: 1667–80.
+</div>
+<div id="ref-hatchuel2001" class="csl-entry">
+Hatchuel, Armand. 2001. <span>“Towards <span>Design</span> <span>Theory</span> and Expandable Rationality: <span>The</span> Unfinished Program of <span>Herbert</span> <span>Simon</span>.”</span> <em>Journal of Management and Governance</em> 5 (3/4): 260–73.
+</div>
+<div id="ref-hatchuel2004" class="csl-entry">
+Hatchuel, Armand, Pascal Le Masson, and Benoît Weil. 2004. <span>“<span>CK</span> Theory in Practice: <span>Lessons</span> from Industrial Applications.”</span> In <em>Proceedings of <span>DESIGN</span> 2004, the 8th <span>International</span> <span>Design</span> <span>Conference</span></em>, 245–58. Dubrovnik, Croatia.
+</div>
+<div id="ref-hatchuel2002" class="csl-entry">
+Hatchuel, Armand, and Benoît Weil. 2002. <span>“<span>CK</span> Theory.”</span> In <em>Proceedings of the <span>Herbert</span> <span>Simon</span> <span>International</span> <span>Conference</span> on <span>Design</span> <span>Sciences</span></em>, 15:1–16. Citeseer.
+</div>
+<div id="ref-hollins1991" class="csl-entry">
+Hollins, Gillian, and Bill Hollins. 1991. <em>Total <span>Design</span>: <span>Managing</span> the Design Process in the Service Sector</em>. Pitman.
+</div>
+<div id="ref-hook2012" class="csl-entry">
+Höök, Kristina, and Jonas Löwgren. 2012. <span>“Strong Concepts: <span>Intermediate</span>-<span>Level</span> Knowledge in Interaction Design Research.”</span> <em>ACM Transactions on Computer-Human Interaction (TOCHI)</em> 19 (3): 1–18.
+</div>
+<div id="ref-jonas2007" class="csl-entry">
+Jonas, Wolfgang. 2007. <span>“Design <span>Research</span> and Its <span>Meaning</span> to the <span>Methodological</span> <span>Development</span> of the <span>Discipline</span>.”</span> <em>Design Research Now</em>, 187–206.
+</div>
+<div id="ref-julier2013" class="csl-entry">
+Julier, Guy. 2013. <em>The Culture of Design</em>. Sage.
+</div>
+<div id="ref-lawson1990" class="csl-entry">
+Lawson, Bryan. 1990. <em>How Designers Think</em>. Butterworth Architecture.
+</div>
+<div id="ref-lindley2020" class="csl-entry">
+Lindley, Joseph, Haider Ali Akmal, and Paul Coulton. 2020. <span>“Design <span>Research</span> and <span>Object</span>-<span>Oriented</span> <span>Ontology</span>.”</span> <em>Open Philosophy</em> 3 (1): 11–41. <a href="https://doi.org/10.1515/opphil-2020-0002">https://doi.org/10.1515/opphil-2020-0002</a>.
+</div>
+<div id="ref-long1991" class="csl-entry">
+Long, John. 1991. <span>“Theory in Human-Computer Interaction?”</span> In <em><span>IEE</span> <span>Colloquium</span> on <span>Theory</span> in <span>Human</span>-<span>Computer</span> <span>Interaction</span> (<span>HCI</span>)</em>, 2–1. IET.
+</div>
+<div id="ref-muratovski2010" class="csl-entry">
+Muratovski, Gjoko. 2010. <span>“Design and <span>Design</span> <span>Research</span>: <span>The</span> <span>Conflict</span> Between the <span>Principles</span> in <span>Design</span> <span>Education</span> and <span>Practices</span> in <span>Industry</span>.”</span> <em>Design Principles &amp; Practices</em> 4 (2): 377–86.
+</div>
+<div id="ref-norman2002" class="csl-entry">
+Norman, Don A. 2002. <em>The <span>Design</span> of <span>Everyday</span> <span>Things</span></em>. <a href="http://scholar.google.com/scholar?q=related:F7KhLFU3WOsJ:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5">http://scholar.google.com/scholar?q=related:F7KhLFU3WOsJ:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5</a>.
+</div>
+<div id="ref-pye1978" class="csl-entry">
+Pye, David. 1978. <span>“The Nature and Aesthetics of Design.”</span> <em>New York</em>.
+</div>
+<div id="ref-rittel1973" class="csl-entry">
+Rittel, Horst WJ, and Melvin M. Webber. 1973. <span>“Dilemmas in a General Theory of Planning.”</span> <em>Policy Sciences</em> 4 (2): 155–69.
+</div>
+<div id="ref-rose2015" class="csl-entry">
+Rose, David. 2015. <em>Enchanted Objects: <span>Innovation</span>, Design, and the Future of Technology</em>. 1. Scribner trade paperback ed. New York London Toronto Sydney New Delhi: Scribner.
+</div>
+<div id="ref-roy1986" class="csl-entry">
+Roy, Robin. 1986. <span>“Meanings of Design and Innovation.”</span> <em>Roy R, Wield D (Coords), Product Design and Technological Innovation. Open University Press, Milton Keynes</em>, 2–7.
+</div>
+<div id="ref-sanders2008" class="csl-entry">
+Sanders, Liz. 2008. <span>“An Evolving Map of Design Practice and Design Research.”</span> <em>Interactions</em> 15 (6): 1–7.
+</div>
+<div id="ref-schon1983" class="csl-entry">
+Schön, D. A. 1983. <em>The <span>Reflective</span> <span>Practitioner</span>: <span>How</span> <span>Professionals</span> <span>Think</span> in <span>Action</span></em>. USA: Basic Book Inc.
+</div>
+<div id="ref-simon1995" class="csl-entry">
+Simon, Herbert A. 1995. <span>“Problem Forming, Problem Finding, and Problem Solving in Design.”</span> In, edited by A Collen and W. W. Gasparski, 3:245–57. New Brunswick, NJ: Transaction Publishers.
+</div>
+<div id="ref-stappers2007" class="csl-entry">
+Stappers, Pieter Jan. 2007. <span>“Doing Design as a Part of Doing Research.”</span> In <em>Design Research Now</em>, 81–91. Springer.
+</div>
+<div id="ref-stappers2014" class="csl-entry">
+Stappers, Pieter Jan, F. Sleeswijk Visser, and A. I. Keller. 2014. <span>“The Role of Prototypes and Frameworks for Structuring Explorations by Research Through Design.”</span> In <em>The <span>Routledge</span> <span>Companion</span> to <span>Design</span> <span>Research</span></em>, edited by J Yee and P Rodgers, 163–74. Taylor &amp; Francis.
+</div>
+<div id="ref-swann2002" class="csl-entry">
+Swann, Cal. 2002. <span>“Action Research and the Practice of Design.”</span> <em>Design Issues</em> 18 (1): 49–61.
+</div>
+<div id="ref-thomas1979" class="csl-entry">
+Thomas, John C., and John M. Carroll. 1979. <span>“The Psychological Study of Design.”</span> <em>Design Studies</em> 1 (1): 5–11.
+</div>
+<div id="ref-toeters2013" class="csl-entry">
+Toeters, Marina, Martijn ten Bhömer, Eliza Bottenberg, Oscar Tomico, and Ger Brinks. 2013. <span>“Research Through Design: <span>A</span> Way to Drive Innovative Solutions in the Field of Smart Textiles.”</span> In <em>Advances in <span>Science</span> and <span>Technology</span></em>, 80:112–17. Trans Tech Publ.
+</div>
+<div id="ref-walker1989" class="csl-entry">
+Walker, David, B. Dagger, and R. Roy. 1989. <em>Managing Design</em>. Open University Press.
+</div>
+<div id="ref-weibel2005" class="csl-entry">
+Weibel, Peter, and Bruno Latour. 2005. <em>Making Things Public: <span>Atmospheres</span> of Democracy</em>.
+</div>
+<div id="ref-zimmerman2007" class="csl-entry">
+Zimmerman, John, Jodi Forlizzi, and Shelley Evenson. 2007. <span>“Research Through Design as a Method for Interaction Design Research in <span>HCI</span>.”</span> In <em>Proceedings of the <span>SIGCHI</span> Conference on <span>Human</span> Factors in Computing Systems</em>, 493–502.
+</div>
+<div id="ref-zimmerman2010" class="csl-entry">
+Zimmerman, John, Erik Stolterman, and Jodi Forlizzi. 2010. <span>“An Analysis and Critique of <span>Research</span> Through <span>Design</span>: <span>Towards</span> a Formalization of a Research Approach.”</span> In <em>Proceedings of the 8th <span>ACM</span> Conference on Designing Interactive Systems</em>, 310–19. ACM.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Chapter4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/015-chapter5.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
