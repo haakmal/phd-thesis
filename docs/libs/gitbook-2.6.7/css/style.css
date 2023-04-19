@@ -2997,6 +2997,9 @@ table {
 .book .book-body .page-wrapper .page-inner section.normal tr {
     page-break-inside: avoid;
 }
+.book .book-body .page-wrapper .page-inner section.normal img {
+    text-align: center;
+}
 .book .book-body .page-wrapper .page-inner section.normal h2,
 .book .book-body .page-wrapper .page-inner section.normal h3,
 .book .book-body .page-wrapper .page-inner section.normal h4,
