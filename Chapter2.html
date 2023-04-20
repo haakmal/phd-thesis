@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Scaffolding | Design by Play</title>
+  <meta name="description" content="Chapter 2 Scaffolding | Design by Play" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Scaffolding | Design by Play" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Scaffolding | Design by Play" />
+  
+  
+  
+
+<meta name="author" content="Haider Ali Akmal" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Chapter1.html"/>
+<link rel="next" href="Chapter3.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Design by Play</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Note from Author</a></li>
+<li class="part"><span><b>Preface</b></span></li>
+<li class="chapter" data-level="" data-path="declaration.html"><a href="declaration.html"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="dedication.html"><a href="dedication.html"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="quote.html"><a href="quote.html"><i class="fa fa-check"></i>Quote</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="Chapter1.html"><a href="Chapter1.html"><i class="fa fa-check"></i><b>1</b> An Unorthodox Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter1.html"><a href="Chapter1.html#a-starting-point"><i class="fa fa-check"></i><b>1.1</b> A starting point</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="Chapter1.html"><a href="Chapter1.html#fish-out-of-water"><i class="fa fa-check"></i><b>1.1.1</b> Fish out of water</a></li>
+<li class="chapter" data-level="1.1.2" data-path="Chapter1.html"><a href="Chapter1.html#surrounded-by-technology"><i class="fa fa-check"></i><b>1.1.2</b> Surrounded by technology</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="Chapter1.html"><a href="Chapter1.html#of-pasts-and-presents"><i class="fa fa-check"></i><b>1.2</b> Of Pasts and Presents</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="Chapter1.html"><a href="Chapter1.html#growing-up-around-play"><i class="fa fa-check"></i><b>1.2.1</b> Growing up around play</a></li>
+<li class="chapter" data-level="1.2.2" data-path="Chapter1.html"><a href="Chapter1.html#art-design-and-philosophy"><i class="fa fa-check"></i><b>1.2.2</b> Art, Design, and Philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="Chapter1.html"><a href="Chapter1.html#in-closing"><i class="fa fa-check"></i><b>1.3</b> In closing</a></li>
+</ul></li>
+<li class="part"><span><b>II Foundations</b></span></li>
+<li class="chapter" data-level="2" data-path="Chapter2.html"><a href="Chapter2.html"><i class="fa fa-check"></i><b>2</b> Scaffolding</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter2.html"><a href="Chapter2.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter2.html"><a href="Chapter2.html#steppingstones-into-post-modern-humanities"><i class="fa fa-check"></i><b>2.2</b> Steppingstones into post-modern humanities</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="Chapter2.html"><a href="Chapter2.html#transdisciplinary-design-research"><i class="fa fa-check"></i><b>2.2.1</b> Transdisciplinary Design Research</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Chapter2.html"><a href="Chapter2.html#crafting-trandisciplinary-assemblages"><i class="fa fa-check"></i><b>2.2.2</b> Crafting Trandisciplinary Assemblages</a></li>
+<li class="chapter" data-level="2.2.3" data-path="Chapter2.html"><a href="Chapter2.html#transcending-method-through-design"><i class="fa fa-check"></i><b>2.2.3</b> Transcending method through Design</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="Chapter2.html"><a href="Chapter2.html#how-to-use-this-thesis"><i class="fa fa-check"></i><b>2.3</b> How to use this Thesis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>3</b> Seeing Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter3.html"><a href="Chapter3.html#a-case-for-and-against-an-internet-of-things"><i class="fa fa-check"></i><b>3.1</b> A case for (and against) an Internet of Things</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="Chapter3.html"><a href="Chapter3.html#defining-iot"><i class="fa fa-check"></i><b>3.1.1</b> Defining IoT</a></li>
+<li class="chapter" data-level="3.1.2" data-path="Chapter3.html"><a href="Chapter3.html#interacting-with-iot"><i class="fa fa-check"></i><b>3.1.2</b> Interacting with IoT</a></li>
+<li class="chapter" data-level="3.1.3" data-path="Chapter3.html"><a href="Chapter3.html#the-disillusionment-of-living-in-iot"><i class="fa fa-check"></i><b>3.1.3</b> The disillusionment of living in IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="Chapter3.html"><a href="Chapter3.html#approaching-an-alternative-perspective-for-design-in-iot"><i class="fa fa-check"></i><b>3.2</b> Approaching an alternative perspective for Design in IoT</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="Chapter3.html"><a href="Chapter3.html#changing-perspectives"><i class="fa fa-check"></i><b>3.2.1</b> Changing perspectives</a></li>
+<li class="chapter" data-level="3.2.2" data-path="Chapter3.html"><a href="Chapter3.html#metaphorically-speaking"><i class="fa fa-check"></i><b>3.2.2</b> Metaphorically speaking</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="Chapter3.html"><a href="Chapter3.html#conclusion"><i class="fa fa-check"></i><b>3.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>4</b> Being Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Chapter4.html"><a href="Chapter4.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="Chapter4.html"><a href="Chapter4.html#a-philosophical-interlude"><i class="fa fa-check"></i><b>4.1.1</b> A Philosophical Interlude</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="Chapter4.html"><a href="Chapter4.html#understanding-things-on-and-not-on-the-internet"><i class="fa fa-check"></i><b>4.2</b> Understanding <em>Things</em> on (and not on) the Internet</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="Chapter4.html"><a href="Chapter4.html#phenomenologically-speaking"><i class="fa fa-check"></i><b>4.2.1</b> Phenomenologically speaking</a></li>
+<li class="chapter" data-level="4.2.2" data-path="Chapter4.html"><a href="Chapter4.html#towards-an-object-oriented-ontology"><i class="fa fa-check"></i><b>4.2.2</b> Towards an Object-Oriented Ontology</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="Chapter4.html"><a href="Chapter4.html#object-oriented-ontology"><i class="fa fa-check"></i><b>4.3</b> Object-Oriented Ontology</a></li>
+<li class="chapter" data-level="4.4" data-path="Chapter4.html"><a href="Chapter4.html#concluding-on-a-post-anthropocentric-perspective-for-design"><i class="fa fa-check"></i><b>4.4</b> Concluding on a post-anthropocentric perspective for Design</a></li>
+</ul></li>
+<li class="part"><span><b>Methodologies</b></span></li>
+<li class="chapter" data-level="5" data-path="Chapter5.html"><a href="Chapter5.html"><i class="fa fa-check"></i><b>5</b> Design Research</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Chapter5.html"><a href="Chapter5.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="Chapter5.html"><a href="Chapter5.html#doing-design-research"><i class="fa fa-check"></i><b>5.2</b> Doing Design Research</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="Chapter5.html"><a href="Chapter5.html#defining-design"><i class="fa fa-check"></i><b>5.2.1</b> Defining Design</a></li>
+<li class="chapter" data-level="5.2.2" data-path="Chapter5.html"><a href="Chapter5.html#defining-research"><i class="fa fa-check"></i><b>5.2.2</b> Defining Research</a></li>
+<li class="chapter" data-level="5.2.3" data-path="Chapter5.html"><a href="Chapter5.html#the-object-of-design"><i class="fa fa-check"></i><b>5.2.3</b> The Object of Design</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="Chapter5.html"><a href="Chapter5.html#research-through-design"><i class="fa fa-check"></i><b>5.3</b> Research through Design</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="Chapter5.html"><a href="Chapter5.html#approaching-research-through-design"><i class="fa fa-check"></i><b>5.3.1</b> Approaching Research through Design</a></li>
+<li class="chapter" data-level="5.3.2" data-path="Chapter5.html"><a href="Chapter5.html#practice-based-research"><i class="fa fa-check"></i><b>5.3.2</b> Practice-based Research</a></li>
+<li class="chapter" data-level="5.3.3" data-path="Chapter5.html"><a href="Chapter5.html#ideology-or-methodology"><i class="fa fa-check"></i><b>5.3.3</b> Ideology or Methodology?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="Chapter5.html"><a href="Chapter5.html#conclusions"><i class="fa fa-check"></i><b>5.4</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Chapter6.html"><a href="Chapter6.html"><i class="fa fa-check"></i><b>6</b> Playfully Designing for Things</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter6.html"><a href="Chapter6.html#defining-play"><i class="fa fa-check"></i><b>6.2</b> Defining Play</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="Chapter6.html"><a href="Chapter6.html#what-is-play"><i class="fa fa-check"></i><b>6.2.1</b> What is Play?</a></li>
+<li class="chapter" data-level="6.2.2" data-path="Chapter6.html"><a href="Chapter6.html#playgrounds-for-play"><i class="fa fa-check"></i><b>6.2.2</b> Playgrounds for Play</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="Chapter6.html"><a href="Chapter6.html#design-and-playfulness"><i class="fa fa-check"></i><b>6.3</b> Design and Playfulness</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="Chapter6.html"><a href="Chapter6.html#returning-to-playfulness"><i class="fa fa-check"></i><b>6.3.1</b> Returning to Playfulness</a></li>
+<li class="chapter" data-level="6.3.2" data-path="Chapter6.html"><a href="Chapter6.html#ludic-design"><i class="fa fa-check"></i><b>6.3.2</b> Ludic Design</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="Chapter6.html"><a href="Chapter6.html#designing-curious-philosophical-artefacts"><i class="fa fa-check"></i><b>6.4</b> Designing Curious Philosophical Artefacts</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter6.html"><a href="Chapter6.html#speculating-over-definitions"><i class="fa fa-check"></i><b>6.4.1</b> Speculating over definitions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="Chapter6.html"><a href="Chapter6.html#carpentry"><i class="fa fa-check"></i><b>6.5</b> Carpentry</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Chapter6.html"><a href="Chapter6.html#getting-your-hands-dirty-with-philosophy"><i class="fa fa-check"></i><b>6.5.1</b> Getting your hands dirty with philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="Chapter6.html"><a href="Chapter6.html#a-combined-methodological-framework"><i class="fa fa-check"></i><b>6.6</b> A combined methodological framework</a></li>
+<li class="chapter" data-level="6.7" data-path="Chapter6.html"><a href="Chapter6.html#conclusions-1"><i class="fa fa-check"></i><b>6.7</b> Conclusions</a></li>
+</ul></li>
+<li class="part"><span><b>III Doing Carpentry</b></span></li>
+<li class="chapter" data-level="7" data-path="Chapter7.html"><a href="Chapter7.html"><i class="fa fa-check"></i><b>7</b> A Model for a Philosophical View of IoT</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#introduction-4"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#iot-as-a-spatial-phenomenon"><i class="fa fa-check"></i><b>7.2</b> IoT as a spatial phenomenon</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="Chapter7.html"><a href="Chapter7.html#the-division-of-space"><i class="fa fa-check"></i><b>7.2.1</b> The division of space</a></li>
+<li class="chapter" data-level="7.2.2" data-path="Chapter7.html"><a href="Chapter7.html#reconfiguring-insides-and-outsides-as-heterotopia"><i class="fa fa-check"></i><b>7.2.2</b> Reconfiguring Insides and Outsides as Heterotopia</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#crafting-a-model-for-a-philosophical-view-of-iot"><i class="fa fa-check"></i><b>7.3</b> Crafting a Model for a Philosophical View of IoT</a></li>
+<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#discussion-and-conclusion"><i class="fa fa-check"></i><b>7.4</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> Playing with the IoT</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter8.html"><a href="Chapter8.html#introduction-5"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter8.html"><a href="Chapter8.html#creating-a-foundation-for-approaching-game-design"><i class="fa fa-check"></i><b>8.2</b> Creating a foundation for approaching Game Design</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="Chapter8.html"><a href="Chapter8.html#play-and-rhetoric"><i class="fa fa-check"></i><b>8.2.1</b> Play and Rhetoric</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="Chapter8.html"><a href="Chapter8.html#carpentering-the-internet-of-things-board-game"><i class="fa fa-check"></i><b>8.3</b> Carpentering the Internet of Things Board Game</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="Chapter8.html"><a href="Chapter8.html#exploration-phase"><i class="fa fa-check"></i><b>8.3.1</b> Exploration Phase</a></li>
+<li class="chapter" data-level="8.3.2" data-path="Chapter8.html"><a href="Chapter8.html#reflection-phase"><i class="fa fa-check"></i><b>8.3.2</b> Reflection Phase</a></li>
+<li class="chapter" data-level="8.3.3" data-path="Chapter8.html"><a href="Chapter8.html#redux"><i class="fa fa-check"></i><b>8.3.3</b> Redux</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="Chapter8.html"><a href="Chapter8.html#discussion-1"><i class="fa fa-check"></i><b>8.4</b> Discussion</a></li>
+<li class="chapter" data-level="8.5" data-path="Chapter8.html"><a href="Chapter8.html#wrapping-up"><i class="fa fa-check"></i><b>8.5</b> Wrapping Up</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="Chapter9.html"><a href="Chapter9.html"><i class="fa fa-check"></i><b>9</b> Predicting futures in the IoT</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter9.html"><a href="Chapter9.html#introduction-6"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter9.html"><a href="Chapter9.html#philosophical-foundations"><i class="fa fa-check"></i><b>9.2</b> Philosophical Foundations</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="Chapter9.html"><a href="Chapter9.html#the-perception-of-technology-and-post-phenomenology"><i class="fa fa-check"></i><b>9.2.1</b> The Perception of Technology and Post-Phenomenology</a></li>
+<li class="chapter" data-level="9.2.2" data-path="Chapter9.html"><a href="Chapter9.html#human-technology-relations-as-perceptual-illusions"><i class="fa fa-check"></i><b>9.2.2</b> Human-Technology Relations as Perceptual Illusions</a></li>
+<li class="chapter" data-level="9.2.3" data-path="Chapter9.html"><a href="Chapter9.html#quantum-causation-for-iot"><i class="fa fa-check"></i><b>9.2.3</b> Quantum Causation for IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="Chapter9.html"><a href="Chapter9.html#carpentering-the-supernatural-iot"><i class="fa fa-check"></i><b>9.3</b> Carpentering the Supernatural IoT</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="Chapter9.html"><a href="Chapter9.html#designing-the-deck"><i class="fa fa-check"></i><b>9.3.1</b> Designing the Deck</a></li>
+<li class="chapter" data-level="9.3.2" data-path="Chapter9.html"><a href="Chapter9.html#scanning-the-stars-with-software"><i class="fa fa-check"></i><b>9.3.2</b> Scanning the Stars with Software</a></li>
+<li class="chapter" data-level="9.3.3" data-path="Chapter9.html"><a href="Chapter9.html#a-tarot-of-things"><i class="fa fa-check"></i><b>9.3.3</b> A Tarot of Things</a></li>
+<li class="chapter" data-level="9.3.4" data-path="Chapter9.html"><a href="Chapter9.html#madame-bitsys-emporium"><i class="fa fa-check"></i><b>9.3.4</b> Madame Bitsy’s Emporium</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="Chapter9.html"><a href="Chapter9.html#feedback"><i class="fa fa-check"></i><b>9.4</b> Feedback</a></li>
+<li class="chapter" data-level="9.5" data-path="Chapter9.html"><a href="Chapter9.html#discussion-and-conclusion-1"><i class="fa fa-check"></i><b>9.5</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="part"><span><b>IV Moving Forwards</b></span></li>
+<li class="chapter" data-level="10" data-path="Chapter10.html"><a href="Chapter10.html"><i class="fa fa-check"></i><b>10</b> Discussions and Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter10.html"><a href="Chapter10.html#the-living-internet-of-things"><i class="fa fa-check"></i><b>10.1</b> The Living Internet of Things</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="Chapter10.html"><a href="Chapter10.html#is-this-discussion-about-privacy-and-security-in-iot"><i class="fa fa-check"></i><b>10.1.1</b> Is this discussion about privacy and security in IoT?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="Chapter10.html"><a href="Chapter10.html#going-beyond-human-centred-design"><i class="fa fa-check"></i><b>10.1.2</b> Going beyond Human-Centred Design</a></li>
+<li class="chapter" data-level="10.1.3" data-path="Chapter10.html"><a href="Chapter10.html#is-this-a-transhumanist-argument"><i class="fa fa-check"></i><b>10.1.3</b> Is this a transhumanist argument?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="Chapter10.html"><a href="Chapter10.html#the-mantra-of-playfulness"><i class="fa fa-check"></i><b>10.2</b> The Mantra of Playfulness</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="Chapter10.html"><a href="Chapter10.html#being-a-playful-philosopher-designer"><i class="fa fa-check"></i><b>10.2.1</b> Being a playful philosopher-designer</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="Chapter10.html"><a href="Chapter10.html#in-closing-1"><i class="fa fa-check"></i><b>10.3</b> In closing</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="AppendixA.html"><a href="AppendixA.html"><i class="fa fa-check"></i><b>A</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="AppendixA.html"><a href="AppendixA.html#game-design-definitions-and-terminologies"><i class="fa fa-check"></i><b>A.1</b> Game Design Definitions and Terminologies</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="AppendixB.html"><a href="AppendixB.html"><i class="fa fa-check"></i><b>B</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="AppendixB.html"><a href="AppendixB.html#the-internet-of-things-board-game-explored"><i class="fa fa-check"></i><b>B.1</b> The Internet of Things Board Game Explored</a></li>
+<li class="chapter" data-level="B.2" data-path="AppendixB.html"><a href="AppendixB.html#backstory91"><i class="fa fa-check"></i><b>B.2</b> Backstory</a></li>
+<li class="chapter" data-level="B.3" data-path="AppendixB.html"><a href="AppendixB.html#game-objective"><i class="fa fa-check"></i><b>B.3</b> Game Objective</a></li>
+<li class="chapter" data-level="B.4" data-path="AppendixB.html"><a href="AppendixB.html#setup"><i class="fa fa-check"></i><b>B.4</b> Play Setup</a></li>
+<li class="chapter" data-level="B.5" data-path="AppendixB.html"><a href="AppendixB.html#phases-of-play94"><i class="fa fa-check"></i><b>B.5</b> Phases of Play</a></li>
+<li class="chapter" data-level="B.6" data-path="AppendixB.html"><a href="AppendixB.html#tiles"><i class="fa fa-check"></i><b>B.6</b> Understanding the Tiles</a></li>
+<li class="chapter" data-level="B.7" data-path="AppendixB.html"><a href="AppendixB.html#avatars"><i class="fa fa-check"></i><b>B.7</b> Avatars</a></li>
+<li class="chapter" data-level="B.8" data-path="AppendixB.html"><a href="AppendixB.html#rolls"><i class="fa fa-check"></i><b>B.8</b> Rolling Dice</a>
+<ul>
+<li class="chapter" data-level="B.8.1" data-path="AppendixB.html"><a href="AppendixB.html#attack"><i class="fa fa-check"></i><b>B.8.1</b> Doing an Attack Roll</a></li>
+<li class="chapter" data-level="B.8.2" data-path="AppendixB.html"><a href="AppendixB.html#random"><i class="fa fa-check"></i><b>B.8.2</b> Randomisation</a></li>
+</ul></li>
+<li class="chapter" data-level="B.9" data-path="AppendixB.html"><a href="AppendixB.html#decks"><i class="fa fa-check"></i><b>B.9</b> Understanding and Reading Cards</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="AppendixB.html"><a href="AppendixB.html#items"><i class="fa fa-check"></i><b>B.9.1</b> Items Deck</a></li>
+<li class="chapter" data-level="B.9.2" data-path="AppendixB.html"><a href="AppendixB.html#risks"><i class="fa fa-check"></i><b>B.9.2</b> Risks Deck</a></li>
+<li class="chapter" data-level="B.9.3" data-path="AppendixB.html"><a href="AppendixB.html#privacy"><i class="fa fa-check"></i><b>B.9.3</b> Privacy Deck</a></li>
+<li class="chapter" data-level="B.9.4" data-path="AppendixB.html"><a href="AppendixB.html#daemons"><i class="fa fa-check"></i><b>B.9.4</b> Daemons Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="B.10" data-path="AppendixB.html"><a href="AppendixB.html#connections"><i class="fa fa-check"></i><b>B.10</b> Making Connections</a></li>
+<li class="chapter" data-level="B.11" data-path="AppendixB.html"><a href="AppendixB.html#risk-check"><i class="fa fa-check"></i><b>B.11</b> Conducting Risk Checks</a></li>
+<li class="chapter" data-level="B.12" data-path="AppendixB.html"><a href="AppendixB.html#tokens"><i class="fa fa-check"></i><b>B.12</b> Tokens</a></li>
+<li class="chapter" data-level="B.13" data-path="AppendixB.html"><a href="AppendixB.html#resolve"><i class="fa fa-check"></i><b>B.13</b> Resolves and Other Actions</a></li>
+<li class="chapter" data-level="B.14" data-path="AppendixB.html"><a href="AppendixB.html#delayed"><i class="fa fa-check"></i><b>B.14</b> Being Delayed</a></li>
+<li class="chapter" data-level="B.15" data-path="AppendixB.html"><a href="AppendixB.html#rest"><i class="fa fa-check"></i><b>B.15</b> Resting</a></li>
+<li class="chapter" data-level="B.16" data-path="AppendixB.html"><a href="AppendixB.html#databox"><i class="fa fa-check"></i><b>B.16</b> Databoxes</a></li>
+<li class="chapter" data-level="B.17" data-path="AppendixB.html"><a href="AppendixB.html#threat-tracker"><i class="fa fa-check"></i><b>B.17</b> Threat Tracker</a></li>
+<li class="chapter" data-level="B.18" data-path="AppendixB.html"><a href="AppendixB.html#end"><i class="fa fa-check"></i><b>B.18</b> End of the Game</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="AppendixC.html"><a href="AppendixC.html"><i class="fa fa-check"></i><b>C</b> Appendix C</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="AppendixC.html"><a href="AppendixC.html#the-tarot-of-things-deck"><i class="fa fa-check"></i><b>C.1</b> The Tarot of Things Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Design by Play</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter2" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Scaffolding<a href="Chapter2.html#Chapter2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>“Sometimes I’ll start a sentence, and I don't even know where it’s going. I just hope I find it along the way. Like an improv conversation. An improversation.”</p>
+<p>— Michael Scott (played by Steve Carell) from <em>The Office</em>, Season 5 Episode 11</p>
+</blockquote>
+<div id="introduction" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introduction<a href="Chapter2.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The IoT has evolved much faster than my younger self could ever have imagined. I have a smart assistant in my house that my spouse and I play trivia with, which is in addition to its core household use as the timer for chips in the oven. The previous chapters’ stroll through the past only briefly mentioned one of the core aspects of this research: using philosophy to provide a design lens for my practice—at least where my playful attitude towards designing for IoT is of concern. Before touching on the philosophical aspect of this research though, this chapter explores some key questions I intend to address in this thesis. It also prepares a scaffolding for the methodologies I incorporate in my research journey.</p>
+<p>This document does not take on the garb of a traditional doctoral research manuscript. In the coming text, a more detailed analysis of why this is the case will become clear. The journey of this research bends around different corners, stopping in different locations to collect knowledge before revealing its destination. Whilst the previous chapter explored the background this chapter explains the structure, defining why this work differs from more conventional doctoral research expressions. Subsequent chapters will delve deeper into philosophy, playfulness, design, and IoT.</p>
+<p>First, any research conducted must ask key questions relating to its topic of concern. As discussed in the previous chapter, this research brings about a two pronged argument: the presence of <em>playfulness</em> and <em>philosophy</em> within a research through design approach towards IoT. In the process it brings together alternative speculative framings in an attempt at challenging orthodox HCD practices for the design of IoT systems. In this vein it also approaches problem spaces in light of prior research. Problems that could be attributed to established non-object-centred approaches such as HCD. The discussion invokes a philosophical carpentry of artefacts intended to act as playful appropriations of viewing IoT differently, hence the second prong of philosophy certainly must be part of the broad set question this research addresses. That said, as previously mentioned the discussion of manifesting a playful attitude within the design process is an important facet of this research as well, ergo restricting my research question towards IoT alone would limit the insights the research through design practice documented in this thesis reveals.</p>
+<p>While this research is intended towards designers interested in practice-based methods towards problem solving IoT, its playful roots and attitude are what truly drive the discussion forward. IoT here was the subject of research coming from PETRAS and acts as the locus of this discourse. It could just as well be substituted for other topics that this playful practice-based approach may be equally helpful in facilitating. Therefore, the broad question this research intends to answer becomes:</p>
+<blockquote>
+<p><strong>Q.</strong> How does a playful research through design process manifest itself within performing philosophical carpentry to create artefacts to be experienced by a diverse audience?</p>
+</blockquote>
+<p>This broad question sets the agenda for conducting the explorative design research considered in this thesis. Specific sub-questions emerge through the course of the work which attempt to address the different areas of interest in coming chapters. This is done through a practice-based exploratory approach at problem solving key areas of focus in IoT. In the process I present an approach of conducting philosophical inquiry through a metaphorical carpentry. As the main philosophy explored in this thesis is Object-Oriented Ontology (OOO) which argues for a more-than human non-anthropocentric world view—further details in <a href="Chapter4.html#Chapter4">Chapter 4</a>—this thesis may also be seen as a way of presenting carpentry as a means to answer the core question of this research into manifesting playfulness within design processes towards a more-than human world view. The sub-questions in this regard are:</p>
+<ol style="list-style-type: decimal">
+<li><p>Is it possible to highlight potential problematic effects emanating off IoT products and services approaches through an object-oriented lens?</p></li>
+<li><p>How does an attitude of playfulness occur in this research through design activity?</p></li>
+<li><p>How can the philosophical foundations of a proposed non-anthropocentric IoT be manifested in RtD artefacts?</p></li>
+</ol>
+<p>Each sub-question is addressed in varying degrees in the coming chapters with some presenting their own internal questions for the designed artefacts. It should be noted here that though philosophy is mentioned in the questions, this research is not <em>‘on’</em> philosophy rather it uses philosophical discourse as a lens for the design processes. It represents an attempt at presenting a playful attitude towards design with a focus on designing for IoT in a more-than human world-view. Putting these core research questions aside for the moment I will now address why this research is structured the way it is.</p>
+</div>
+<div id="steppingstones-into-post-modern-humanities" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Steppingstones into post-modern humanities<a href="Chapter2.html#steppingstones-into-post-modern-humanities" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A thesis or dissertation of academic stature requires the grounding of any conceptual discourse in established ideas from a scholarly community. These bodies of work most commonly take on the form of a review of literature in subsequently related, and at times disparate, fields of research. The generally accepted definition of research is the crafting of knowledge through systemic investigation, where knowledge is generated by the combination of information and analysis. <span class="citation">Webster and Watson (<a href="#ref-webster2002" role="doc-biblioref">2002, xiii</a>)</span> believe, that the efficacy of a review establishes strong foundations for the “advancing of knowledge”. Facilitating the development of theory and unearthing hidden avenues of further research. Quoting <span class="citation">Dudley-Evans (<a href="#ref-dudley-evans1999" role="doc-biblioref">1999</a>)</span> and <span class="citation">Thompson (<a href="#ref-thompson1999" role="doc-biblioref">1999</a>)</span> on the variations in approaches towards theses and dissertations, <span class="citation">Paltridge (<a href="#ref-paltridge2002" role="doc-biblioref">2002, 132</a>)</span> examines the differences between conventional methods of doctoral thesis writing and their real-world practice. As a result, the traditional approach to structuring a thesis has evolved to incorporate an array of approaches; some of which Paltridge explores in his paper. He defines the traditional pattern as a “simple” one, involving a “macro-structure” taking on a generic format of an introduction followed by a literature review, a methodology, ending in findings, and a conclusion as the result of some discussion.</p>
+<p>Where this defines his view of a “traditional pattern” in thesis writing, a more complex structure he claims is required for the study of more than one topic <span class="citation">(<a href="#ref-paltridge2002" role="doc-biblioref">Paltridge 2002, 132</a>)</span>. Other sources bring to light alternate methods of thesis writing, which include a topical approach <span class="citation">(<a href="#ref-dudley-evans1999" role="doc-biblioref">Dudley-Evans 1999</a>)</span>, and a thesis as a collection of published research articles <span class="citation">(<a href="#ref-dong1998" role="doc-biblioref">Dong 1998</a>)</span>. Where the former bifurcates a topic into relevant subtopics, the latter is a more audience-centric approach meant for experts in a field <span class="citation">(<a href="#ref-paltridge2002" role="doc-biblioref">Paltridge 2002, 132</a>)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:evolution"></span>
+<img src="figures/ch2-res_evolve.png" alt=" @jensenius2012 presents the evolution of research approaches which may be visualised as moving away from conventional means of research towards transdisciplinary perspectives."  />
+<p class="caption">
+Figure 2.1:  <span class="citation">Jensenius (<a href="#ref-jensenius2012" role="doc-biblioref">2012</a>)</span> presents the evolution of research approaches which may be visualised as moving away from conventional means of research towards transdisciplinary perspectives.
+</p>
+</div>
+<p>Though research articles of the social sciences often conform to standards established by scientific research, <span class="citation">Stember (<a href="#ref-stember1991" role="doc-biblioref">1991</a>)</span> points out the influence of academic disciplines in research and calls for advancement in social sciences through an interdisciplinary research approach. <span class="citation">Gibbons et al. (<a href="#ref-gibbons1994" role="doc-biblioref">1994, 1–2</a>)</span> see this as a transition of knowledge production from <em>Mode 1</em> to <em>Mode 2</em>, where the former equates to traditional understandings of research and knowledge production, i.e. scientific research or Newtonian models, the latter approaches ideals of trans-disciplinarity. Appropriating Zeigler’s 1990 model for differentiating between research methods, in an attempt to understand this <span class="citation">Jensenius (<a href="#ref-jensenius2012" role="doc-biblioref">2012</a>)</span> presents a broader model that offers an evolutionary view of research approaches (Fig. <a href="Chapter2.html#fig:evolution">2.1</a>). In this model, five major modes of research are plotted:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Intradisciplinary</strong> when working within a single discipline with no overlaps</p></li>
+<li><p><strong>Multidisciplinary</strong> when collaborating between different disciplines, such as the invention of the defibrillator which can be seen as a combination of biology, chemistry, and electric engineering</p></li>
+<li><p><strong>Crossdisciplinary</strong> when viewing a discipline from the perspective of another, e.g. genetics</p></li>
+<li><p><strong>Interdisciplinary</strong> when integrating knowledge from different disciplines through synthesis, such as how literature is a synthesis of history, anthropology, science, etc.</p></li>
+<li><p><strong>Transdisciplinary</strong> when creating a unity of intellectual frameworks beyond disciplinary perspectives, e.g. studies in sustainability often transcend knowledge from areas of concern</p></li>
+</ol>
+<p>Presenting these major modalities of research in this manner reveals an evolution of research practice moving away from conventional approaches. On this, <span class="citation">Hodge (<a href="#ref-hodge1995" role="doc-biblioref">1995, 35</a>)</span> presents an argument for a “revolution” in social science research, which he calls the “New Humanities” or <em>“Post-modern Humanities”</em>. In his text he speaks of the trans-disciplinary nature of post-modern humanities as abnormalities to be studied and explored encouraging avant-garde approaches towards knowledge production.</p>
+<div id="transdisciplinary-design-research" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Transdisciplinary Design Research<a href="Chapter2.html#transdisciplinary-design-research" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the context of design <span class="citation">Boradkar (<a href="#ref-boradkar2010" role="doc-biblioref">2010, 281</a>)</span> argues that design problems posit unique challenges that require “unique set of tools” often of an interdisciplinary capacity. In order to tackle these challenges he echoes other scholars in affirming that design as an independent discipline must “enrich itself in transdisciplinary engagements” <span class="citation">(<a href="#ref-boradkar2010" role="doc-biblioref">2010, 282</a>)</span>. <span class="citation">Friedman (<a href="#ref-friedman2000" role="doc-biblioref">2000, 39</a>)</span> motions that design as a discipline exists in the “intersection of several large fields”. As an example of this <span class="citation">Boradkar (<a href="#ref-boradkar2017" role="doc-biblioref">2017, 462</a>)</span> explains how web and mobile application designers often require an understanding of computer programming alongside graphical design knowledge. This presents two forms of design which <span class="citation">Mitcham (<a href="#ref-mitcham1994" role="doc-biblioref">1994, 461</a>)</span> refers to as engineering-design and artistic-design respectively, each requiring different levels of mastery.</p>
+<p>Quoting <span class="citation">Klein (<a href="#ref-klein1990" role="doc-biblioref">1990</a>)</span>, <span class="citation">Boradkar (<a href="#ref-boradkar2017" role="doc-biblioref">2017, 462</a>)</span> continues to describe design practice as “transdisciplinary problem solving” focusing on present research questions over discipline. This research attempts to approach transdisciplinary problem solving using a Research through Design (RtD) methodology which I explore in detail in <a href="Chapter5.html#Chapter5">Chapter 5</a>.</p>
+<p>Furthering the point of generating transcendent knowledge, studies involving research around science topics such as engineering, chemistry, and mathematics could justify a regimented approach. However, as this research involves the interactions of elements within <em>and beyond</em> logical science, it plays with the ideas of logic using philosophical thought experiments. Meaning to interweave itself within the fabric of human and non-human interaction. The attitude of playfulness that this research proposes acts as a way to facilitate this weave through the vehicle of philosophical inquiry into alternative perspectives of IoT. The methodology used here is part natural science, and part social science.</p>
+<p>To bring this further into perspective metaphor is elaborately employed. In <em>After Method</em> <span class="citation">Law (<a href="#ref-law2004" role="doc-biblioref">2004</a>)</span> discusses alternative approaches to considering research methods. He equates the world to a “set of possibly discoverable processes” <span class="citation">(<a href="#ref-law2004" role="doc-biblioref">2004, 9</a>)</span>, encouraging researchers to attempt to bridge research through “method assemblages” <span class="citation">(<a href="#ref-law2004" role="doc-biblioref">2004, 13</a>)</span>. These assemblages create what he calls a “hinterland” of relations between methods <span class="citation">(<a href="#ref-law2004" role="doc-biblioref">2004, 13</a>)</span>. Giving an example of how philosopher Bruno Latour’s examining of the world of Salk Institute’s endocrinologists became the basis for a new field of study known today as the ethnography of science, he explains how a philosopher with no prior background in science can do this by subverting method into a definition that is more generous and looser to conventional understandings. To this Law argues that “[Social] science should also be trying to make and know realities that are vague and indefinite because much of the world is enacted in that way” <span class="citation">(<a href="#ref-law2004" role="doc-biblioref">2004, 14</a>)</span>.</p>
+<p>As this work defines itself within the boundaries of design research using iterative methodologies—namely RtD and speculative design—it raises a connection between design and social sciences. An association which began in the 1980’s as a design-driven experiment crafting what we today know as user-centred design <span class="citation">(<a href="#ref-sanders2002" role="doc-biblioref">E. B.-N. Sanders 2002, 1</a>)</span>. Adding to that is the on-going attitude of playfulness and rhetoric of philosophy as a driving force for designing in a certain manner and intention that this research advocates. This places design research on par with the likes of social sciences such as psychology, geography, history, and anthropology among others; all having their own established formats of research. Although fundamentally being research into the IoT, it requires an understanding of technological processes and knowledge representation related to the different areas of concern.</p>
+</div>
+<div id="crafting-trandisciplinary-assemblages" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Crafting Trandisciplinary Assemblages<a href="Chapter2.html#crafting-trandisciplinary-assemblages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When seen in this manner, this research falls beyond the scope of the formulaic traditional thesis approaches defined by <span class="citation">Paltridge (<a href="#ref-paltridge2002" role="doc-biblioref">2002</a>)</span>. Whilst including topics which have established approaches towards academic writing such as philosophy and writing for computer engineering subjects related to IoT research, the way this work utilises these disciplines happens in a manner of equating them to tools found in a toolbox. This all places this research in a spectrum of interdisciplinary studies bordering on the transdisciplinary, akin to the method assemblages discussed by <span class="citation">Law (<a href="#ref-law2004" role="doc-biblioref">2004</a>)</span>. Through this idea of transcendent knowledge, I present the formulation of unique ‘engines’ for transdisciplinary design research (Fig. <a href="Chapter2.html#fig:engine">2.2</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:engine"></span>
+<img src="figures/ch2-engine.png" alt="The knowledge generated through designed artefacts in this thesis comes from assembling methodological approaches present within the concepts this research concerns with. In doing so it approaches a manner of transcending knowledge between disciplines through design."  />
+<p class="caption">
+Figure 2.2: The knowledge generated through designed artefacts in this thesis comes from assembling methodological approaches present within the concepts this research concerns with. In doing so it approaches a manner of transcending knowledge between disciplines through design.
+</p>
+</div>
+<p>In the coming chapters, each of the individual parts of this engine are discussed in detail and explored from the vantage point of design research. Each provides a unique perspective towards the challenges of designing for IoT products and services and in turn articulates unique knowledge production. Since this research argues for an objective view at orthodox design practices such as HCD it becomes necessary to include philosophical perspectives such as object-oriented philosophy that may offer alternate perspectives. Playfulness here is an ever present attitude within the designer and the process that supports the crafting of unique explorative design artefacts to indulge the philosophical views intended to be explored ahead. And finally, a practice-based RtD approach ensures an iterative exploration of the design problem that may be equal parts explorative and critical in nature.</p>
+</div>
+<div id="transcending-method-through-design" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Transcending method through Design<a href="Chapter2.html#transcending-method-through-design" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>While presenting a paper involving one of the artefacts from this research at <em>DRS2018</em>, the ensuing discussion raised a point to how the practical manner of research would not fit within the traditions of the discipline of philosophy. However, the consensus was that it fit well within the boundaries of design due to the freedom available in the discipline. <span class="citation">Lee and Lee (<a href="#ref-lee2019" role="doc-biblioref">2019</a>)</span> map the characteristics of design research within the humanities for inter and cross-disciplinary research. They conclude that understanding the implications and applications of design within other disciplines may help in developing the field of Design. <span class="citation">E. B.-N. Sanders (<a href="#ref-sanders2002" role="doc-biblioref">2002, 6</a>)</span> presents the argument of designers and design researchers, specifically social scientists working in conjunction with design and/or designers, as being interdependent. The appropriated freedom in design as a discipline for knowledge generation thus comes from this interdependence. As such, this research aspires to become transdisciplinary considering approximations by <span class="citation">Hodge (<a href="#ref-hodge1995" role="doc-biblioref">1995</a>)</span> and the notion of method assemblages from <span class="citation">Law (<a href="#ref-law2004" role="doc-biblioref">2004</a>)</span>. By moving between the hinterland of relations connecting interdisciplinary research, this work attempts at expanding on established models of design for IoT to encourage potential new directions. These unique engines for research are comprised of different combinations of methods here on considered ‘tools’ in a metaphorical toolbox.</p>
+<p>This is not equating them as design tools meant to be used in that fashion, rather it is a play on the word ‘tool’ from ‘toolbox’. Within each toolbox are the assemblages of different concepts coming from different disciplines used in the design process of each artefact.</p>
+<p>Therefore, I do not see imperative in allowing this thesis to conform to the generic format of a postdoctoral manuscript. The elements required for a document of this calibre will all be present: a review of relevant literature; intent of research; methodology; findings; and discussion to take away at the end. But due to the nature of the study and its involvement of different research topics on a transdisciplinary platform, the potential for a modification of the standard model of a postdoctoral thesis presents itself. Another way of looking at it is <em>this research attempts to transcend knowledge between areas of philosophy, design, playfulness, and technology, and might feel odd in places.</em></p>
+</div>
+</div>
+<div id="how-to-use-this-thesis" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> How to use this Thesis<a href="Chapter2.html#how-to-use-this-thesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>By jumping between different topics of concern this research risks raising levels of confusion. Thus, rather than have a larger review of literature presented in one chapter in the start, references to literature are placed appropriately throughout the text. An introductory review will be presented in the initial chapters, but each chapter will also have its pieces of reviewed literature brought up on an as-per-need basis. This should help alleviate any confusion, allowing readers to avoid jumping back chapters to reacquaint themselves with topics. It should also help in establishing a cohesive discourse throughout.</p>
+<p>The previous chapter was a brief dive into some background in myself and how this work came about. This chapter provided a scaffolding for why this document is laid out in this manner along with the core questions this thesis aims to address. The next few chapters may be viewed as a <em>mise en place</em> for the coming artefacts designed as part of this research. My intention with them is to incorporate an understanding of <em>seeing</em>, <em>being</em>, and <em>designing</em> things of IoT in order to grasp the foundations of this research. Here is what can be expected ahead:</p>
+<ul>
+<li><p><strong><a href="Chapter3.html#Chapter3">Chapter 3</a></strong> starts us off by introducing our focal point of IoT and how it is <em>seen</em> in a general sense. I present a case for and against general approaches towards design in IoT. Supported by a review of relevant literature I lay a foundation for our discussion around technology in this research. Following it up with why design for IoT matters, challenges currently at play, and how metaphor may be an ally in seeing IoT. This chapter incorporates our first step at seeing through an alternative lens.</p></li>
+<li><p><strong><a href="Chapter4.html#Chapter4">Chapter 4</a></strong> attempts to unravel the dense philosophical concepts this thesis utilizes in the coming designed artefacts. It covers the core philosophy of phenomenology that is discussed throughout. Building towards the main discussion of how things in IoT exist I argue for how design approaches can see them through an object-oriented perspective of simulating agency within things. This expands upon notions of alternative perspectives towards viewing technology from <a href="Chapter4.html#Chapter4">Chapter 4</a>.</p></li>
+<li><p><strong><a href="Chapter5.html#Chapter5">Chapter 5</a></strong> is the first of two chapters on used methods and core approaches in this research. It dives into an exploration of design research as a methodology. Here I approach the idea of an iterative design perspective of creating artefacts for this design research through an ideology of Research through Design (RtD).</p></li>
+<li><p><strong><a href="Chapter6.html#Chapter6">Chapter 6</a></strong> explores the broader attitude of playfulness this research advocates comparing it to decision making and design processes. Here I take on the idea of playfulness as an asset for design research, making a connection between disciplines of design and the act of play through curiosity-driven engagement. This is also where I introduce the concept of philosophical carpentry as a way of playfully approaching design research and philosophy to form the method assemblage toolboxes explored in <a href="Chapter2.html#Chapter2">Chapter 2</a>.</p></li>
+<li><p><strong><a href="Chapter7.html#Chapter7">Chapter 7</a></strong> through to <strong><a href="Chapter9.html#Chapter9">Chapter 9</a></strong> introduce the research through design aspect of this thesis and each present a different artefact intended to enact philosophy. Starting with a way of defining a model for a philosophical perspective of IoT, using play to prod and poke at the design of IoT systems. Each chapter in this series is accompanied by different philosophical concepts and design approaches used in its metaphorical toolbox with findings and insights. <a href="Chapter7.html#Chapter7">Chapter 7</a> introduces a core framework for viewing interactions occurring in IoT through philosophy. This framework is then carried on to subsequent chapters in an attempt to explore it further. In this regard <a href="Chapter8.html#Chapter8">Chapter 8</a> walks through the process of designing a board game based on the framework. It defines the iterative process and design decisions made in designing the <em>Internet of Things Board Game</em> with a discussion into the pitfalls and compromises undergone in the process. Finally, in this series <a href="Chapter9.html#Chapter9">Chapter 9</a> dives into a deeper exploration of the framework enforcing a more direct relation with the philosophical discourse defined in this research through imaging the personal lives of IoT objects using Tarot.</p></li>
+<li><p><strong><a href="Chapter10.html#Chapter10">Chapter 10</a></strong> brings about the final section of this thesis, with a discussion into the implications of carpentry for design research through findings and experiences, and a discussion into manifesting an attitude of playfulness within the design process. It is accompanied by a discourse into the future potential for research in this manner, before rounding up the conclusions of this research.</p></li>
+</ul>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-boradkar2010" class="csl-entry">
+Boradkar, Prasad. 2010. <span>“Design as Problem Solving.”</span> In <em>The <span>Oxford</span> <span>Handbook</span> of <span>Interdisciplinarity</span></em>, edited by Jose Antonio Lopez Cerezo, Wolfgang Krohn, William Newell, Nancy Tuana, and Peter Weingart, 1st ed., 273–87. Oxford: Oxford University Press.
+</div>
+<div id="ref-boradkar2017" class="csl-entry">
+———. 2017. <span>“Agency and Counteragency of Materials: <span>A</span> Story of Copper.”</span> In <em>Encountering <span>Things</span>: <span>Design</span> and <span>Theories</span> of <span>Things</span></em>, edited by Leslie Atzmon and Prasad Boradkar, 193–201. London Oxford New York: Bloomsbury Academic, an Imprint of Bloomsbury Publishing Plc.
+</div>
+<div id="ref-dong1998" class="csl-entry">
+Dong, Yu Ren. 1998. <span>“Non-Native Graduate Students’ <span>Thesis</span>/<span>Dissertation</span> Writing in Science: <span>Self</span>-<span>Reports</span> by Students and Their Advisors from Two <span>US</span> Institutions.”</span> <em>English for Specific Purposes</em> 17 (4): 369–90.
+</div>
+<div id="ref-dudley-evans1999" class="csl-entry">
+Dudley-Evans, Tony. 1999. <span>“The Dissertation: <span>A</span> Case of Neglect.”</span> <em>Issues in EAP Writing Research and Instruction</em>, 28–36.
+</div>
+<div id="ref-friedman2000" class="csl-entry">
+———. 2000. <span>“Creating Design Knowledge: <span>From</span> Research into Practice.”</span> <em>IDATER 2000</em> 1: 28.
+</div>
+<div id="ref-gibbons1994" class="csl-entry">
+Gibbons, Michael, Camille Limoges, Helga Nowotny, Simon Schwartzman, Peter Scott, and Martin Trow. 1994. <em>The New Production of Knowledge: <span>The</span> Dynamics of Science and Research in Contemporary Societies</em>. Sage.
+</div>
+<div id="ref-hodge1995" class="csl-entry">
+Hodge, Bob. 1995. <span>“Monstrous Knowledge: <span>Doing</span> <span>PhDs</span> in the New Humanities.”</span> <em>Australian Universities’ Review, The</em> 38 (2): 35.
+</div>
+<div id="ref-jensenius2012" class="csl-entry">
+Jensenius, Alexander Refsum. 2012. <span>“Disciplinarities: <span>Intra</span>, Cross, Multi, Inter, Trans <span></span> <span>Alexander</span> <span>Refsum</span> <span>Jensenius</span>.”</span> Blog. <a href="https://www.arj.no/2012/03/12/disciplinarities-2/">https://www.arj.no/2012/03/12/disciplinarities-2/</a>.
+</div>
+<div id="ref-klein1990" class="csl-entry">
+Klein, Julie Thompson. 1990. <em>Interdisciplinarity: <span>History</span>, Theory, and Practice</em>. Wayne state university press.
+</div>
+<div id="ref-law2004" class="csl-entry">
+Law, John. 2004. <em>After Method: <span>Mess</span> in Social Science Research</em>. International Library of Sociology. London ; New York: Routledge.
+</div>
+<div id="ref-lee2019" class="csl-entry">
+Lee, Dayoung, and Hyunju Lee. 2019. <span>“Mapping the <span>Characteristics</span> of <span>Design</span> <span>Research</span> in <span>Social</span> <span>Sciences</span>.”</span> <em>Adr</em> 32 (4): 39–51. <a href="https://doi.org/10.15187/adr.2019.11.32.4.39">https://doi.org/10.15187/adr.2019.11.32.4.39</a>.
+</div>
+<div id="ref-mitcham1994" class="csl-entry">
+Mitcham, Carl. 1994. <em>Thinking Through Technology: <span>The</span> Path Between Engineering and Philosophy</em>. University of Chicago Press.
+</div>
+<div id="ref-paltridge2002" class="csl-entry">
+Paltridge, Brian. 2002. <span>“Thesis and Dissertation Writing: <span>An</span> Examination of Published Advice and Actual Practice.”</span> <em>English for Specific Purposes</em> 21 (2): 125–43. <a href="https://doi.org/10.1016/S0889-4906(00)00025-9">https://doi.org/10.1016/S0889-4906(00)00025-9</a>.
+</div>
+<div id="ref-sanders2002" class="csl-entry">
+Sanders, Elizabeth B.-N. 2002. <span>“From User-Centered to Participatory Design Approaches.”</span> In <em>Design and the <span>Social</span> <span>Sciences</span></em>, edited by Frascara Jorge, 1–9. New York: Taylor &amp; Francis.
+</div>
+<div id="ref-stember1991" class="csl-entry">
+Stember, Marilyn. 1991. <span>“Advancing the Social Sciences Through the Interdisciplinary Enterprise.”</span> <em>The Social Science Journal</em> 28 (1): 1–14. <a href="https://doi.org/10.1016/0362-3319(91)90040-B">https://doi.org/10.1016/0362-3319(91)90040-B</a>.
+</div>
+<div id="ref-thompson1999" class="csl-entry">
+Thompson, Paul. 1999. <span>“Exploring the Contexts of Writing: <span>Interviews</span> with <span>PhD</span> Supervisors.”</span> <em>Issues in EAP Writing Research and Instruction</em>, 37–54.
+</div>
+<div id="ref-webster2002" class="csl-entry">
+Webster, Jane, and Richard T. Watson. 2002. <span>“Analyzing the <span>Past</span> to <span>Prepare</span> for the <span>Future</span>: <span>Writing</span> a <span>Literature</span> <span>Review</span>.”</span> <em>MIS Quarterly</em> 26 (2): xiii–xxiii.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Chapter1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/012-chapter2.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

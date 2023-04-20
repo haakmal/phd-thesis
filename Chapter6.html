@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Playfully Designing for Things | Design by Play</title>
+  <meta name="description" content="Chapter 6 Playfully Designing for Things | Design by Play" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Playfully Designing for Things | Design by Play" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Playfully Designing for Things | Design by Play" />
+  
+  
+  
+
+<meta name="author" content="Haider Ali Akmal" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Chapter5.html"/>
+<link rel="next" href="Chapter7.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Design by Play</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Note from Author</a></li>
+<li class="part"><span><b>Preface</b></span></li>
+<li class="chapter" data-level="" data-path="declaration.html"><a href="declaration.html"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="dedication.html"><a href="dedication.html"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="quote.html"><a href="quote.html"><i class="fa fa-check"></i>Quote</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="Chapter1.html"><a href="Chapter1.html"><i class="fa fa-check"></i><b>1</b> An Unorthodox Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter1.html"><a href="Chapter1.html#a-starting-point"><i class="fa fa-check"></i><b>1.1</b> A starting point</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="Chapter1.html"><a href="Chapter1.html#fish-out-of-water"><i class="fa fa-check"></i><b>1.1.1</b> Fish out of water</a></li>
+<li class="chapter" data-level="1.1.2" data-path="Chapter1.html"><a href="Chapter1.html#surrounded-by-technology"><i class="fa fa-check"></i><b>1.1.2</b> Surrounded by technology</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="Chapter1.html"><a href="Chapter1.html#of-pasts-and-presents"><i class="fa fa-check"></i><b>1.2</b> Of Pasts and Presents</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="Chapter1.html"><a href="Chapter1.html#growing-up-around-play"><i class="fa fa-check"></i><b>1.2.1</b> Growing up around play</a></li>
+<li class="chapter" data-level="1.2.2" data-path="Chapter1.html"><a href="Chapter1.html#art-design-and-philosophy"><i class="fa fa-check"></i><b>1.2.2</b> Art, Design, and Philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="Chapter1.html"><a href="Chapter1.html#in-closing"><i class="fa fa-check"></i><b>1.3</b> In closing</a></li>
+</ul></li>
+<li class="part"><span><b>II Foundations</b></span></li>
+<li class="chapter" data-level="2" data-path="Chapter2.html"><a href="Chapter2.html"><i class="fa fa-check"></i><b>2</b> Scaffolding</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter2.html"><a href="Chapter2.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter2.html"><a href="Chapter2.html#steppingstones-into-post-modern-humanities"><i class="fa fa-check"></i><b>2.2</b> Steppingstones into post-modern humanities</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="Chapter2.html"><a href="Chapter2.html#transdisciplinary-design-research"><i class="fa fa-check"></i><b>2.2.1</b> Transdisciplinary Design Research</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Chapter2.html"><a href="Chapter2.html#crafting-trandisciplinary-assemblages"><i class="fa fa-check"></i><b>2.2.2</b> Crafting Trandisciplinary Assemblages</a></li>
+<li class="chapter" data-level="2.2.3" data-path="Chapter2.html"><a href="Chapter2.html#transcending-method-through-design"><i class="fa fa-check"></i><b>2.2.3</b> Transcending method through Design</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="Chapter2.html"><a href="Chapter2.html#how-to-use-this-thesis"><i class="fa fa-check"></i><b>2.3</b> How to use this Thesis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>3</b> Seeing Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter3.html"><a href="Chapter3.html#a-case-for-and-against-an-internet-of-things"><i class="fa fa-check"></i><b>3.1</b> A case for (and against) an Internet of Things</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="Chapter3.html"><a href="Chapter3.html#defining-iot"><i class="fa fa-check"></i><b>3.1.1</b> Defining IoT</a></li>
+<li class="chapter" data-level="3.1.2" data-path="Chapter3.html"><a href="Chapter3.html#interacting-with-iot"><i class="fa fa-check"></i><b>3.1.2</b> Interacting with IoT</a></li>
+<li class="chapter" data-level="3.1.3" data-path="Chapter3.html"><a href="Chapter3.html#the-disillusionment-of-living-in-iot"><i class="fa fa-check"></i><b>3.1.3</b> The disillusionment of living in IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="Chapter3.html"><a href="Chapter3.html#approaching-an-alternative-perspective-for-design-in-iot"><i class="fa fa-check"></i><b>3.2</b> Approaching an alternative perspective for Design in IoT</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="Chapter3.html"><a href="Chapter3.html#changing-perspectives"><i class="fa fa-check"></i><b>3.2.1</b> Changing perspectives</a></li>
+<li class="chapter" data-level="3.2.2" data-path="Chapter3.html"><a href="Chapter3.html#metaphorically-speaking"><i class="fa fa-check"></i><b>3.2.2</b> Metaphorically speaking</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="Chapter3.html"><a href="Chapter3.html#conclusion"><i class="fa fa-check"></i><b>3.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>4</b> Being Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Chapter4.html"><a href="Chapter4.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="Chapter4.html"><a href="Chapter4.html#a-philosophical-interlude"><i class="fa fa-check"></i><b>4.1.1</b> A Philosophical Interlude</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="Chapter4.html"><a href="Chapter4.html#understanding-things-on-and-not-on-the-internet"><i class="fa fa-check"></i><b>4.2</b> Understanding <em>Things</em> on (and not on) the Internet</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="Chapter4.html"><a href="Chapter4.html#phenomenologically-speaking"><i class="fa fa-check"></i><b>4.2.1</b> Phenomenologically speaking</a></li>
+<li class="chapter" data-level="4.2.2" data-path="Chapter4.html"><a href="Chapter4.html#towards-an-object-oriented-ontology"><i class="fa fa-check"></i><b>4.2.2</b> Towards an Object-Oriented Ontology</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="Chapter4.html"><a href="Chapter4.html#object-oriented-ontology"><i class="fa fa-check"></i><b>4.3</b> Object-Oriented Ontology</a></li>
+<li class="chapter" data-level="4.4" data-path="Chapter4.html"><a href="Chapter4.html#concluding-on-a-post-anthropocentric-perspective-for-design"><i class="fa fa-check"></i><b>4.4</b> Concluding on a post-anthropocentric perspective for Design</a></li>
+</ul></li>
+<li class="part"><span><b>Methodologies</b></span></li>
+<li class="chapter" data-level="5" data-path="Chapter5.html"><a href="Chapter5.html"><i class="fa fa-check"></i><b>5</b> Design Research</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Chapter5.html"><a href="Chapter5.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="Chapter5.html"><a href="Chapter5.html#doing-design-research"><i class="fa fa-check"></i><b>5.2</b> Doing Design Research</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="Chapter5.html"><a href="Chapter5.html#defining-design"><i class="fa fa-check"></i><b>5.2.1</b> Defining Design</a></li>
+<li class="chapter" data-level="5.2.2" data-path="Chapter5.html"><a href="Chapter5.html#defining-research"><i class="fa fa-check"></i><b>5.2.2</b> Defining Research</a></li>
+<li class="chapter" data-level="5.2.3" data-path="Chapter5.html"><a href="Chapter5.html#the-object-of-design"><i class="fa fa-check"></i><b>5.2.3</b> The Object of Design</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="Chapter5.html"><a href="Chapter5.html#research-through-design"><i class="fa fa-check"></i><b>5.3</b> Research through Design</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="Chapter5.html"><a href="Chapter5.html#approaching-research-through-design"><i class="fa fa-check"></i><b>5.3.1</b> Approaching Research through Design</a></li>
+<li class="chapter" data-level="5.3.2" data-path="Chapter5.html"><a href="Chapter5.html#practice-based-research"><i class="fa fa-check"></i><b>5.3.2</b> Practice-based Research</a></li>
+<li class="chapter" data-level="5.3.3" data-path="Chapter5.html"><a href="Chapter5.html#ideology-or-methodology"><i class="fa fa-check"></i><b>5.3.3</b> Ideology or Methodology?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="Chapter5.html"><a href="Chapter5.html#conclusions"><i class="fa fa-check"></i><b>5.4</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Chapter6.html"><a href="Chapter6.html"><i class="fa fa-check"></i><b>6</b> Playfully Designing for Things</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter6.html"><a href="Chapter6.html#defining-play"><i class="fa fa-check"></i><b>6.2</b> Defining Play</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="Chapter6.html"><a href="Chapter6.html#what-is-play"><i class="fa fa-check"></i><b>6.2.1</b> What is Play?</a></li>
+<li class="chapter" data-level="6.2.2" data-path="Chapter6.html"><a href="Chapter6.html#playgrounds-for-play"><i class="fa fa-check"></i><b>6.2.2</b> Playgrounds for Play</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="Chapter6.html"><a href="Chapter6.html#design-and-playfulness"><i class="fa fa-check"></i><b>6.3</b> Design and Playfulness</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="Chapter6.html"><a href="Chapter6.html#returning-to-playfulness"><i class="fa fa-check"></i><b>6.3.1</b> Returning to Playfulness</a></li>
+<li class="chapter" data-level="6.3.2" data-path="Chapter6.html"><a href="Chapter6.html#ludic-design"><i class="fa fa-check"></i><b>6.3.2</b> Ludic Design</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="Chapter6.html"><a href="Chapter6.html#designing-curious-philosophical-artefacts"><i class="fa fa-check"></i><b>6.4</b> Designing Curious Philosophical Artefacts</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter6.html"><a href="Chapter6.html#speculating-over-definitions"><i class="fa fa-check"></i><b>6.4.1</b> Speculating over definitions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="Chapter6.html"><a href="Chapter6.html#carpentry"><i class="fa fa-check"></i><b>6.5</b> Carpentry</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Chapter6.html"><a href="Chapter6.html#getting-your-hands-dirty-with-philosophy"><i class="fa fa-check"></i><b>6.5.1</b> Getting your hands dirty with philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="Chapter6.html"><a href="Chapter6.html#a-combined-methodological-framework"><i class="fa fa-check"></i><b>6.6</b> A combined methodological framework</a></li>
+<li class="chapter" data-level="6.7" data-path="Chapter6.html"><a href="Chapter6.html#conclusions-1"><i class="fa fa-check"></i><b>6.7</b> Conclusions</a></li>
+</ul></li>
+<li class="part"><span><b>III Doing Carpentry</b></span></li>
+<li class="chapter" data-level="7" data-path="Chapter7.html"><a href="Chapter7.html"><i class="fa fa-check"></i><b>7</b> A Model for a Philosophical View of IoT</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#introduction-4"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#iot-as-a-spatial-phenomenon"><i class="fa fa-check"></i><b>7.2</b> IoT as a spatial phenomenon</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="Chapter7.html"><a href="Chapter7.html#the-division-of-space"><i class="fa fa-check"></i><b>7.2.1</b> The division of space</a></li>
+<li class="chapter" data-level="7.2.2" data-path="Chapter7.html"><a href="Chapter7.html#reconfiguring-insides-and-outsides-as-heterotopia"><i class="fa fa-check"></i><b>7.2.2</b> Reconfiguring Insides and Outsides as Heterotopia</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#crafting-a-model-for-a-philosophical-view-of-iot"><i class="fa fa-check"></i><b>7.3</b> Crafting a Model for a Philosophical View of IoT</a></li>
+<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#discussion-and-conclusion"><i class="fa fa-check"></i><b>7.4</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> Playing with the IoT</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter8.html"><a href="Chapter8.html#introduction-5"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter8.html"><a href="Chapter8.html#creating-a-foundation-for-approaching-game-design"><i class="fa fa-check"></i><b>8.2</b> Creating a foundation for approaching Game Design</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="Chapter8.html"><a href="Chapter8.html#play-and-rhetoric"><i class="fa fa-check"></i><b>8.2.1</b> Play and Rhetoric</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="Chapter8.html"><a href="Chapter8.html#carpentering-the-internet-of-things-board-game"><i class="fa fa-check"></i><b>8.3</b> Carpentering the Internet of Things Board Game</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="Chapter8.html"><a href="Chapter8.html#exploration-phase"><i class="fa fa-check"></i><b>8.3.1</b> Exploration Phase</a></li>
+<li class="chapter" data-level="8.3.2" data-path="Chapter8.html"><a href="Chapter8.html#reflection-phase"><i class="fa fa-check"></i><b>8.3.2</b> Reflection Phase</a></li>
+<li class="chapter" data-level="8.3.3" data-path="Chapter8.html"><a href="Chapter8.html#redux"><i class="fa fa-check"></i><b>8.3.3</b> Redux</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="Chapter8.html"><a href="Chapter8.html#discussion-1"><i class="fa fa-check"></i><b>8.4</b> Discussion</a></li>
+<li class="chapter" data-level="8.5" data-path="Chapter8.html"><a href="Chapter8.html#wrapping-up"><i class="fa fa-check"></i><b>8.5</b> Wrapping Up</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="Chapter9.html"><a href="Chapter9.html"><i class="fa fa-check"></i><b>9</b> Predicting futures in the IoT</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter9.html"><a href="Chapter9.html#introduction-6"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter9.html"><a href="Chapter9.html#philosophical-foundations"><i class="fa fa-check"></i><b>9.2</b> Philosophical Foundations</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="Chapter9.html"><a href="Chapter9.html#the-perception-of-technology-and-post-phenomenology"><i class="fa fa-check"></i><b>9.2.1</b> The Perception of Technology and Post-Phenomenology</a></li>
+<li class="chapter" data-level="9.2.2" data-path="Chapter9.html"><a href="Chapter9.html#human-technology-relations-as-perceptual-illusions"><i class="fa fa-check"></i><b>9.2.2</b> Human-Technology Relations as Perceptual Illusions</a></li>
+<li class="chapter" data-level="9.2.3" data-path="Chapter9.html"><a href="Chapter9.html#quantum-causation-for-iot"><i class="fa fa-check"></i><b>9.2.3</b> Quantum Causation for IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="Chapter9.html"><a href="Chapter9.html#carpentering-the-supernatural-iot"><i class="fa fa-check"></i><b>9.3</b> Carpentering the Supernatural IoT</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="Chapter9.html"><a href="Chapter9.html#designing-the-deck"><i class="fa fa-check"></i><b>9.3.1</b> Designing the Deck</a></li>
+<li class="chapter" data-level="9.3.2" data-path="Chapter9.html"><a href="Chapter9.html#scanning-the-stars-with-software"><i class="fa fa-check"></i><b>9.3.2</b> Scanning the Stars with Software</a></li>
+<li class="chapter" data-level="9.3.3" data-path="Chapter9.html"><a href="Chapter9.html#a-tarot-of-things"><i class="fa fa-check"></i><b>9.3.3</b> A Tarot of Things</a></li>
+<li class="chapter" data-level="9.3.4" data-path="Chapter9.html"><a href="Chapter9.html#madame-bitsys-emporium"><i class="fa fa-check"></i><b>9.3.4</b> Madame Bitsy’s Emporium</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="Chapter9.html"><a href="Chapter9.html#feedback"><i class="fa fa-check"></i><b>9.4</b> Feedback</a></li>
+<li class="chapter" data-level="9.5" data-path="Chapter9.html"><a href="Chapter9.html#discussion-and-conclusion-1"><i class="fa fa-check"></i><b>9.5</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="part"><span><b>IV Moving Forwards</b></span></li>
+<li class="chapter" data-level="10" data-path="Chapter10.html"><a href="Chapter10.html"><i class="fa fa-check"></i><b>10</b> Discussions and Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter10.html"><a href="Chapter10.html#the-living-internet-of-things"><i class="fa fa-check"></i><b>10.1</b> The Living Internet of Things</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="Chapter10.html"><a href="Chapter10.html#is-this-discussion-about-privacy-and-security-in-iot"><i class="fa fa-check"></i><b>10.1.1</b> Is this discussion about privacy and security in IoT?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="Chapter10.html"><a href="Chapter10.html#going-beyond-human-centred-design"><i class="fa fa-check"></i><b>10.1.2</b> Going beyond Human-Centred Design</a></li>
+<li class="chapter" data-level="10.1.3" data-path="Chapter10.html"><a href="Chapter10.html#is-this-a-transhumanist-argument"><i class="fa fa-check"></i><b>10.1.3</b> Is this a transhumanist argument?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="Chapter10.html"><a href="Chapter10.html#the-mantra-of-playfulness"><i class="fa fa-check"></i><b>10.2</b> The Mantra of Playfulness</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="Chapter10.html"><a href="Chapter10.html#being-a-playful-philosopher-designer"><i class="fa fa-check"></i><b>10.2.1</b> Being a playful philosopher-designer</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="Chapter10.html"><a href="Chapter10.html#in-closing-1"><i class="fa fa-check"></i><b>10.3</b> In closing</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="AppendixA.html"><a href="AppendixA.html"><i class="fa fa-check"></i><b>A</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="AppendixA.html"><a href="AppendixA.html#game-design-definitions-and-terminologies"><i class="fa fa-check"></i><b>A.1</b> Game Design Definitions and Terminologies</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="AppendixB.html"><a href="AppendixB.html"><i class="fa fa-check"></i><b>B</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="AppendixB.html"><a href="AppendixB.html#the-internet-of-things-board-game-explored"><i class="fa fa-check"></i><b>B.1</b> The Internet of Things Board Game Explored</a></li>
+<li class="chapter" data-level="B.2" data-path="AppendixB.html"><a href="AppendixB.html#backstory91"><i class="fa fa-check"></i><b>B.2</b> Backstory</a></li>
+<li class="chapter" data-level="B.3" data-path="AppendixB.html"><a href="AppendixB.html#game-objective"><i class="fa fa-check"></i><b>B.3</b> Game Objective</a></li>
+<li class="chapter" data-level="B.4" data-path="AppendixB.html"><a href="AppendixB.html#setup"><i class="fa fa-check"></i><b>B.4</b> Play Setup</a></li>
+<li class="chapter" data-level="B.5" data-path="AppendixB.html"><a href="AppendixB.html#phases-of-play94"><i class="fa fa-check"></i><b>B.5</b> Phases of Play</a></li>
+<li class="chapter" data-level="B.6" data-path="AppendixB.html"><a href="AppendixB.html#tiles"><i class="fa fa-check"></i><b>B.6</b> Understanding the Tiles</a></li>
+<li class="chapter" data-level="B.7" data-path="AppendixB.html"><a href="AppendixB.html#avatars"><i class="fa fa-check"></i><b>B.7</b> Avatars</a></li>
+<li class="chapter" data-level="B.8" data-path="AppendixB.html"><a href="AppendixB.html#rolls"><i class="fa fa-check"></i><b>B.8</b> Rolling Dice</a>
+<ul>
+<li class="chapter" data-level="B.8.1" data-path="AppendixB.html"><a href="AppendixB.html#attack"><i class="fa fa-check"></i><b>B.8.1</b> Doing an Attack Roll</a></li>
+<li class="chapter" data-level="B.8.2" data-path="AppendixB.html"><a href="AppendixB.html#random"><i class="fa fa-check"></i><b>B.8.2</b> Randomisation</a></li>
+</ul></li>
+<li class="chapter" data-level="B.9" data-path="AppendixB.html"><a href="AppendixB.html#decks"><i class="fa fa-check"></i><b>B.9</b> Understanding and Reading Cards</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="AppendixB.html"><a href="AppendixB.html#items"><i class="fa fa-check"></i><b>B.9.1</b> Items Deck</a></li>
+<li class="chapter" data-level="B.9.2" data-path="AppendixB.html"><a href="AppendixB.html#risks"><i class="fa fa-check"></i><b>B.9.2</b> Risks Deck</a></li>
+<li class="chapter" data-level="B.9.3" data-path="AppendixB.html"><a href="AppendixB.html#privacy"><i class="fa fa-check"></i><b>B.9.3</b> Privacy Deck</a></li>
+<li class="chapter" data-level="B.9.4" data-path="AppendixB.html"><a href="AppendixB.html#daemons"><i class="fa fa-check"></i><b>B.9.4</b> Daemons Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="B.10" data-path="AppendixB.html"><a href="AppendixB.html#connections"><i class="fa fa-check"></i><b>B.10</b> Making Connections</a></li>
+<li class="chapter" data-level="B.11" data-path="AppendixB.html"><a href="AppendixB.html#risk-check"><i class="fa fa-check"></i><b>B.11</b> Conducting Risk Checks</a></li>
+<li class="chapter" data-level="B.12" data-path="AppendixB.html"><a href="AppendixB.html#tokens"><i class="fa fa-check"></i><b>B.12</b> Tokens</a></li>
+<li class="chapter" data-level="B.13" data-path="AppendixB.html"><a href="AppendixB.html#resolve"><i class="fa fa-check"></i><b>B.13</b> Resolves and Other Actions</a></li>
+<li class="chapter" data-level="B.14" data-path="AppendixB.html"><a href="AppendixB.html#delayed"><i class="fa fa-check"></i><b>B.14</b> Being Delayed</a></li>
+<li class="chapter" data-level="B.15" data-path="AppendixB.html"><a href="AppendixB.html#rest"><i class="fa fa-check"></i><b>B.15</b> Resting</a></li>
+<li class="chapter" data-level="B.16" data-path="AppendixB.html"><a href="AppendixB.html#databox"><i class="fa fa-check"></i><b>B.16</b> Databoxes</a></li>
+<li class="chapter" data-level="B.17" data-path="AppendixB.html"><a href="AppendixB.html#threat-tracker"><i class="fa fa-check"></i><b>B.17</b> Threat Tracker</a></li>
+<li class="chapter" data-level="B.18" data-path="AppendixB.html"><a href="AppendixB.html#end"><i class="fa fa-check"></i><b>B.18</b> End of the Game</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="AppendixC.html"><a href="AppendixC.html"><i class="fa fa-check"></i><b>C</b> Appendix C</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="AppendixC.html"><a href="AppendixC.html#the-tarot-of-things-deck"><i class="fa fa-check"></i><b>C.1</b> The Tarot of Things Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Design by Play</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter6" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Playfully Designing for Things<a href="Chapter6.html#Chapter6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>“The creation of something new is not accomplished by the intellect but by the play instinct”</p>
+<p>— Carl Jung</p>
+</blockquote>
+<div id="introduction-3" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Introduction<a href="Chapter6.html#introduction-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Design is a discipline heavily involved with the practice of making. This making could be of physical objects or artefacts intended to interact with their surroundings, embody intentions and meaning, and enact the object of design by bringing together elements pertaining to the concerns of design. With the interest of this research lying in the overlap of IoT, design, and philosophy—each topic having been explored separately in the previous chapters—I can now begin to combine these core elements to form accompanying methodologies to allow the making of designed artefacts for this research.</p>
+<p>The previous chapter introduced an overarching ideology of RtD which remains predominate throughout this entire manuscript. The approaches described in this chapter are intended to act as internal methodologies existing within a larger methodological framework, capable of crafting and presenting arguments for different philosophical concepts and their relationship with IoT. This chapter explores how an attitude of <em>‘playfulness’</em> is manifested as a pertinent element to the design process utilised in this research. This binding agent intends to bring together the discussions introduced in the previous chapters to create unique project-specific toolboxes that help in designing the different artefacts produced during this research. Each toolbox borrows something from IoT, Design, and Philosophy, echoing Law’s concept of “method assemblages” <span class="citation">(<a href="#ref-law2004" role="doc-biblioref">Law 2004, 13</a>)</span> to form purposeful arrangements of concepts which collectively aid in the crafting of philosophically charged artefacts for discussing more-than human design.</p>
+<p>First and foremost, it is necessary to retrace our steps to the first chapter. I mentioned the presence of <em>play</em> as an important factor in not just my life but also this research. For the ideas that will be discussed here to gel together, we will need to cover one fundamental aspect of design that I as a design practitioner exercise: <em>design for me is inherently playful</em>. In the coming text I will be defining the act of play moving towards a discussion of playfulness as a medium for innovation and creativity. This is done by analysing relevant literature to create an understanding of playfulness as a key ability of designers and the design process. Towards the end I present a combined methodological framework consisting of philosophical concepts, ludic design, and speculative design under an umbrella of philosophical carpentry.</p>
+<p>Here carpentry alludes to a manner of crafting to enact philosophical concepts such as those this thesis relates to and stems from amalgamating a speculative design approach with philosophy. The concept of ludic design discussed later in this chapter is an attempt at engaging ones curiosity through the practice of design and speculation that these carpentered artefacts invoke. This notion of engaging curiosity echoes views by <span class="citation">DeKoven (<a href="#ref-dekoven2013" role="doc-biblioref">2013</a>)</span> of playfulness as an attitude that invokes curiosity through the act of play, becoming an important element in this discussion to understand the need for carpentry and ludic design as methodologies better. The toolboxes or method assemblages I mention are related to this manner of crafting through philosophical carpentry rather than to be seen as design ‘tools’. But before entering a discussion for either, an initial argument between Design and Play needs to be established.</p>
+</div>
+<div id="defining-play" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Defining Play<a href="Chapter6.html#defining-play" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The word <em>play</em> (like design) is associated with multiple definitions depending on the context in which the word is used. The common understanding of play is as an activity associated with pleasure, that is not serious, may involve elements of make-believe, and is not necessarily productive in the context of ‘work’ <span class="citation">(<a href="#ref-bateson2013" role="doc-biblioref">Bateson and Martin 2013</a>; <a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014</a>; <a href="#ref-bogost2016" role="doc-biblioref">Bogost 2016a</a>; <a href="#ref-vanleeuwen2008" role="doc-biblioref">Van Leeuwen and Westwood 2008</a>; <a href="#ref-rieber1998" role="doc-biblioref">Rieber, Smith, and Noah 1998</a>; <a href="#ref-pellegrini1995" role="doc-biblioref">Pellegrini 1995</a>)</span>. This understanding has played a role in belittling the act of ‘play’ when compared to utilitarian activities.</p>
+<p><span class="citation">Bateson and Martin (<a href="#ref-bateson2013" role="doc-biblioref">2013, 2</a>)</span> define the biology and psychology of play as exhibited by certain criteria. In their opinion play may be defined as: a rewarding spontaneous behaviour for an individual; an intrinsically motivated behaviour which presents a goal in itself; an act that presents a protected space for the individual to enact specific actions; and, a comparatively exaggerated behaviour which may be performed repeatedly. As an inquiry into play theory, <span class="citation">Pellegrini (<a href="#ref-pellegrini1995" role="doc-biblioref">1995</a>)</span> catalogues play in four formats which include play as power, play as progress, play as fantasy, and play as self. The suggestion is that these different formats present an argument for the persuasive abilities of play as an activity in an anthropological context.</p>
+<p>In the research literature collected by Pellegrini on play, play as power concerns with the declaration of winning and losing where sufficient power is suggested through the course of play-activities, as is evident in sports. Play as progress concerns with a view where play leads towards different outcomes, where one such may be learning <span class="citation">(<a href="#ref-rieber1998" role="doc-biblioref">Rieber, Smith, and Noah 1998, 30</a>)</span>. Play as fantasy relates with play’s ability to effectively involve creativity and the imagination <span class="citation">(<a href="#ref-rieber1998" role="doc-biblioref">1998, 30</a>)</span>, and, play as self suggests play as an act that is directed towards personal value where the activity may enhance one’s quality of life <span class="citation">(<a href="#ref-rieber1998" role="doc-biblioref">1998, 30</a>)</span>. These findings and research all view play through the ontogenesis of both humans and animals, seeing it as an integral proponent for development from childhood into maturity <span class="citation">(<a href="#ref-vanleeuwen2008" role="doc-biblioref">Van Leeuwen and Westwood 2008</a>)</span>.</p>
+<p>Biological and anthropological definitions of play aside, colloquial understandings of play also exist such as a theatrical ‘play’. The tradition of research into play has surrounded the works of <span class="citation">Sutton-Smith (<a href="#ref-sutton-smith1997" role="doc-biblioref">1997</a>)</span>, <span class="citation">Huizinga (<a href="#ref-huizinga1955" role="doc-biblioref">1955</a>)</span>, <span class="citation">Caillois (<a href="#ref-caillois2001" role="doc-biblioref">2001</a>)</span>, and <span class="citation">Suits (<a href="#ref-suits1978" role="doc-biblioref">1978</a>)</span> among others. These works all look at play through its role in history, cataloguing its anthropological, psychological, and at times philosophical impacts. Where these pieces of literature into the foundations of play have their merits, aside from particular introduced concepts, for this research I will be restricting myself to more contemporary understandings from the works of <span class="citation">Sicart (<a href="#ref-sicart2014" role="doc-biblioref">2014</a>)</span>, <span class="citation">Bogost (<a href="#ref-bogost2016" role="doc-biblioref">2016a</a>)</span>, <span class="citation">Salen and Zimmerman (<a href="#ref-salen2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation">DeKoven (<a href="#ref-dekoven2013" role="doc-biblioref">2013</a>, <a href="#ref-dekoven2014" role="doc-biblioref">2014</a>)</span>.</p>
+<div id="what-is-play" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> What is Play?<a href="Chapter6.html#what-is-play" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="citation">Sicart (<a href="#ref-sicart2014" role="doc-biblioref">2014</a>)</span> attempts to define play through all that it is (and isn’t) in relation to the human experience. Where he recognises play as a behavioural reaction to certain stimuli in an act facilitating understandings of pleasure, he disagrees with a clinical definition of the term as being sufficient to explain its breadth. True, play has significant cultural meaning association, but inherently play is an activity that provokes challenging conventions <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014</a>)</span>. His views set aside the scientific definitions of play as a mechanism for inducing endorphins in humans and animals, and instead, looks at the relationship between the players and the act of play in this manner.</p>
+<p>The picture Sicart paints of play is of a “dance between creation and destruction, between creativity and nihilism” <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014, 3</a>)</span>. His attempt of defining play in its various forms produces an expansive list of definitions, some of which are:</p>
+<ul>
+<li><p>Play as a contextual activity that involves a tangle of people, things, spaces, objects, and cultures <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 6</a>)</span>;</p></li>
+<li><p>Play as an activity contesting creation and destruction <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 9</a>)</span>;</p></li>
+<li><p>Play as a “carnivalesque” act attempting to balance chaos and order <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 10</a>)</span>;</p></li>
+<li><p>Play as an appropriative behaviour that is fluid, capable of taking over the context it is presented in; thus unpredictable <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 11</a>)</span>;</p></li>
+<li><p>Play as an autotelic activity, presenting its own goals and purposes <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 16</a>)</span>;</p></li>
+<li><p>Play as an activity of negotiation, in constant flux on defining and redefining its boundaries and influences <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 16</a>)</span>;</p></li>
+<li><p>Play as a disruptive activity due to its appropriative nature, as it attempts to break down convention and the state of given affairs <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 14</a>)</span>;</p></li>
+<li><p>Play as a creative act, creating itself through the many rules, objects, locations, and stimuli it invokes enforcing participants to act (and react) creatively <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 17</a>)</span>, and</p></li>
+<li><p>Play as an intimate act provoking and forging sentimental, moral, political, and deeply personal emotions, memories, and associations <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 17</a>)</span>.</p></li>
+</ul>
+<p>Irrespective of how one may define play considerable literature exists attesting to the importance of play as an activity in human experience <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">Bogost 2016a</a>; <a href="#ref-juul2005" role="doc-biblioref">Juul 2005</a>; <a href="#ref-dekoven2013" role="doc-biblioref">DeKoven 2013</a>; <a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014</a>; <a href="#ref-rieber1998" role="doc-biblioref">Rieber, Smith, and Noah 1998</a>; <a href="#ref-coulton2015a" role="doc-biblioref">Coulton 2015a</a>; <a href="#ref-bateson2013" role="doc-biblioref">Bateson and Martin 2013</a>; <a href="#ref-pellegrini1995" role="doc-biblioref">Pellegrini 1995</a>; <a href="#ref-bissell2011" role="doc-biblioref">Bissell 2011</a>; <a href="#ref-blanchard1995" role="doc-biblioref">Blanchard 1995</a>; <a href="#ref-vanleeuwen2008" role="doc-biblioref">Van Leeuwen and Westwood 2008</a>)</span>. Within any discussion of play is the distinction between play as observable behaviour, and play as an underlying mood, or <em>playfulness</em> <span class="citation">(<a href="#ref-bateson2013" role="doc-biblioref">Bateson and Martin 2013, 2</a>)</span>. Like play, playfulness has colloquial understandings as well, but the term generally concerns with an emotional attitude towards things, people, and situations <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014, 21</a>)</span>. Sicart defines the difference between play and playfulness where the former is an activity consisting of finite sets of actions performed for specific purposes, and the latter a means of “projecting characteristics of play into non-play activities” <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 22</a>)</span>. He further defines it as a means for appropriation, making the world it occupies ambiguous:</p>
+<blockquote>
+<p>“Playfulness assumes one of the core attributes of play: appropriation. To be playful is to appropriate a context that is not created or intended for play. Playfulness is the play-like appropriation of what should not be play…Playfulness re-ambiguates the world. Through the characteristics of play, it makes it less formalized, less explained, open to interpretation and wonder and manipulation. To be playful is to add ambiguity to the world and play with that ambiguity.” <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014, 27–28</a>)</span></p>
+</blockquote>
+</div>
+<div id="playgrounds-for-play" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Playgrounds for Play<a href="Chapter6.html#playgrounds-for-play" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For <span class="citation">Sicart (<a href="#ref-sicart2014" role="doc-biblioref">2014, 1</a>)</span>, play becomes a state of mind or being, full of unique context and emotion that subjects an individual (or group) into an altered state where the world it occupies may be tampered with or appropriated. These states are contexts where play happens, traditionally as games but these can also take the form of less conventional understandings of time and space where the possibility of play may exist <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 28</a>)</span>.</p>
+<p>The altered state of play suggests the presence of a space where play is executed; in other words a playground (Fig. <a href="Chapter6.html#fig:playgrounds">6.1</a>). Games are a form of playgrounds in this manner. Dutch anthropologist <span class="citation">Huizinga (<a href="#ref-huizinga1955" role="doc-biblioref">1955, 10</a>)</span> coined the term “magic circles” to explain one of many playgrounds devised in the act of play. These playgrounds are spaces apart from normal life <span class="citation">(<a href="#ref-liebe2008" role="doc-biblioref">Liebe 2008</a>; <a href="#ref-consalvo2009" role="doc-biblioref">Consalvo 2009</a>)</span>, accompanied by their own rules, ethics, and narratives. <span class="citation">Caillois (<a href="#ref-caillois2001" role="doc-biblioref">2001, 9</a>)</span> appropriated Huizinga’s magic circles within his definitions of play and described the activity as being separate “within the limits of space and time, defined, and fixed in advanced”.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="Chapter6.html#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">rep</span>(<span class="st">&quot;figures/ch6-playgrounds.png&quot;</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:playgrounds"></span>
+<img src="figures/ch6-playgrounds.png" alt="This illustration adapted from @nagy2017 argues of how playgrounds may be altered spaces with their own contexts where 'play' is executed."  />
+<p class="caption">
+Figure 6.1: This illustration adapted from <span class="citation">Nagy (<a href="#ref-nagy2017" role="doc-biblioref">2017</a>)</span> argues of how playgrounds may be altered spaces with their own contexts where ‘play’ is executed.
+</p>
+</div>
+<p>Modern understandings of the magic circle differ. Some claim it doesn’t exist in the form Huizinga suggested <span class="citation">(<a href="#ref-consalvo2009" role="doc-biblioref">Consalvo 2009</a>; <a href="#ref-liebe2008" role="doc-biblioref">Liebe 2008</a>)</span>, while others suggest the circle is not created by the game but the players in their captivation of play <span class="citation">(<a href="#ref-moore2011" role="doc-biblioref">Moore 2011</a>; <a href="#ref-salen2004" role="doc-biblioref">Salen and Zimmerman 2004</a>)</span>. Further still, <span class="citation">Juul (<a href="#ref-juul2008" role="doc-biblioref">2008</a>)</span> suggests a reframing of the concept to clarify proof of its existence. The contention asserted by many is that as a metaphor the magic circle suggests a strict boundary between the realm of play and that of non-play <span class="citation">(<a href="#ref-copier2005" role="doc-biblioref">Copier 2005</a>; <a href="#ref-calleja2008" role="doc-biblioref">Calleja 2008</a>; <a href="#ref-taylor2007" role="doc-biblioref">Taylor 2007</a>)</span>. <span class="citation">Juul (<a href="#ref-juul2008" role="doc-biblioref">2008, 63</a>)</span> argues against this notion suggesting instead of viewing it as a puzzle piece, allowing games to fit into given contexts without arguing for any differentiation between games, play, and playgrounds.</p>
+<p>Taking another perspective is <span class="citation">Bogost (<a href="#ref-bogost2016" role="doc-biblioref">2016a</a>)</span>, who suggests that playgrounds exist in all walks of life in different forms. Giving the example of how children are capable of turning any mundane activity into an act of play, he presents a case for the precedence of play in our lives through hidden playgrounds waiting to be played in. Arguing against considering play the opposite of work, he calls for seeing it as “experiences that set aside the ordinary purposes of things” <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">2016a, 6</a>)</span>. His definition of the magic circle is of facilitating play to create meaningful experiences, allowing play to act as a means of dissecting the world:</p>
+<blockquote>
+<p>“By refusing to ask what could be different, and instead allowing what is present to guide us, we create a new space. A magic circle, a circumscribed, imaginary playground in which the limitations of the things we encounter—of anything we encounter—can produce meaningful experiences” <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">Bogost 2016a, 11</a>)</span></p>
+</blockquote>
+<p>This argument presented by Bogost allows for play to be seen as more than amusement; a point echoed by others <span class="citation">(<a href="#ref-juul2005" role="doc-biblioref">Juul 2005</a>; <a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014</a>; <a href="#ref-coulton2015a" role="doc-biblioref">Coulton 2015a</a>; <a href="#ref-montola2005" role="doc-biblioref">Montola 2005</a>)</span>. Claiming the gravest mistake one can make about play is to consider it as amusement or a diversion, <span class="citation">Bogost (<a href="#ref-bogost2016" role="doc-biblioref">2016a, 18–19</a>)</span> instead argues that play is a structured activity where one plays with something under specific guidelines. Pleasure, or whatever form of it, is simply a by-product of the activity.</p>
+<p>This concept is accentuated further by DeKoven’s <span class="citation">(<a href="#ref-dekoven2014" role="doc-biblioref">2014, 34</a>)</span> argument of infinite play, where playfulness is seen as an attitude requiring ones “presence” and “responsiveness”. For DeKoven play transforms activities to redefine consequences. The playground in Bogost’s and DeKoven’s view becomes a hybrid physical and conceptual space that radiates into the material world, concerning itself with the things occupied within it, and captivating those executing play. “A playground is a place where play takes place, and play is a practice of manipulating the things you happen to find in a playground” <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">Bogost 2016a, 22</a>)</span>.</p>
+<p>I should point out the differing stance between Sicart and Bogost on this matter as the reader may see an inherent contradiction here. Where <span class="citation">Sicart (<a href="#ref-sicart2014" role="doc-biblioref">2014, 1</a>)</span> literally sees play as a “mode of being human”, <span class="citation">Bogost (<a href="#ref-bogost2016" role="doc-biblioref">2016a, 92</a>)</span> argues for the opposite where “play is in things, not in you.” For the purposes of this research I mention both for specific reasons, <em>(a)</em> as a person who employs playful appropriation coming from my own experience of playfulness as an attitude I see as aligning with Sicart’s notion of play within the human, and <em>(b)</em> as a design practitioner who enjoys making and approaching problems from a playful vantage point and/or <em>playing</em> with things I acknowledge Bogost’s notion of play within things designed or otherwise. That said, I feel that Bogost presents a playful attitude as can be seen from the artefacts he creates such as <em>Put Words Between Buns</em><a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a> and <em>Cow Clicker</em> <a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>. From his description of how <em>Cow Clicker</em> came to be what is apparent is that besides a playful artefact there is the playful individual behind it. As I intend to steer this discussion towards philosophical carpentry in the end, a concept introduced by <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012</a>)</span> as well, his definition of playgrounds and play within things is important to this discourse as the manifestation of playfulness in the design process arose through considering RtD as a playground. For now I shall put aside this discussion around my opinion towards play, though I will return to it later in <a href="Chapter10.html#Chapter10">Chapter 10</a>.</p>
+</div>
+</div>
+<div id="design-and-playfulness" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Design and Playfulness<a href="Chapter6.html#design-and-playfulness" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Returning to the matter at hand you might be wondering, where does all this fit into the argument for design? When seen in the right way, design and play have many similarities. I’ve been juggling between different terms so far and though they may be close together in a discussion of play they may also represent different things when discussed in the context of design. The argument I present is not for games and toys to be considered as the focus of design processes, there is ample literature for those discussions <span class="citation">(<a href="#ref-lindley2004" role="doc-biblioref">C. A. Lindley 2004</a>; <a href="#ref-walz2014" role="doc-biblioref">Walz and Deterding 2014</a>; <a href="#ref-winn2009" role="doc-biblioref">Winn 2009</a>)</span>, rather the stance I take is for acknowledging playfulness as an attitude invoked in the design process that may fuel design practice. References I make to toys and games in this discussion are not in place of design tools per say but as part of the process of creating play-like activities that help break down the barriers for discussing complex ideas.</p>
+<p>Returning to the topic of playfulness and design, the view of play and its metaphorical playgrounds as presented by <span class="citation">Bogost (<a href="#ref-bogost2016" role="doc-biblioref">2016a</a>)</span> can be translated into the act of design and the design artefact respectively. Parallels can be seen by skimming through the above definitions of play described by <span class="citation">Sicart (<a href="#ref-sicart2014" role="doc-biblioref">2014</a>)</span> to attributes one may associate with a <em>playful designer</em>. For instance, both activities indulge creativity, attempt disruption, and are manipulative. Design is as much an act of creation as it is an act of understanding the context of its creation, making it a contextual activity similar to play. Designers negotiate with their given wicked problems to find potential solutions. The act of play is in effect an act of negotiating oneself between the many rules, systems, contexts, and appropriations presented <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 90</a>)</span>. As explored previously, design involves problem-solving and many aspects of play revolve around the crafting of creative solutions, as is often the case with ‘serious play’ <span class="citation">(<a href="#ref-rieber1998" role="doc-biblioref">Rieber, Smith, and Noah 1998</a>)</span>.</p>
+<p>Furthermore, game design is often compared to systems design <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014</a>; <a href="#ref-salen2005" role="doc-biblioref">Salen and Zimmerman 2005</a>)</span>, as it requires the mapping of choices and variants for making actions. After all, “playing a game means making choices” <span class="citation">(<a href="#ref-salen2005" role="doc-biblioref">Salen and Zimmerman 2005, 60</a>)</span>. <span class="citation">Salen and Zimmerman (<a href="#ref-salen2004" role="doc-biblioref">2004, 304</a>)</span> believe, that the intention of play is not to work comfortably within its own structure, rather, to be in constant movement developing new structures and formats through play. This framework and the notion of games and play as choice-making activities is very similar to that of design reasoning, where designers situate problems in different ‘frames’ to better view them <span class="citation">(<a href="#ref-dorst2011" role="doc-biblioref">Dorst 2011, 528</a>)</span>. <span class="citation">DeKoven (<a href="#ref-dekoven2013" role="doc-biblioref">2013, 30</a>)</span> describes of how the ‘playful path’ is a “many-branched, multi-dimensional” path; perspectives echoed in design approaches and methodologies. Acknowledging their importance for designing interactive systems, <span class="citation">Carroll (<a href="#ref-carroll2014" role="doc-biblioref">2014</a>)</span> defines design archetypes that are present in games. These he says offer a means for “articulating critical abstractions” <span class="citation">(<a href="#ref-carroll2014" role="doc-biblioref">2014, 199</a>)</span> within contexts of human interaction.</p>
+<p><span class="citation">Bateson and Martin (<a href="#ref-bateson2013" role="doc-biblioref">2013</a>)</span> go into further detail around the connections between playfulness, creativity, and innovation. Their detailed study suggests that through a playful mindset or approach alternative perspectives or potential cognitive abilities and use of tools may emerge that could present solutions to current or future challenges that may be executed “for [their] own sake” <span class="citation">(<a href="#ref-bateson2013" role="doc-biblioref">2013, 77</a>)</span>. Continuing on that point they argue that playfulness in an activity may foster “divergent thinking” <span class="citation">(<a href="#ref-bateson2013" role="doc-biblioref">2013, 85</a>)</span> and interconnecting of thoughts traits that designers often employ when solving wicked problems. I go into further detail on this later in the chapter by considering the cognitive process of design and where playfulness and its effects fit in.</p>
+<div class="figure"><span style="display:block;" id="fig:playfulness"></span>
+<img src="figures/ch6-design_play.png" alt="Playfulness may be an inherent attribute of design practices as they often involve playful appropriation or similar attitudes to reach a designed artefact or solution to a wicked problem."  />
+<p class="caption">
+Figure 6.2: Playfulness may be an inherent attribute of design practices as they often involve playful appropriation or similar attitudes to reach a designed artefact or solution to a wicked problem.
+</p>
+</div>
+<p>This list of similarities could go on, but my intention here is not to say design is the same as play. Rather, what I would like to approach is the idea that <em>design involves play</em>; more specifically playfulness (Fig. <a href="Chapter6.html#fig:playfulness">6.2</a>). That when design is executed with this inherent ludic ability at the forefront as an attitude of playfulness, the nature of design changes into being provocative, challenging, and speculative.</p>
+<div id="returning-to-playfulness" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Returning to Playfulness<a href="Chapter6.html#returning-to-playfulness" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To understand this, let’s return to the earlier discussion and define what an attitude of playfulness is further in light of this research. I’ve defined playfulness as an attitude, a core behaviour associated with play-like activities and for the most part it has been around the writings of <span class="citation">Sicart (<a href="#ref-sicart2014" role="doc-biblioref">2014</a>)</span>. This attitude of playfulness is meant to engage with specific contexts and objects—similar to play—respecting core values, goals, objects, and any associated contexts <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">2014, 21</a>)</span>. To that can be added that playfulness is often described as a psychological and emotional attitude towards things, people, and situations <span class="citation">(<a href="#ref-bateson2013" role="doc-biblioref">Bateson and Martin 2013</a>; <a href="#ref-bogost2016" role="doc-biblioref">Bogost 2016a</a>; <a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014</a>)</span>. And, that play can take a disruptive approach at playfulness, through a notion of ‘dark play’, intended to break through conventional contexts <span class="citation">(<a href="#ref-stenros2007" role="doc-biblioref">Stenros, Montola, and Mäyrä 2007</a>; <a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014</a>)</span>.</p>
+<p><span class="citation">Bogost (<a href="#ref-bogost2016" role="doc-biblioref">2016a, 104</a>)</span> stands in defiance of this liberated idea of play as Sicart puts forward in favour of play as an act of submission. His argument is that play exists in the “working of a system” <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">2016a, 114</a>)</span>, in all the pieces that make up our lives. He asserts play as a paradox entailing freedom yet constraints <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">2016a, 116</a>)</span>. Where Sicart defines playfulness as another way of looking at something through freedom, Bogost reminds us that play requires limitations. The activities within an attitude of playfulness are not play but play-like. Through playfulness they inherit play’s abilities.</p>
+<p>As explored in the previous chapter designers work within limitations to craft unique solutions to wicked problems. What I am inferring is that the design process may include an attitude of playfulness that affords this intermingling with the limitations of any given design problem. <span class="citation">Don A. Norman (<a href="#ref-norman2002" role="doc-biblioref">2002</a>)</span> stressed the importance of meaningful relationships being considered in design processes. The act of designing is the crafting of an experience <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014</a>; <a href="#ref-norman2002" role="doc-biblioref">Don A. Norman 2002</a>; <a href="#ref-nam2011" role="doc-biblioref">Nam and Kim 2011</a>)</span>, often when done for an artefact this involves the infusing of emotional value <span class="citation">(<a href="#ref-nam2011" role="doc-biblioref">Nam and Kim 2011</a>; <a href="#ref-norman2002" role="doc-biblioref">Don A. Norman 2002</a>)</span>. Designs association with emotional value is something <span class="citation">Rose (<a href="#ref-rose2015" role="doc-biblioref">2015</a>)</span> explores through his enchanted objects, specifically the importance emotion plays as a stimulant in designed artefacts. And as play is an inherently personal activity riddled with unique emotional value <span class="citation">(<a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014</a>; <a href="#ref-bateson2013" role="doc-biblioref">Bateson and Martin 2013</a>; <a href="#ref-suits1978" role="doc-biblioref">Suits 1978</a>; <a href="#ref-salen2005" role="doc-biblioref">Salen and Zimmerman 2005</a>; <a href="#ref-juul2005" role="doc-biblioref">Juul 2005</a>; <a href="#ref-bissell2011" role="doc-biblioref">Bissell 2011</a>)</span>, this view makes playfulness a means to apply one’s personal expression into the world through the act of play and design, as Bogost puts it: “Play is impossible without restriction—not doing what you want, but determining what is possible to do given the meager resources” <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">Bogost 2016a, 119</a>)</span>.</p>
+<p>When seen in the context of design, playfulness becomes a way of gripping a design problem and imagining an artefact that is personalised, has emotion, is disruptive, and still full of designerly intent. In a manifesto promoting the neogenesis for play in our lives, <span class="citation">E. Zimmerman (<a href="#ref-zimmerman2014" role="doc-biblioref">2014</a>)</span> argues for changing perspectives towards the acceptance of play in an ever-growing complex world of information and systems. His position is that games<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a> fit naturally in a systemic society, as machines inputting, outputting, manipulating, and exploring information. Since games are a facilitating medium for play, playfulness becomes an active ingredient in this stance. The manifesto continues to urge the inclusion of playfulness in design approaches, as his opinion is that it acts as an engine for innovation and creativity <span class="citation">(<a href="#ref-zimmerman2014" role="doc-biblioref">2014, 21</a>)</span>. Furthermore, this view he believes is necessary for addressing problems of a new age which require “playful, innovative, and transdisciplinary thinking” <span class="citation">(<a href="#ref-zimmerman2014" role="doc-biblioref">2014, 22</a>)</span> to create, analyse, redesign, and transform systems into newer better versions of themselves.</p>
+<p>Bogost’s <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">2016a, 114</a>)</span> stance of play as “not an act of diversion, but the work of working a system” takes on an object-oriented approach at viewing play-like activities as removing oneself from human perspectives to discover the world anew. Giving examples of machines that have ‘play’ built-in to them affording them the functions they do, he suggests that as users of machines we enter into specified playgrounds such as with the manipulation of a guitar or the turning of a steering wheel to allow that <em>‘play’</em> to happen. The things around us are thus inherently imbued in a playfulness that we have yet to tap into. “Every playground has two basic properties, which are two sides of the same coin: boundaries and contents” <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">Bogost 2016a, 21</a>)</span>.</p>
+<p>The act of design is to understand the core attributes and influences of a given problem. These include, but are not limited to materiality, logic, cultures, economy, aesthetics, satisfaction, etc. If there should be a takeaway from the previous chapter on RtD, it should be that the world surrounding the designed artefact is as much present in the artefact as it is around it. Design is as much an act of understanding given problems in respect of revealed and hidden attributes, as much as it is about crafting an alternative viewpoint or solution to those problems.</p>
+</div>
+<div id="ludic-design" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Ludic Design<a href="Chapter6.html#ludic-design" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>What I’m nudging the discussion towards is the notion of <em>Ludic Design (LD)</em>; a form of design with an explicit interest towards playful and “curiosity-driven” engagement <span class="citation">(<a href="#ref-lupton2018" role="doc-biblioref">Lupton 2018, 6</a>)</span>. The term ludic is from the Latin <em>ludus</em> meaning ‘to play’. <span class="citation">Huizinga (<a href="#ref-huizinga1955" role="doc-biblioref">1955</a>)</span> and <span class="citation">Caillois (<a href="#ref-caillois2001" role="doc-biblioref">2001</a>)</span> made strong assertions for play’s central role in human culture, and though, <em>Homo Ludens</em> is considered a standard reference for game design literature <span class="citation">(<a href="#ref-rodriguez2006" role="doc-biblioref">Rodriguez 2006</a>; <a href="#ref-salen2004" role="doc-biblioref">Salen and Zimmerman 2004</a>; <a href="#ref-crawford2003" role="doc-biblioref">C. Crawford 2003</a>)</span>, it’s forgivable to think <em>ludic</em> design and <em>game</em> design are the same. Though game design involves the manipulating of ludic elements, they are very different. Where one strives to create an experience that is intended for its purpose of achieving play, vis-à-vis a game or similar product, ludic design intends to create meaningful experiences that are inherently playful.</p>
+<p>Ludic design forms one part of a combined methodological framework that I intend to introduce in this chapter asides the above discourse for an attitude of playfulness. The discussion so far has been towards viewing this approach at manipulating the presence of playfulness within an activity or artefact to illicit alternative interactions and results. The term ludic design, and the appropriation of Huizinga’s <em>Homo Ludens</em>, was introduced by <span class="citation">Gaver (<a href="#ref-gaver2002" role="doc-biblioref">2002</a>)</span> through a series of design experiments exploring the ludic capacities of design for HCI <span class="citation">(<a href="#ref-gaver2004" role="doc-biblioref">Gaver et al. 2004</a>; <a href="#ref-gaver2003" role="doc-biblioref">Gaver, Beaver, and Benford 2003</a>; <a href="#ref-sengers2005" role="doc-biblioref">Sengers et al. 2005</a>)</span> <a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>. Where humans are generally characterised in light of the ability to think and achieve, taking in the perspective of <span class="citation">Gaver (<a href="#ref-gaver2002" role="doc-biblioref">2002</a>)</span> humans may further be characterised as playful through curiosity and their affection for exploration, inventions, and wonder.</p>
+<p>Gaver’s interest is in HCI and the role technology plays in our lives. His opinion is that where IoT-enabled objects are introduced into our homes with the intention of them bringing ease and functionality, the homes we occupy are not solely for utilitarian purposes <span class="citation">(<a href="#ref-gaver2004" role="doc-biblioref">Gaver et al. 2004, 886</a>)</span>. We play in our homes engaging in mundane seemingly futile activities such as reading books for pleasure, admiring our gardens, arranging furniture, etc. These activities in his view are not merely entertainment or wasting of time, rather when seen and used in a creative manner they may present novel opportunities for understanding and development.</p>
+<p>To make sense of the role ludic design plays as a methodology it would help to understand how design cognition works in this context and where curiosity and creativity intermingle with innovation through playfulness. To further solidify the premise I intend to present between play and design the interconnections between design cognition and playful activities may be plotted in lieu of the earlier references to the works by <span class="citation">Bateson and Martin (<a href="#ref-bateson2013" role="doc-biblioref">2013</a>)</span> among others.</p>
+<div id="design-cognition" class="section level4 hasAnchor" number="6.3.2.1">
+<h4><span class="header-section-number">6.3.2.1</span> Design Cognition<a href="Chapter6.html#design-cognition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="citation">Gedenryd (<a href="#ref-gedenryd1998" role="doc-biblioref">1998</a>)</span> plots a history of design as a cognitive activity comparing it to other models of cognition to unearth how designers attempt to design. Most of this I’ve explored in the previous chapter with design as a process, so what follows is built upon that. What Gedenryd manages to do is equate design on a cognitive level to programming and planning saying, “design consists in developing a plan for <em>the implementation</em> [of design], by translating the given goal into a specification of what should be done” <span class="citation">(<a href="#ref-gedenryd1998" role="doc-biblioref">1998, 49</a>)</span>. His argument explores the reciprocal relationship design establishes between a problem and its solution(s).</p>
+<p>The ideation stage of any design process is intended to promote creativity in generating concepts for later evaluation <span class="citation">(<a href="#ref-yilmaz2015" role="doc-biblioref">Yilmaz et al. 2015</a>)</span>. This often happens with (and without) the use of tools such as sketching or prototyping <span class="citation">(<a href="#ref-yilmaz2015" role="doc-biblioref">Yilmaz et al. 2015</a>; <a href="#ref-purcell1996" role="doc-biblioref">Purcell and Gero 1996</a>; <a href="#ref-gedenryd1998" role="doc-biblioref">Gedenryd 1998</a>)</span>. Defining how constraints exist for a designer, <span class="citation">Gedenryd (<a href="#ref-gedenryd1998" role="doc-biblioref">1998</a>)</span> goes on to explain that asides any contextual constraints of a problem designers impose <em>their own</em> flexible constraints allowing the viewing of problems pragmatically. This presents constraints as an instrument for a designer which they execute through the many tools at their disposal. The presence of limitations and its effect on creativity is not an unknown concept <span class="citation">(<a href="#ref-bateson2013" role="doc-biblioref">Bateson and Martin 2013</a>; <a href="#ref-sicart2014" role="doc-biblioref">Sicart 2014</a>; <a href="#ref-bogost2016" role="doc-biblioref">Bogost 2016a</a>; <a href="#ref-norman2002" role="doc-biblioref">Don A. Norman 2002</a>)</span>. In fact, the limitations presented by a problem often create possibility spaces as <span class="citation">(<a href="#ref-bogost2016" role="doc-biblioref">Bogost 2016a, chap. 6</a>, para. 26)</span> argues for quoting Norman’s concept of “affordances” and “constraints” that act as tools when designing for user-centeredness.</p>
+<p>On the role played by sketches in design and development, <span class="citation">Gedenryd (<a href="#ref-gedenryd1998" role="doc-biblioref">1998, 149</a>)</span> gives the example of graphic design raising the point that in a design process sketches act as a means for informative inquiry. They interact with the designer on a cognitive level. Being unfinished and rough allows sketches in graphic design to act as a medium for inquiring about the problem at hand:</p>
+<blockquote>
+<p>“For graphic designers as much as architects, sketching is the way in which they work on a problem…designers make sketches to ‘familiarize themselves’ with their problem” <span class="citation">(<a href="#ref-gedenryd1998" role="doc-biblioref">Gedenryd 1998, 149</a>)</span></p>
+</blockquote>
+<p>He goes on to familiarise other methods and tools (such as thumbnailing, roughs, prototyping, etc.) used by designers with their inherent ability to achieve specific goals in cognition. This connection he makes is to define the theoretical concerns present with how designers extract information from the world they exist in (Fig. <a href="Chapter6.html#fig:cognition">6.3</a>). Cognition comes from the world the designers and the design cohabit, enabling “interactive cognition” <span class="citation">(<a href="#ref-gedenryd1998" role="doc-biblioref">Gedenryd 1998, 157</a>)</span>. A designer is not solely concerned with the object of design, but all in the vicinity of the design.</p>
+<div class="figure"><span style="display:block;" id="fig:cognition"></span>
+<img src="figures/ch6-cognition.png" alt="Design Cognition enables interaction of design knowledge (often playful such as sketches) with external influences within the design process that collectively influence the designing of solutions or artefacts."  />
+<p class="caption">
+Figure 6.3: Design Cognition enables interaction of design knowledge (often playful such as sketches) with external influences within the design process that collectively influence the designing of solutions or artefacts.
+</p>
+</div>
+<p>Having said that, he raises a point of contention at how the word design when taken to account for something that is <em>designed</em>, is far from the idea of the function associated with the design; ‘designer clothes’, ‘this design’, etc. When designing, often the function is the focus of a design followed closely by form. What he’s saying is that the artefact created by design is not the genuine goal of the designer, rather it is a means by which designers achieve their goals <span class="citation">(<a href="#ref-gedenryd1998" role="doc-biblioref">Gedenryd 1998, 155</a>)</span>. The artefact created is intended to interact with the situation it is presented, creating a future instance where the designer is capable of reaching their intention: the solution <span class="citation">(<a href="#ref-gedenryd1998" role="doc-biblioref">1998, 156</a>)</span>. This is most clearly seen in the formulating of prototypes, which he claims have similar properties to sketches in that they intend towards desired future states in a tangible form. Another way of viewing this is, sketches, artefacts, prototypes, etc. are all <em>playgrounds where designers playfully design</em>. Seeing this from the vantage point of <span class="citation">Bogost (<a href="#ref-bogost2016" role="doc-biblioref">2016a</a>)</span> they are things imbued with a sense of play afforded through their unique constraints yet simultaneously invoked sense of freedom.</p>
+</div>
+<div id="curiosity-driven-design" class="section level4 hasAnchor" number="6.3.2.2">
+<h4><span class="header-section-number">6.3.2.2</span> Curiosity-driven Design<a href="Chapter6.html#curiosity-driven-design" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now let’s return to the topic of ludic design and where notions of curiosity fit into this argument of playfulness and design. What should be understood is that its focus is towards meaning-making rather than tackling technical, social, psychological or other issues <span class="citation">(<a href="#ref-mivielle2015" role="doc-biblioref">Mivielle 2015</a>; <a href="#ref-gaver2002" role="doc-biblioref">Gaver 2002</a>, <a href="#ref-gaver2009" role="doc-biblioref">2009</a>; <a href="#ref-gaver2004" role="doc-biblioref">Gaver et al. 2004</a>; <a href="#ref-back2017" role="doc-biblioref">Back, Segura, and Waern 2017</a>)</span>. This is a core ideology that Gaver utilises in his different experiments and design probes. They are to engage with curiosity in order to define specific meaning. That said, the artefacts created under this banner are of an obscure nature for this very reason, as emotion <span class="citation">(<a href="#ref-gaver2009" role="doc-biblioref">Gaver 2009</a>)</span> and ambiguity <span class="citation">(<a href="#ref-gaver2003" role="doc-biblioref">Gaver, Beaver, and Benford 2003</a>)</span> become important assets for the designer.</p>
+<p>A definition of ludic design starts with understanding ludic engagement and the functions that befall such an interaction. As such, it fits within the proximity of different genres of application without belonging to any of them, for example toolmaking, communication, art, etc. <span class="citation">(<a href="#ref-gaver2004" role="doc-biblioref">Gaver et al. 2004, 888</a>)</span>. These all are part of what constitutes ludic engagement but individually are not enough to define it. Nevertheless, <span class="citation">Gaver et al. (<a href="#ref-gaver2004" role="doc-biblioref">2004, 893</a>)</span> present their opening position towards ludic design as not being specifically <em>for</em> anything, rather capable of offering insight into a range of possible meanings for human exploration. They sum it up into three core values that ludic design need possess:</p>
+<ol style="list-style-type: decimal">
+<li><p>The ability to promote curiosity, exploration, and reflection at the foremost. Allowing those engaged to appropriate their own meanings from given activities rather than have meaning imposed on them</p></li>
+<li><p>Be non-utilitarian to fully encompass traits of a playful activity instead of one where those partaking may be distracted by its practicality, and</p></li>
+<li><p>Remain open and ambiguous devoid of defined narratives to enrich an experience that is more accepting of interpretations on a wider spectrum of meanings stemming from different cultures and ethics.</p></li>
+</ol>
+<p><span class="citation">Bateson and Martin (<a href="#ref-bateson2013" role="doc-biblioref">2013, 44</a>)</span> argue for creativity as being a response to experiences which subsequently leads to innovation. By-products of engagement such as changes in mood, situational flexibilities, present limitations, and other psychological effects may inhibit the potential of genuine creativity <span class="citation">(<a href="#ref-bateson2013" role="doc-biblioref">2013, 80</a>)</span>. Ludic design’s format of engagement creates an artefact that is not privileged to any particular activity or goal (Fig. <a href="Chapter6.html#fig:ludic">6.4</a>), yet remains engaging and playful allowing it to become something thought-provoking <span class="citation">(<a href="#ref-sengers2006" role="doc-biblioref">Sengers and Gaver 2006</a>; <a href="#ref-gaver2004" role="doc-biblioref">Gaver et al. 2004</a>; <a href="#ref-back2017" role="doc-biblioref">Back, Segura, and Waern 2017</a>)</span>. To quickly explore this further, we can look at the <em>Drift Table</em> a design probe executed by <span class="citation">Gaver et al. (<a href="#ref-gaver2004" role="doc-biblioref">2004</a>)</span> as part of the <em>Equator Project</em>.</p>
+<div class="figure"><span style="display:block;" id="fig:ludic"></span>
+<img src="figures/ch6-ludic.png" alt="The curiosity-driven engagement of ludic design artefacts make them exploratory endeavours as their ambiguity aids in fostering alternative potential goals."  />
+<p class="caption">
+Figure 6.4: The curiosity-driven engagement of ludic design artefacts make them exploratory endeavours as their ambiguity aids in fostering alternative potential goals.
+</p>
+</div>
+<p>The Drift Table’s central premise is the feeling of drifting over a landscape. As a designed artefact it looks like a small coffee table on wheels with a circular digital viewport in the middle. The viewport shows an ever-drifting landscape of the United Kingdom and the only way to control the direction or speed of drift is by placing things on the different corners of the table. This interaction is not as intuitive as scrolling on a tablet or pressing a button, instead it is exploratory. Furthermore, the table gives limited access to those engaged as to where they are in the landscape. A screen on the side points out geographical locations, and a micro-size button beneath allows it to be reset to its current location. Although, these are designed in a way to imply that its users should not feel the need to exit its reality. The table thus presents the feeling of experiencing the familiar in an unfamiliar way, allowing those engaged in this experience to be taken aback by the things they rarely noticed.</p>
+<p>This rather poetic reimagining of a coffee table is perhaps the most oft-cited design probe in the discourse of ludic design, and for good measure. When seen in light of design cognition and the discussion of playfulness above, artefacts such as the Drift Table become equivalent to the playful sketches done by designers in the design process. It is a means to a goal, conducted in a manner that is playful and engaging not only for those involved in its use, but also in the process of its execution. In the study conducted by <span class="citation">Gaver et al. (<a href="#ref-gaver2004" role="doc-biblioref">2004, 898</a>)</span> the long-term use of the table in a domestic setting was also explored. The observations acquired from this, and other similar probes, help towards further exploring the potential in designing for ludic pursuits both for average users and for design practice.</p>
+</div>
+</div>
+</div>
+<div id="designing-curious-philosophical-artefacts" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Designing Curious Philosophical Artefacts<a href="Chapter6.html#designing-curious-philosophical-artefacts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ludic design is helpful in regard to this research for understanding a level of curious engagement with the unknowns that this work attempts to tackle; more-than humanness. However, the philosophical arguments that the previous chapters have touched upon require an approach that is capable of dissecting them further in a microscopic manner. How does one attempt to design artefacts that can explore the object-oriented philosophies for design knowledge?</p>
+<p>As what is being dealt with exists in an unknown space hence the need for speculative philosophical approaches such as OOO, the next part of this combined methodological framework is of a similar speculative nature. Like-wise as I am also dealing with future-focused technologies based on contemporary concepts these are yet to be understood or materialised, a Speculative Design (SD) approach may be incorporated to understand near-future possibilities where these solutions may exist and build on the combined methodological framework of this research. This section explores SD and the need for speculation in this research moving towards a combined method for designing curious philosophically charged artefacts</p>
+<div id="speculating-over-definitions" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Speculating over definitions<a href="Chapter6.html#speculating-over-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A true definition of SD overlaps between different design practices which include critical design, design fiction, design probes, and discursive design ([Auger, 2013, p. 12]). Each of these practices as <span class="citation">Auger (<a href="#ref-auger2013" role="doc-biblioref">2013</a>)</span> points out, involve elements of speculation that place the designed object apart from the world it originally inhabits to allow for freedom of movement and narrative. A requirement in our current situation of understanding object-oriented perspectives. As such, SD employs the use of fiction to present alternative viewpoints to the same designed object. <span class="citation">Dunne and Raby (<a href="#ref-dunne2013" role="doc-biblioref">2013</a>)</span> are most accredited with the term SD as having explored the potential of using design as a form of critique akin to design as communication or problem-solving. This critical approach towards design takes into account designs interest as a future-oriented task, and as such SD has been oft associated with research in design futures and futurology <span class="citation">(<a href="#ref-dunne2013" role="doc-biblioref">Dunne and Raby 2013</a>; <a href="#ref-lukens2011" role="doc-biblioref">Lukens and DiSalvo 2011</a>; <a href="#ref-coulton2016" role="doc-biblioref">Coulton, Burnett, and Gradinar 2016</a>)</span>.</p>
+<p>Futurists often refer to activities that occur in futures in a taxonomy of states (possible, preferable, probable), depicted through a model of the “futures cone” <span class="citation">(<a href="#ref-voros2017" role="doc-biblioref">Voros 2017, 7</a>)</span>) (Fig. <a href="Chapter6.html#fig:futures-cone">6.5</a>). <span class="citation">Voros (<a href="#ref-voros2017" role="doc-biblioref">2017</a>)</span> traces back a history of the cone to an appropriation of how <span class="citation">Hancock and Bezold (<a href="#ref-hancock1994" role="doc-biblioref">1994</a>)</span> defined futures and even further back. The adaptation by <span class="citation">Voros (<a href="#ref-voros2017" role="doc-biblioref">2017</a>)</span> though, is more commonly referred to in modern depictions as it incorporates a broader taxonomy. These alternative future states are considered subjective views relating to past and present events therefore concepts are subject to change over time, for example space travel.</p>
+<div class="figure"><span style="display:block;" id="fig:futures-cone"></span>
+<img src="figures/ch6-futures_cone.png" alt="Futures Cone adapted from @voros2017 presents a means of charting activities of the future which may fall under different portions of the cone."  />
+<p class="caption">
+Figure 6.5: Futures Cone adapted from <span class="citation">Voros (<a href="#ref-voros2017" role="doc-biblioref">2017</a>)</span> presents a means of charting activities of the future which may fall under different portions of the cone.
+</p>
+</div>
+<p>This is not to say SD ‘only’ contends to matters of things to be. Though the term brings with it visions of science fiction dreams and impossible futures—think jet packs and flying cars—it is equally a means of exploring “alternative presents” <span class="citation">(<a href="#ref-auger2013" role="doc-biblioref">Auger 2013, 12</a>)</span>, or “lost futures” <span class="citation">(<a href="#ref-coulton2016" role="doc-biblioref">Coulton, Burnett, and Gradinar 2016, 5</a>)</span>. As Auger explains:</p>
+<blockquote>
+<p>“…alternative presents are design proposals that utilise contemporary technology but apply different ideologies or configurations to those currently directing product development. This method is similar to the historiographical practice of counterfactual histories and the literary genre of alternate histories, but rather than focusing on asking ‘what if’ of historical events and imagining the effect on here and now, it shifts the emphasis onto artefacts.” <span class="citation">(<a href="#ref-auger2013" role="doc-biblioref">Auger 2013, 12</a>)</span></p>
+</blockquote>
+<p>Auger continues to express SD as a methodology capable of bridging how one perceives the world around them in relation to the fictional settings presented by the speculation <span class="citation">(<a href="#ref-auger2013" role="doc-biblioref">Auger 2013, 12</a>)</span> Rather than throw an artefact into a distant future of which we might be incapable of relating with, the suggestion is to alter one’s goal. Striving instead for the creation of ‘near futures’ with approximated more tangible speculations. The point is to distance a speculatively designed artefact from science fiction, rendering it in the plausible or probable portion of the cone. As a methodology, Auger further attempts to define different modes of interacting with SD to formulate arguments which hover around satirical commentary, provocation, and disrupting normality <span class="citation">(<a href="#ref-auger2013" role="doc-biblioref">2013, 12</a>)</span>.</p>
+<p>This supplementary definition stems from the experience of many SD artefacts, such as those explored by <span class="citation">Dunne and Raby (<a href="#ref-dunne2013" role="doc-biblioref">2013</a>)</span>, where one can’t help feeling they are alien. This is because most exploration of SD has to do with “unreality” <span class="citation">(<a href="#ref-dunne2013" role="doc-biblioref">2013, 12</a>)</span> and the aesthetics involved. These artefacts are as much artisanal and philosophical visions as they are designed. Conjecture is to blame for this for what the term ‘speculative’ implies: not real, yet to happen, etc.</p>
+<p>Furthermore, SD is also argued to be about the present <span class="citation">(<a href="#ref-gonzatto2013" role="doc-biblioref">Gonzatto et al. 2013, 40</a>)</span> relying instead on past experiences and future speculations projected onto a discourse about the ‘now’. On this, <span class="citation">Coulton, Burnett, and Gradinar (<a href="#ref-coulton2016" role="doc-biblioref">2016, 6</a>)</span> contend, that when considering future possibilities, the influence of the past cannot be ignored as prior events may be responsible for lost futures. As such, any speculative design process needs to incorporate a designers present perspectives and past influences. They urge for SD practices to not be considered neutral acts, rather, present them in lieu with Buchanan’s view that all design may be considered “as rhetoric” <span class="citation">(<a href="#ref-buchanan1985" role="doc-biblioref">Buchanan 1985, 5</a>)</span>. Ergo, SD and its related methodologies may be seen as open-ended conversational approaches towards speculation, lessening its association with critical design.</p>
+<div id="designing-the-mundane" class="section level4 hasAnchor" number="6.4.1.1">
+<h4><span class="header-section-number">6.4.1.1</span> Designing the Mundane<a href="Chapter6.html#designing-the-mundane" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Where the goal for SD becomes the designing of a critical future-focused view of a situation (influenced by the past or not), the artefacts created are none-the-less <em>art-like</em>. Fantastical shapes, odd angles, vivid obscurities, that all intend to highlight themselves as being apart from their less speculative counterparts. They succeed in crafting a fiction capable of diegesis, yet they also succeed in alienating themselves from the world they exist in. They are playful and indeed curious, but far from mundane.</p>
+<p>Putting the above views and supplementary definitions of SD aside, <span class="citation">(<a href="#ref-coulton2017b" role="doc-biblioref">Coulton and Lindley 2017</a>)</span> argue instead for world-building through <em>Design Fiction</em> practice. In this holistic approach towards SD, they present a case for multiple artefacts contributing to a worldview that surrounds the designed object. This speculated design is no longer existing in a vacuum, and instead becomes something that relates to its surroundings:</p>
+<blockquote>
+<p>“While speculative designs may well conjure qualities of an alternate world via art-like artefacts, Design Fictions use any media they can to give life to fictional alternate worlds, worlds within which the artefacts that define them make sense.” <span class="citation">(<a href="#ref-coulton2017b" role="doc-biblioref">Coulton and Lindley 2017, 4</a>)</span></p>
+</blockquote>
+<p>Fictional artefacts and their worlds created through design fiction—specifically those with commercially targeted inclinations—they see akin to vapourware imagined for potential technologies. The fictions themselves, in turn, make what they call “vapourworlds” <span class="citation">(<a href="#ref-coulton2017b" role="doc-biblioref">Coulton and Lindley 2017, 5</a>)</span> a play on the idea of vapourware. These are specific environments designed solely for prototyping commercially minded speculation in a manner where they become relatable. The many design fiction artefacts that are created, end up as entry-points into different perspectives facilitating these <em>vapourworlds</em>. That said, this ideology of world-building may be extended to other non-commercially focused endeavours of design fiction as well <span class="citation">(<a href="#ref-coulton2017c" role="doc-biblioref">Coulton et al. 2017</a>)</span>.</p>
+<p>A key strength of design fictions is in their ambiguity as they take the form of imagery, film, physical or digital artefacts as opposed to text <span class="citation">(<a href="#ref-blythe2018" role="doc-biblioref">Blythe and Encinas 2018, 34</a>)</span>. Mundanity thus becomes an important asset for a design fictions ambiguous nature to be realised. Examples of this can be seen in artefacts created by <em>Near Futures Laboratory</em> and others <span class="citation">(<a href="#ref-bleecker2009" role="doc-biblioref">Bleecker 2009</a>, <a href="#ref-bleecker2010" role="doc-biblioref">2010</a>)</span>. The goal becomes to blur the lines between reality and fiction through diegetic prototyping, creating a world that is cohesive yet artificial <span class="citation">(<a href="#ref-coulton2019a" role="doc-biblioref">Coulton et al. 2019, 15</a>)</span> capable of inquiry, critique, vision, disruption, etc.</p>
+<p>On world-building for fantasy, <span class="citation">Tolkien (<a href="#ref-tolkien1947" role="doc-biblioref">1947, para. 34</a>)</span> described the process as “sub-creation”, dependant on the world it is influenced by; our own. The grass may be purple in this secondary fantasy world, but there is grass. No matter how fictional a world may become, a core relationship remains with its source <span class="citation">(<a href="#ref-blythe2018" role="doc-biblioref">Blythe and Encinas 2018, 85</a>)</span>.</p>
+<p>In this argument for playfulness, technology, philosophy, and design, speculation attempts to bring them together by weaving linkages between crafted curiosity and intentional philosophical concepts within a designed artefact. Be it elaborate artefacts like the <em>Living Room of the Future</em> <span class="citation">(<a href="#ref-coulton2019a" role="doc-biblioref">Coulton et al. 2019</a>)</span>, the curiosity-driven <em>Drift Table</em> <span class="citation">(<a href="#ref-gaver2004" role="doc-biblioref">Gaver et al. 2004</a>)</span>, or <em>Enchanted Objects</em> <span class="citation">(<a href="#ref-rose2015" role="doc-biblioref">Rose 2015</a>)</span>, they become speculative imaginings of lost presents and potential futures. Entry-points in a world full of possibilities and playful potential. With all that has been said and done we can now focus on combining these concepts to create a collective methodological framework for crafting artefacts that engage in philosophical arguments around IoT.</p>
+</div>
+</div>
+</div>
+<div id="carpentry" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Carpentry<a href="Chapter6.html#carpentry" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It’s taken a while getting here, but the arguments presented thus far were necessary to connect the dots towards my appropriation of carpentry as a combined methodological approach for the design research conducted here. As with most things discussed so far, when I refer to ‘carpentry’ things are not as it seems. By carpentry I don’t mean woodworking in any way. Rather, it is philosophical crafting akin to a <em>‘kind of’</em> carpentry that I speak of. How it is utilised here was presented by <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012</a>)</span> in a chapter of his book <em>Alien Phenomenology, or What it’s like to be a thing</em>. Where the book’s main focus is on a phenomenological approach of viewing objects as actors in their own right, while discussing carpentry Bogost argues against the need for writing as a sole means for scholarly productivity; particularly when philosophy is an active ingredient in one’s research.</p>
+<p>Carpentered artefacts are to paraphrase <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012, 100</a>)</span> philosophical lab work. Though he agrees that when philosophers come together, the outcome automatically becomes a written product of sorts. The point of contention he puts forward is for researchers of science who although do their research on the tangible world and manufacture or devise things for tangible application, their findings are still subjected to the typical academic rigour of writing scholarly articles to prove themselves. The artefact, chemical, product, etc. created or discovered by the researcher becomes less scholarly without in his opinion.</p>
+<p>This is not to say that Bogost is against the creation of scholarly articles and academic papers. On the contrary, he agrees with the reasoning to have a standardised approach towards the quality, transparency, ethics, and validity of academic knowledge generation. What he finds an issue with is in having an “obsession” with scholarly writing over other methods <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012, 89</a>)</span>. The reasoning being his opinion that <em>(a)</em> academics are bad writers, and <em>(b)</em> on a philosophical ground writing is dangerous.</p>
+<p>Bogost’s reasoning is quite easily understandable, academic writing is full of obfuscation and jargon intended to be ambiguous and “faceless” <span class="citation">(<a href="#ref-rothman2014" role="doc-biblioref">Rothman 2014, para. 2</a>)</span>, which may prove a hindrance to those outside of research. The later reason though requires some explaining. When <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012, 90</a>)</span> says writing is dangerous for philosophy, he is referring to how it is “one form of being” out of the many different ways in which we interact with our world. His stance is against the assumption that our language is the only way through which we relate to our world. This assumption hinges on the idea that we are evolved humans, and language differentiates us from other animals making it our strongest tool in understanding the world.</p>
+<p>This view in his opinion is an ancient one. He quotes <span class="citation">Bryant (<a href="#ref-bryant2010" role="doc-biblioref">2010</a>)</span> in this regard, saying that if the world we live in were only understood through the semiotics of what we can put into language, then the contributions of the non-semiotic world (such as, lightbulbs, optical cables, climate change, etc) would forever remain unknown to us <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012, 90</a>)</span>.</p>
+<p>The consequence of this approach towards language over other methods, he asserts, is a “fixation on argumentation” <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012, 91</a>)</span>, so much that one’s curiosity becomes less charged and the need only becomes to explain oneself. Quoting Richard Rorty he goes on to explain how for philosophers the act of “doing philosophy” <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">2012, 91</a>)</span> is an act of contesting arguments through weaknesses; often done through writing and publishing one’s opinions. The successful philosopher thus becomes like a sniper with a keen eye for weaknesses, only their weapon is writing skilfully <a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
+<div id="getting-your-hands-dirty-with-philosophy" class="section level3 hasAnchor" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> Getting your hands dirty with philosophy<a href="Chapter6.html#getting-your-hands-dirty-with-philosophy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As a recourse, Bogost’s suggestion to <em>improve</em> scholarly discourse is adopting an alternative approach towards making things that <em>‘do philosophy’</em>; potentially supplemented with writing. He compares the knowledge accrued through reading/writing and that from crafting/making/doing as “two sides of the same coin” <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012, 92</a>)</span>. Quoting <span class="citation">M. B. Crawford (<a href="#ref-crawford2009" role="doc-biblioref">2009</a>)</span> on his departure from academic philosophy to the world of auto-mechanics, <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012, 92</a>)</span> explains how philosophy may be seen as a “practice” as much as a theoretical application. “Like mechanics philosophers ought to get their hands dirty” <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">2012, 92</a>)</span>.</p>
+<p>This view sees a philosophical discourse embedded in an artefact created with the intention of it being a product of philosophy. An approach he calls <em>Carpentry</em> as the “practice of constructing artefacts as a philosophical practice” <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012, 92</a>)</span>. The term carpentry, Bogost derives from an amalgamation of meanings. The first coming from the meaning of carpentry as a form of woodcraft or construction. The second, he takes from <span class="citation">Harman (<a href="#ref-harman2005" role="doc-biblioref">2005, 20</a>)</span> as a philosophical account of a “carpentry of things”, a concept Harman borrows from Alphonso Lingis. The idea is that objects that exist are involved in their realities fashioning each other and the world around them.</p>
+<p>Furthermore, since this is a discussion around OOO, carpentry may be seen as anti-correlationist allowing for a broader perspective towards the world, as he explains himself:</p>
+<blockquote>
+<p>“Carpentry might offer a more rigorous kind of philosophical creativity, precisely because it rejects the correlationist agenda by definition, refusing to address only the human reader’s ability to pass eyeballs over words and intellect over notions they contain…philosophical works generally do not perpetrate their philosophical positions through their form as books. The carpenter, by contrast, must contend with the material resistance of his or her chosen form, making the object itself become the philosophy.” <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012, 92–93</a>)</span></p>
+</blockquote>
+<p>He gives examples of philosophical arguments that make better sense as textual accounts. But at the same time, there are many aspects of philosophy which contend better through the act of recreating arguments in a tangible medium. His comparison of carpentry to philosophy in this regard, is on par with the act of scientific experiments to science.</p>
+<p>In <a href="#sec:Chapter4">Chapter 4</a>, while discussing OOO I briefly introduced the idea of ontography. In <em>Alien Phenomenology</em>, <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012, 19</a>)</span> expands on the perspective of ontography as a record of “things within”. This recording of objects can then be defined further by their “collocation” to not only the things within the ontograph but also those around it <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">2012, 38</a>)</span> The idea is not foreign as it mirrors the concept of flat ontologies expressed by <span class="citation">Harman (<a href="#ref-harman2018" role="doc-biblioref">2018</a>)</span>.</p>
+<p><span class="citation">Harman (<a href="#ref-harman2010a" role="doc-biblioref">2010b</a>)</span> and later <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012</a>)</span>, examine Bruno Latour’s lists of objects as a way to present the idea of an ontograph in the most basic of ways. Latour’s lists, or as Bogost calls them <em>litanies</em>, force one to create obscure relationships between words and phrases which otherwise would not be paired together, such as:</p>
+<blockquote>
+<p>“A storm, a rat, a rock, a lake, a lion, a child, a worker, a gene, a slave, the unconscious, a virus.” <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012, 38</a>)</span></p>
+</blockquote>
+<p>This prompted Bogost to build the <em>Latour Litanizer</em>,<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> a program that fetches random titles of articles from Wikipedia and assembles them to form a list of ‘objects’; an ontograph of Wikipedia articles. The assembly of disjointed information removes the reader from the process of selecting the article and instead presents it as raw information. The subsequent <em>litany</em> is now free to be scrutinised for the various relationships the titles may (or may not) have amongst each other.</p>
+<p>Carpentry thus becomes an attempt at enacting philosophical arguments in a way that may do justice to the deep musings of philosophical discourse in order to make sense of them better, perhaps even in a contemporary setting such as with the <em>Litanizer</em>. It invokes elements of curiosity to encourage speculating over the philosophical concepts it embodies while simultaneously retaining an air of playfulness through its execution which Bogost is an advocate of.</p>
+<p>As a maker of software and game designer, Bogost’s medium of getting his hands dirty with philosophy becomes crafting games and programming. As a design researcher exploring more-than human design methods for IoT my approach becomes crafting physical/digital design artefacts capable of rendering philosophical arguments around IoT.</p>
+</div>
+</div>
+<div id="a-combined-methodological-framework" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> A combined methodological framework<a href="Chapter6.html#a-combined-methodological-framework" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At the start of this chapter and in <a href="Chapter2.html#Chapter2">Chapter 2</a> I referenced the creation of bespoke toolboxes capable of enabling the carpentry of the coming artefacts of this research. I would like to reaffirm a point that though these are called toolboxes, they are not design tools in reality but a play on the use of ‘carpentry’ as a methodology. What <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012, 100</a>)</span> suggests is seeing carpentry as “philosophical lab equipment” capable of assembling philosophical concepts in a form where they may be scrutinised. He proposes its use in general philosophical application as a way to experiment and further create the <em>alien phenomenologies</em> he speaks of in his book. These are deliberate probes intended to prove, disprove, or disrupt philosophies.</p>
+<div class="figure"><span style="display:block;" id="fig:carpentry"></span>
+<img src="figures/ch6-carpentry.png" alt="In light of the method assemblages from [Chapter 2](#Chapter2) a combined methodological framework may be imagined that incorporates an iterative process of examining philosophical discourses through playful appropriations and speculative design that feed into the carpentering of bespoke philosophically charged artefacts."  />
+<p class="caption">
+Figure 6.6: In light of the method assemblages from <a href="Chapter2.html#Chapter2">Chapter 2</a> a combined methodological framework may be imagined that incorporates an iterative process of examining philosophical discourses through playful appropriations and speculative design that feed into the carpentering of bespoke philosophically charged artefacts.
+</p>
+</div>
+<p>My intention of creating bespoke combinations of concepts coming from philosophy, design, and technology is an argument for the playful approach carpentry affords as a methodology. The artefacts crafted in the coming chapters were all done through carpentry in an iterative process of RtD that involved examining concepts through affordances of curious engagement and speculation (Fig. <a href="Chapter6.html#fig:carpentry">6.6</a>). These concepts do not strictly align with the terms associated with Bogost’s vision of carpentry which he describes as a means for enacting OOO. They are important to this specific practice of exploring more-than human futures for technology proposed by my RtD approach, by encouraging alternative thinking and explaining how play manifests in my practice of design.</p>
+<p>In this chapter I’ve explored play from multiple vantage points because as a playful practitioner I see play in both myself and the world around me. Bogost understands carpentry to be playful as he understands playfulness. Though his definition of play is at odds with Sicart and others, it was necessary for me to include those arguments because that is how I see play as existing in both people and artefacts. For the purposes of this research and myself I see playfulness manifesting in the act of carpentry as, <em>(a)</em> a vehicle that allows me to explore speculative concepts of more-than humanness and IoT relevant to OOO, and <em>(b)</em> a practice-based activity that affords playfulness within the things that I create. LD and SD are required to carry the argument for IoT and the more-than human by encouraging engagement. As a human I can only design things from that perspective, yet this research takes on the challenge of designing from a non-human perspective. Both LD and SD allow that to happen through their loosely defined worlds. Artefacts such as the Drift Table allow one to exit their own worlds into curiously ambiguous ones. Carpentry here holds LD and SD together with philosophical musings through an iterative design practice. And all of this is only possible by acknowledging a manifested playful attitude towards what future human-computer relations may imply.</p>
+<p>As a programmer Bogost’s interest is related to HCI and thus many of the examples he gives are related to machines and programming. On this he suggests that HCI is a correlationist field as its concern is with the relationship between humans and computers; the focus being an obsession with “human goals and experiences” <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012, 107</a>)</span>. When allowed to break free from this human-tether, HCI evolves into something more. The example Bogost gives for this is the <em>Tableau Machine</em> <span class="citation">(<a href="#ref-romero2008" role="doc-biblioref">Romero, Pousman, and Mateas 2008</a>)</span>, an attempt to create a sentient home aware of its occupants. How this attempt is different from other like attempts at AI’s inclusion in an occupied space, is in how the information is relayed back to the human. Rather than have it as directly legible information, it is returned as abstract art. The depiction becomes a relationship of spaces and the interactions taking place within them. Though these interactions have no meaning as they are not assigned any legibility. It takes on the form of an “alien perspective” on our world from an artificial intelligence <span class="citation">(<a href="#ref-bogost2012" role="doc-biblioref">Bogost 2012, 106</a>)</span>.</p>
+<p>Though not intended in this manner nor directly related to this research, I reference the <em>Tableau Machine</em> here because as a carpentered artefact it can translate into the methodological framework devised above. As described by <span class="citation">Romero, Pousman, and Mateas (<a href="#ref-romero2008" role="doc-biblioref">2008, 373</a>)</span> the intention for the artefact was to understand technology as an alien presence in the domestic environment. The anthropological studies it references explores the fascination between humans and technology through obscure HCI products. It incorporates an application of technology that is both current yet future-focused, speculating about the potential present among contemporary technologies. Furthermore, the results of the artefact are presented as purposefully ambiguous playful abstractions that contribute to a wider audience of design, technology, and anthropology.</p>
+<p>Carpentry itself as <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012, 104</a>)</span> presents it is not proposed as a medium for engaging in ambiguity or curiosity, rather one for unpacking reality and making things more visible such as in the case of Ben Fry’s <em>Deconstructulator</em> <a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>. Though he agrees that when removing the HCI confines of the <em>Tableau Machine</em> it becomes something more. Romero et al. suggest the information presented by the <em>Tableau Machine</em> to be a way to view the social dynamics of a space. Irrespective of how it may be viewed, as with the <em>Latour Litanizer</em> the result requires speculation to be directed. The artefacts ahead attempt to do this unpacking of a non-anthropocentric reality in their own ways utilising a combined understanding of carpentry as a philosophical inquirer, future-focused visions of SD, and a playful appropriation of HCI through LD. Through his understandings of carpentry and the examples he presents, Bogost suggests the merger of different disciplines with philosophy to form unique perspectives coining the possibility for a philosopher-programmer or philosopher-mechanic. With my appropriation of carpentry I perhaps am proposing a philosopher-designer; a notion seconded by <span class="citation">J. G. Lindley, Coulton, and Akmal (<a href="#ref-lindley2018" role="doc-biblioref">2018, 232</a>)</span>.</p>
+</div>
+<div id="conclusions-1" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Conclusions<a href="Chapter6.html#conclusions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This concludes the methodologies section of this manuscript. Throughout this thesis I’ve been introducing a new concept in each chapter and have had to do so to reach this point where these concepts may be weaved together for the purposes of this research. IoT and alternative approaches at designing for objects that function within it is the locus of this argument, but in order to approach it concepts that put aside prior prejudices such as object-oriented philosophy must be tapped into. Designing for post-anthropocentric perspectives that go beyond human interaction requires elements of speculation about near-futures where these solutions could make sense, or may exist for scrutiny. Designing an artefact through the lens of philosophy becomes a matter of not only understanding the philosophy, but also knowing which combination of things works for the object of design. The <em>Tableau Machine</em> could just as well return information in a series of words, tags, or numbers. But the fact that the response is in the form of art makes it ambiguous and thus speculative in nature.</p>
+<p>Furthermore, the amalgamation of these different concepts and approaches within a framework of design requires an open mind towards playfulness, in order to facilitate enough freedom for these different concepts to intermingle. The design process utilised throughout this thesis is one of play and feedback. Carpentry allows for that playfulness to act out in a manner that works for both philosophy and design purposes. This intermingling is important as a rigid approach of HCD for technology would not necessarily allow for object-oriented views to exist, just as an overly philosophical approach would not present a strong enough case for its application. An iterative RtD process is thus necessary to reach that level of balance where these concepts may converge. LD though might seem like a footnote in all this I argue on the contrary, the coming artefacts attempt to slowly reach that level of curious engagement that I believe is needed to accept a post-anthropocentric approach at design for IoT.</p>
+<p>As a designer-philosopher for the following artefacts created in this research, it became important to assign the correct philosophical (and design) approaches. In the next section, I will attempt to ‘do carpentry’ by exploring three different artefacts designed as part of this work into the use of philosophy to explore alternative approaches to designing for IoT. The combined methodological framework will be represented in each chapter to show how the different concepts and approaches are able to intermingle together in a manifested attitude of playfulness. I again refrain from calling them design tools, and though I might continue the rhetoric of a toolbox in the coming chapters I use it only as a homage to carpentry as a methodology.</p>
+
+</div>
+</div>
+
+
+
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-auger2013" class="csl-entry">
+Auger, James. 2013. <span>“Speculative Design: <span>Crafting</span> the Speculation.”</span> <em>Digital Creativity</em> 24 (1): 11–35. <a href="https://doi.org/10.1080/14626268.2013.767276">https://doi.org/10.1080/14626268.2013.767276</a>.
+</div>
+<div id="ref-back2017" class="csl-entry">
+Back, Jon, Elena Márquez Segura, and Annika Waern. 2017. <span>“Designing for Transformative Play.”</span> <em>ACM Transactions on Computer-Human Interaction (TOCHI)</em> 24 (3): 1–28.
+</div>
+<div id="ref-bateson2013" class="csl-entry">
+Bateson, P. P. G, and Paul Martin. 2013. <em>Play, Playfulness, Creativity and Innovation</em>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139057691">https://doi.org/10.1017/CBO9781139057691</a>.
+</div>
+<div id="ref-bissell2011" class="csl-entry">
+Bissell, Tom. 2011. <em>Extra Lives Why Video Games Matter</em>. New York: Vintage.
+</div>
+<div id="ref-blanchard1995" class="csl-entry">
+Blanchard, Kendall. 1995. <em>The Anthropology of Sport: <span>An</span> Introduction</em>. ABC-CLIO.
+</div>
+<div id="ref-bleecker2009" class="csl-entry">
+Bleecker, Julian. 2009. <span>“Design <span>Fiction</span>: <span>A</span> <span>Short</span> <span>Essay</span> on <span>Design</span>, <span>Science</span>, <span>Fact</span> and <span>Fiction</span>,”</span> March, 1–49.
+</div>
+<div id="ref-bleecker2010" class="csl-entry">
+———. 2010. <span>“Design Fiction: <span>From</span> Props to Prototypes.”</span> <em>Negotiating Futures–Design Fiction</em>, 58–67.
+</div>
+<div id="ref-blythe2018" class="csl-entry">
+Blythe, M., and E. Encinas. 2018. <em>Research <span>Fiction</span> and <span>Thought</span> <span>Experiments</span> in <span>Design</span></em>. now. <a href="http://ieeexplore.ieee.org/document/8384202">http://ieeexplore.ieee.org/document/8384202</a>.
+</div>
+<div id="ref-bogost2012" class="csl-entry">
+———. 2012. <em>Alien Phenomenology, or, <span>What</span> It’s Like to Be a Thing</em>. Posthumanities 20. Minneapolis: University of Minnesota Press.
+</div>
+<div id="ref-bogost2016" class="csl-entry">
+———. 2016a. <em>Play Anything: <span>The</span> Pleasure of Limits, the Uses of Boredom, and the Secret of Games</em>. New York: Basic Books.
+</div>
+<div id="ref-bryant2010" class="csl-entry">
+Bryant, Levi R. 2010. <span>“You <span>Know</span> <span>You</span>’re a <span>Correlationist</span> <span>If</span>….”</span> <a href="https://larvalsubjects.wordpress.com/2010/07/30/you-know-youre-a-correlationist-if/">https://larvalsubjects.wordpress.com/2010/07/30/you-know-youre-a-correlationist-if/</a>.
+</div>
+<div id="ref-buchanan1985" class="csl-entry">
+Buchanan, Richard. 1985. <span>“Declaration by Design: <span>Rhetoric</span>, Argument, and Demonstration in Design Practice.”</span> <em>Design Issues</em>, 4–22.
+</div>
+<div id="ref-caillois2001" class="csl-entry">
+Caillois, Roger. 2001. <em>Man, Play, and Games</em>. University of Illinois Press.
+</div>
+<div id="ref-calleja2008" class="csl-entry">
+Calleja, Gordon. 2008. <span>“The <span>Binary</span> <span>Myth</span>.”</span> Lecture.
+</div>
+<div id="ref-carroll2014" class="csl-entry">
+Carroll, John M. 2014. <span>“Games as <span>Design</span> <span>Archetypes</span>.”</span> In <em>The Gameful World: <span>Approaches</span>, Issues, Applications</em>, edited by Steffen P. Walz and Sebastian Deterding, 199–200. Cambridge, Mass. London, England: MIT Press.
+</div>
+<div id="ref-consalvo2009" class="csl-entry">
+Consalvo, Mia. 2009. <span>“There Is No Magic Circle.”</span> <em>Games and Culture</em> 4 (4): 408–17.
+</div>
+<div id="ref-copier2005" class="csl-entry">
+Copier, Marinka. 2005. <span>“Connecting Worlds. <span>Fantasy</span> Role-Playing Games, Ritual Acts and the Magic Circle.”</span>
+</div>
+<div id="ref-coulton2015a" class="csl-entry">
+Coulton, Paul. 2015a. <span>“Playful and Gameful Design for the <span>Internet</span> of <span>Things</span>.”</span> In <em>More <span>Playful</span> <span>User</span> <span>Interfaces</span></em>, 151–73. Springer.
+</div>
+<div id="ref-coulton2016" class="csl-entry">
+Coulton, Paul, Dan Burnett, and Adrian Ioan Gradinar. 2016. <span>“Games as Speculative Design: <span>Allowing</span> Players to Consider Alternate Presents and Plausible Futures.”</span>
+</div>
+<div id="ref-coulton2017b" class="csl-entry">
+Coulton, Paul, and Joseph Lindley. 2017. <span>“Vapourworlds and Design Fiction: <span>The</span> Role of Intentionality.”</span> In <em>Proceedings of the 12th <span>European</span> <span>Academy</span> of <span>Design</span> <span>Conference</span></em>, 1–11. Rome: EAD. <a href="http://www.research.lancs.ac.uk/portal/services/downloadRegister/158028939/Vapourwolds_and_Design_Fiction_final.pdf">http://www.research.lancs.ac.uk/portal/services/downloadRegister/158028939/Vapourwolds_and_Design_Fiction_final.pdf</a>.
+</div>
+<div id="ref-coulton2017c" class="csl-entry">
+Coulton, Paul, Joseph Lindley, Miriam Sturdee, and Mike Stead. 2017. <span>“Design Fiction as World Building.”</span> In <em>Proceedings of the 3rd <span>Biennial</span> <span>Research</span> <span>Through</span> <span>Design</span> <span>Conference</span></em>, 163–79. Edinburgh, UK. <a href="https://doi.org/10.6084/m9.figshare.4746964">https://doi.org/10.6084/m9.figshare.4746964</a>.
+</div>
+<div id="ref-coulton2019a" class="csl-entry">
+Coulton, Paul, Josepth Lindley, Adrian Gradinar, James Colley, Neelima Sailaja, Andy Crabtree, Ian Forrester, and Lianne Kerlin. 2019. <span>“Experiencing the Future Mundane.”</span> <a href="https://doi.org/10.6084/m9.figshare.7855790.v1">https://doi.org/10.6084/m9.figshare.7855790.v1</a>.
+</div>
+<div id="ref-crawford2003" class="csl-entry">
+Crawford, Chris. 2003. <em>Chris <span>Crawford</span> on <span>Game</span> <span>Design</span></em>. New Riders.
+</div>
+<div id="ref-crawford2009" class="csl-entry">
+Crawford, Matthew B. 2009. <em>Shop Class as Soulcraft: <span>An</span> Inquiry into the Value of Work</em>. Penguin.
+</div>
+<div id="ref-dekoven2013" class="csl-entry">
+DeKoven, Bernie. 2013. <em>The Well-Played Game: <span>A</span> Player’s Philosophy</em>. Cambridge, Massachusetts: The MIT Press.
+</div>
+<div id="ref-dekoven2014" class="csl-entry">
+———. 2014. <em>A Playful Path</em>. <a href="http://press.etc.cmu.edu/content/playful-path">http://press.etc.cmu.edu/content/playful-path</a>.
+</div>
+<div id="ref-dorst2011" class="csl-entry">
+Dorst, Kees. 2011. <span>“The Core of ‘<span>Design</span> Thinking’and Its Application.”</span> <em>Design Studies</em> 32 (6): 521–32.
+</div>
+<div id="ref-dunne2013" class="csl-entry">
+Dunne, Anthony, and Fiona Raby. 2013. <em>Speculative Everything: <span>Design</span>, Fiction, and Social Dreaming</em>. Cambridge, Massachusetts: MIT Press.
+</div>
+<div id="ref-gaver2002" class="csl-entry">
+Gaver, William. 2002. <span>“Designing for Homo Ludens.”</span> <em>I3 Magazine</em> 12 (June): 2–6.
+</div>
+<div id="ref-gaver2009" class="csl-entry">
+———. 2009. <span>“Designing for Emotion (Among Other Things).”</span> <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em> 364 (1535): 3597–3604.
+</div>
+<div id="ref-gaver2003" class="csl-entry">
+Gaver, William, Jacob Beaver, and Steve Benford. 2003. <span>“Ambiguity as a Resource for Design.”</span> In <em>Proceedings of the <span>SIGCHI</span> Conference on <span>Human</span> Factors in Computing Systems</em>, 233–40.
+</div>
+<div id="ref-gaver2004" class="csl-entry">
+Gaver, William, John Bowers, Andrew Boucher, Hans Gellerson, Sarah Pennington, Albrecht Schmidt, Anthony Steed, Nicholas Villars, and Brendan Walker. 2004. <span>“The Drift Table: <span>Designing</span> for Ludic Engagement.”</span> In <em><span>CHI</span>’04 Extended Abstracts on <span>Human</span> Factors in Computing Systems</em>, 885–900.
+</div>
+<div id="ref-gedenryd1998" class="csl-entry">
+Gedenryd, Henrik. 1998. <span>“How Designers Work: <span>Making</span> Sense of Authentic Cognitive Activities.”</span> PhD thesis, Sweden: Lund University.
+</div>
+<div id="ref-gonzatto2013" class="csl-entry">
+Gonzatto, Rodrigo Freese, Frederick MC van Amstel, Luiz Ernesto Merkle, and Timo Hartmann. 2013. <span>“The Ideology of the Future in Design Fictions.”</span> <em>Digital Creativity</em> 24 (1): 36–45.
+</div>
+<div id="ref-hancock1994" class="csl-entry">
+Hancock, Trevor, and Clement Bezold. 1994. <span>“Possible Futures, Preferable Futures.”</span> <em>The Healthcare Forum Journal</em> 37 (2): 23–29.
+</div>
+<div id="ref-harman2005" class="csl-entry">
+Harman, Graham. 2005. <em>Guerrilla Metaphysics: <span>Phenomenology</span> and the Carpentry of Things</em>. Chicago: Open Court.
+</div>
+<div id="ref-harman2010a" class="csl-entry">
+———. 2010b. <em>Prince of Networks: <span>Bruno</span> <span>Latour</span> and Metaphysics</em>. re. press.
+</div>
+<div id="ref-harman2018" class="csl-entry">
+———. 2018. <em>Object-<span>Oriented</span> <span>Ontology</span>: <span>A</span> <span>New</span> <span>Theory</span> of <span>Everything</span></em>. 1st ed. Pelican Books.
+</div>
+<div id="ref-huizinga1955" class="csl-entry">
+Huizinga, Johan. 1955. <em>Homo <span>Ludens</span>: <span>A</span> Study of the Play-Element in Culture</em>. 30. print. Boston: The Beacon Press.
+</div>
+<div id="ref-juul2005" class="csl-entry">
+Juul, Jesper. 2005. <em>Half-Real: <span>Video</span> Games Between Real Rules and Fictional Worlds</em>. Cambridge, Mass: MIT Press.
+</div>
+<div id="ref-juul2008" class="csl-entry">
+———. 2008. <span>“The Magic Circle and the Puzzle Piece.”</span> In <em>Proceedings of the <span>Philosophy</span> of <span>Computer</span> <span>Games</span> 2008</em>, edited by Stephan Günzel, Michael Liebe, and Dieter Mersch, 56–67. Potsdam: University Press. <a href="http://pub.ub.uni-potsdam.de/volltexte/2008/2455/">http://pub.ub.uni-potsdam.de/volltexte/2008/2455/</a>.
+</div>
+<div id="ref-law2004" class="csl-entry">
+Law, John. 2004. <em>After Method: <span>Mess</span> in Social Science Research</em>. International Library of Sociology. London ; New York: Routledge.
+</div>
+<div id="ref-liebe2008" class="csl-entry">
+Liebe, Michael. 2008. <span>“There Is No Magic Circle: <span>On</span> the Difference Between Computer Games and Traditional Games.”</span>
+</div>
+<div id="ref-lindley2004" class="csl-entry">
+Lindley, Craig A. 2004. <span>“Ludic Engagement and Immersion as a Generic Paradigm for Human-Computer Interaction Design.”</span> In <em>International <span>Conference</span> on <span>Entertainment</span> <span>Computing</span></em>, 3–13. Springer.
+</div>
+<div id="ref-lindley2018" class="csl-entry">
+Lindley, Joseph Galen, Paul Coulton, and Haider Akmal. 2018. <span>“Turning <span>Philosophy</span> with a <span>Speculative</span> <span>Lathe</span>: <span>Object</span> <span>Oriented</span> <span>Ontology</span>, <span>Carpentry</span>, and <span>Design</span> <span>Fiction</span>.”</span> In <em>Proceedings of <span>DRS2018</span> <span>Limerick</span></em>, 1:229–43. Limerick. <a href="https://doi.org/10.21606/dma.2018.327">https://doi.org/10.21606/dma.2018.327</a>.
+</div>
+<div id="ref-lukens2011" class="csl-entry">
+Lukens, Jonathan, and Carl DiSalvo. 2011. <span>“Speculative <span>Design</span> and <span>Technological</span> <span>Fluency</span>.”</span> <em>International Journal of Learning and Media</em> 3 (4): 23–40. <a href="https://doi.org/10.1162/IJLM_a_00080">https://doi.org/10.1162/IJLM_a_00080</a>.
+</div>
+<div id="ref-lupton2018" class="csl-entry">
+Lupton, Deborah. 2018. <span>“Towards Design Sociology.”</span> <em>Sociology Compass</em> 12 (1): e12546. <a href="https://doi.org/10.1111/soc4.12546">https://doi.org/10.1111/soc4.12546</a>.
+</div>
+<div id="ref-mivielle2015" class="csl-entry">
+Mivielle, Cédric. 2015. <span>“What Is Ludic about Ludic Design? <span>A</span> Back and Forth Between Theory and Practice.”</span> In <em>Proceedings of 11th <span>European</span> <span>Academy</span> of <span>Design</span> <span>Conference</span></em>. Paris.
+</div>
+<div id="ref-montola2005" class="csl-entry">
+Montola, Markus. 2005. <span>“Exploring the Edge of the Magic Circle: <span>Defining</span> Pervasive Games.”</span> In <em>Proceedings of <span>DAC</span></em>, 1966:103.
+</div>
+<div id="ref-moore2011" class="csl-entry">
+Moore, Christopher. 2011. <span>“The Magic Circle and the Mobility of Play.”</span> <em>Convergence</em> 17 (4): 373–87.
+</div>
+<div id="ref-nagy2017" class="csl-entry">
+Nagy, Agoston. 2017. <span>“Game <span>World</span>.”</span> <a href="https://medium.com/@_stc/game-world-98a0f18e3a13">https://medium.com/@_stc/game-world-98a0f18e3a13</a>.
+</div>
+<div id="ref-nam2011" class="csl-entry">
+Nam, Tek-Jin, and Changwon Kim. 2011. <span>“Design by Tangible Stories: <span>Enriching</span> Interactive Everyday Products with Ludic Value.”</span> <em>International Journal of Design</em> 5 (1): 85–98.
+</div>
+<div id="ref-norman2002" class="csl-entry">
+Norman, Don A. 2002. <em>The <span>Design</span> of <span>Everyday</span> <span>Things</span></em>. <a href="http://scholar.google.com/scholar?q=related:F7KhLFU3WOsJ:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5">http://scholar.google.com/scholar?q=related:F7KhLFU3WOsJ:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5</a>.
+</div>
+<div id="ref-pellegrini1995" class="csl-entry">
+Pellegrini, Anothony D., ed. 1995. <em>The Future of Play Theory: <span>A</span> Multidisciplinary Inquiry into the Contributions of <span>Brian</span> <span>Sutton</span>-<span>Smith</span></em>. <span>SUNY</span> Series, Children’s Play in Society. State University of New York Press. <a href="https://books.google.co.uk/books?id=8_NBW3q__PgC">https://books.google.co.uk/books?id=8_NBW3q__PgC</a>.
+</div>
+<div id="ref-purcell1996" class="csl-entry">
+Purcell, A. Terry, and John S. Gero. 1996. <span>“Design and Other Types of Fixation.”</span> <em>Design Studies</em> 17 (4): 363–83.
+</div>
+<div id="ref-rieber1998" class="csl-entry">
+Rieber, Lloyd P., Lola Smith, and David Noah. 1998. <span>“The Value of Serious Play.”</span> <em>Educational Technology</em> 38 (6): 29–37.
+</div>
+<div id="ref-rodriguez2006" class="csl-entry">
+Rodriguez, Hector. 2006. <span>“The <span>Playful</span> and the <span>Serious</span>: <span>An</span> Approximation to <span>Huizinga</span>’s <span>Homo</span> <span>Ludens</span>.”</span> <em>The International Journal of Computer Game Research</em> 6 (1). <a href="http://gamestudies.org/0601/articles/rodriges">http://gamestudies.org/0601/articles/rodriges</a>.
+</div>
+<div id="ref-romero2008" class="csl-entry">
+Romero, Mario, Zachary Pousman, and Michael Mateas. 2008. <span>“Alien Presence in the Home: <span>The</span> Design of <span>Tableau</span> <span>Machine</span>.”</span> <em>Personal and Ubiquitous Computing</em> 12 (5): 373–82. <a href="https://doi.org/10.1007/s00779-007-0190-z">https://doi.org/10.1007/s00779-007-0190-z</a>.
+</div>
+<div id="ref-rose2015" class="csl-entry">
+Rose, David. 2015. <em>Enchanted Objects: <span>Innovation</span>, Design, and the Future of Technology</em>. 1. Scribner trade paperback ed. New York London Toronto Sydney New Delhi: Scribner.
+</div>
+<div id="ref-rothman2014" class="csl-entry">
+Rothman, Joshua. 2014. <span>“Why <span>Is</span> <span>Academic</span> <span>Writing</span> <span>So</span> <span>Academic</span>?”</span> <a href="https://www.newyorker.com/books/page-turner/why-is-academic-writing-so-academic">https://www.newyorker.com/books/page-turner/why-is-academic-writing-so-academic</a>.
+</div>
+<div id="ref-salen2004" class="csl-entry">
+Salen, Katie, and Eric Zimmerman. 2004. <em>Rules of Play: <span>Game</span> Design Fundamentals</em>. MIT press.
+</div>
+<div id="ref-salen2005" class="csl-entry">
+———. 2005. <span>“Game Design and Meaningful Play.”</span> <em>Handbook of Computer Game Studies</em> 59: 79.
+</div>
+<div id="ref-sengers2005" class="csl-entry">
+Sengers, Phoebe, Kirsten Boehner, Shay David, and Joseph’Jofish’Kaye. 2005. <span>“Reflective Design.”</span> In <em>Proceedings of the 4th <span>Decennial</span> <span>Conference</span> on <span>Critical</span> <span>Computing</span>: <span>Between</span> <span>Sense</span> and <span>Sensibility</span></em>, 49–58.
+</div>
+<div id="ref-sengers2006" class="csl-entry">
+Sengers, Phoebe, and Bill Gaver. 2006. <span>“Staying Open to Interpretation: <span>Engaging</span> Multiple Meanings in Design and Evaluation.”</span> In <em>Proceedings of the 6th Conference on <span>Designing</span> <span>Interactive</span> Systems</em>, 99–108.
+</div>
+<div id="ref-sicart2014" class="csl-entry">
+Sicart, Miguel. 2014. <em>Play Matters</em>. <a href="http://site.ebrary.com/id/10904663">http://site.ebrary.com/id/10904663</a>.
+</div>
+<div id="ref-stenros2007" class="csl-entry">
+Stenros, Jaakko, Markus Montola, and Frans Mäyrä. 2007. <span>“Pervasive Games in Ludic Society.”</span> In <em>Proceedings of the 2007 Conference on <span>Future</span> <span>Play</span></em>, 30–37.
+</div>
+<div id="ref-suits1978" class="csl-entry">
+Suits, Bernard. 1978. <em>The Grasshopper : <span>Games</span>, Life and <span>Utopia</span></em>. Edinburgh: Scottish Academic Press.
+</div>
+<div id="ref-sutton-smith1997" class="csl-entry">
+Sutton-Smith, B. 1997. <em>The <span>Ambiguity</span> of <span>Play</span></em>. Harvard University Press. <a href="https://books.google.co.uk/books?id=q6l9AAAAMAAJ">https://books.google.co.uk/books?id=q6l9AAAAMAAJ</a>.
+</div>
+<div id="ref-taylor2007" class="csl-entry">
+Taylor, T. L. 2007. <span>“Pushing the Borders: <span>Player</span> Participation and Game Culture.”</span> <em>Structures of Participation in Digital Culture</em>, 112–31.
+</div>
+<div id="ref-tolkien1947" class="csl-entry">
+Tolkien, John Ronald Reuel. 1947. <em>On Fairy-Stories</em>. Oxford University Press Oxford.
+</div>
+<div id="ref-vanleeuwen2008" class="csl-entry">
+Van Leeuwen, Lieselotte, and Diane Westwood. 2008. <span>“Adult Play, Psychology and Design.”</span> <em>Digital Creativity</em> 19 (3): 153–61.
+</div>
+<div id="ref-voros2017" class="csl-entry">
+Voros, Joseph. 2017. <span>“Big <span>History</span> and <span>Anticipation</span>.”</span> In <em>Handbook of <span>Anticipation</span></em>, edited by Roberto Poli, 1–40. Cham: Springer International Publishing. <a href="http://link.springer.com/10.1007/978-3-319-31737-3_95-1">http://link.springer.com/10.1007/978-3-319-31737-3_95-1</a>.
+</div>
+<div id="ref-walz2014" class="csl-entry">
+Walz, Steffen P., and Sebastian Deterding, eds. 2014. <em>The Gameful World: <span>Approaches</span>, Issues, Applications</em>. Cambridge, Mass. London, England: MIT Press.
+</div>
+<div id="ref-winn2009" class="csl-entry">
+Winn, Brian M. 2009. <span>“The Design, Play, and Experience Framework.”</span> In <em>Handbook of Research on Effective Electronic Gaming in Education</em>, 1010–24. IGI Global.
+</div>
+<div id="ref-yilmaz2015" class="csl-entry">
+Yilmaz, Seda, Shanna R. Daly, Colleen M. Seifert, and Richard Gonzalez. 2015. <span>“How Do Designers Generate New Ideas? <span>Design</span> Heuristics Across Two Disciplines.”</span> <em>Design Science</em> 1.
+</div>
+<div id="ref-zimmerman2014" class="csl-entry">
+Zimmerman, Eric. 2014. <span>“Manifesto for a <span>Ludic</span> <span>Century</span>.”</span> In <em>The Gameful World: <span>Approaches</span>, Issues, Applications</em>, edited by Steffen P. Walz and Sebastian Deterding, 19–22. Cambridge, Mass. London, England: MIT Press.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="24">
+<li id="fn24"><p>For more information, see: <a href="http://bogost.com/projects/buns-life/" class="uri">http://bogost.com/projects/buns-life/</a>.<a href="Chapter6.html#fnref24" class="footnote-back">↩︎</a></p></li>
+<li id="fn25"><p>For more information, see: <a href="http://bogost.com/games/cow_clicker/" class="uri">http://bogost.com/games/cow_clicker/</a>.<a href="Chapter6.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p>Zimmerman’s stance revolves around games as play because his area of interest is in game design, mostly video games.<a href="Chapter6.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn27"><p>These experiments were part of a six year collaborative interdisciplinary research between different institutions in the UK funded by EPSRC, called <em>Equator</em>. The project explored different ways in which digital and physical realities could be interwoven into everyday activities and amassed a portfolio of thought provoking designed artefacts and probes.<a href="Chapter6.html#fnref27" class="footnote-back">↩︎</a></p></li>
+<li id="fn28"><p>Ironically, I discuss this in my unorthodox PhD thesis a document riddled with tangential arguments which I’ve been attempting to weave together into a cohesive discourse. Though the artefacts created in this research come under the umbrella of carpentry and should be scrutinised as to their sources of knowledge generation, given how academic research is conducted, I could consider the writing of a thesis in the typical scholarly manner collateral damage to doing a transdisciplinary PhD. At the same time, being an unorthodox document, I attempt to do some justice to Bogost’s unorthodox approach towards philosophical research.<a href="Chapter6.html#fnref28" class="footnote-back">↩︎</a></p></li>
+<li id="fn29"><p>For more information, see: <a href="http://bogost.com/writing/blog/latour_litanizer/" class="uri">http://bogost.com/writing/blog/latour_litanizer/</a>.<a href="Chapter6.html#fnref29" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p>For more information, see: <a href="https://benfry.com/deconstructulator/" class="uri">https://benfry.com/deconstructulator/</a>.<a href="Chapter6.html#fnref30" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Chapter5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/016-chapter6.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
