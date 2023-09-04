@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Seeing Things of the Internet | Design by Play</title>
+  <meta name="description" content="Chapter 3 Seeing Things of the Internet | Design by Play" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Seeing Things of the Internet | Design by Play" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Seeing Things of the Internet | Design by Play" />
+  
+  
+  
+
+<meta name="author" content="Haider Ali Akmal" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Chapter2.html"/>
+<link rel="next" href="Chapter4.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Design by Play</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Note from Author</a></li>
+<li class="part"><span><b>Preface</b></span></li>
+<li class="chapter" data-level="" data-path="declaration.html"><a href="declaration.html"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="dedication.html"><a href="dedication.html"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="quote.html"><a href="quote.html"><i class="fa fa-check"></i>Quote</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="Chapter1.html"><a href="Chapter1.html"><i class="fa fa-check"></i><b>1</b> An Unorthodox Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter1.html"><a href="Chapter1.html#a-starting-point"><i class="fa fa-check"></i><b>1.1</b> A starting point</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="Chapter1.html"><a href="Chapter1.html#fish-out-of-water"><i class="fa fa-check"></i><b>1.1.1</b> Fish out of water</a></li>
+<li class="chapter" data-level="1.1.2" data-path="Chapter1.html"><a href="Chapter1.html#surrounded-by-technology"><i class="fa fa-check"></i><b>1.1.2</b> Surrounded by technology</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="Chapter1.html"><a href="Chapter1.html#of-pasts-and-presents"><i class="fa fa-check"></i><b>1.2</b> Of Pasts and Presents</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="Chapter1.html"><a href="Chapter1.html#growing-up-around-play"><i class="fa fa-check"></i><b>1.2.1</b> Growing up around play</a></li>
+<li class="chapter" data-level="1.2.2" data-path="Chapter1.html"><a href="Chapter1.html#art-design-and-philosophy"><i class="fa fa-check"></i><b>1.2.2</b> Art, Design, and Philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="Chapter1.html"><a href="Chapter1.html#in-closing"><i class="fa fa-check"></i><b>1.3</b> In closing</a></li>
+</ul></li>
+<li class="part"><span><b>II Foundations</b></span></li>
+<li class="chapter" data-level="2" data-path="Chapter2.html"><a href="Chapter2.html"><i class="fa fa-check"></i><b>2</b> Scaffolding</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter2.html"><a href="Chapter2.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter2.html"><a href="Chapter2.html#steppingstones-into-post-modern-humanities"><i class="fa fa-check"></i><b>2.2</b> Steppingstones into post-modern humanities</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="Chapter2.html"><a href="Chapter2.html#transdisciplinary-design-research"><i class="fa fa-check"></i><b>2.2.1</b> Transdisciplinary Design Research</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Chapter2.html"><a href="Chapter2.html#crafting-trandisciplinary-assemblages"><i class="fa fa-check"></i><b>2.2.2</b> Crafting Trandisciplinary Assemblages</a></li>
+<li class="chapter" data-level="2.2.3" data-path="Chapter2.html"><a href="Chapter2.html#transcending-method-through-design"><i class="fa fa-check"></i><b>2.2.3</b> Transcending method through Design</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="Chapter2.html"><a href="Chapter2.html#how-to-use-this-thesis"><i class="fa fa-check"></i><b>2.3</b> How to use this Thesis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>3</b> Seeing Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter3.html"><a href="Chapter3.html#a-case-for-and-against-an-internet-of-things"><i class="fa fa-check"></i><b>3.1</b> A case for (and against) an Internet of Things</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="Chapter3.html"><a href="Chapter3.html#defining-iot"><i class="fa fa-check"></i><b>3.1.1</b> Defining IoT</a></li>
+<li class="chapter" data-level="3.1.2" data-path="Chapter3.html"><a href="Chapter3.html#interacting-with-iot"><i class="fa fa-check"></i><b>3.1.2</b> Interacting with IoT</a></li>
+<li class="chapter" data-level="3.1.3" data-path="Chapter3.html"><a href="Chapter3.html#the-disillusionment-of-living-in-iot"><i class="fa fa-check"></i><b>3.1.3</b> The disillusionment of living in IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="Chapter3.html"><a href="Chapter3.html#approaching-an-alternative-perspective-for-design-in-iot"><i class="fa fa-check"></i><b>3.2</b> Approaching an alternative perspective for Design in IoT</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="Chapter3.html"><a href="Chapter3.html#changing-perspectives"><i class="fa fa-check"></i><b>3.2.1</b> Changing perspectives</a></li>
+<li class="chapter" data-level="3.2.2" data-path="Chapter3.html"><a href="Chapter3.html#metaphorically-speaking"><i class="fa fa-check"></i><b>3.2.2</b> Metaphorically speaking</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="Chapter3.html"><a href="Chapter3.html#conclusion"><i class="fa fa-check"></i><b>3.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>4</b> Being Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Chapter4.html"><a href="Chapter4.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="Chapter4.html"><a href="Chapter4.html#a-philosophical-interlude"><i class="fa fa-check"></i><b>4.1.1</b> A Philosophical Interlude</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="Chapter4.html"><a href="Chapter4.html#understanding-things-on-and-not-on-the-internet"><i class="fa fa-check"></i><b>4.2</b> Understanding <em>Things</em> on (and not on) the Internet</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="Chapter4.html"><a href="Chapter4.html#phenomenologically-speaking"><i class="fa fa-check"></i><b>4.2.1</b> Phenomenologically speaking</a></li>
+<li class="chapter" data-level="4.2.2" data-path="Chapter4.html"><a href="Chapter4.html#towards-an-object-oriented-ontology"><i class="fa fa-check"></i><b>4.2.2</b> Towards an Object-Oriented Ontology</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="Chapter4.html"><a href="Chapter4.html#object-oriented-ontology"><i class="fa fa-check"></i><b>4.3</b> Object-Oriented Ontology</a></li>
+<li class="chapter" data-level="4.4" data-path="Chapter4.html"><a href="Chapter4.html#concluding-on-a-post-anthropocentric-perspective-for-design"><i class="fa fa-check"></i><b>4.4</b> Concluding on a post-anthropocentric perspective for Design</a></li>
+</ul></li>
+<li class="part"><span><b>Methodologies</b></span></li>
+<li class="chapter" data-level="5" data-path="Chapter5.html"><a href="Chapter5.html"><i class="fa fa-check"></i><b>5</b> Design Research</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Chapter5.html"><a href="Chapter5.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="Chapter5.html"><a href="Chapter5.html#doing-design-research"><i class="fa fa-check"></i><b>5.2</b> Doing Design Research</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="Chapter5.html"><a href="Chapter5.html#defining-design"><i class="fa fa-check"></i><b>5.2.1</b> Defining Design</a></li>
+<li class="chapter" data-level="5.2.2" data-path="Chapter5.html"><a href="Chapter5.html#defining-research"><i class="fa fa-check"></i><b>5.2.2</b> Defining Research</a></li>
+<li class="chapter" data-level="5.2.3" data-path="Chapter5.html"><a href="Chapter5.html#the-object-of-design"><i class="fa fa-check"></i><b>5.2.3</b> The Object of Design</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="Chapter5.html"><a href="Chapter5.html#research-through-design"><i class="fa fa-check"></i><b>5.3</b> Research through Design</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="Chapter5.html"><a href="Chapter5.html#approaching-research-through-design"><i class="fa fa-check"></i><b>5.3.1</b> Approaching Research through Design</a></li>
+<li class="chapter" data-level="5.3.2" data-path="Chapter5.html"><a href="Chapter5.html#practice-based-research"><i class="fa fa-check"></i><b>5.3.2</b> Practice-based Research</a></li>
+<li class="chapter" data-level="5.3.3" data-path="Chapter5.html"><a href="Chapter5.html#ideology-or-methodology"><i class="fa fa-check"></i><b>5.3.3</b> Ideology or Methodology?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="Chapter5.html"><a href="Chapter5.html#conclusions"><i class="fa fa-check"></i><b>5.4</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Chapter6.html"><a href="Chapter6.html"><i class="fa fa-check"></i><b>6</b> Playfully Designing for Things</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter6.html"><a href="Chapter6.html#defining-play"><i class="fa fa-check"></i><b>6.2</b> Defining Play</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="Chapter6.html"><a href="Chapter6.html#what-is-play"><i class="fa fa-check"></i><b>6.2.1</b> What is Play?</a></li>
+<li class="chapter" data-level="6.2.2" data-path="Chapter6.html"><a href="Chapter6.html#playgrounds-for-play"><i class="fa fa-check"></i><b>6.2.2</b> Playgrounds for Play</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="Chapter6.html"><a href="Chapter6.html#design-and-playfulness"><i class="fa fa-check"></i><b>6.3</b> Design and Playfulness</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="Chapter6.html"><a href="Chapter6.html#returning-to-playfulness"><i class="fa fa-check"></i><b>6.3.1</b> Returning to Playfulness</a></li>
+<li class="chapter" data-level="6.3.2" data-path="Chapter6.html"><a href="Chapter6.html#ludic-design"><i class="fa fa-check"></i><b>6.3.2</b> Ludic Design</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="Chapter6.html"><a href="Chapter6.html#designing-curious-philosophical-artefacts"><i class="fa fa-check"></i><b>6.4</b> Designing Curious Philosophical Artefacts</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter6.html"><a href="Chapter6.html#speculating-over-definitions"><i class="fa fa-check"></i><b>6.4.1</b> Speculating over definitions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="Chapter6.html"><a href="Chapter6.html#carpentry"><i class="fa fa-check"></i><b>6.5</b> Carpentry</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Chapter6.html"><a href="Chapter6.html#getting-your-hands-dirty-with-philosophy"><i class="fa fa-check"></i><b>6.5.1</b> Getting your hands dirty with philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="Chapter6.html"><a href="Chapter6.html#a-combined-methodological-framework"><i class="fa fa-check"></i><b>6.6</b> A combined methodological framework</a></li>
+<li class="chapter" data-level="6.7" data-path="Chapter6.html"><a href="Chapter6.html#conclusions-1"><i class="fa fa-check"></i><b>6.7</b> Conclusions</a></li>
+</ul></li>
+<li class="part"><span><b>III Doing Carpentry</b></span></li>
+<li class="chapter" data-level="7" data-path="Chapter7.html"><a href="Chapter7.html"><i class="fa fa-check"></i><b>7</b> A Model for a Philosophical View of IoT</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#introduction-4"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#iot-as-a-spatial-phenomenon"><i class="fa fa-check"></i><b>7.2</b> IoT as a spatial phenomenon</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="Chapter7.html"><a href="Chapter7.html#the-division-of-space"><i class="fa fa-check"></i><b>7.2.1</b> The division of space</a></li>
+<li class="chapter" data-level="7.2.2" data-path="Chapter7.html"><a href="Chapter7.html#reconfiguring-insides-and-outsides-as-heterotopia"><i class="fa fa-check"></i><b>7.2.2</b> Reconfiguring Insides and Outsides as Heterotopia</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#crafting-a-model-for-a-philosophical-view-of-iot"><i class="fa fa-check"></i><b>7.3</b> Crafting a Model for a Philosophical View of IoT</a></li>
+<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#discussion-and-conclusion"><i class="fa fa-check"></i><b>7.4</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> Playing with the IoT</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter8.html"><a href="Chapter8.html#introduction-5"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter8.html"><a href="Chapter8.html#creating-a-foundation-for-approaching-game-design"><i class="fa fa-check"></i><b>8.2</b> Creating a foundation for approaching Game Design</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="Chapter8.html"><a href="Chapter8.html#play-and-rhetoric"><i class="fa fa-check"></i><b>8.2.1</b> Play and Rhetoric</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="Chapter8.html"><a href="Chapter8.html#carpentering-the-internet-of-things-board-game"><i class="fa fa-check"></i><b>8.3</b> Carpentering the Internet of Things Board Game</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="Chapter8.html"><a href="Chapter8.html#exploration-phase"><i class="fa fa-check"></i><b>8.3.1</b> Exploration Phase</a></li>
+<li class="chapter" data-level="8.3.2" data-path="Chapter8.html"><a href="Chapter8.html#reflection-phase"><i class="fa fa-check"></i><b>8.3.2</b> Reflection Phase</a></li>
+<li class="chapter" data-level="8.3.3" data-path="Chapter8.html"><a href="Chapter8.html#redux"><i class="fa fa-check"></i><b>8.3.3</b> Redux</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="Chapter8.html"><a href="Chapter8.html#discussion-1"><i class="fa fa-check"></i><b>8.4</b> Discussion</a></li>
+<li class="chapter" data-level="8.5" data-path="Chapter8.html"><a href="Chapter8.html#wrapping-up"><i class="fa fa-check"></i><b>8.5</b> Wrapping Up</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="Chapter9.html"><a href="Chapter9.html"><i class="fa fa-check"></i><b>9</b> Predicting futures in the IoT</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter9.html"><a href="Chapter9.html#introduction-6"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter9.html"><a href="Chapter9.html#philosophical-foundations"><i class="fa fa-check"></i><b>9.2</b> Philosophical Foundations</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="Chapter9.html"><a href="Chapter9.html#the-perception-of-technology-and-post-phenomenology"><i class="fa fa-check"></i><b>9.2.1</b> The Perception of Technology and Post-Phenomenology</a></li>
+<li class="chapter" data-level="9.2.2" data-path="Chapter9.html"><a href="Chapter9.html#human-technology-relations-as-perceptual-illusions"><i class="fa fa-check"></i><b>9.2.2</b> Human-Technology Relations as Perceptual Illusions</a></li>
+<li class="chapter" data-level="9.2.3" data-path="Chapter9.html"><a href="Chapter9.html#quantum-causation-for-iot"><i class="fa fa-check"></i><b>9.2.3</b> Quantum Causation for IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="Chapter9.html"><a href="Chapter9.html#carpentering-the-supernatural-iot"><i class="fa fa-check"></i><b>9.3</b> Carpentering the Supernatural IoT</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="Chapter9.html"><a href="Chapter9.html#designing-the-deck"><i class="fa fa-check"></i><b>9.3.1</b> Designing the Deck</a></li>
+<li class="chapter" data-level="9.3.2" data-path="Chapter9.html"><a href="Chapter9.html#scanning-the-stars-with-software"><i class="fa fa-check"></i><b>9.3.2</b> Scanning the Stars with Software</a></li>
+<li class="chapter" data-level="9.3.3" data-path="Chapter9.html"><a href="Chapter9.html#a-tarot-of-things"><i class="fa fa-check"></i><b>9.3.3</b> A Tarot of Things</a></li>
+<li class="chapter" data-level="9.3.4" data-path="Chapter9.html"><a href="Chapter9.html#madame-bitsys-emporium"><i class="fa fa-check"></i><b>9.3.4</b> Madame Bitsy’s Emporium</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="Chapter9.html"><a href="Chapter9.html#feedback"><i class="fa fa-check"></i><b>9.4</b> Feedback</a></li>
+<li class="chapter" data-level="9.5" data-path="Chapter9.html"><a href="Chapter9.html#discussion-and-conclusion-1"><i class="fa fa-check"></i><b>9.5</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="part"><span><b>IV Moving Forwards</b></span></li>
+<li class="chapter" data-level="10" data-path="Chapter10.html"><a href="Chapter10.html"><i class="fa fa-check"></i><b>10</b> Discussions and Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter10.html"><a href="Chapter10.html#the-living-internet-of-things"><i class="fa fa-check"></i><b>10.1</b> The Living Internet of Things</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="Chapter10.html"><a href="Chapter10.html#is-this-discussion-about-privacy-and-security-in-iot"><i class="fa fa-check"></i><b>10.1.1</b> Is this discussion about privacy and security in IoT?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="Chapter10.html"><a href="Chapter10.html#going-beyond-human-centred-design"><i class="fa fa-check"></i><b>10.1.2</b> Going beyond Human-Centred Design</a></li>
+<li class="chapter" data-level="10.1.3" data-path="Chapter10.html"><a href="Chapter10.html#is-this-a-transhumanist-argument"><i class="fa fa-check"></i><b>10.1.3</b> Is this a transhumanist argument?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="Chapter10.html"><a href="Chapter10.html#the-mantra-of-playfulness"><i class="fa fa-check"></i><b>10.2</b> The Mantra of Playfulness</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="Chapter10.html"><a href="Chapter10.html#being-a-playful-philosopher-designer"><i class="fa fa-check"></i><b>10.2.1</b> Being a playful philosopher-designer</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="Chapter10.html"><a href="Chapter10.html#in-closing-1"><i class="fa fa-check"></i><b>10.3</b> In closing</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="AppendixA.html"><a href="AppendixA.html"><i class="fa fa-check"></i><b>A</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="AppendixA.html"><a href="AppendixA.html#game-design-definitions-and-terminologies"><i class="fa fa-check"></i><b>A.1</b> Game Design Definitions and Terminologies</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="AppendixB.html"><a href="AppendixB.html"><i class="fa fa-check"></i><b>B</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="AppendixB.html"><a href="AppendixB.html#the-internet-of-things-board-game-explored"><i class="fa fa-check"></i><b>B.1</b> The Internet of Things Board Game Explored</a></li>
+<li class="chapter" data-level="B.2" data-path="AppendixB.html"><a href="AppendixB.html#backstory91"><i class="fa fa-check"></i><b>B.2</b> Backstory</a></li>
+<li class="chapter" data-level="B.3" data-path="AppendixB.html"><a href="AppendixB.html#game-objective"><i class="fa fa-check"></i><b>B.3</b> Game Objective</a></li>
+<li class="chapter" data-level="B.4" data-path="AppendixB.html"><a href="AppendixB.html#setup"><i class="fa fa-check"></i><b>B.4</b> Play Setup</a></li>
+<li class="chapter" data-level="B.5" data-path="AppendixB.html"><a href="AppendixB.html#phases-of-play94"><i class="fa fa-check"></i><b>B.5</b> Phases of Play</a></li>
+<li class="chapter" data-level="B.6" data-path="AppendixB.html"><a href="AppendixB.html#tiles"><i class="fa fa-check"></i><b>B.6</b> Understanding the Tiles</a></li>
+<li class="chapter" data-level="B.7" data-path="AppendixB.html"><a href="AppendixB.html#avatars"><i class="fa fa-check"></i><b>B.7</b> Avatars</a></li>
+<li class="chapter" data-level="B.8" data-path="AppendixB.html"><a href="AppendixB.html#rolls"><i class="fa fa-check"></i><b>B.8</b> Rolling Dice</a>
+<ul>
+<li class="chapter" data-level="B.8.1" data-path="AppendixB.html"><a href="AppendixB.html#attack"><i class="fa fa-check"></i><b>B.8.1</b> Doing an Attack Roll</a></li>
+<li class="chapter" data-level="B.8.2" data-path="AppendixB.html"><a href="AppendixB.html#random"><i class="fa fa-check"></i><b>B.8.2</b> Randomisation</a></li>
+</ul></li>
+<li class="chapter" data-level="B.9" data-path="AppendixB.html"><a href="AppendixB.html#decks"><i class="fa fa-check"></i><b>B.9</b> Understanding and Reading Cards</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="AppendixB.html"><a href="AppendixB.html#items"><i class="fa fa-check"></i><b>B.9.1</b> Items Deck</a></li>
+<li class="chapter" data-level="B.9.2" data-path="AppendixB.html"><a href="AppendixB.html#risks"><i class="fa fa-check"></i><b>B.9.2</b> Risks Deck</a></li>
+<li class="chapter" data-level="B.9.3" data-path="AppendixB.html"><a href="AppendixB.html#privacy"><i class="fa fa-check"></i><b>B.9.3</b> Privacy Deck</a></li>
+<li class="chapter" data-level="B.9.4" data-path="AppendixB.html"><a href="AppendixB.html#daemons"><i class="fa fa-check"></i><b>B.9.4</b> Daemons Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="B.10" data-path="AppendixB.html"><a href="AppendixB.html#connections"><i class="fa fa-check"></i><b>B.10</b> Making Connections</a></li>
+<li class="chapter" data-level="B.11" data-path="AppendixB.html"><a href="AppendixB.html#risk-check"><i class="fa fa-check"></i><b>B.11</b> Conducting Risk Checks</a></li>
+<li class="chapter" data-level="B.12" data-path="AppendixB.html"><a href="AppendixB.html#tokens"><i class="fa fa-check"></i><b>B.12</b> Tokens</a></li>
+<li class="chapter" data-level="B.13" data-path="AppendixB.html"><a href="AppendixB.html#resolve"><i class="fa fa-check"></i><b>B.13</b> Resolves and Other Actions</a></li>
+<li class="chapter" data-level="B.14" data-path="AppendixB.html"><a href="AppendixB.html#delayed"><i class="fa fa-check"></i><b>B.14</b> Being Delayed</a></li>
+<li class="chapter" data-level="B.15" data-path="AppendixB.html"><a href="AppendixB.html#rest"><i class="fa fa-check"></i><b>B.15</b> Resting</a></li>
+<li class="chapter" data-level="B.16" data-path="AppendixB.html"><a href="AppendixB.html#databox"><i class="fa fa-check"></i><b>B.16</b> Databoxes</a></li>
+<li class="chapter" data-level="B.17" data-path="AppendixB.html"><a href="AppendixB.html#threat-tracker"><i class="fa fa-check"></i><b>B.17</b> Threat Tracker</a></li>
+<li class="chapter" data-level="B.18" data-path="AppendixB.html"><a href="AppendixB.html#end"><i class="fa fa-check"></i><b>B.18</b> End of the Game</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="AppendixC.html"><a href="AppendixC.html"><i class="fa fa-check"></i><b>C</b> Appendix C</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="AppendixC.html"><a href="AppendixC.html#the-tarot-of-things-deck"><i class="fa fa-check"></i><b>C.1</b> The Tarot of Things Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Design by Play</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter3" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Seeing Things of the Internet<a href="Chapter3.html#Chapter3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>“The Internet is the first thing that humanity has built that humanity doesn’t understand, the largest experiment in anarchy that we have ever had.”</p>
+<p>— Eric Schmidt at the Internet World Trade Show, New York, 18 November 1999</p>
+</blockquote>
+<p>Among its contributions this thesis presents an alternative approach to widely adopted human-centric perspectives in the design of IoT products and services. Being the locus of this thesis, this requires an exploration of IoT as a design space. In this chapter I present an overview of IoT as a society altering technology, as well as a case for a mismatch between user expectations of what IoT products and services do beyond their immediate task. I use this to build the case for viewing IoT through an alternative perspective than HCD, and then move towards examples in the coming chapters of using speculative design to reveal what the future design of IoT could be like.</p>
+<div id="a-case-for-and-against-an-internet-of-things" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> A case for (and against) an Internet of Things<a href="Chapter3.html#a-case-for-and-against-an-internet-of-things" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A review of literature around IoT often begins with the origins of the phrase itself. The credit generally goes to a presentation by Kevin Ashton from 1999 that had the phrase in its title <span class="citation">(<a href="#ref-ashton2009" role="doc-biblioref">Ashton 2009</a>)</span>. Ashton’s presentation was on radio frequency identification protocols (RFID), and its usage in manufacturing processes in industry. <span class="citation">Graham and Haarstad (<a href="#ref-graham2014" role="doc-biblioref">2014, 6</a>)</span> connect the roots of IoT with early attempts at the collection of data through RFID technology, which could explain Ashton’s usage of the phrase in that context. Though Ashton has since attempted to restructure his coining of the phrase, <span class="citation">Greenfield (<a href="#ref-greenfield2006" role="doc-biblioref">2006, 18</a>)</span> argues for the coming of a zeitgeist for objects that were not before considered as ‘technology’, reclassifying them as housing “information-sensing, -processing, and -networking capabilities”. Since then, IoT has become more commonly placed among concepts relating to ubiquitous computing, often classified as <em>‘smart’</em> devices <span class="citation">(<a href="#ref-kortuem2010" role="doc-biblioref">Kortuem et al. 2010</a>; <a href="#ref-lindley2017a" role="doc-biblioref">J. Lindley, Coulton, and Cooper 2017</a>)</span>.</p>
+<p>The earliest record of an Internet-connected device though goes back to the 1980s. Credited to a <em>Coke</em> vending machine in the Carnegie Mellon University Computer Science Department <span class="citation">(<a href="#ref-teicher2018" role="doc-biblioref">Teicher 2018</a>; <a href="#ref-madakam2015" role="doc-biblioref">Madakam, Ramaswamy, and Tripathi 2015</a>)</span>. The <em>‘device’</em> tracked the duration and temperature of individual bottles of Coke inside the machine. As banal as it might sound, the connected vending machine came out of a want of programmers for the cold caffeinated beverage and their offices being a fair distance away from the machine <span class="citation">(<a href="#ref-madakam2015" role="doc-biblioref">Madakam, Ramaswamy, and Tripathi 2015, 166</a>)</span>. This origin story is more suited to the state of IoT today as a technology existing among the mundanity of life, but it is also perfect for this thesis as an advocacy for the playful beginnings of transformative concepts and technologies.</p>
+<div id="defining-iot" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Defining IoT<a href="Chapter3.html#defining-iot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="citation">Madakam, Ramaswamy, and Tripathi (<a href="#ref-madakam2015" role="doc-biblioref">2015</a>)</span> begin their review of IoT by breaking down the two components of the phrase: ‘Internet’ and ‘Thing’. The former they classify as a network of networks, and latter, an amalgamation of all “real objects” present in the physical world <span class="citation">(<a href="#ref-madakam2015" role="doc-biblioref">2015, 165</a>)</span>. They are of the opinion that myriad definitions of IoT are present, each having common threads which they present in the following cohesive definition for IoT:</p>
+<blockquote>
+<p>“[IoT is] an open and comprehensive network of intelligent objects that have the capacity to auto-organize, share information, data and resources, reacting and acting in face of situations and changes in the environment” <span class="citation">(<a href="#ref-madakam2015" role="doc-biblioref">Madakam, Ramaswamy, and Tripathi 2015, 165</a>)</span></p>
+</blockquote>
+<p>Interest in the development of IoT has been primarily seen among large corporations <span class="citation">(<a href="#ref-greenfield2006" role="doc-biblioref">Greenfield 2006</a>; <a href="#ref-madakam2015" role="doc-biblioref">Madakam, Ramaswamy, and Tripathi 2015</a>; <a href="#ref-douglas2000" role="doc-biblioref">Douglas and Lianos 2000</a>; <a href="#ref-chui2010" role="doc-biblioref">Chui, Löffler, and Roberts 2010</a>)</span>. Its usage has proven to be widespread with IoT-enabled systems emerging in industries such as insurance, chemical production, manufacturing, agriculture, and health care to name a few <span class="citation">(<a href="#ref-chui2010" role="doc-biblioref">Chui, Löffler, and Roberts 2010</a>)</span>. The ability to code and track objects using uniquely identifiable information, places IoT as a strong point of interest for corporations with the handling of extracted information, capable of reducing risks and speeding up processes <span class="citation">(<a href="#ref-ferguson2002" role="doc-biblioref">Ferguson 2002</a>)</span>.</p>
+<p>Where industries have benefited from the advanced computational prowess of interconnected IoT-enabled systems, the past decade has brought with it significant interest of IoT’s potential in the domestic sector <span class="citation">(<a href="#ref-coughlan2012" role="doc-biblioref">Coughlan et al. 2012</a>; <a href="#ref-lindley2017c" role="doc-biblioref">J. Lindley, Coulton, and Sturdee 2017</a>; <a href="#ref-zanella2014" role="doc-biblioref">Zanella et al. 2014</a>)</span>. The term itself has seen iterations coming from different sources all acting as aliases for the broader gamut of an Internet of Things, such as a <em>Web of Things</em> or <em>Internet of Objects</em> <span class="citation">(<a href="#ref-madakam2015" role="doc-biblioref">Madakam, Ramaswamy, and Tripathi 2015, 166</a>)</span>. A history of IoT aliases is plotted boiling them down to a methodology that utilises machine to machine interaction as a modus operandi at its core with some of the aliases and associations accredit IoT as “Pervasive Computing”, “Ubiquitous Computing”, “Cyber-Physical Systems” and “Human-Computer Interaction”, calling IoT a form of “Ambient Intelligence” present within computing <span class="citation">(<a href="#ref-madakam2015" role="doc-biblioref">2015, 166</a>)</span>. This presents IoT as a form of technology that is omnipresent and, to a certain degree (or a projected future), omniscient.</p>
+</div>
+<div id="interacting-with-iot" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Interacting with IoT<a href="Chapter3.html#interacting-with-iot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Our relationship with technology such as IoT has evolved over time. One may find its roots in early adaptations of science fiction, an understanding that to this day is still present with myriad examples to be found. The modern smart phone and tablet can arguably trace their roots back to their fictional versions in the form of <em>Communicators</em> and <em>Tricoders</em> found in the popular television franchise <em>Star Trek</em> <span class="citation">(<a href="#ref-bleecker2010" role="doc-biblioref">Bleecker 2010</a>; <a href="#ref-akmal2015" role="doc-biblioref">Akmal 2015</a>)</span>. Cinema, television, and creative writing act as benchmarks for imagining new futures in technology through fictional endeavours. Though most of these imaginings fall in the category of fantasy with killer robots or all-knowing devious AI’s, a glimpse of a more tangible version of this is present in academia. One such example is Greenfield’s <span class="citation">(<a href="#ref-greenfield2006" role="doc-biblioref">2006</a>)</span> <em>Everyware</em>, which discusses forms future technology could take around ubiquitous computing. The book talks of acknowledging the presence of technology capable of consciously processing our daily lives from garments to streets, household objects, and daily mundane rituals, acting collectively to gather information about ourselves for greater purposes.</p>
+<div id="existing-among-the-mundane" class="section level4 hasAnchor" number="3.1.2.1">
+<h4><span class="header-section-number">3.1.2.1</span> Existing among the mundane<a href="Chapter3.html#existing-among-the-mundane" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Designers, among other academics, have had a close affiliation with technology and its connection to everyday life; whether that be the domestication of IoT, or, the envisioning of grander schemes of ubiquitous computing <span class="citation">(<a href="#ref-richardson2009" role="doc-biblioref">Richardson 2009</a>; <a href="#ref-reeves2012" role="doc-biblioref">Reeves 2012</a>)</span>. The vision of the future presented in Greenfield’s book bases itself in Mark Weiser’s famous words, <em>“The most profound technologies are those that disappear. They weave themselves into the fabric of everyday life until they are indistinguishable from it.”</em> <span class="citation">(<a href="#ref-weiser1991" role="doc-biblioref">Weiser 1991, 94</a>)</span>. Weiser’s famous quote is around the human user surrounded by technology. The disappearing of technology affirms its power and influence on the human through a merging into mundanity. In many regards, design has used the human user and daily life as the focal point in the design process for IoT through an approach called Human-Centred Design (HCD).</p>
+<p>Design has always implicated humans at its centre <span class="citation">(<a href="#ref-love2000" role="doc-biblioref">Love 2000, 293</a>)</span>. Predating the Internet, these roots of HCD can be traced back to fields of ergonomics and computer science. Early ISO patents<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> showcased standards for what may equate to human-friendly designs. This approach has proven to become a popular choice among designers and scholars in this regard <span class="citation">(<a href="#ref-giacomin2014" role="doc-biblioref">Giacomin 2014</a>; <a href="#ref-thomas2017" role="doc-biblioref">V. Thomas, Remy, and Bates 2017</a>; <a href="#ref-norman2002" role="doc-biblioref">Don A. Norman 2002</a>)</span>. HCD may act as an umbrella term that accommodates its predecessor User-Centred Design (UCD) <span class="citation">(<a href="#ref-steen2011" role="doc-biblioref">Steen 2011, 45</a>)</span>. Today, the word <em>human</em> and <em>user</em> have become synonymous in the design process of IoT and products/services in general with designers opting for HCD as the go-to approach for the design process <span class="citation">(<a href="#ref-lindley2017" role="doc-biblioref">J. G. Lindley and Coulton 2017, para. 12</a>)</span>. This approach has created a world where IoT-enabled objects and services linger in our peripherals existing in mundanity much like the technology defined by Weiser.</p>
+</div>
+<div id="simplicity-by-design" class="section level4 hasAnchor" number="3.1.2.2">
+<h4><span class="header-section-number">3.1.2.2</span> Simplicity by design<a href="Chapter3.html#simplicity-by-design" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A core axiom of simplicity is most associated with HCD <span class="citation">(<a href="#ref-norman1999" role="doc-biblioref">Donald A. Norman 1999</a>)</span>, and dogmatically exercised in the design of products and services involving human-user-experience. This translates onto the design for IoT where HCD governs how we interact with this technology. Examples can be seen in products such as <em>Amazon’s Alexa</em> or <em>Google’s Nest</em>, presenting minimal ways of direct interaction by design. In his book <em>The Design of Everyday Things</em> <span class="citation">Don A. Norman (<a href="#ref-norman2002" role="doc-biblioref">2002</a>)</span> defines parameters for a user-centred approach to design to include ease, visibility, and the following of natural flows of processing. The examples he gives are of designed items such as chairs, doors, and washing machines, where function and form act in tandem. For instance, a door not designed with torque in mind would be difficult to manoeuvre. Similarly, a washing machine overly designed or improperly labelled would be difficult to operate.</p>
+<p>Whilst there is a critique of HCD as a design methodology for IoT at the heart of this manuscript it is not a dismissal of its benefits. Rather, it is the prevailing understanding that simplicity is a necessary requirement of HCD, and more importantly its appropriate usage that is of concern. <span class="citation">Donald A. Norman (<a href="#ref-norman2016" role="doc-biblioref">2016, 34</a>)</span> who is often credited as the originator of HCD has also taken a similar stance towards simplicity in design suggesting both complexity and simplicity existing as conceptual models of “underlying belief structures”. The task of the designer then becomes to acknowledge and appropriate the correct conceptual model as per design problem. Giving the example of moving files into folders on a computer, Norman highlights that while doing so behind the scenes a vast amount of complex computation is undergone while the user plays out a fiction of moving <em>‘files’</em> into <em>‘folders’</em>, allowing the designer to embed a simplified conceptual model of storage through Human Computer Interaction (HCI) into the user.</p>
+<p>Furthering this point, <span class="citation">Donald A. Norman (<a href="#ref-norman2016" role="doc-biblioref">2016, 47</a>)</span> continues by explaining how over simplicity is counter intuitive giving the example of a remote control with fewer buttons making certain use cases tedious. On the flip side a remote control with too many buttons would be confusing and excessive, suggesting complexity is a subjective matter as well.</p>
+<p>Either logic plays at an anthropocentric view of the design process, and to an extent can create artefacts that function as expected. However, when the presence of ‘intelligence’ is introduced into a product—such as a washing machine or remote control—through IoT, implications emerge of deeper more complex underlying workings presenting a greater challenge for designers to forge appropriate conceptual models for their problems.</p>
+</div>
+</div>
+<div id="the-disillusionment-of-living-in-iot" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> The disillusionment of living in IoT<a href="Chapter3.html#the-disillusionment-of-living-in-iot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A simplicity-first approach often associated with general understandings of HCD attempts to hide away the interior workings of a product for the benefit of the user. This in a way enacts Arthur C. Clarkes famously cited view of advanced technology being equated to magic <span class="citation">(<a href="#ref-clarke1962" role="doc-biblioref">Clarke 1962</a>)</span>. Many users will most likely be content with this view, as can be seen from Norman’s example above of <em>‘files and folders’</em>. This of course is also counter intuitive to core values of HCD such as visibility, feedback, and consistency. “Well-designed objects are easy to interpret and understand” <span class="citation">(<a href="#ref-norman2002" role="doc-biblioref">Don A. Norman 2002, 2</a>)</span>. The inclusion of IoT in our daily lives though allows the physical world to transform into an “information system”, promising enhanced capabilities for our already functioning objects with little intervention <span class="citation">(<a href="#ref-chui2010" role="doc-biblioref">Chui, Löffler, and Roberts 2010, 582</a>)</span>. This added presence of ever computing AI in products in our surroundings as proposed by IoT, suggests a complex level of interactions occurring behind the fictional conceptual models of our physical interactions with these devices.</p>
+<p>IoT and actions happening within remain unclear to human users who are often the centre of these systems for the collection and creation of valuable data. Key properties of human-centeredness highlighted by Norman, thus are not necessarily present in the digital footprint of IoT system design creating a blind spot for users <span class="citation">(<a href="#ref-lindley2017" role="doc-biblioref">J. G. Lindley and Coulton 2017</a>; <a href="#ref-coulton2019" role="doc-biblioref">Coulton and Lindley 2019</a>)</span>. Some of the points of concern resulting from this blind sport are expressed ahead. <span class="citation">Coughlan et al. (<a href="#ref-coughlan2012" role="doc-biblioref">2012, 148</a>)</span> are of the opinion that interactions in IoT have yet to explore true human involvement. <span class="citation">Donald A. Norman (<a href="#ref-norman2016" role="doc-biblioref">2016, 41–47</a>)</span> describes himself that it’s unjust to compare the complexity associated with a photo-editing tool with that of a planishing hammer. Each has their own level of complexity which depending on the wielder affords different levels of simplicity; or appropriation of defining simplicity. As mundane objects become networked, our relationships with them as users alter radically.</p>
+<div id="the-betrayal-of-our-devices" class="section level4 hasAnchor" number="3.1.3.1">
+<h4><span class="header-section-number">3.1.3.1</span> The betrayal of our devices<a href="Chapter3.html#the-betrayal-of-our-devices" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In his book, <span class="citation">Greenfield (<a href="#ref-greenfield2006" role="doc-biblioref">2006</a>)</span> also explores the flip side of the equation, suggesting the <em>smart</em> moniker to be deceiving. His view proposes the intertwining of computation in our everyday lives, may breed disturbances:</p>
+<blockquote>
+<p>“When everyday things are endowed with the ability to sense their environment, store metadata reflecting their own provenance, location, status, and use history, and share that information with other such objects, this cannot help but redefine our relationship with such things. We’ll find our daily experience of the world altered in innumerable ways, some obvious and some harder to discern. And among the more significant consequences of this ‘computing everywhere’ is that it strongly implies ‘information everywhere.’” <span class="citation">(<a href="#ref-greenfield2006" role="doc-biblioref">Greenfield 2006, 23</a>)</span></p>
+</blockquote>
+<p>Where on the one hand computing of this nature opens doors to creating newly founded interactions—before considered closer to science fiction—this also presents challenges on the emerging fronts of security, ethics, and policy <span class="citation">(<a href="#ref-weber2009" role="doc-biblioref">Weber 2009</a>; <a href="#ref-farooq2015" role="doc-biblioref">Farooq et al. 2015</a>; <a href="#ref-lindley2017c" role="doc-biblioref">J. Lindley, Coulton, and Sturdee 2017</a>)</span>. Furthermore, accountability for topics such as privacy and the use of data becomes a factor in play when designing for these systems <span class="citation">(<a href="#ref-boos2012" role="doc-biblioref">Boos and Grote 2012</a>)</span>.</p>
+<p>This brings about the disillusion of IoT in our daily lives. <span class="citation">Vamosi (<a href="#ref-vamosi2011" role="doc-biblioref">2011</a>)</span> suggests the betrayal of our gadgets and devices when they unintentionally break due to design errors. Giving examples of contact-less interactions with cars, banks, and homes he suggests how technology may have developed a false sense of security among us. This is due to our never-ceasing want for ease in a turn he dubs, “the dark side of convenience” <span class="citation">(<a href="#ref-vamosi2011" role="doc-biblioref">2011, 25</a>)</span>. This is visible in the security risks around IoT which have over the years multiplied <a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.</p>
+<p><span class="citation">Donald A. Norman (<a href="#ref-norman2016" role="doc-biblioref">2016, 53</a>)</span> seconds this notion in his own way by highlighting that “assumed trade-offs” between simplicity and complexity are improper applications of design. Taking the earlier example of the remote control he suggests this leading to two understandings, <em>(a)</em> that the goal is to achieve simplicity, and <em>(b)</em> that certain things must be given up in order to achieve it. Continuing on the same note while speaking of a specific <em>Siemens</em> developed washing machine, Norman argues that in the process of automation for the sake of simplification the otherwise accepted simple conceptual model of using a washing machine to wash laundry was complicated by defining the minutiae of the laundry contents to the machine. An otherwise simple process became more tedious in his opinion as with automation the general understanding is trusting in the machine’s judgement.</p>
+<p>In Vamosi’s <span class="citation">(<a href="#ref-vamosi2011" role="doc-biblioref">2011, xvi</a>)</span> terms, we have yet to evolve “survival instincts” around technological fallacies. Solutions surface as often as vulnerabilities through patches and software updates. A further problem comes in the form of excess such as with the case of the above washing machine with <em>‘extra control’</em>, or with companies offering solutions by overhauling expensive IoT eco-systems <a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>. Collectively these measures present consumers with difficult decisions around the adoption of IoT.</p>
+</div>
+<div id="gathering-future-technological-asbestos" class="section level4 hasAnchor" number="3.1.3.2">
+<h4><span class="header-section-number">3.1.3.2</span> Gathering future technological asbestos<a href="Chapter3.html#gathering-future-technological-asbestos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>While the above might lead one to assume these issues come solely from a security perspective and the fortification of networks is the solution, in truth design plays a pivotal role in all of this <span class="citation">(<a href="#ref-vamosi2011" role="doc-biblioref">Vamosi 2011</a>; <a href="#ref-lindley2017c" role="doc-biblioref">J. Lindley, Coulton, and Sturdee 2017</a>; <a href="#ref-norman2016" role="doc-biblioref">Donald A. Norman 2016</a>)</span>. With the ever expansion of IoT through networks of heterogeneous interconnected objects and things, the underlying complexities hidden from users arguably through inefficient design choices rise exponentially <span class="citation">(<a href="#ref-lindley2017a" role="doc-biblioref">J. Lindley, Coulton, and Cooper 2017</a>)</span>.</p>
+<p>Where IoT does provide benefit in lifestyle and certain aspects of interaction, <em>Internet of Things</em> and <em>smart</em> have become buzz-words for manufacturers to create eventual IoT “asbestos of the future” <span class="citation">(<a href="#ref-spadafora2019" role="doc-biblioref">Spadafora 2019, para. 2</a>)</span> through products which fulfil rudimentary purposes. These obfuscated interactions do not necessarily come from the need of a user, rather, disguised under convenience they present fundamental problems in the design process of IoT. Take for instance the <em>Quirky Egg Minder Smart Egg Tray</em><a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a> intended to keep track of eggs in the refrigerator. A selling point of this product is not solely the fact that it can keep track of your eggs, but also, that it can connect to an external IoT hub for one-point access to the device. This implies an additional network where multiple devices, servers, stakeholders, and networks all implicitly interact with an interest in one's refrigerated eggs.</p>
+<p>The argument here is not for or against the necessity of knowing the condition of one’s dairy products (though that could be considered), but rather the point raised is that objects such as these surround us with electronic breadcrumbs. These act as key points of entry for not just secure interactions but also insecure and malicious ones. For the sake of (arguable) <em>convenience</em>, how many networks or connections can one truly fortify if it is solely a matter of security?</p>
+<p>The smart egg tray is destined to fail in this regard. It along with other similar devices, though designed with good intentions, promote a rudimentary problem in the practice of general understandings of HCD when used for the design of IoT. Weiser’s earlier comment on technology disappearing into the everyday fabric of life is certainly visible in these IoT devices, but they don’t necessarily operate under the truest ideals of design with humans in mind. Where HCD advocates simplicity it also does visibility and feedback which many IoT devices deny with proprietary software, overtly simplified interfaces, or simply a lack of transparency. There is little view of the experience from its perspective for the user, rather, many products are designed with surveillance capitalism in mind. When they could also be imagined to be evolving, cleaner, or secure, traits that benefit the product as much as users by keeping true to human-centred ideals.</p>
+</div>
+</div>
+</div>
+<div id="approaching-an-alternative-perspective-for-design-in-iot" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Approaching an alternative perspective for Design in IoT<a href="Chapter3.html#approaching-an-alternative-perspective-for-design-in-iot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Hungarian painter and professor for the Bauhaus School László Moholy-Nagy, wrote that “ultimately, all problems of design merge into one great problem: ‘design for life’” <span class="citation">(<a href="#ref-moholy-nagy1947" role="doc-biblioref">Moholy-Nagy 1947, 42</a>)</span>. What differentiates a normal refrigerator with an IoT-enabled one is what <span class="citation">Pierce and DiSalvo (<a href="#ref-pierce2017" role="doc-biblioref">2017</a>)</span> consider a <em>‘networkification’</em> of a world outside of the Internet, presenting with it levels of agency and value not originally associated with the device. Through IoT designers redefine aspects of living. Objects connected in IoT present themselves as simple solutions to mundane problems, yet, they house complex designs emerging from this networkification creating a complex problem space.</p>
+<p>Obscuring hidden workings through general applications of HCD under the guise of <em>‘simplicity’</em> may be welcome in some cases as many human-users could benefit from the lack of excessive information. Yet this obfuscation, paradoxically, also accredits the aforementioned security hazards in IoT, further opening avenues for similar concerns <span class="citation">(<a href="#ref-lindley2017a" role="doc-biblioref">J. Lindley, Coulton, and Cooper 2017, para. 1</a>)</span>.</p>
+<p>Our hyper-connected world is governed by assemblages of mediated data collected and processed through the various devices and systems in place around us. Simplification of such a complex system may only agitate the problem space further when challenges such as societal, economic, or environmental are faced around IoT <span class="citation">(<a href="#ref-coulton2019" role="doc-biblioref">Coulton and Lindley 2019, 466</a>)</span>.</p>
+<p>To see this in perspective, <span class="citation">J. G. Lindley and Coulton (<a href="#ref-lindley2017" role="doc-biblioref">2017, para. 2</a>)</span> give the example of a smart meter intended to control heating in a confined space. The associated value for this device drastically changes between stakeholders involved. As a consumer, one might be inclined to reduce the amount of energy used. Yet, as the energy provider they would be motivated to maximise profits; with or without data collected from the meters. Whom is the smart meter designed for? What attributes should a designer focus on for this device? Should it be the efficiency of use? Stakeholder engagement and interests? Or effects on the environment?</p>
+<div class="figure"><span style="display:block;" id="fig:disillusion"></span>
+<img src="figures/ch3-disillusion.png" alt="This appropriation of the illustration by @lindley2017, suggests that the perspective through which users see their world is not necessarily the same for IoT devices."  />
+<p class="caption">
+Figure 3.1: This appropriation of the illustration by <span class="citation">J. G. Lindley and Coulton (<a href="#ref-lindley2017" role="doc-biblioref">2017</a>)</span>, suggests that the perspective through which users see their world is not necessarily the same for IoT devices.
+</p>
+</div>
+<p>Certainly, concerns around privacy and transparency are of importance when considering HCD. Through the examples mentioned previously, and countless others strewed across the Internet, privacy is often the first casualty when designing for IoT. Many of the highlighted concerns appear to be solely a matter of transparency, though excess information is equally a subjective issue when designing. Certain systems might not need their underlying operations to be deemed extra information, equally some designs could require it. When perspectives differ so drastically for an IoT product and service design (Fig. <a href="Chapter3.html#fig:disillusion">3.1</a>), then how does one approach this design space?</p>
+<div id="changing-perspectives" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Changing perspectives<a href="Chapter3.html#changing-perspectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The appropriation by <span class="citation">Buchanan (<a href="#ref-buchanan1992" role="doc-biblioref">1992, 14</a>)</span> of “wicked problems” in design are often considered the baseline for justifying methods in design research. The argument presented, is that problems addressed by design are far more complex and indeterminate with no immediate solutions existing a priori, ergo, understanding the situation becomes as important as formulating a solution <span class="citation">(<a href="#ref-gaver2012" role="doc-biblioref">Gaver 2012, para. 24</a>)</span>. Examples of this are problems such as climate change and solutions presented under the umbrella of sustainability. This is why design researchers often employ methods from diverse disciplines converging together to create a focal point around a subject matter they have invested in through an act of “innovative repositioning” <span class="citation">(<a href="#ref-buchanan1992" role="doc-biblioref">Buchanan 1992, 11</a>)</span>. What this means is for design researchers to conduct their research they must accept the fact that the solution will lie in resituating the problem. In our case, for the design of IoT we need to change our perspective.</p>
+<p>The complexity of the situation emerges partly from our innate trust in technology, but also perspectives exercised through HCD. Ironically, one of the most notable and quoted figures in the argument for HCD <span class="citation">Donald A. Norman (<a href="#ref-norman2005" role="doc-biblioref">2005, 14</a>)</span> has also argued against an anthropocentric approach to design, proposing an “activity-centric” approach instead. On the matter of designing for IoT, <span class="citation">J. G. Lindley and Coulton (<a href="#ref-lindley2017" role="doc-biblioref">2017</a>)</span> present a case in favour of alternative design approaches to HCD saying that perspective plays a large role in how one may view IoT.</p>
+<p>All the examples presented above create an argument for the <em>‘things’</em> in IoT as being more than physical objects. Besides their physicality they include abstract concepts such as data, algorithms, software architecture, policies, and business models, to name a few. Each of them defining these concepts in different ways. The interrelations of these different elements fuel the problem of complexity, and as such is how a smart television could infuse paranoia,<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a> or a baby-monitor might also serve a criminal activity <a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>. <span class="citation">J. Lindley, Coulton, and Cooper (<a href="#ref-lindley2017a" role="doc-biblioref">2017</a>)</span> are of the opinion that extreme use of generalised conceptual models of simplicity associated with HCD, may unintentionally detriment the adoption of IoT.</p>
+</div>
+<div id="metaphorically-speaking" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Metaphorically speaking<a href="Chapter3.html#metaphorically-speaking" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Arguments are presented for expanding the scope of HCD to include elements such as the environment and objects <span class="citation">(<a href="#ref-thomas2017" role="doc-biblioref">V. Thomas, Remy, and Bates 2017</a>; <a href="#ref-coulton2019" role="doc-biblioref">Coulton and Lindley 2019</a>)</span>, and even fantasy and lore <span class="citation">(<a href="#ref-rose2015" role="doc-biblioref">Rose 2015</a>)</span>. This acknowledgement of abstract entities as actants in an IoT network expands on the broader perspective for design. One way of seeing IoT is through metaphor as suggested by <span class="citation">J. G. Lindley and Coulton (<a href="#ref-lindley2017" role="doc-biblioref">2017, para. 3</a>)</span>, presenting the concept of metaphorical “constellations” for IoT.</p>
+<p>This argument suggested by <span class="citation">Buchanan (<a href="#ref-buchanan1992" role="doc-biblioref">1992, 12</a>)</span> of innovative repositioning through design practice incorporating diverse disciplines in this instance, is conducted through the use of metaphor to understand alternative perspectives better. IoT is not a stranger to the use of metaphors. Different sources express interacting in and among IoT comparable with non-digital experiences <span class="citation">(<a href="#ref-cila2017" role="doc-biblioref">Cila et al. 2017</a>; <a href="#ref-rose2015" role="doc-biblioref">Rose 2015</a>; <a href="#ref-romero2008" role="doc-biblioref">Romero, Pousman, and Mateas 2008</a>)</span>. The infamous quote of technology as magic can be viewed as a way of describing something like IoT akin to sorcery for the less informed. <span class="citation">Rose (<a href="#ref-rose2015" role="doc-biblioref">2015, 52</a>)</span> discusses this approach further by seeing IoT housing “enchanted objects”, capable of enhancing our daily experiences akin to magical artefacts from lore. Though his view could be argued as still anthropocentric in certain regards, it proposes an alternative viewpoint. One where these objects are given importance and value beyond their utilitarian function, embodying them with a higher essence to serve their human-users. In the coming two examples I will build a case for viewing IoT through metaphor in order to understand it better from alternative non-human perspectives.</p>
+<div id="enchanted-experiences" class="section level4 hasAnchor" number="3.2.2.1">
+<h4><span class="header-section-number">3.2.2.1</span> Enchanted experiences<a href="Chapter3.html#enchanted-experiences" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="citation">Rose (<a href="#ref-rose2015" role="doc-biblioref">2015, 111</a>)</span> presents the case of an umbrella inspired by the magical sword <em>Sting</em> from <em>The Hobbit</em> by J.R.R. Tolkien. Where <em>Sting</em> informed <em>Bilbo Baggins</em> of nearby danger, Rose’s umbrella informs him of whether it’s about to rain. Though a simple premise, the interaction becomes an enchanting one capable of pulling the user into a playful world where umbrella’s converse with their users about the weather. Furthermore, it establishes a deeper existence for the device disconnected from the human.</p>
+<p>One could argue that our devices are always enacting themselves in our background lives. But where the enchanted umbrella differs is in its anticipation of use: “Objects that anticipate their use; know when they’re needed” <span class="citation">(<a href="#ref-rose2015" role="doc-biblioref">Rose 2015, 111</a>)</span>. This is not collecting data because it can be collected, rather, it is obtaining data as a result of meaningful interactions. One that not only is important to the user but establishes a strengthened presence of the device.</p>
+<p>Where the IoT egg tray could be shrugged off as an item of jest just like the USB ghost tracker from my past, the enchanted umbrella incorporates a playful experience in a manner that elevates the device by design. Through a metaphor of enchantment the magical aspects of IoT, or underlying complexity, is approached in a human-centred way providing a meaningful interaction beyond that of a regular umbrella. Arguably, the complexity is not made visible in this instance but for the end-user it remains an intimate interaction with a simple conceptual model, glowing umbrella equals rain as opposed to the series of side interactions to check the weather before leaving. This also highlights the umbrella’s awareness of things out of the human user’s control or knowledge. Rose gives many such examples that present IoT-enabled objects comparable to magical artefacts from fantasy fiction, making them metaphorical representations of magic and simplifications of otherwise complex interactions.</p>
+</div>
+<div id="a-faceless-shapeless-internet" class="section level4 hasAnchor" number="3.2.2.2">
+<h4><span class="header-section-number">3.2.2.2</span> A faceless shapeless Internet<a href="Chapter3.html#a-faceless-shapeless-internet" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A further definition of the Internet is provided by <span class="citation">Pierce and DiSalvo (<a href="#ref-pierce2017" role="doc-biblioref">2017, para. 1</a>)</span> who refer to it as “shapeless and faceless”, attesting to the benefit of defining IoT through perspectives of metaphor. The notion of a <em>constellation design</em> creates relations in IoT that are “independent-but-interdependent” <span class="citation">(<a href="#ref-coulton2019" role="doc-biblioref">Coulton and Lindley 2019, 467</a>)</span>. The user is removed from the centre of the equation and becomes one piece in a larger puzzle with services, stakeholders, business models all residing in their respective dependencies (Fig. <a href="Chapter3.html#fig:constellation">3.2</a>). In this light, <em>perspective</em> becomes important as what is of value changes according to what is viewed and by whom.</p>
+<div class="figure"><span style="display:block;" id="fig:constellation"></span>
+<img src="figures/ch3-constellation.png" alt="Seeing IoT through a metaphor of constellations reveals individual perspectives and dependencies in relation to the observer."  />
+<p class="caption">
+Figure 3.2: Seeing IoT through a metaphor of constellations reveals individual perspectives and dependencies in relation to the observer.
+</p>
+</div>
+<p>More so, one must understand that the <em>things</em> in IoT differ from those in our daily lives. Whether we see it as enchantment through <span class="citation">Rose (<a href="#ref-rose2015" role="doc-biblioref">2015</a>)</span> or betrayal as <span class="citation">Vamosi (<a href="#ref-vamosi2011" role="doc-biblioref">2011</a>)</span> suggests, IoT objects are different from non-IoT counterparts. Partly because of their abilities (magical or otherwise), but also because of the workings behind the illusion they present <a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>. Paraphrasing <span class="citation">Pierce and DiSalvo (<a href="#ref-pierce2017" role="doc-biblioref">2017, para. 1</a>)</span>, they are as shapeless and faceless as the Internet they exist in. To further this point we can see the comparison by Coulton et al. between a wired telephone to its IoT alternative, the smart phone, illustrating the difference in regular things and IoT<em>-things</em>:</p>
+<blockquote>
+<p>“The wired phone is a single purpose device, connecting into the phone network, which itself is a complex but highly sanitized and controlled system. The smartphone on the other hand is a general-purpose computer, imbued with a range of sensors, connected to the Internet, running user-installed software. It so happens that it also makes phone calls and, for historical reasons, is primarily referred to as a ‘phone’. This is analogous to the contrast between ‘things’ and the IoT.” <span class="citation">(<a href="#ref-coulton2019" role="doc-biblioref">Coulton and Lindley 2019, 468</a>)</span></p>
+</blockquote>
+<p>The metaphor of a constellation allows for this contrast to be seen more clearly. A wired telephone exists for a singular purpose making/taking phone calls, and thus serves simpler stakeholders which can be drawn out in a linear fashion of telephone company to user and back. Of course the telephone company and user are under the influence of third-party effects such as government policies, this model is less influx than a digital network as I will explain. The smart phone serves multiple stakeholders from the fact that it is more than a device for making phone calls. Among these stakeholders include but are not limited to the user, network providers, manufacturers, government policies, applications in use, third-party manufacturers and advertisers, and so on. So, a linear model is not possible. Through this assemblage of independence and interdependence, a series of “networked ecologies” <span class="citation">(<a href="#ref-coulton2019" role="doc-biblioref">Coulton and Lindley 2019, 467</a>)</span> are created. One can see them as collections of interacting bodies, depending on each other to form a cohesive interaction. Where immediate interdependence is viewed in basic interactions like user input, others are less obvious but just as important. Coulton and Lindley also give the example of smart televisions which log user activity. Users information is not simply used to tailor the viewing experience but is passed on by the manufacturers to third parties for targeted marketing based on those interactions.</p>
+<p>IoT devices are not solely owned by their users just as the telephone lines are shared between the provider and client. The difference between these services comes when seeing that unlike traditional networking abilities IoT devices also may incorporate other types of <em>networked things</em>. This may include other devices, interactions with businesses, communications with government authorities, or unsolicited interactions with third-parties. Metaphorically speaking, IoT networks exist as constellations of interacting bodies with clusters of independent and inter-dependent interactions each affecting the other in a daisy-chain manner.</p>
+<p>The alternative perspective presented has been termed “more-than human centred design” <span class="citation">(<a href="#ref-coulton2019" role="doc-biblioref">Coulton and Lindley 2019, 478</a>)</span> to look beyond the precedence of an anthropocentric view. It utilises elements of speculation and a large part of philosophical debate to understand how one can experience concepts such as IoT from different perspectives. By removing the human centre in this view, one can focus on the networked ecologies housing the different stakeholders and their various interactions. This allows for a broader perspective, which was before given solely to the human-user. Thus, in order to acknowledge alternative approaches towards HCD for the design of IoT, one must acknowledge the independent and inter-dependent perspectives of the things in IoT, their lives, objectives, and intentions.</p>
+</div>
+</div>
+</div>
+<div id="conclusion" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Conclusion<a href="Chapter3.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>From the above understanding of constellations in IoT the human user is not the centre unless its place in a wider ecology is examined, such as between user and device or user and internet service provider. The more expansive the ecology, the more the ‘centre’ is realigned. All the while these networks remain hidden from the human user.</p>
+<p>In light of the playful attitude towards research presented by this thesis if taking the view of IoT as enchanted objects as posited by <span class="citation">Rose (<a href="#ref-rose2015" role="doc-biblioref">2015</a>)</span>, then one can see these hidden workings as background processes of <em>magic</em>; or how the illusionist manages to hide away information. Examples such as these, present an alternative case for viewing IoT as constellations where actants rely on their interactions with others. The metaphor may stage the setting for understanding the illusion better. In <a href="Chapter9.html#Chapter9">Chapter 9</a> I go into much more detail exploring these illusions generated between user and device through philosophical musings, but before going into that there is a lot of ground to cover in the coming chapters.</p>
+<p>This is a case for misaligned conceptual models to generalised understandings of HCD in practice. Simplification does not necessarily lead to ease of use and could equally unearth unintentional flaws in design, particularly when considering IoT where beyond security measures concerns such as privacy and ethics are at stake. A more-than human approach encompasses elements of design that elevate the experience beyond mere servitude. Shying away of underlying workings of IoT for the sake of simplifying use to highlight device servitude, inadvertently leads to further complexity. <em>Visio’s</em> lack of regard for user privacy is a haunting example among the plethora of others befallen to ignorant or at times nefarious design choices in IoT.</p>
+<p>Objects in our vicinity exist out their vicarious lives, a philosophical concept. This way of viewing IoT through a lens of philosophy is the driving argument of this manuscript proposed through its playful attitude towards research. A philosophical discourse around understanding this alternative perspective to HCD will be highlighted in the next chapter to act as the main driver of metaphor for viewing IoT differently.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-akmal2015" class="csl-entry">
+Akmal, Haider Ali. 2015. <span>“Empathy <span>Engine</span>: <span>Researching</span> <span>Through</span> <span>Design</span> <span>Fiction</span>.”</span> Masters dissertation, Lancaster, UK: Lancaster University.
+</div>
+<div id="ref-ashton2009" class="csl-entry">
+Ashton, Kevin. 2009. <span>“That <span>‘<span>Internet</span> of Things’</span> Thing.”</span> <em>RFID Journal</em> 22 (7): 97–114.
+</div>
+<div id="ref-bleecker2010" class="csl-entry">
+———. 2010. <span>“Design Fiction: <span>From</span> Props to Prototypes.”</span> <em>Negotiating Futures–Design Fiction</em>, 58–67.
+</div>
+<div id="ref-boos2012" class="csl-entry">
+Boos, Daniel, and Gudela Grote. 2012. <span>“Designing Controllable Accountability of Future Internet of Things Applications.”</span> <em>Scandinavian Journal of Information …</em>. <a href="https://pdfs.semanticscholar.org/dfbb/57c9b6f8cc563e243b621b951e9c87c3ca16.pdf">https://pdfs.semanticscholar.org/dfbb/57c9b6f8cc563e243b621b951e9c87c3ca16.pdf</a>.
+</div>
+<div id="ref-buchanan1992" class="csl-entry">
+———. 1992. <span>“Wicked Problems in Design Thinking.”</span> <em>Design Issues</em> 8 (2): 5–21.
+</div>
+<div id="ref-chui2010" class="csl-entry">
+Chui, Michael, Markus Löffler, and Roger Roberts. 2010. <span>“The Internet of Things.”</span> <em>McKinsey Quarterly</em> 2: 581–85. <a href="https://doi.org/10.1109/INCoS.2014.113">https://doi.org/10.1109/INCoS.2014.113</a>.
+</div>
+<div id="ref-cila2017" class="csl-entry">
+Cila, Nazli, Iskander Smit, Elisa Giaccardi, and Ben Kröse. 2017. <span>“Products as Agents: <span>Metaphors</span> for Designing the Products of the <span>IoT</span> Age.”</span> In <em>Proceedings of the 2017 <span>CHI</span> <span>Conference</span> on <span>Human</span> <span>Factors</span> in <span>Computing</span> <span>Systems</span></em>, 448–59.
+</div>
+<div id="ref-clarke1962" class="csl-entry">
+Clarke, Arthur C. 1962. <span>“Hazards of <span>Prophecy</span>: <span>The</span> <span>Failure</span> of <span>Imagination</span>.”</span> In <em>Profiles of the <span>Future</span>: <span>An</span> <span>Enquiry</span> into the <span>Limits</span> of the <span>Possible</span></em>. Harper &amp; Row.
+</div>
+<div id="ref-coughlan2012" class="csl-entry">
+Coughlan, Tim, Michael Brown, Richard Mortier, Robert J. Houghton, Murray Goulden, and Glyn Lawson. 2012. <span>“Exploring <span>Acceptance</span> and <span>Consequences</span> of the <span>Internet</span> of <span>Things</span> in the <span>Home</span>.”</span> In <em>Green <span>Computing</span> and <span>Communications</span> (<span>GreenCom</span>), 2012 <span>IEEE</span> <span>International</span> <span>Conference</span> on</em>, 148–55. IEEE.
+</div>
+<div id="ref-coulton2019" class="csl-entry">
+Coulton, Paul, and Joseph Galen Lindley. 2019. <span>“More-<span>Than</span> <span>Human</span> <span>Centred</span> <span>Design</span>: <span>Considering</span> <span>Other</span> <span>Things</span>.”</span> <em>The Design Journal</em> 22 (4): 463–81. <a href="https://doi.org/10.1080/14606925.2019.1614320">https://doi.org/10.1080/14606925.2019.1614320</a>.
+</div>
+<div id="ref-douglas2000" class="csl-entry">
+Douglas, Mary, and Michalis Lianos. 2000. <span>“Dangerization and the End of <span>Deviance</span>.”</span> <em>Criminology and Social Theory</em>, 110.
+</div>
+<div id="ref-farooq2015" class="csl-entry">
+Farooq, M. U., Muhammad Waseem, Anjum Khairi, and Sadia Mazhar. 2015. <span>“A <span>Critical</span> <span>Analysis</span> on the <span>Security</span> <span>Concerns</span> of <span>Internet</span> of <span>Things</span> (<span>IoT</span>).”</span> <em>International Journal of Computer Applications</em> 111 (7): 1–6. <a href="https://doi.org/10.5120/19547-1280">https://doi.org/10.5120/19547-1280</a>.
+</div>
+<div id="ref-ferguson2002" class="csl-entry">
+Ferguson, Glover T. 2002. <span>“Have <span>Your</span> <span>Objects</span> <span>Call</span> <span>My</span> <span>Objects</span>.”</span> <em>Harvard Business Review</em>, June. <a href="https://hbr.org/2002/06/have-your-objects-call-my-objects">https://hbr.org/2002/06/have-your-objects-call-my-objects</a>.
+</div>
+<div id="ref-gaver2012" class="csl-entry">
+———. 2012. <span>“What Should We Expect from Research Through Design?”</span> In <em>Proceedings of the <span>SIGCHI</span> Conference on Human Factors in Computing Systems</em>, 937–46. ACM.
+</div>
+<div id="ref-giacomin2014" class="csl-entry">
+Giacomin, Joseph. 2014. <span>“What Is Human Centred Design?”</span> <em>The Design Journal</em> 17 (4): 606–23. <a href="https://doi.org/10.2752/175630614X14056185480186">https://doi.org/10.2752/175630614X14056185480186</a>.
+</div>
+<div id="ref-graham2014" class="csl-entry">
+Graham, Mark, and H Haarstad. 2014. <span>“Transparency and Development: <span>Ethical</span> Consumption Through <span>Web</span> 2.0 and the Internet of Things.”</span> <em>Open Development: Networked Innovations in International Development</em> 79.
+</div>
+<div id="ref-greenfield2006" class="csl-entry">
+Greenfield, Adam. 2006. <em>Everyware: <span>The</span> Dawning Age of Ubiquitous Computing</em>. Berkeley, CA: New Riders.
+</div>
+<div id="ref-kortuem2010" class="csl-entry">
+Kortuem, Gerd, Fahim Kawsar, Daniel Fitton, and Vasughi Sundramoorthy. 2010. <span>“Smart Objects as Building Blocks for the Internet of Things.”</span> <em>IEEE Internet Computing</em> 14 (1): 44–51. <a href="https://doi.org/10.1109/MIC.2009.143">https://doi.org/10.1109/MIC.2009.143</a>.
+</div>
+<div id="ref-lindley2017" class="csl-entry">
+Lindley, Joseph Galen, and Paul Coulton. 2017. <span>“On the <span>Internet</span> <span>Everybody</span> <span>Knows</span> <span>You</span>’re a <span>Whatchamacallit</span> (or a <span>Thing</span>).”</span> In <em><span>CHI</span> 2017 <span>Workshop</span></em>.
+</div>
+<div id="ref-lindley2017a" class="csl-entry">
+Lindley, Joseph, Paul Coulton, and Rachel Cooper. 2017. <span>“Why the <span>Internet</span> of <span>Things</span> Needs <span>Object</span> <span>Orientated</span> <span>Ontology</span>.”</span> <em>The Design Journal</em> 20 (sup1): S2846–57. <a href="https://doi.org/10.1080/14606925.2017.1352796">https://doi.org/10.1080/14606925.2017.1352796</a>.
+</div>
+<div id="ref-lindley2017c" class="csl-entry">
+Lindley, Joseph, Paul Coulton, and Miriam Sturdee. 2017. <span>“Implications for <span>Adoption</span>.”</span> In <em>Proceedings of the 2017 <span>CHI</span> <span>Conference</span></em>, 265–77. New York, New York, USA: ACM Press. <a href="https://doi.org/10.1145/3025453.3025742">https://doi.org/10.1145/3025453.3025742</a>.
+</div>
+<div id="ref-love2000" class="csl-entry">
+Love, Terence. 2000. <span>“Philosophy of Design: <span>A</span> Meta-Theoretical Structure for Design Theory.”</span> <em>Design Studies</em> 21 (3): 293–313. <a href="https://doi.org/10.1016/S0142-694X(99)00012-5">https://doi.org/10.1016/S0142-694X(99)00012-5</a>.
+</div>
+<div id="ref-madakam2015" class="csl-entry">
+Madakam, Somayya, R. Ramaswamy, and Siddharth Tripathi. 2015. <span>“Internet of <span>Things</span> (<span>IoT</span>): <span>A</span> Literature Review.”</span> <em>Journal of Computer and Communications</em> 3 (05): 164.
+</div>
+<div id="ref-moholy-nagy1947" class="csl-entry">
+Moholy-Nagy, László. 1947. <em>Vision in Motion</em>.
+</div>
+<div id="ref-norman2002" class="csl-entry">
+Norman, Don A. 2002. <em>The <span>Design</span> of <span>Everyday</span> <span>Things</span></em>. <a href="http://scholar.google.com/scholar?q=related:F7KhLFU3WOsJ:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5">http://scholar.google.com/scholar?q=related:F7KhLFU3WOsJ:scholar.google.com/&amp;hl=en&amp;num=20&amp;as_sdt=0,5</a>.
+</div>
+<div id="ref-norman1999" class="csl-entry">
+Norman, Donald A. 1999. <em>The Invisible Computer: <span>Why</span> Good Products Can Fail, the Personal Computer Is so Complex, and Information Appliances Are the Solution</em>. Cambridge, Massachusetts: MIT press.
+</div>
+<div id="ref-norman2005" class="csl-entry">
+———. 2005. <span>“Human-Centered Design Considered Harmful.”</span> <em>Interactions</em> 12 (4): 14. <a href="https://doi.org/10.1145/1070960.1070976">https://doi.org/10.1145/1070960.1070976</a>.
+</div>
+<div id="ref-norman2016" class="csl-entry">
+———. 2016. <em>Living with Complexity</em>. MIT press.
+</div>
+<div id="ref-pierce2017" class="csl-entry">
+Pierce, James, and Carl DiSalvo. 2017. <span>“Dark <span>Clouds</span>, <span>Io</span>&amp;#!+, And [<span>Crystal</span> <span>Ball</span> <span>Emoji</span>]: <span>Projecting</span> <span>Network</span> <span>Anxieties</span> with <span>Alternative</span> <span>Design</span> <span>Metaphors</span>.”</span> In <em>Proceedings of the 2017 <span>Conference</span> on <span>Designing</span> <span>Interactive</span> <span>Systems</span> - <span>DIS</span> ’17</em>, 1383–93. Edinburgh, United Kingdom: ACM Press. <a href="https://doi.org/10.1145/3064663.3064795">https://doi.org/10.1145/3064663.3064795</a>.
+</div>
+<div id="ref-reeves2012" class="csl-entry">
+Reeves, Stuart. 2012. <span>“Envisioning Ubiquitous Computing.”</span> <em>SIGCHI Conference on Human Factors in Computing</em>. <a href="http://dl.acm.org/citation.cfm?id=2208278">http://dl.acm.org/citation.cfm?id=2208278</a>.
+</div>
+<div id="ref-richardson2009" class="csl-entry">
+Richardson, Helen J. 2009. <span>“A <span>‘<span>Smart</span> House’</span> Is Not a Home: <span>The</span> Domestication of <span>ICTs</span>.”</span> <em>Information Systems Frontiers : A Journal of Research and Innovation</em> 11 (5): 599. <a href="https://doi.org/10.1007/s10796-008-9137-9">https://doi.org/10.1007/s10796-008-9137-9</a>.
+</div>
+<div id="ref-romero2008" class="csl-entry">
+Romero, Mario, Zachary Pousman, and Michael Mateas. 2008. <span>“Alien Presence in the Home: <span>The</span> Design of <span>Tableau</span> <span>Machine</span>.”</span> <em>Personal and Ubiquitous Computing</em> 12 (5): 373–82. <a href="https://doi.org/10.1007/s00779-007-0190-z">https://doi.org/10.1007/s00779-007-0190-z</a>.
+</div>
+<div id="ref-rose2015" class="csl-entry">
+Rose, David. 2015. <em>Enchanted Objects: <span>Innovation</span>, Design, and the Future of Technology</em>. 1. Scribner trade paperback ed. New York London Toronto Sydney New Delhi: Scribner.
+</div>
+<div id="ref-spadafora2019" class="csl-entry">
+Spadafora, Anthony. 2019. <span>“<span>IoT</span> Devices Could Be Asbestos of the Future.”</span> <a href="https://www.techradar.com/uk/news/iot-devices-could-be-asbestos-of-the-future">https://www.techradar.com/uk/news/iot-devices-could-be-asbestos-of-the-future</a>.
+</div>
+<div id="ref-steen2011" class="csl-entry">
+Steen, Marc. 2011. <span>“Tensions in Human-Centred Design.”</span> <em>CoDesign : International Journal of Cocreation in Design and the Arts</em> 7 (1): 45–60.
+</div>
+<div id="ref-teicher2018" class="csl-entry">
+Teicher, Jordan. 2018. <span>“The Little-Known Story of the First <span>IoT</span> Device.”</span> <a href="https://www.ibm.com/blogs/industries/little-known-story-first-iot-device/">https://www.ibm.com/blogs/industries/little-known-story-first-iot-device/</a>.
+</div>
+<div id="ref-thomas2017" class="csl-entry">
+Thomas, Vanessa, Christian Remy, and Oliver Bates. 2017. <span>“The Limits of <span>HCD</span>: <span>Reimagining</span> the Anthropocentricity of <span>ISO</span> 9241-210.”</span> In <em>Proceedings of the 2017 <span>Workshop</span> on <span>Computing</span> <span>Within</span> <span>Limits</span></em>, 85–92.
+</div>
+<div id="ref-vamosi2011" class="csl-entry">
+Vamosi, Robert. 2011. <em>When <span>Gadgets</span> <span>Betray</span> <span>Us</span>: <span>The</span> <span>Dark</span> <span>Side</span> of <span>Our</span> <span>Infatuation</span> with <span>New</span> <span>Technologies</span></em>. New York: Basic Books.
+</div>
+<div id="ref-weber2009" class="csl-entry">
+Weber, Rolf H. 2009. <span>“Internet of Things - <span>Need</span> for a New Legal Environment?”</span> <em>Computer Law &amp; Security Review</em> 25 (6): 522–27. <a href="https://doi.org/10.1016/j.clsr.2009.09.002">https://doi.org/10.1016/j.clsr.2009.09.002</a>.
+</div>
+<div id="ref-weiser1991" class="csl-entry">
+Weiser, Mark. 1991. <span>“The <span>Computer</span> for the 21 St <span>Century</span>.”</span> <em>Scientific American</em> 265 (3): 94–105.
+</div>
+<div id="ref-zanella2014" class="csl-entry">
+Zanella, Andrea, Nicola Bui, Angelo Castellani, Lorenzo Vangelista, and Michele Zorzi. 2014. <span>“Internet of <span>Things</span> for <span>Smart</span> <span>Cities</span>.”</span> <em>IEEE Internet of Things Journal</em> 1 (1): 22–32. <a href="https://doi.org/10.1109/JIOT.2014.2306328">https://doi.org/10.1109/JIOT.2014.2306328</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="16">
+<li id="fn16"><p>HCD’s six guiding principles are defined under ISO 9241-210:2010 as projects that include designs based on an explicit understanding of users, tasks and environments; an involvement of users throughout the design process and development; is driven by user-centred evaluation; involves an iterative process; addresses the whole user experience; and includes multidisciplinary skills and perspectives within the design process.<a href="Chapter3.html#fnref16" class="footnote-back">↩︎</a></p></li>
+<li id="fn17"><p>In 2019 India faced a staggering 20% jump in cyberattacks on IoT devices making it the most attacked nation in that quarter. For more information, see: <a href="https://www.thenewsminute.com/article/india-saw-most-cyberattacks-iot-space-last-quarter-subex-report-106989" class="uri">https://www.thenewsminute.com/article/india-saw-most-cyberattacks-iot-space-last-quarter-subex-report-106989</a>.<a href="Chapter3.html#fnref17" class="footnote-back">↩︎</a></p></li>
+<li id="fn18"><p>In the start of 2020 <em>Sonos</em> announced a discontinuation of ‘legacy’ IoT products bringing about outrage from consumers who had spent fortunes in the smart home <em>Sonos</em> eco-system. For more information, see: <a href="https://www.wired.co.uk/article/sonos-outrage-legacy-speakers" class="uri">https://www.wired.co.uk/article/sonos-outrage-legacy-speakers</a>.<a href="Chapter3.html#fnref18" class="footnote-back">↩︎</a></p></li>
+<li id="fn19"><p>For more information, see: <a href="https://www.smarthome.com/quirky-ge-egg-minder-smart-egg-tray.html" class="uri">https://www.smarthome.com/quirky-ge-egg-minder-smart-egg-tray.html</a>.<a href="Chapter3.html#fnref19" class="footnote-back">↩︎</a></p></li>
+<li id="fn20"><p>For more information, see: <a href="https://www.wired.com/2017/02/smart-tv-spying-viziosettlement/" class="uri">https://www.wired.com/2017/02/smart-tv-spying-viziosettlement/</a>.<a href="Chapter3.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>For more information, see: <a href="https://www.healthline.com/health-news/baby-monitors-can-be-hacked" class="uri">https://www.healthline.com/health-news/baby-monitors-can-be-hacked</a>.<a href="Chapter3.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p>In <a href="Chapter9.html#Chapter9">Chapter 9</a> I go into much more detail on how these illusions manifest between user’s anticipations with IoT and the actual workings of IoT.<a href="Chapter3.html#fnref22" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Chapter2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/013-chapter3.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

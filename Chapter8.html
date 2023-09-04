@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Playing with the IoT | Design by Play</title>
+  <meta name="description" content="Chapter 8 Playing with the IoT | Design by Play" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Playing with the IoT | Design by Play" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Playing with the IoT | Design by Play" />
+  
+  
+  
+
+<meta name="author" content="Haider Ali Akmal" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Chapter7.html"/>
+<link rel="next" href="Chapter9.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Design by Play</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Note from Author</a></li>
+<li class="part"><span><b>Preface</b></span></li>
+<li class="chapter" data-level="" data-path="declaration.html"><a href="declaration.html"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="dedication.html"><a href="dedication.html"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="quote.html"><a href="quote.html"><i class="fa fa-check"></i>Quote</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="Chapter1.html"><a href="Chapter1.html"><i class="fa fa-check"></i><b>1</b> An Unorthodox Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter1.html"><a href="Chapter1.html#a-starting-point"><i class="fa fa-check"></i><b>1.1</b> A starting point</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="Chapter1.html"><a href="Chapter1.html#fish-out-of-water"><i class="fa fa-check"></i><b>1.1.1</b> Fish out of water</a></li>
+<li class="chapter" data-level="1.1.2" data-path="Chapter1.html"><a href="Chapter1.html#surrounded-by-technology"><i class="fa fa-check"></i><b>1.1.2</b> Surrounded by technology</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="Chapter1.html"><a href="Chapter1.html#of-pasts-and-presents"><i class="fa fa-check"></i><b>1.2</b> Of Pasts and Presents</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="Chapter1.html"><a href="Chapter1.html#growing-up-around-play"><i class="fa fa-check"></i><b>1.2.1</b> Growing up around play</a></li>
+<li class="chapter" data-level="1.2.2" data-path="Chapter1.html"><a href="Chapter1.html#art-design-and-philosophy"><i class="fa fa-check"></i><b>1.2.2</b> Art, Design, and Philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="Chapter1.html"><a href="Chapter1.html#in-closing"><i class="fa fa-check"></i><b>1.3</b> In closing</a></li>
+</ul></li>
+<li class="part"><span><b>II Foundations</b></span></li>
+<li class="chapter" data-level="2" data-path="Chapter2.html"><a href="Chapter2.html"><i class="fa fa-check"></i><b>2</b> Scaffolding</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter2.html"><a href="Chapter2.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter2.html"><a href="Chapter2.html#steppingstones-into-post-modern-humanities"><i class="fa fa-check"></i><b>2.2</b> Steppingstones into post-modern humanities</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="Chapter2.html"><a href="Chapter2.html#transdisciplinary-design-research"><i class="fa fa-check"></i><b>2.2.1</b> Transdisciplinary Design Research</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Chapter2.html"><a href="Chapter2.html#crafting-trandisciplinary-assemblages"><i class="fa fa-check"></i><b>2.2.2</b> Crafting Trandisciplinary Assemblages</a></li>
+<li class="chapter" data-level="2.2.3" data-path="Chapter2.html"><a href="Chapter2.html#transcending-method-through-design"><i class="fa fa-check"></i><b>2.2.3</b> Transcending method through Design</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="Chapter2.html"><a href="Chapter2.html#how-to-use-this-thesis"><i class="fa fa-check"></i><b>2.3</b> How to use this Thesis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>3</b> Seeing Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter3.html"><a href="Chapter3.html#a-case-for-and-against-an-internet-of-things"><i class="fa fa-check"></i><b>3.1</b> A case for (and against) an Internet of Things</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="Chapter3.html"><a href="Chapter3.html#defining-iot"><i class="fa fa-check"></i><b>3.1.1</b> Defining IoT</a></li>
+<li class="chapter" data-level="3.1.2" data-path="Chapter3.html"><a href="Chapter3.html#interacting-with-iot"><i class="fa fa-check"></i><b>3.1.2</b> Interacting with IoT</a></li>
+<li class="chapter" data-level="3.1.3" data-path="Chapter3.html"><a href="Chapter3.html#the-disillusionment-of-living-in-iot"><i class="fa fa-check"></i><b>3.1.3</b> The disillusionment of living in IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="Chapter3.html"><a href="Chapter3.html#approaching-an-alternative-perspective-for-design-in-iot"><i class="fa fa-check"></i><b>3.2</b> Approaching an alternative perspective for Design in IoT</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="Chapter3.html"><a href="Chapter3.html#changing-perspectives"><i class="fa fa-check"></i><b>3.2.1</b> Changing perspectives</a></li>
+<li class="chapter" data-level="3.2.2" data-path="Chapter3.html"><a href="Chapter3.html#metaphorically-speaking"><i class="fa fa-check"></i><b>3.2.2</b> Metaphorically speaking</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="Chapter3.html"><a href="Chapter3.html#conclusion"><i class="fa fa-check"></i><b>3.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>4</b> Being Things of the Internet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Chapter4.html"><a href="Chapter4.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="Chapter4.html"><a href="Chapter4.html#a-philosophical-interlude"><i class="fa fa-check"></i><b>4.1.1</b> A Philosophical Interlude</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="Chapter4.html"><a href="Chapter4.html#understanding-things-on-and-not-on-the-internet"><i class="fa fa-check"></i><b>4.2</b> Understanding <em>Things</em> on (and not on) the Internet</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="Chapter4.html"><a href="Chapter4.html#phenomenologically-speaking"><i class="fa fa-check"></i><b>4.2.1</b> Phenomenologically speaking</a></li>
+<li class="chapter" data-level="4.2.2" data-path="Chapter4.html"><a href="Chapter4.html#towards-an-object-oriented-ontology"><i class="fa fa-check"></i><b>4.2.2</b> Towards an Object-Oriented Ontology</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="Chapter4.html"><a href="Chapter4.html#object-oriented-ontology"><i class="fa fa-check"></i><b>4.3</b> Object-Oriented Ontology</a></li>
+<li class="chapter" data-level="4.4" data-path="Chapter4.html"><a href="Chapter4.html#concluding-on-a-post-anthropocentric-perspective-for-design"><i class="fa fa-check"></i><b>4.4</b> Concluding on a post-anthropocentric perspective for Design</a></li>
+</ul></li>
+<li class="part"><span><b>Methodologies</b></span></li>
+<li class="chapter" data-level="5" data-path="Chapter5.html"><a href="Chapter5.html"><i class="fa fa-check"></i><b>5</b> Design Research</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Chapter5.html"><a href="Chapter5.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="Chapter5.html"><a href="Chapter5.html#doing-design-research"><i class="fa fa-check"></i><b>5.2</b> Doing Design Research</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="Chapter5.html"><a href="Chapter5.html#defining-design"><i class="fa fa-check"></i><b>5.2.1</b> Defining Design</a></li>
+<li class="chapter" data-level="5.2.2" data-path="Chapter5.html"><a href="Chapter5.html#defining-research"><i class="fa fa-check"></i><b>5.2.2</b> Defining Research</a></li>
+<li class="chapter" data-level="5.2.3" data-path="Chapter5.html"><a href="Chapter5.html#the-object-of-design"><i class="fa fa-check"></i><b>5.2.3</b> The Object of Design</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="Chapter5.html"><a href="Chapter5.html#research-through-design"><i class="fa fa-check"></i><b>5.3</b> Research through Design</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="Chapter5.html"><a href="Chapter5.html#approaching-research-through-design"><i class="fa fa-check"></i><b>5.3.1</b> Approaching Research through Design</a></li>
+<li class="chapter" data-level="5.3.2" data-path="Chapter5.html"><a href="Chapter5.html#practice-based-research"><i class="fa fa-check"></i><b>5.3.2</b> Practice-based Research</a></li>
+<li class="chapter" data-level="5.3.3" data-path="Chapter5.html"><a href="Chapter5.html#ideology-or-methodology"><i class="fa fa-check"></i><b>5.3.3</b> Ideology or Methodology?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="Chapter5.html"><a href="Chapter5.html#conclusions"><i class="fa fa-check"></i><b>5.4</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Chapter6.html"><a href="Chapter6.html"><i class="fa fa-check"></i><b>6</b> Playfully Designing for Things</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter6.html"><a href="Chapter6.html#defining-play"><i class="fa fa-check"></i><b>6.2</b> Defining Play</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="Chapter6.html"><a href="Chapter6.html#what-is-play"><i class="fa fa-check"></i><b>6.2.1</b> What is Play?</a></li>
+<li class="chapter" data-level="6.2.2" data-path="Chapter6.html"><a href="Chapter6.html#playgrounds-for-play"><i class="fa fa-check"></i><b>6.2.2</b> Playgrounds for Play</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="Chapter6.html"><a href="Chapter6.html#design-and-playfulness"><i class="fa fa-check"></i><b>6.3</b> Design and Playfulness</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="Chapter6.html"><a href="Chapter6.html#returning-to-playfulness"><i class="fa fa-check"></i><b>6.3.1</b> Returning to Playfulness</a></li>
+<li class="chapter" data-level="6.3.2" data-path="Chapter6.html"><a href="Chapter6.html#ludic-design"><i class="fa fa-check"></i><b>6.3.2</b> Ludic Design</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="Chapter6.html"><a href="Chapter6.html#designing-curious-philosophical-artefacts"><i class="fa fa-check"></i><b>6.4</b> Designing Curious Philosophical Artefacts</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter6.html"><a href="Chapter6.html#speculating-over-definitions"><i class="fa fa-check"></i><b>6.4.1</b> Speculating over definitions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="Chapter6.html"><a href="Chapter6.html#carpentry"><i class="fa fa-check"></i><b>6.5</b> Carpentry</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="Chapter6.html"><a href="Chapter6.html#getting-your-hands-dirty-with-philosophy"><i class="fa fa-check"></i><b>6.5.1</b> Getting your hands dirty with philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="Chapter6.html"><a href="Chapter6.html#a-combined-methodological-framework"><i class="fa fa-check"></i><b>6.6</b> A combined methodological framework</a></li>
+<li class="chapter" data-level="6.7" data-path="Chapter6.html"><a href="Chapter6.html#conclusions-1"><i class="fa fa-check"></i><b>6.7</b> Conclusions</a></li>
+</ul></li>
+<li class="part"><span><b>III Doing Carpentry</b></span></li>
+<li class="chapter" data-level="7" data-path="Chapter7.html"><a href="Chapter7.html"><i class="fa fa-check"></i><b>7</b> A Model for a Philosophical View of IoT</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#introduction-4"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#iot-as-a-spatial-phenomenon"><i class="fa fa-check"></i><b>7.2</b> IoT as a spatial phenomenon</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="Chapter7.html"><a href="Chapter7.html#the-division-of-space"><i class="fa fa-check"></i><b>7.2.1</b> The division of space</a></li>
+<li class="chapter" data-level="7.2.2" data-path="Chapter7.html"><a href="Chapter7.html#reconfiguring-insides-and-outsides-as-heterotopia"><i class="fa fa-check"></i><b>7.2.2</b> Reconfiguring Insides and Outsides as Heterotopia</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#crafting-a-model-for-a-philosophical-view-of-iot"><i class="fa fa-check"></i><b>7.3</b> Crafting a Model for a Philosophical View of IoT</a></li>
+<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#discussion-and-conclusion"><i class="fa fa-check"></i><b>7.4</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> Playing with the IoT</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter8.html"><a href="Chapter8.html#introduction-5"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter8.html"><a href="Chapter8.html#creating-a-foundation-for-approaching-game-design"><i class="fa fa-check"></i><b>8.2</b> Creating a foundation for approaching Game Design</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="Chapter8.html"><a href="Chapter8.html#play-and-rhetoric"><i class="fa fa-check"></i><b>8.2.1</b> Play and Rhetoric</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="Chapter8.html"><a href="Chapter8.html#carpentering-the-internet-of-things-board-game"><i class="fa fa-check"></i><b>8.3</b> Carpentering the Internet of Things Board Game</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="Chapter8.html"><a href="Chapter8.html#exploration-phase"><i class="fa fa-check"></i><b>8.3.1</b> Exploration Phase</a></li>
+<li class="chapter" data-level="8.3.2" data-path="Chapter8.html"><a href="Chapter8.html#reflection-phase"><i class="fa fa-check"></i><b>8.3.2</b> Reflection Phase</a></li>
+<li class="chapter" data-level="8.3.3" data-path="Chapter8.html"><a href="Chapter8.html#redux"><i class="fa fa-check"></i><b>8.3.3</b> Redux</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="Chapter8.html"><a href="Chapter8.html#discussion-1"><i class="fa fa-check"></i><b>8.4</b> Discussion</a></li>
+<li class="chapter" data-level="8.5" data-path="Chapter8.html"><a href="Chapter8.html#wrapping-up"><i class="fa fa-check"></i><b>8.5</b> Wrapping Up</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="Chapter9.html"><a href="Chapter9.html"><i class="fa fa-check"></i><b>9</b> Predicting futures in the IoT</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter9.html"><a href="Chapter9.html#introduction-6"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter9.html"><a href="Chapter9.html#philosophical-foundations"><i class="fa fa-check"></i><b>9.2</b> Philosophical Foundations</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="Chapter9.html"><a href="Chapter9.html#the-perception-of-technology-and-post-phenomenology"><i class="fa fa-check"></i><b>9.2.1</b> The Perception of Technology and Post-Phenomenology</a></li>
+<li class="chapter" data-level="9.2.2" data-path="Chapter9.html"><a href="Chapter9.html#human-technology-relations-as-perceptual-illusions"><i class="fa fa-check"></i><b>9.2.2</b> Human-Technology Relations as Perceptual Illusions</a></li>
+<li class="chapter" data-level="9.2.3" data-path="Chapter9.html"><a href="Chapter9.html#quantum-causation-for-iot"><i class="fa fa-check"></i><b>9.2.3</b> Quantum Causation for IoT</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="Chapter9.html"><a href="Chapter9.html#carpentering-the-supernatural-iot"><i class="fa fa-check"></i><b>9.3</b> Carpentering the Supernatural IoT</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="Chapter9.html"><a href="Chapter9.html#designing-the-deck"><i class="fa fa-check"></i><b>9.3.1</b> Designing the Deck</a></li>
+<li class="chapter" data-level="9.3.2" data-path="Chapter9.html"><a href="Chapter9.html#scanning-the-stars-with-software"><i class="fa fa-check"></i><b>9.3.2</b> Scanning the Stars with Software</a></li>
+<li class="chapter" data-level="9.3.3" data-path="Chapter9.html"><a href="Chapter9.html#a-tarot-of-things"><i class="fa fa-check"></i><b>9.3.3</b> A Tarot of Things</a></li>
+<li class="chapter" data-level="9.3.4" data-path="Chapter9.html"><a href="Chapter9.html#madame-bitsys-emporium"><i class="fa fa-check"></i><b>9.3.4</b> Madame Bitsy’s Emporium</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="Chapter9.html"><a href="Chapter9.html#feedback"><i class="fa fa-check"></i><b>9.4</b> Feedback</a></li>
+<li class="chapter" data-level="9.5" data-path="Chapter9.html"><a href="Chapter9.html#discussion-and-conclusion-1"><i class="fa fa-check"></i><b>9.5</b> Discussion and Conclusion</a></li>
+</ul></li>
+<li class="part"><span><b>IV Moving Forwards</b></span></li>
+<li class="chapter" data-level="10" data-path="Chapter10.html"><a href="Chapter10.html"><i class="fa fa-check"></i><b>10</b> Discussions and Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter10.html"><a href="Chapter10.html#the-living-internet-of-things"><i class="fa fa-check"></i><b>10.1</b> The Living Internet of Things</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="Chapter10.html"><a href="Chapter10.html#is-this-discussion-about-privacy-and-security-in-iot"><i class="fa fa-check"></i><b>10.1.1</b> Is this discussion about privacy and security in IoT?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="Chapter10.html"><a href="Chapter10.html#going-beyond-human-centred-design"><i class="fa fa-check"></i><b>10.1.2</b> Going beyond Human-Centred Design</a></li>
+<li class="chapter" data-level="10.1.3" data-path="Chapter10.html"><a href="Chapter10.html#is-this-a-transhumanist-argument"><i class="fa fa-check"></i><b>10.1.3</b> Is this a transhumanist argument?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="Chapter10.html"><a href="Chapter10.html#the-mantra-of-playfulness"><i class="fa fa-check"></i><b>10.2</b> The Mantra of Playfulness</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="Chapter10.html"><a href="Chapter10.html#being-a-playful-philosopher-designer"><i class="fa fa-check"></i><b>10.2.1</b> Being a playful philosopher-designer</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="Chapter10.html"><a href="Chapter10.html#in-closing-1"><i class="fa fa-check"></i><b>10.3</b> In closing</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="AppendixA.html"><a href="AppendixA.html"><i class="fa fa-check"></i><b>A</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="AppendixA.html"><a href="AppendixA.html#game-design-definitions-and-terminologies"><i class="fa fa-check"></i><b>A.1</b> Game Design Definitions and Terminologies</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="AppendixB.html"><a href="AppendixB.html"><i class="fa fa-check"></i><b>B</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="AppendixB.html"><a href="AppendixB.html#the-internet-of-things-board-game-explored"><i class="fa fa-check"></i><b>B.1</b> The Internet of Things Board Game Explored</a></li>
+<li class="chapter" data-level="B.2" data-path="AppendixB.html"><a href="AppendixB.html#backstory91"><i class="fa fa-check"></i><b>B.2</b> Backstory</a></li>
+<li class="chapter" data-level="B.3" data-path="AppendixB.html"><a href="AppendixB.html#game-objective"><i class="fa fa-check"></i><b>B.3</b> Game Objective</a></li>
+<li class="chapter" data-level="B.4" data-path="AppendixB.html"><a href="AppendixB.html#setup"><i class="fa fa-check"></i><b>B.4</b> Play Setup</a></li>
+<li class="chapter" data-level="B.5" data-path="AppendixB.html"><a href="AppendixB.html#phases-of-play94"><i class="fa fa-check"></i><b>B.5</b> Phases of Play</a></li>
+<li class="chapter" data-level="B.6" data-path="AppendixB.html"><a href="AppendixB.html#tiles"><i class="fa fa-check"></i><b>B.6</b> Understanding the Tiles</a></li>
+<li class="chapter" data-level="B.7" data-path="AppendixB.html"><a href="AppendixB.html#avatars"><i class="fa fa-check"></i><b>B.7</b> Avatars</a></li>
+<li class="chapter" data-level="B.8" data-path="AppendixB.html"><a href="AppendixB.html#rolls"><i class="fa fa-check"></i><b>B.8</b> Rolling Dice</a>
+<ul>
+<li class="chapter" data-level="B.8.1" data-path="AppendixB.html"><a href="AppendixB.html#attack"><i class="fa fa-check"></i><b>B.8.1</b> Doing an Attack Roll</a></li>
+<li class="chapter" data-level="B.8.2" data-path="AppendixB.html"><a href="AppendixB.html#random"><i class="fa fa-check"></i><b>B.8.2</b> Randomisation</a></li>
+</ul></li>
+<li class="chapter" data-level="B.9" data-path="AppendixB.html"><a href="AppendixB.html#decks"><i class="fa fa-check"></i><b>B.9</b> Understanding and Reading Cards</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="AppendixB.html"><a href="AppendixB.html#items"><i class="fa fa-check"></i><b>B.9.1</b> Items Deck</a></li>
+<li class="chapter" data-level="B.9.2" data-path="AppendixB.html"><a href="AppendixB.html#risks"><i class="fa fa-check"></i><b>B.9.2</b> Risks Deck</a></li>
+<li class="chapter" data-level="B.9.3" data-path="AppendixB.html"><a href="AppendixB.html#privacy"><i class="fa fa-check"></i><b>B.9.3</b> Privacy Deck</a></li>
+<li class="chapter" data-level="B.9.4" data-path="AppendixB.html"><a href="AppendixB.html#daemons"><i class="fa fa-check"></i><b>B.9.4</b> Daemons Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="B.10" data-path="AppendixB.html"><a href="AppendixB.html#connections"><i class="fa fa-check"></i><b>B.10</b> Making Connections</a></li>
+<li class="chapter" data-level="B.11" data-path="AppendixB.html"><a href="AppendixB.html#risk-check"><i class="fa fa-check"></i><b>B.11</b> Conducting Risk Checks</a></li>
+<li class="chapter" data-level="B.12" data-path="AppendixB.html"><a href="AppendixB.html#tokens"><i class="fa fa-check"></i><b>B.12</b> Tokens</a></li>
+<li class="chapter" data-level="B.13" data-path="AppendixB.html"><a href="AppendixB.html#resolve"><i class="fa fa-check"></i><b>B.13</b> Resolves and Other Actions</a></li>
+<li class="chapter" data-level="B.14" data-path="AppendixB.html"><a href="AppendixB.html#delayed"><i class="fa fa-check"></i><b>B.14</b> Being Delayed</a></li>
+<li class="chapter" data-level="B.15" data-path="AppendixB.html"><a href="AppendixB.html#rest"><i class="fa fa-check"></i><b>B.15</b> Resting</a></li>
+<li class="chapter" data-level="B.16" data-path="AppendixB.html"><a href="AppendixB.html#databox"><i class="fa fa-check"></i><b>B.16</b> Databoxes</a></li>
+<li class="chapter" data-level="B.17" data-path="AppendixB.html"><a href="AppendixB.html#threat-tracker"><i class="fa fa-check"></i><b>B.17</b> Threat Tracker</a></li>
+<li class="chapter" data-level="B.18" data-path="AppendixB.html"><a href="AppendixB.html#end"><i class="fa fa-check"></i><b>B.18</b> End of the Game</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="AppendixC.html"><a href="AppendixC.html"><i class="fa fa-check"></i><b>C</b> Appendix C</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="AppendixC.html"><a href="AppendixC.html#the-tarot-of-things-deck"><i class="fa fa-check"></i><b>C.1</b> The Tarot of Things Deck</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Design by Play</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter8" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Playing with the IoT<a href="Chapter8.html#Chapter8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>“Instead of deriving an understanding of play from a particular object or activity, like war, ritual, or games, I see play as a portable tool for being”</p>
+<p>— <span class="citation">Sicart (<a href="#ref-sicart2014" role="doc-biblioref">2014, 2</a>)</span></p>
+</blockquote>
+<div id="introduction-5" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Introduction<a href="Chapter8.html#introduction-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now that we have a framework for viewing IoT systems and interactions as occurring phenomenon of spatial configurations, we can begin to apply it towards understanding interactions in IoT further. The inter-spatial interaction model from the previous chapter allows us to view IoT through a lens of philosophy presenting an opportunity for detailed scrutiny. From a design perspective we can ask whether certain design choices are required when dealing with a specific manner of interaction, and in this process attempt to address the sub-question (SQ1) from before. The model also reveals the convoluted nature of IoT interactions through its different heterotopias in a context collapse of thing-geography. An object-oriented perspective of the relations of objects echoing the constellation metaphor proposed by <span class="citation">J. G. Lindley and Coulton (<a href="#ref-lindley2017" role="doc-biblioref">2017</a>)</span> in a detailed and open-faced manner. All that said, to answer SQ1 as a model it must be applicable for design intervention and practice, and to that effect in this chapter I will be presenting a journey of the development of a board game inspired by the inter-spatial model.</p>
+<p>Why a board game you might ask? Certain reasonings became apparent when approaching the next steps from the model. Establishing the framework required a playfulness with philosophy that came from engaging in carpentry. In order to exercise the end model as the phenomenon it characterised IoT to be, an equally playful experiential approach was needed. A board game thus became a potential means of enacting it. In this manner, the artefact presented in this chapter attempts to address two of the sub-questions from this thesis. The first is SQ1 relating to how an object-oriented lens may be used to highlight potential problems in IoT, the second is SQ2 which states: <em>How does an attitude of playfulness occur in this research through design activity?</em></p>
+<p>The latter question was lightly touched upon at the end of the previous chapter, but is more directly illustrated through this artefact. Earlier steps post-designing the model were to create a tool that would allow designers to understand their design approaches towards IoT more fully. A question I ask of this research is how to allow designers the ability to objectively view the design of IoT? The model allowed that to happen in a systemic breakdown of interaction design by proposing a flat ontology of interactions, but an application of the model in a more easily conveyable manner was still required. This is why I refer to this chapter as a journey. One that taught me about game design and playfulness as much as it did about how well the model reflected IoT, and whether it could help in understanding design choices for IoT.</p>
+<p>In that light, I can consider the crafting of this artefact also represents carpentry. It allowed me to exercise the philosophical concepts this research argues for in the context of IoT but in a manner where the philosophy can be scrutinised as much as enacted.</p>
+<div class="figure"><span style="display:block;" id="fig:8toolbox"></span>
+<img src="figures/ch8-toolbox.png" alt="The method assemblage for the carpentry of this artefact explores playful appropriations of philosophies of rhetoric and the more-than human, combined with concepts coming from game design and speculative fictions, that feed into experiencing the inter-spatial model through gameplay."  />
+<p class="caption">
+Figure 8.1: The method assemblage for the carpentry of this artefact explores playful appropriations of philosophies of rhetoric and the more-than human, combined with concepts coming from game design and speculative fictions, that feed into experiencing the inter-spatial model through gameplay.
+</p>
+</div>
+<p>Unlike the previous artefact that was more directed towards establishing a philosophical framework, the method assemblage exercised in this chapter introduces ludic design and play in a more direct manner (Fig. <a href="Chapter8.html#fig:8toolbox">8.1</a>). As I’m not a game designer myself a level of understanding was required to begin the design process. This chapter is thus presented in two sections, the first explores the logic that went into design choices. By referencing relevant literature I define how rhetoric is a key component in this artefact as the game attempts to explain the workings of the model through gameplay. This is supplemented with the core methodology of this artefact of RtD approaching a way of using Game Design (GD) as an extended methodology. Ludic design advocates for curious-engagement <span class="citation">(<a href="#ref-gaver2004" role="doc-biblioref">Gaver et al. 2004, 888</a>)</span> and to achieve that this artefact explores the use of gameplay as a driving mechanism for engagement, ambiguity, and curiosity. This is crafted into the artefact through speculative fictions that create the atmosphere of play combining our three method assemblages of philosophy, ludic design, and speculation under the banner of carpentry. The game was designed over a series of iterations which create the second section of this chapter where I walk through the various design choices, obstacles, and realisations that arose in the iterative design process. Finally, this chapter ends in a discussion as to how successful this approach was through gathered notes and reviews from playtesting, as well how well this process captured playfulness as an attitude.</p>
+</div>
+<div id="creating-a-foundation-for-approaching-game-design" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Creating a foundation for approaching Game Design<a href="Chapter8.html#creating-a-foundation-for-approaching-game-design" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The model from <a href="Chapter7.html#Chapter7">Chapter 7</a> laid bare layers of an IoT interaction nudging at OOO’s view of the proximity of objects proposed by <span class="citation">Harman (<a href="#ref-harman2011" role="doc-biblioref">2011b</a>)</span>, and, its strength in exploring causal ‘rifts’ <span class="citation">(<a href="#ref-harman2018" role="doc-biblioref">Harman 2018, 161</a>)</span>. In the previous chapter I refer to this as a thing-geography where relations between things are presented. These notions might not be too outlandish to explore through philosophy, however, when attempting to incorporate it in design practice the necessity becomes understanding it on more than a philosophical level. Persuasion is a common literary tactic utilised in philosophy with most philosophical discourse resonating an agenda of persuasion. This is a good time to return to the idea that Design is <em>also</em> an argument for persuasion. When <span class="citation">Buchanan (<a href="#ref-buchanan1985" role="doc-biblioref">1985</a>)</span> refers to design as <em>rhetoric</em>, he is referring to this very notion of design as an act of persuasion. Designers attempt systemic justifications of their ideas; or, their ‘designs’. Hence, rhetoric becomes an important aspect of not just philosophical practice but also design practice.</p>
+<p>When considering a history of rhetoric, and its relationship with philosophy, considerable research is present <span class="citation">(<a href="#ref-frogel2005" role="doc-biblioref">Frogel 2005</a>; <a href="#ref-worthington2008" role="doc-biblioref">Worthington 2008</a>; <a href="#ref-garver1982" role="doc-biblioref">Garver 1982</a>)</span>. In antiquity the roots of purposeful rhetoric can be found in the practice of eloquent oration and systemic speech; the Greek’s being mostly accredited with its systemic formulation <span class="citation">(<a href="#ref-worthington2008" role="doc-biblioref">Worthington 2008</a>)</span>. Accounts of rhetoric move between the Sophist practices of taking contradictory stances through <em>dissoi logoi</em> (double argument) to the Aristotelian approaches of persuasion ranging across centuries <span class="citation">(<a href="#ref-day2008" role="doc-biblioref">Day 2008, 382–86</a>)</span>. Looking at synonyms of the word ‘rhetoric’ one finds its comparison to <em>bombast</em>, <em>grandiloquence</em>, and <em>hot air</em>, contributing to negative connotations in the contemporary usage of the word as <em>“rhetorically speaking”</em> or <em>“it’s all rhetoric”</em> <a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>. None the less, Aristotle’s <em>Art of Rhetoric</em> is considered a fundamental pillar in any study in the area as its reach spreads through antiquity into contemporary philosophical practice <span class="citation">(<a href="#ref-fortenbaugh2008" role="doc-biblioref">Fortenbaugh 2008, 107</a>)</span>.</p>
+<div id="modes-of-rhetoric" class="section level4 hasAnchor" number="8.2.0.1">
+<h4><span class="header-section-number">8.2.0.1</span> Modes of Rhetoric<a href="Chapter8.html#modes-of-rhetoric" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Aristotle’s perspective of rhetoric differs from his earlier counterparts, in that it becomes an argument for persuasion rather than political oration <a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>. Aristotle thus defines rhetoric as “the capacity to consider in each case the possible means of persuasion” <span class="citation">(<a href="#ref-fortenbaugh2008" role="doc-biblioref">Fortenbaugh 2008, 107</a>)</span>. Rhetoric becomes the art of argumentation rather than stylised verse. The rhetorician sees the potential for persuasion in every instance presented.</p>
+<p>Though Aristotle’s <em>Art of Rhetoric</em> is considered a “problematic” read <span class="citation">(<a href="#ref-fortenbaugh2008" role="doc-biblioref">Fortenbaugh 2008, 109</a>)</span>, it sheds light on three base modes of rhetoric: <em>logos</em> (logic), <em>pathos</em> (empathy), and <em>ethos</em> (credibility) <span class="citation">(<a href="#ref-rapp2010" role="doc-biblioref">Rapp 2010</a>)</span>. Even though Aristotle believed the art of rhetoric could only be used in practices of law, politics or ceremonial speeches <span class="citation">(<a href="#ref-frogel2005" role="doc-biblioref">Frogel 2005, 27</a>)</span>, these modes of rhetoric have established themselves in philosophical discourse as canon. Though there is much more to say on the topic of rhetoric and the different modes beyond these <span class="citation">(<a href="#ref-rapp2010" role="doc-biblioref">Rapp 2010</a>)</span>, our discussion is restricted to the basics.</p>
+<p>In the three modes, <em>logos</em> is considered the most important dealing with rational arguments which take on the form of syllogism’s; or as Aristotle called them <em>enthymeme</em> <span class="citation">(<a href="#ref-fortenbaugh2008" role="doc-biblioref">Fortenbaugh 2008, 110</a>)</span>. Enthymemes are more than linear arguments, Aristotle’s definition of them is of understanding something without being explicitly told <span class="citation">(<a href="#ref-harman2018" role="doc-biblioref">Harman 2018, 91</a>)</span> <a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>. The other two modes of rhetoric, <em>pathos</em> and <em>ethos</em>, look at emotional appeal and character respectively. A fourth mode also exists, though less used directly when explaining rhetoric. None the less, it plays an important part in our argument; this mode is <em>kairos</em> or time. It refers to the opportune time and place to make an argument that affects its persuasiveness, in other words, context.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="Chapter8.html#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">rep</span>(<span class="st">&quot;figures/ch8-rhetorics.png&quot;</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:rhetoric"></span>
+<img src="figures/ch8-rhetorics.png" alt="Modes of Rhetoric according to Aristotle's Art of Rhetoric appropriated from @coulton2015."  />
+<p class="caption">
+Figure 8.2: Modes of Rhetoric according to Aristotle’s Art of Rhetoric appropriated from <span class="citation">Coulton (<a href="#ref-coulton2015" role="doc-biblioref">2015b</a>)</span>.
+</p>
+</div>
+<p>Collectively, these modes create a model for establishing rhetoric (Fig. <a href="Chapter8.html#fig:rhetoric">8.2</a>). The different relational modalities form rhetorical or literary devices <a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>. Having dealt with this additional philosophy, the relation of rhetoric and play can now be explored.</p>
+</div>
+<div id="play-and-rhetoric" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Play and Rhetoric<a href="Chapter8.html#play-and-rhetoric" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Rhetoric need not be considered with philosophical prose and speech alone. As pointed out with Buchanan’s <span class="citation">(<a href="#ref-buchanan1985" role="doc-biblioref">1985</a>)</span> design as rhetoric, other approaches also exist such as animal rhetoric <span class="citation">(<a href="#ref-kull2001" role="doc-biblioref">Kull 2001</a>)</span>, visual rhetoric <span class="citation">(<a href="#ref-kim2010" role="doc-biblioref">Kim and DiSalvo 2010</a>)</span>, and even a further encyclopaedic list of types of rhetoric <span class="citation">(<a href="#ref-sloane2001" role="doc-biblioref">Sloane 2001</a>)</span>. <span class="citation">Bogost (<a href="#ref-bogost2007" role="doc-biblioref">2007, 46</a>)</span> presents a further area of intrigue by suggesting all systems entailing procedures or “unit operations” as exercising rhetoric. Though his argument is primarily for computer software it opens a possibility for rhetoric existing in play-like activities, where he and others argue in favour of games as being one such activity <span class="citation">(<a href="#ref-coulton2015" role="doc-biblioref">Coulton 2015b</a>)</span>.</p>
+<p>As explored in <a href="Chapter6.html#Chapter6">Chapter 6</a>, play embodies activities fuelled by curiosity to present innovative opportunities for creativity. While on the subject, a relation between games and play must first be clarified. <a href="Chapter6.html#Chapter6">Chapter 6</a> introduced us to games as playgrounds where play is executed, yet the colloquial use of the word <em>game</em> implies something very specific. Wittgenstein famously believed that the definition of a game was not possible due to the diverse human activities that can be classified as ‘games’ <span class="citation">(<a href="#ref-costikyan2018" role="doc-biblioref">Costikyan and Davidson 2018, 179</a>)</span>. Generally, when speaking of ‘games’ the understanding is an activity for amusement, but as already explored the act of play does not necessarily revolve around amusement. Serious games are one such example where the focus is not amusement and often educational purposes <span class="citation">(<a href="#ref-abt1970" role="doc-biblioref">Abt 1970</a>; <a href="#ref-breuer2010" role="doc-biblioref">Breuer and Bente 2010</a>)</span>. Hence, certain <em>game-like</em> activities don’t necessarily fall within the logic of play-for-amusement.</p>
+<p>The inclusion of ‘game-like’ activities to illicit a notion of play is commonly known as the practice of <em>gamification</em> <span class="citation">(<a href="#ref-zichermann2011" role="doc-biblioref">Zichermann and Cunningham 2011</a>)</span> and oft used in different scenarios for facilitation purposes. For example, when games are used within a research context, they tend to emerge through a process of rendering <em>game-like</em> elements within the confines of already present ideas or references. The many design tools available that use play-like systems from cards and board games to facilitate design workshops and design research come to mind <a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>. Arguments have been made for the persuasive powers of gamification, but this approach has faced controversy as it can be deemed as manipulative and only effective in very simple situations <span class="citation">(<a href="#ref-coulton2015" role="doc-biblioref">Coulton 2015b</a>; <a href="#ref-deterding2011" role="doc-biblioref">Deterding et al. 2011</a>)</span>. Therefore, the artefact must go beyond the limitations of gamification and incorporate a more robust notion of play that allows for an exercise of rhetorical persuasion.</p>
+<div id="procedural-rhetoric" class="section level4 hasAnchor" number="8.2.1.1">
+<h4><span class="header-section-number">8.2.1.1</span> Procedural Rhetoric<a href="Chapter8.html#procedural-rhetoric" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Games and play have a history of being used for propagating ideas highlighting a means of “persuasive play” <span class="citation">(<a href="#ref-grace2012" role="doc-biblioref">Grace 2012, 77</a>)</span>. <span class="citation">Bogost (<a href="#ref-bogost2007" role="doc-biblioref">2007, 28</a>)</span> proposes it as a way of revealing underlying processes and concepts to a player in a means to embody a quality of persuasion which he calls “procedural rhetoric”. Certain <em>advergames</em> utilise persuasive play with a purpose of brand promotion over gameplay <span class="citation">(<a href="#ref-cauberghe2010" role="doc-biblioref">Cauberghe and De Pelsmacker 2010</a>; <a href="#ref-bogost2007" role="doc-biblioref">Bogost 2007</a>; <a href="#ref-jayaswal2017" role="doc-biblioref">Jayaswal and Malati 2017</a>)</span> <a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>. Though such games are commercially driven other persuasive games have been successfully used to reveal underlying systems that affect people’s lives.</p>
+<p>Games offer a space where players can “explore alternative ways of being” <span class="citation">(<a href="#ref-coulton2017a" role="doc-biblioref">Coulton and Hook 2017, 111</a>)</span>, enter philosophical environments for opening “new and interactive horizons of thought” <span class="citation">(<a href="#ref-gualeni2015" role="doc-biblioref">Gualeni 2015, 85</a>)</span>, or encounter social dilemmas through balanced cooperative and competitive actions <span class="citation">(<a href="#ref-zagal2006" role="doc-biblioref">Zagal, Rick, and Hsi 2006, 30</a>)</span>. A game such as <em>Darfur is Dying</em><a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a> further reveals a potential of games that is not limited to entertainment but also for social impact through imagining “games as artefacts” <span class="citation">(<a href="#ref-grace2012" role="doc-biblioref">Grace 2012, 2</a>)</span>. Bogost’s <span class="citation">(<a href="#ref-bogost2007" role="doc-biblioref">2007</a>)</span> comparison of games to the art of rhetoric suggests the purposeful embodying of procedural rhetoric within a game may afford it a power of persuasion. Whether it be to persuade players to compete against each other, collaborate for a universal goal, or personal/social growth. This lays a foundation for attempting <em>Research through Game Design (RtGD)</em> by employing procedural rhetoric for a persuasion-by-play of the arguments presented from the inter-spatial interaction model.</p>
+</div>
+<div id="research-through-game-design" class="section level4 hasAnchor" number="8.2.1.2">
+<h4><span class="header-section-number">8.2.1.2</span> Research through Game Design<a href="Chapter8.html#research-through-game-design" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Strong similarities exist between RtD and GD owing to their similar iterative processes. <span class="citation">Salen and Zimmerman (<a href="#ref-salen2004" role="doc-biblioref">2004</a>)</span> discuss the process of GD as a design process defined through play where they emphasize the presence of prototyping and playtesting to inform design decisions. Earlier in <a href="Chapter5.html#Chapter5">Chapter 5</a> I presented RtD in par with practice-based research and as <span class="citation">Faste and Faste (<a href="#ref-faste2012" role="doc-biblioref">2012, para. 23</a>)</span> referred to it as “embedded design research”, whereby it incorporated a designers’ knowledge of the world as much as its own purpose owing to the fact that it involved practicing design as a discipline. This perspective is apparent in GD’s iterative process as <span class="citation">Salen and Zimmerman (<a href="#ref-salen2004" role="doc-biblioref">2004</a>)</span> argue that the questions related to the design of a game may only be answered through playing it: “Through the iterative design process, the game designer becomes a game player and the act of play becomes an act of design” <span class="citation">(<a href="#ref-salen2004" role="doc-biblioref">2004, chap. 2</a>, para. 4)</span>.</p>
+<p>In the case of GD, the artefact is oft in the form of unstable versions of a game approaching a ‘stable release’ <a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>. <span class="citation">To et al. (<a href="#ref-to2016" role="doc-biblioref">2016</a>)</span> further present a perspective of the game design process as a transformational framework involving iterative cycles that go between delineating goals and designing through prototypes and testing. This is an approach similar to one suggested by <span class="citation">Herriot (<a href="#ref-herriot2019" role="doc-biblioref">2019</a>)</span> for RtD. In terms of GD’s use for research, arguments can be found touting benefits for participatory design to practice-based design <span class="citation">(<a href="#ref-coulton2017a" role="doc-biblioref">Coulton and Hook 2017, 99</a>)</span> and even in sociological and anthropological studies <span class="citation">(<a href="#ref-gobet2004" role="doc-biblioref">Gobet, Retschitzki, and Voogt 2004</a>)</span>. <span class="citation">Coulton and Hook (<a href="#ref-coulton2017a" role="doc-biblioref">2017, 99</a>)</span> praise the use of RtD as being “highly suitable” for academic research for games due to an under-representation of practice-based design research within academic games literature. They continue their discussion into how game design research may indeed offer “insights for design research” <span class="citation">(<a href="#ref-coulton2017a" role="doc-biblioref">2017, 97</a>)</span> more generally.</p>
+<p>For these reasons I present a possible iterative framework for the design of this artefact as a game (Fig. <a href="Chapter8.html#fig:iterative-process">8.3</a>). Adopting traits of both GD processes and RtD it allows for the artefact to enter a series of iterations fuelled by background research, testing, and feedback all feeding into a final design. In addition it allows a possibility for re-framing the defined design parameters for each iteration through feedback and analysis.</p>
+<div class="figure"><span style="display:block;" id="fig:iterative-process"></span>
+<img src="figures/ch8-iterative_process.png" alt="The RtGD process used in the carpentry of this artefact involves taking an iterative approach similar to RtD, but incorporates an additional step of re-framing research backgrounds and design parameters through the iterative process."  />
+<p class="caption">
+Figure 8.3: The RtGD process used in the carpentry of this artefact involves taking an iterative approach similar to RtD, but incorporates an additional step of re-framing research backgrounds and design parameters through the iterative process.
+</p>
+</div>
+<p>In order to manifest the inter-spatial interaction model in a manner that it could be easily processed (preferably by/for designers), this iterative RtGD process was embarked upon that would allow for the carpentering of a game that presented a unique procedural rhetoric coming from the model. The later re-framing of parameters to design decisions and goals was an important step, because for this process a scaffolding for undergoing an RtGD approach had to be established. The initial parameter to be set was just <em>how much of the core philosophy of this research should be embedded within the rhetoric?</em> This step was a later addition and understood from feedback as a necessity for this artefact. Games that utilise philosophical arguments as part of gameplay, such as <em>The Stanley Parable</em>,<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a> do so without overwhelming players with their philosophical discourse. Here, the initial imperative was to present philosophical rhetoric as emerging from an academic research perspective for the purposes of informing design decisions in IoT. Furthermore, when designing a game for play, entertainment is an important factor, therefore, the second point of questioning was <em>could this be a research artefact as well as an entertaining game, or are these concepts mutually exclusive?</em></p>
+<p>Due to how the artefact transformed in this research journey the RtGD process takes from the framework described by <span class="citation">To et al. (<a href="#ref-to2016" role="doc-biblioref">2016</a>)</span> of tandem game design. Where their process shifts between a delineation of goals and the practice of designing a game, this echoes the efforts that went into creating this artefact where a balance between research intent and playability had to be achieved, ergo the re-framing step in the process. As will be explained in detail ahead this essentially meant that the procedural rhetoric embedded in gameplay needed to exist in a space where it retained enough information about the research concerns (i.e. a philosophical object-oriented perspective of IoT), as well as be acceptably playable as a game.</p>
+<p>Finally, the decision to opt for a board game over a video game came from the IoT model itself. Most of the carpentered artefacts by <span class="citation">Bogost (<a href="#ref-bogost2012" role="doc-biblioref">2012</a>)</span> tackle the idea of alien phenomenology through the digital with the physical aspect of device(s)/service(s) having little importance <a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>. As the model intended to act as an overlay for exploring <em>both</em> physical and digital interactions, a digital game would have been limiting. Furthermore, the physicality of playing with tangible pieces and the ease of depicting spatial configurations afforded by board games helped directly build upon the intended procedural rhetoric. With a foundation now established for approaching GD for the purposes of exploring our inter-spatial interaction model, this next section will walk through the process of designing the game through its different iterations.</p>
+</div>
+</div>
+</div>
+<div id="carpentering-the-internet-of-things-board-game" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Carpentering the Internet of Things Board Game<a href="Chapter8.html#carpentering-the-internet-of-things-board-game" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Having no prior experience designing games, the process of carpentering a board game for this research was to put it lightly a learning experience. For the <em>Internet of Things Board Game</em>, each iteration was evaluated with feedback coming from playtesting as well as personal critical reflections fed back into the RtGD process. In total there were 14 iterations of the game (at the time of writing this thesis). That said, the distinctions between iterations can often blur and for clarity of discussion they are grouped and discussed individually where possible in the coming sections as certain iterations involved more drastic changes than others due to the re-framing process. In the tradition of board game design the process is my journey towards a <em>first stable edition</em>.</p>
+<div class="figure"><span style="display:block;" id="fig:iot-game"></span>
+<img src="figures/ch8-iot_game.jpg" alt="Iteration 14 of the Internet of Things Board Game laid out in its entirety for 4 players."  />
+<p class="caption">
+Figure 8.4: Iteration 14 of the Internet of Things Board Game laid out in its entirety for 4 players.
+</p>
+</div>
+<p>I present the game in its current most form in (Fig. <a href="Chapter8.html#fig:iot-game">8.4</a>) as a typical 4 player set up for play. As the focus of this chapter is the carpentry of this artefact over the artefact itself, for brevity every asset of the game is not fully explored here but a summary of gameplay is presented instead. Steps taken and lessons learned from earlier iterations are described in more details which lead to the final iteration. Details pertaining to the final iteration presented in Fig. <a href="Chapter8.html#fig:iot-game">8.4</a> and a list of definitions and terminology associated with GD are presented as part of <a href="AppendixB.html#AppendixB">Appendix B</a> and <a href="AppendixA.html#AppendixA">Appendix A</a> respectively. Also provided is a time lapsed playthrough of the game viewable online. Without further ado, what is the Internet of Things Board Game?</p>
+<p>The Internet of Things Board Game in its final iteration has players collaboratively work at securing non-digital spaces where insecure digital interactions may be occurring. Players move between game tiles depicting spaces such as living rooms and kitchens where they collect IoT-enabled objects capable of interacting with digital spaces through commonly understood protocols such as Wi-Fi and Bluetooth. The game employs a fictional backstory to situate play where a data hungry corporation is attempting to extract data from average users. The players are part of a coalition working against the corporation in order to create their own secure spaces where they are in control of their data. Each player has their own set of skills which they use in conjunction with the IoT-enabled objects they carry with some objects affecting their skills. The game attempts to disrupt the order of play by forcing players to assess the levels of risk their actions may have undergone through a phase-based play. Players first play out actions then are instructed to assess those actions using a dice roll. Various factors allow for players to navigate this assessment successfully, but if they fail certain consequences are faced. The game actively attempts to stop players from creating secure locations by dropping tokens identifying vulnerabilities and threats in the network. All the while as players create further interactions in-game they facilitate spatial configurations of digital/non-digital spaces depicted by connected physical game tiles. The game is won after a certain number of spaces have been secured, and being a collaborative game it can be lost if a number of different situations arise such as too many vulnerabilities and threats in the network.</p>
+<p>Though this research does not entirely concern itself with data privacy and ethical practices in the design of IoT systems, it is still a relevant factor associated with IoT as many design concerns in this topic tend to pivot around this discussion. Also, as SQ1 asks the question of problematic effects emanating off IoT, the most commonly associated of these are in the area of privacy and security. The constellation metaphor also references itself as a means for understanding how to view interaction in IoT as independent yet interdependent with <span class="citation">J. G. Lindley and Coulton (<a href="#ref-lindley2017" role="doc-biblioref">2017, para. 6</a>)</span> highlighting the privacy and security of IoT systems. For these reason this game explores this specific angle. Through the different phases of play the game intends to sketch out the inner workings of an IoT-enabled or similar network. With the different vignettes and storytelling elements exercised throughout, it also paints a picture of the users within these systems, their requirements, and the effects of these interactions occurring within the different spatial configurations they and their devices occupy. More on this later in the chapter.</p>
+<p>This final iteration of the game could not have been possible without the different versions that came before it in the RtGD process. To explore this I will be presenting the iterations as three phases: exploration, reflection, and redux. As the names suggest, the phases look at specific aspects of this journey. To further aid an overview of the salient features imagined and directions taken during the carpentry process is also presented ahead in (Fig. <a href="Chapter8.html#fig:iterations">8.5</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:iterations"></span>
+<img src="figures/ch8-iterations.png" alt="Overview of carpentry process with a progression of iterations and playtests."  />
+<p class="caption">
+Figure 8.5: Overview of carpentry process with a progression of iterations and playtests.
+</p>
+</div>
+<div id="exploration-phase" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Exploration Phase<a href="Chapter8.html#exploration-phase" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The carpentry process started by understanding the medium being designed in. A number of elements are required to make up a board game the most common being a play area or board, cards, tokens, and perhaps dice. From the start, the game was kept as close to the initial research intent as possible i.e. the philosophical rhetoric explored through in-game actions. The understanding here was for the model and its concepts to be most accurately represented in gameplay. Which is why early adaptations used common terminology from the model. These early iterations make up the exploration phase of this process.</p>
+<div id="iteration-1" class="section level4 hasAnchor" number="8.3.1.1">
+<h4><span class="header-section-number">8.3.1.1</span> Iteration 1<a href="Chapter8.html#iteration-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The first iteration was barebones starting with fleshing out the premise and rules of play—later iterations would alter these parameters as playtests were conducted. This first iteration also adopted the private/public aspect of the model as a grounding premise with the intention being to ‘make sense’ of these concepts through gameplay. It and subsequent early iterations were heavily dependent on rigorous notetaking as a game mechanic. Variables established for gameplay were taken directly from the research model with game mechanics acting as vessels to facilitate the philosophical discourse.</p>
+<div class="figure"><span style="display:block;" id="fig:version1"></span>
+<img src="figures/ch8-initial_iterations.jpg" alt="Iterations 1 through 5 used a similar setup more geared towards its research intent over play. The game pieces were designed as workable low-fidelity prototypes and repurposed through iterations"  />
+<p class="caption">
+Figure 8.6: Iterations 1 through 5 used a similar setup more geared towards its research intent over play. The game pieces were designed as workable low-fidelity prototypes and repurposed through iterations
+</p>
+</div>
+<p>A number of playable items were designed for this game a list of which is presented in Table <a href="Chapter8.html#tab:tab-version1">8.1</a>. I will be expanding on them in the coming text and where possible present examples of how they were used during play. For this iteration there was no ‘game board’ instead plain black and white cards were used with all the tokens and cards either written down, printed on stickers, or substituted for tangible pieces (Fig. <a href="Chapter8.html#fig:version1">8.6</a>). This is a common trait when prototyping for games which is often done on paper.</p>
+<table>
+<caption><span id="tab:tab-version1">Table 8.1: </span>List of game items/pieces designed for iteration 1 of the Internet of Things Board Game.</caption>
+<colgroup>
+<col width="6%" />
+<col width="2%" />
+<col width="91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Amount</th>
+<th align="left">Description/Title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Space tile</td>
+<td align="left">10</td>
+<td align="left">Black representing digital space</td>
+</tr>
+<tr class="even">
+<td align="left">Space tile</td>
+<td align="left">10</td>
+<td align="left">White representing non-digital space</td>
+</tr>
+<tr class="odd">
+<td align="left">Local Nodes</td>
+<td align="left">14</td>
+<td align="left">“Smart Lock”, “Bulb”, “Smart Plug”, “Smart Button”, “Security Camera”, “Smoke Alarm”, “Garage Bin”, “Curtains”, “IFTTT Protocol”, “Wireless Printer”, “Social Media Counter”, “Fridge”, “TV”, “Air Conditioner”</td>
+</tr>
+<tr class="even">
+<td align="left">Global Nodes</td>
+<td align="left">6</td>
+<td align="left">“Wi-Fi”, “Bluetooth”, “Smart Assistant”, “Nest”, “Network Access”, “GPS”</td>
+</tr>
+<tr class="odd">
+<td align="left">Player tokens</td>
+<td align="left">5 (x2)</td>
+<td align="left">Two pairs of player tokens for use in both spaces</td>
+</tr>
+<tr class="even">
+<td align="left">Item cards</td>
+<td align="left">18</td>
+<td align="left">“Smart Phone”, “Fitness Tracker”, Smart Watch”, “Google Glass”, “Snapchat Spectacles”, “Apple Watch”, “Apple Account”, “Social Media Account”, “Heating”, “Smart Belt”, “Smart Mug”, “Access Key”, “Tablet”, “Smart Watch”, “Google Account”, “Body Camera”, “Satchel”</td>
+</tr>
+<tr class="odd">
+<td align="left">Interference cards</td>
+<td align="left">9</td>
+<td align="left">“No Wi-Fi Access”, “No Bluetooth Access”, “No GPS Access”, “Fine Print” (x3), “Compromised”, “Princely Affairs”, “See Through”</td>
+</tr>
+<tr class="even">
+<td align="left">Dice</td>
+<td align="left">1</td>
+<td align="left">Custom designed dice</td>
+</tr>
+<tr class="odd">
+<td align="left">Interaction tokens</td>
+<td align="left">~500</td>
+<td align="left">For keeping track of interactions in spaces</td>
+</tr>
+<tr class="even">
+<td align="left">Connectivity coins</td>
+<td align="left">~600</td>
+<td align="left">Different demarcations</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Space Tiles:</strong> Black and white cards or ‘space tiles’ were laid out in varying arrangements to simulate digital/non-digital spaces on a hand-drawn surface that constituted as the play area. The cards were laid out identically side by side leaving a space in the middle to show present connections of <em>Global Nodes</em> (see ahead) that allowed for interfacing between spaces such as through Wi-Fi. For the game the black cards represented digital spaces and white cards non-digital.</p>
+<p>Players then labelled the non-digital spaces as tangible locations after deciding where the game was taking place. For instance, if it was in a home the spaces would be kitchen, living room, garden, etc. Players then marked them according to a self-established game rubric around how <em>Secure</em>, <em>Social</em>, <em>Private</em>, and <em>Public</em> the spaces were <a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>. Two aspects came from a direct categorization of spaces (digital/non-digital to private/public), while the other two (secure/social) came from attempting to understand the nature of those spaces and possibly define them as a heterotopia. Players would assign a baseline score to the variables making up the non-digital space. For instance a space such as the living room without any digital presence in it could be categorised as private/public or secure/social based on the fact that it did not have any access to the Internet. Perhaps there’s a window there, access to other spaces, or possibility of tangible interactions overlapping such as sound and touch? These factors would affect the scores given to the space and understandings of private/public would be defined accordingly, subsequently also aligning the space within a specific portion of the model through phenomenology. Initially, this rubric was understood according to the space they represented. The intention was that they would change as different interactions emerged, and could represent thing-geography coming from the model. Hence, social/secure could also refer to social proximity of IoT objects in later stages of the game.</p>
+<p><strong>Nodes:</strong> These tokens allowed for connectivity within the game and between the digital/non-digital spaces. They came in two types, local and global nodes (Fig. <a href="Chapter8.html#fig:1cards">8.7</a>) with the later affecting all players simultaneously and the former only that specific space they occupied. Among global nodes were Wi-Fi, smart assistants, network access, and Bluetooth among others. Local nodes consisted of objects or items that were found and placed in the spaces. Being digital objects they allowed for an interface with the black digital space tiles through the white non-digital space tiles. Therefore when the game starts until players establish nodes the digital space is relatively untouched.</p>
+<div class="figure"><span style="display:block;" id="fig:1cards"></span>
+<img src="figures/ch8-1cards.png" alt="Item cards, Interference cards, and nodes made up the main interaction of players with the game. The effects and attributes of each card would further influence the spaces they were reveal in and as players moved around space tiles they would alter the status of each space according to items in hand."  />
+<p class="caption">
+Figure 8.7: Item cards, Interference cards, and nodes made up the main interaction of players with the game. The effects and attributes of each card would further influence the spaces they were reveal in and as players moved around space tiles they would alter the status of each space according to items in hand.
+</p>
+</div>
+<p><strong>Item Cards:</strong> These were spendable IoT-enabled items that players carried on them to enact various effects through the game. Each item card showed its effect on the space it occupied as well as any additional ‘chain’ effects with a description of how the card interacted with the space and any other cards if applicable (Fig. <a href="Chapter8.html#fig:1cards">8.7</a>). They also listed a number of attributes which they either required to function or were able to process. For instance, the <em>Smart Phone</em> item card showed a number of icons in its attributes highlighting that it had a camera, Bluetooth, Wi-Fi, and a digital wallet. It also mentioned that it required Wi-Fi or network access to function.</p>
+<p><strong>Interference Cards:</strong> The second set of cards were interference cards (see <a href="Chapter8.html#fig:1cards">8.7</a>) and were designed to act as interruptions in play. Several cards were imagined and when prompted players had to exercise them. These included reassessing the space they were in, removing crucial global nodes, returning any collected coins, and so forth.</p>
+<p><strong>Dice:</strong> All actions in the game were governed by a custom 3D printed dice. Each side represented a different action players could take from picking out new items, dropping local and global nodes, to being forced to draw an interference card.</p>
+<p><strong>Movement, Assessing Spaces, and Getting Tokens:</strong> After selecting player tokens to represent them in the game, players moved in tandem <a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>. As the black and white cards were mirrored hence movement was shown mirrored in these spaces as well. This was to drive the point of spaces being linked even though they might appear separate. Players were then awarding connectivity coins for each interaction they conducted in the game as a scoring mechanism. Interactions were made at the end of a players turn before they had to reassess the spaces they occupied. This usually happened because the game either had new nodes in play or players had cards on their person which affected their surroundings.</p>
+<p>Assessments were made by understanding the properties of the heterotopias acting upon the space. This was not an easy feat but generally understood by players as reassessing the private/public/social/secure rubric of the space. Therefore, some base questions they could ask were:</p>
+<ul>
+<li><p>How ‘public’ can this space be considered?</p></li>
+<li><p>How ‘private’ can this space be considered?</p></li>
+<li><p>How ‘socially active’ is this space?</p></li>
+<li><p>And, how ‘secure’ could this space be considered?</p></li>
+</ul>
+<p>Players also dropped interactivity tokens in the space if they had cards that made them do that leaving a breadcrumb of sorts throughout the game. Finally, players kept track of their scoring through the interactions they made on a score sheet. Certain interactions warranted multiple scores while others didn’t.</p>
+<p>Play continued in this fashion with players rolling a dice and either collecting new cards making them drop more interactions in the game, forming more nodes, or acting out interreferences. Combinations of cards would often create chain connectivity, subsequently creating chained disruptions as well.</p>
+<p>The main objective was for players to move around the ‘board’ in both digital/non-digital spaces simultaneously, dropping local nodes to make <em>connections</em> which acted as currency. By dropping tokens on the cards in digital spaces players would denote an interaction within specific heterotopias to simulate real-life interactions within IoT, while the end of turn discussions on the different ways their actions may have affected the spaces encouraged players to understand the spatial configurations the game proposed. That at least was what this iteration intended to do.</p>
+<div id="playtesting-and-feedback" class="section level5 hasAnchor" number="8.3.1.1.1">
+<h5><span class="header-section-number">8.3.1.1.1</span> Playtesting and Feedback<a href="Chapter8.html#playtesting-and-feedback" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Playtests for this first iteration were done over two sessions with some recurring and fresh participants. As the game was designed to be played with 2–4 people both sessions were done with 3 players each with a total of 6 participants coming from diverse backgrounds but each related to design research or practice. Age groups of participants were between 20–40 and each were asked initial questions regarding their experience with playing games for research and their understanding of IoT and/or philosophy. As principal investigator I joined in on the playtests in the capacity of a game master<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a> facilitating the game.</p>
+<p>Immediately players were not enjoying this first iteration as it was unable to capture player attention or interests. A recurring complaint was a lack of purpose and excessive complexity, it just wasn’t easy to understand or play. <em>“The coins don’t seem to do anything, so why am I collecting them?”</em>, was one comment echoed among participants. The interferences didn’t appeal either as there wasn’t much variety in actions or possibilities. Players didn’t feel like they were ‘playing’ the game rather they were simply acting out a mundane task.</p>
+<p>On the assessment portion of play, players agreed with it feeling like a chore and didn’t look forward to it at the end of their turns. Though they appreciated the logic of digital/non-digital spaces being represented in this mirrored manner they didn’t see it as anything but that: a representation of collected actions in a networked space. What they did find interesting was how the game allowed them to visualise their steps in the spaces through breadcrumbs of interactions. But in the end, it didn’t warrant much interest from players as they all agreed it didn’t feel like a game.</p>
+</div>
+</div>
+<div id="iterations-2-through-5" class="section level4 hasAnchor" number="8.3.1.2">
+<h4><span class="header-section-number">8.3.1.2</span> Iterations 2 through 5<a href="Chapter8.html#iterations-2-through-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Iteration 1 though unsuccessful conjured up a large portion of the design for subsequent iterations. Beyond it minor alterations and later additions were made between iterations coming from player feedback. Table <a href="Chapter8.html#tab:tab-version2">8.2</a> shows a list of changes that came about in iterations 2 through 5. The main format of play remained the same though.</p>
+<table>
+<caption><span id="tab:tab-version2">Table 8.2: </span>List of feedback received from playtests of iteration 1 and changes administered between iterations 2–5</caption>
+<colgroup>
+<col width="2%" />
+<col width="33%" />
+<col width="63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Iter.</th>
+<th align="left">Feedback Received</th>
+<th align="left">Change Administered</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">Scoring was tedious</td>
+<td align="left">Assessment sheets added</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">Player tokens were confusing</td>
+<td align="left">Swapped tokens for non-themed alternatives</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">Spatial configurations imagined felt limiting</td>
+<td align="left">Included broader configurations for external spaces, gardens, parks, etc. Players also allowed more freedom with setting up their environment/play-area.</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">Lack of purpose to gameplay</td>
+<td align="left">Player specific scenarios with goals introduced (Fig. <a href="Chapter8.html#fig:2cards">8.8</a>)</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="left">Not enough interaction of players with the game</td>
+<td align="left">New interferences imagined and added nodes for players to interact with.</td>
+</tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="left">Play too open-ended, cannot focus on the spatial configurations aspect of model.</td>
+<td align="left">Spaces reimagined as an interlocking tile system to direct the point of spatial configurations through play.</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">Game aesthetic unappealing for play</td>
+<td align="left">Design and aesthetics redone.</td>
+</tr>
+</tbody>
+</table>
+
+<p>One major difference between these iterations and the initial was the inclusion of player-specific goals, abilities, and ‘scenarios’ (Fig. <a href="Chapter8.html#fig:2cards">8.8</a>) to speed up gameplay which came about in iteration 4. The largest design change came in iteration 5 where the spaces were reimagined as interlocking tiles with their preestablished rubrics.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="Chapter8.html#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">rep</span>(<span class="st">&quot;figures/ch8-2cards.png&quot;</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:2cards"></span>
+<img src="figures/ch8-2cards.png" alt="Among the changes between iterations 2–5 were the addition of Scenario cards that players followed throughout play and new interferences. Many cards were redesigned to incorporate a more 'player-friendly' vibe while still remaining true to research roots."  />
+<p class="caption">
+Figure 8.8: Among the changes between iterations 2–5 were the addition of Scenario cards that players followed throughout play and new interferences. Many cards were redesigned to incorporate a more ‘player-friendly’ vibe while still remaining true to research roots.
+</p>
+</div>
+<div id="playtesting-and-feedback-1" class="section level5 hasAnchor" number="8.3.1.2.1">
+<h5><span class="header-section-number">8.3.1.2.1</span> Playtesting and Feedback<a href="Chapter8.html#playtesting-and-feedback-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Between iterations 2 through 5 a total of 3 playtests were conducted. Player sizes varied from 2-3 per session and for each I remained present as game master and principal investigator. Although these iterations tried to structure the game further by taking in player feedback regarding gameplay and how well the procedural rhetoric was communicated, the prevalent critique remained the same among participants. It lacked any sense of purpose and remained a mundane task rather than a playable game. Complex terminologies used throughout the artefact were also questioned as they kept the game from being read as something to be understood rather than enjoyed as play. One comment from a recurring participant was that they went into each playtest expecting to ‘play a game’ but were always left wanting and felt they were conducting a research task instead.</p>
+<p>The participants had experiences with playing board games and each stayed firm on their comment that the carpentered artefact did not play as a game and felt like a chore. One thing that again stood out from these iterations was still the fact that it allowed them to visualise IoT, though not very effectively. <em>“The game doesn’t seem to have an end”</em>, was a returning comment from a few participants.</p>
+<p>Around playtest 4 recurring participants had started understanding the purpose of the research better and reflected that into their experience of the game. Certain elements such as scenarios were suggested by participants in earlier playtests and they agreed that such additions did improve the playability, they still didn’t do it enough to communicate the research rhetoric through play. Scoring was particularly criticised, and the addition of individual assessment sheets did little to aid playability or player interest in the game.</p>
+</div>
+</div>
+<div id="discussion" class="section level4 hasAnchor" number="8.3.1.3">
+<h4><span class="header-section-number">8.3.1.3</span> Discussion<a href="Chapter8.html#discussion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Prior experience in participatory research influenced these initial designs. As such, the experience involved a lot of participation from the players, from the design of the ‘board’ to the rubric. This proved to be its downfall as players found the act of keeping track of every movement counter-intuitive to the ‘game’ aspect of the artefact <a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>. Initially understood as a means of tracking score while simultaneously facilitating a procedural rhetoric, the experience provided no stimulus with each action ending in players dropping tokens whether they wanted to or not. Key elements of gameplay such as strategy were found to be missing, as players focused on keeping in-depth track of themselves a hindrance in ascertaining the core rhetoric of the game.</p>
+<p>These initial iterations showed little promise to the research intent. The alterations that were made to address issues proved to be insufficient as further testing revealed that the influence of the research objectives were ultimately undermining the playability of the game. Players constantly asked the same question in different voices, <em>“What is the purpose of this game?”</em>.</p>
+<p>A combination of weak goals, complex jargon, repetitive tasks, and the fact that it was designed as a competitive experience meant the rhetoric was lost with no insight for research. The only positive take back is that it was capable of visualising IoT. Subsequently, players saw it as neither a compelling research artefact nor a compelling game.</p>
+</div>
+</div>
+<div id="reflection-phase" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Reflection Phase<a href="Chapter8.html#reflection-phase" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As the philosophical discourse intended to be explored through this exercise of carpentry was non-existent, iterations from the exploration phase needed to be reassessed. This is where the added re-framing portion of the RtGD process was invoked to understand how to best reassess the design artefact and its research parameters (Fig. <a href="Chapter8.html#fig:focus-process">8.9</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:focus-process"></span>
+<img src="figures/ch8-focus_process.png" alt="Up till this point the iterative portion of the RtGD process was exercised. After feedback from playtests it was understood that the defined parameters of designing this artefact needed to be reassessed, hence the secondary re-framing process was embarked upon."  />
+<p class="caption">
+Figure 8.9: Up till this point the iterative portion of the RtGD process was exercised. After feedback from playtests it was understood that the defined parameters of designing this artefact needed to be reassessed, hence the secondary re-framing process was embarked upon.
+</p>
+</div>
+<p>Participants agreed the inter-spatial model was not effectively reflected through play. Understanding what the real obstacle was in this carpentry process became the next priority. References of the model needed to be present for it to be assessed but simultaneously also did playability since the artefact was intended to be treated as that; at least by participants. With players unable to understand the game as a competitive experience of a cooperative one the game left players confused. The scoring system gave the idea that the game was a competition, though comparing with IoT in practice competition did not seem to be a method that fit the operation of IoT devices which tend to work collaboratively. Hence, an alternative perspective was needed. As a result, it was decided to examine popular board games in a bid to find mechanics that better fit with IoT. Rather than go through an exhaustive list of board games, a few base parameters were established to pick out games that worked better.</p>
+<p>Firstly, since the design was thematic the games referenced needed to be categorised as <em>Ameritrash</em><a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a> or similar. Second, to consider an option of cooperative play, the games had to involve a level of collaboration/cooperation <a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>. Third, they had to incorporate the use of physical spaces in some manner. The third criteria was not a necessity as board games generally do deal with spaces, but it was kept as a note to sift through games that were more relevant than others. The fact that the iterations allowed players to visualise IoT and the spatial configurations meant that there were definitely certain elements that worked. The problem was in its current format it was unable to explain the philosophical aspect of viewing objects and spaces in an object-oriented manner. Therefore, the following three board games (Fig. <a href="Chapter8.html#fig:board-games">8.10</a>) were selected for reference and study of how to design games better:</p>
+<ul>
+<li><p><strong><em>Dead of Winter</em> by Plaid Hat Games:</strong> A zombie apocalypse worker-placement game that has players work cooperatively to survive a fictional apocalyptic landscape,</p></li>
+<li><p><strong><em>Betrayal at House on the Hill</em> by Avalon Hill:</strong> A cooperative game with a defector element where players navigate a haunted house, and,</p></li>
+<li><p><strong><em>Eldritch Horror</em> by Fantasy Flight Games:</strong> a collaborative Lovecraftian horror survival game highly dependent on storytelling and player interaction</p></li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:board-games"></span>
+<img src="figures/ch8-boardgames.jpg" alt="Referenced modern board games Betrayal at House on the Hill (left), Dead of Winter (middle), and Eldritch Horror (right)."  />
+<p class="caption">
+Figure 8.10: Referenced modern board games Betrayal at House on the Hill (left), Dead of Winter (middle), and Eldritch Horror (right).
+</p>
+</div>
+<p>These games highlighted characteristics that could be considered prerequisites for producing engaging gameplay: elements such as the enforcement of rules, established goals, storytelling as a world-building tool, social dilemmas, balance of opposition, synergy between players, the presence of repercussions as well as a payoff for one’s actions <span class="citation">(<a href="#ref-zagal2006" role="doc-biblioref">Zagal, Rick, and Hsi 2006</a>; <a href="#ref-grace2012" role="doc-biblioref">Grace 2012</a>; <a href="#ref-rocha2008" role="doc-biblioref">Rocha, Mascarenhas, and Prada 2008</a>; <a href="#ref-salen2004" role="doc-biblioref">Salen and Zimmerman 2004</a>)</span>. All three games fit perfectly within the defined parameters for the research particularly the use of physical space, having players move around the game through spaces such as rooms or metaphorical spaces such as items on hand and astral planes. This spatial realignment meant players had to think in multiple modalities and whether their actions could have ripple effects <a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>. Immediately, connections were appearing of ‘insides’ and ‘outsides’ akin to references in the IoT model.</p>
+<p>They each also involved an intricate array of characters that players could embody in the game. <span class="citation">Bogost (<a href="#ref-bogost2011" role="doc-biblioref">2011, 23</a>)</span> discusses how world-building can create empathy when achieved through “vignettes” as brief descriptions or accounts of characters and events. Finally, all the games encouraged cooperative or collaborative play with elements of disruption. In the case of <em>Dead of Winter</em> and <em>Betrayal at House on the Hill,</em> it appeared through incognito defectors while <em>Eldritch Horror</em> utilised a more aggressive approach enforcing restrictions. Save the defector element, none of the disruptions hindered the core cooperative nature of the games.</p>
+<div id="iterations-6-and-7" class="section level4 hasAnchor" number="8.3.2.1">
+<h4><span class="header-section-number">8.3.2.1</span> Iterations 6 and 7<a href="Chapter8.html#iterations-6-and-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The learning aspect of this reflection phase presented a benchmark for crafting compelling gameplay. To simplify the process of further exploration, rather than designing prototypes like the previous attempts manuals for play were designed. The manuals expanded on what IoT in the context of the game could represent, acting as a way to put down thoughts in a systematic manner that could, <em>(a)</em> be referenced later, and <em>(b)</em> present an opportunity to quickly tune into details of the game. Key areas that these manuals attempted to address were pathfinding, spatial dynamics, item collection, personal goals, counteractions, establishing crisis, and balance in play. As these iterations were done on paper playtesting was not conducted instead concepts were discussed with prior participants to understand their perspectives for whether such changes could benefit the process.</p>
+<p>Several proposals for these key areas where the game needed improvement were planned out on paper. Each were then cross-referenced with their equivalent in the three referenced games to understand how they worked there. The shared similarities between the three selected games allowed for relevant game mechanics to emerge which could be used for further prototypes. Out of the list of attributes appropriated from the referenced games, the following were the most influential and highlighted for further iterations as many reflected elements from the model:</p>
+<ul>
+<li><p>A fictional backstory which re-framed the game’s perspective, situating actions of players in a setting appropriate to IoT</p></li>
+<li><p>Physical tiles as spaces that helped in both navigation and for providing interaction points between digital/non-digital such as actions, items, and consequences;</p></li>
+<li><p>A reimagining of the aesthetics to gel better with the premise of IoT and the fictional backstory;</p></li>
+<li><p>Relevant establishing of crisis through play and their mitigation;</p></li>
+<li><p>A collaborative play format over a competitive one;</p></li>
+<li><p>Balance between players, so they may complement each other during play;</p></li>
+<li><p>Clearly established goals, either player specific or global;</p></li>
+<li><p>Player controlled levels of chance from accumulative dice rolls and deckbuilding while retaining elements of uncertainty to push play forward; and,</p></li>
+<li><p>Consequential actions through conditional cards mirroring the gatekeeper concept of heterotopias.</p></li>
+</ul>
+</div>
+</div>
+<div id="redux" class="section level3 hasAnchor" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> Redux<a href="Chapter8.html#redux" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>During the reflection phase focus was returned to the flaws present in earlier attempts. References to the model though present in the earlier iterations they were not presented in a ‘play-friendly’ manner hence not strong enough to translate through gameplay. As such, core concepts were lost to players. The fact that the research-centric attempts deviated so much from the intended rhetoric of the game, meant future iterations had to incorporate the philosophy in a redacted or simplified manner. A level of flexibility was required on how much of the research could effectively be incorporated to balance out the game’s playability with mechanics either favouring rhetoric of play, or rhetoric of research. Finding a comfortable compromise was now the overriding goal for the design process and the basis of the next group of iterations.</p>
+<div id="iterations-8-through-10" class="section level4 hasAnchor" number="8.3.3.1">
+<h4><span class="header-section-number">8.3.3.1</span> Iterations 8 through 10<a href="Chapter8.html#iterations-8-through-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The questioning of research rhetoric versus playability culminated in iteration 8. Findings from the reflective and explorative phases were combined to create stable working prototypes that aligned better as playable games over research artefacts. Whilst some game mechanics were borrowed from the referenced games, others came from new combinations of mechanics across the three games, or where developed during playtesting. Table <a href="Chapter8.html#tab:tab-version8">8.3</a> references the changes in iterations 8 through 10 which focused on simplifying play, interaction of players, and pathfinding the most.</p>
+<table>
+<caption><span id="tab:tab-version8">Table 8.3: </span>List of changes administered and concerns addressed through iterations 8–10.</caption>
+<colgroup>
+<col width="7%" />
+<col width="40%" />
+<col width="52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Iter.</th>
+<th align="left">Change Administered</th>
+<th align="left">Addressed Concern</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">Tile based navigation system</td>
+<td align="left">Pathfinding</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">(Redacted) Dice focused play</td>
+<td align="left">More control and freedom of choice</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">(Redacted) Rubric</td>
+<td align="left">Simplification of play</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">(Redacted) Spatial assessment</td>
+<td align="left">Simplification of play</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">Connectivity points between tiles</td>
+<td align="left">Spatial dynamics and configurations</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">Dice rolls as mechanic</td>
+<td align="left">Improved interaction and playability</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">Backstory</td>
+<td align="left">Situating play, rhetoric, and purpose</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">Character cards and abilities</td>
+<td align="left">Player specific strategies for collaboration</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">Secret objectives</td>
+<td align="left">Player specific goals</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">Crisis cards</td>
+<td align="left">Counteractions</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">First player token</td>
+<td align="left">Leadership</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">Wounds</td>
+<td align="left">Affects from play</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">Stacked spaces</td>
+<td align="left">Better reflection of spatial configurations</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">Redesign item cards</td>
+<td align="left">Clarity of purpose and use of cards</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">Improved aesthetics and pieces</td>
+<td align="left">Improved player connection with game</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">Threat tracker</td>
+<td align="left">End scenario and urgency of play</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">Securing of spaces</td>
+<td align="left">Clearly defined global goal</td>
+</tr>
+<tr class="even">
+<td align="right">9</td>
+<td align="left">Round counter</td>
+<td align="left">Tracking of time and urgency of play</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">Threats and Vulnerabilities</td>
+<td align="left">Added elements of challenging gameplay</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">Revised character abilities</td>
+<td align="left">Better interactions between players</td>
+</tr>
+<tr class="odd">
+<td align="right">10</td>
+<td align="left">(Redacted) Secret objectives</td>
+<td align="left">Simplification of play</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">(Redacted) Round counter</td>
+<td align="left">Simplification of play</td>
+</tr>
+</tbody>
+</table>
+
+<p>New game pieces were designed for the artefacts reflecting on previous design decisions. Play was established as collaborative with players focused on a universal goal of security giving a purpose to their actions. The game world was also generative now with new spaces coming into play as players explored revealing unique spatial restrictions allowing them to feel more present in the game.</p>
+<p>Tiles were designed hexagonal<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a> having players take advantage of free movement and interaction in multiple directions. A new inclusion was of connector points on each tile (Fig. <a href="Chapter8.html#fig:connectors">8.11</a>), allowing players to create digital links between non-digital spaces by ‘dropping’ IoT devices. Acting primarily as a symbolic representation of spatial configurations from the model. Each connector point allowed players to place a link between spaces through digital interactions. These links were symbolic much like the phenomenological linkages asserted by the model.</p>
+<div class="figure"><span style="display:block;" id="fig:connectors"></span>
+<img src="figures/ch8-connectors.jpg" alt="The new iterations allowed players to more directly interconnect digital/non-digital spaces through connector tokens."  />
+<p class="caption">
+Figure 8.11: The new iterations allowed players to more directly interconnect digital/non-digital spaces through connector tokens.
+</p>
+</div>
+<p>The earlier dice roll based play was redacted and a new phase-based play system was administered echoing similar approaches used in the referenced games. Players were also given new actions they could perform, providing them with a wider gamut of possibilities. As a countermeasure, a <em>Vulnerabilities</em> mechanic was introduced later becoming the core mechanic of play. This was crucial as it hinted towards the rhetoric of an imperfect IoT, whilst also furthering the philosophical rhetoric through suggesting present interactions and overlaps between spatial configurations. Cards that players had in hand were now accessible through the game so any actions that happened in the game area were mimicked on player cards to symbolise their IoT items as sharing in the workings of the network. This reflected the earlier black/white space title approach from previous iterations but in a manner more directly accessible to players.</p>
+<p>Cards were still IoT-enabled devices and for the most part remained similar with aesthetic changes, but tokens were used to simulate connections in the physical spaces and on items in hand <a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>. Upon facing a <em>vulnerability</em>, players rolled dice for each token present on their items. Failed dice rolls ended in special <em>Vulnerability Tokens</em> falling in connected and interconnected spaces mimicking the concept of ontographs within OOO, effectively removing the IoT-enabled device from a ‘network’ to be seen independently. One aspect that was added to the cards was synchronisation with player specific abilities (see ahead) making the players want to keep certain IoT items on hand for their benefits.</p>
+<p>A threat tracker was introduced to allow players to foresee when the game would end and assess their progress. Later iterations worked on this further to incorporate it more directly with play and enforce a sense of urgency.</p>
+<div class="figure"><span style="display:block;" id="fig:characters"></span>
+<img src="figures/ch8-characters.png" alt="The addition of in-game characters that players could embody drastically changed player perceptions towards the playability of the game. Each character came with their own backstory and unique traits which players modified during play."  />
+<p class="caption">
+Figure 8.12: The addition of in-game characters that players could embody drastically changed player perceptions towards the playability of the game. Each character came with their own backstory and unique traits which players modified during play.
+</p>
+</div>
+<p>New characters were introduced with accompanying backgrounds which fit into the designed fictional backstory of the game (Fig. <a href="Chapter8.html#fig:characters">8.12</a>). This was a common approach in other mainstream board games of this kind and certainly seen in the referenced games as well. A new ability system was introduced encouraging players to work together by finding their unique combinations of abilities during play. This new system replaced the assessment and rubrics from the previous iterations and focused on players reading their different items which improved their characters’ abilities and connected them with their actions in the game. Each ability was referenced by a number of dice that players could roll in the game though at this stage what these numbers represented was still unclear and worked out during playtests.</p>
+<div id="playtests-and-feedback" class="section level5 hasAnchor" number="8.3.3.1.1">
+<h5><span class="header-section-number">8.3.3.1.1</span> Playtests and Feedback<a href="Chapter8.html#playtests-and-feedback" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Prototyping for these iterations was done using simple card and paper, and recycling earlier designed artefacts (Fig. <a href="Chapter8.html#fig:prototyping">8.13</a>). Though, these iterations still involved a game master as a facilitator in the game. Players immediately connected more with these iterations especially with the backstory bringing about a more engaging experience. A total of 2 playtests were conducted with the new sets of rules with alterations being made by player feedback between iterations and tests. As before between 2–3 participants were part of each test in addition to myself as facilitator. Participants were mostly recurring players with a few fresh faces, all still related to design practice and research in some form. The biggest take back was regarding the flow of the game which changed considerably from the earlier attempts due to the adopted phase-based gameplay.</p>
+<div class="figure"><span style="display:block;" id="fig:prototyping"></span>
+<img src="figures/ch8-prototyping.jpg" alt="Soft prototyping allowed for the game to remain flexible even during play-tests."  />
+<p class="caption">
+Figure 8.13: Soft prototyping allowed for the game to remain flexible even during play-tests.
+</p>
+</div>
+<p>Particular appreciation was given to the aesthetics of the prototypes which though still rudimentary and low fidelity were capable of capturing the spirit of the artefact as game-like. Players enjoyed the new characters with some picking favourites and empathising with them during play. The vulnerabilities mechanic was contested though with many players suggesting it still felt confusing and cluttered.</p>
+<p>The tile-based pathfinding approach was highly regarded in these iterations as players highlighted it made IoT visible as constellations. They wished the game was able to represent their association with technologies like IoT better though with one player commenting how it felt very <em>“Science Fiction-like”</em>. None-the-less, the general consensus was that these iterations were doing something better than the previous ones but still lacked in certain areas.</p>
+</div>
+</div>
+<div id="iterations-11-through-14" class="section level4 hasAnchor" number="8.3.3.2">
+<h4><span class="header-section-number">8.3.3.2</span> Iterations 11 through 14<a href="Chapter8.html#iterations-11-through-14" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>These changes brought about new life into the artefact, thus the next iterations (Fig. <a href="Chapter8.html#fig:later-iterations">8.14</a>) looked at refinement and a gradual return of the research rhetoric. Iterations 11 through 14 mostly saw aesthetic changes and strategic redaction of mechanics and components. What it attempted to improve upon was representing the philosophy in a subtle manner that it could be infused within the procedural rhetoric. The approach taken for this was through storytelling.</p>
+<div class="figure"><span style="display:block;" id="fig:later-iterations"></span>
+<img src="figures/ch8-later_iterations.jpg" alt="Iterations 11–14 slowly evolved as an overhaul of design to incorporate findings from play-tests and solidify the procedural rhetoric. Besides certain back steps most changes came about as either aesthetic or refinement."  />
+<p class="caption">
+Figure 8.14: Iterations 11–14 slowly evolved as an overhaul of design to incorporate findings from play-tests and solidify the procedural rhetoric. Besides certain back steps most changes came about as either aesthetic or refinement.
+</p>
+</div>
+<p>The imagined rich selection of characters was reimagined with improved abilities and management of skills for players. It was necessary for players to relate more with the artefact as not just a source of research related intrigue but also as a playable game. As a step in returning to research roots, these iterations included external research projects as elements within the fictional game world grounding the rhetoric further in reality as opposed to fictional conjecture. Real technologies with plausible trajectories such as the <em>Databox</em><a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a> <span class="citation">(<a href="#ref-mortier2016" role="doc-biblioref">Mortier et al. 2016</a>)</span> were incorporated and imagined as the purpose of play. Players now worked together to create secure spaces within the game world in the form of these Databoxes. Ultimately, it was in the later consequences of interaction choices for addressing IoT vulnerabilities where the artefact became more interesting among players. Databoxes were required to ‘win’ the game and each had players enact a series of resolution actions to acquire them. Table <a href="Chapter8.html#tab:tab-version11">8.4</a> shows the main changes done in these iterations.</p>
+<table>
+<caption><span id="tab:tab-version11">Table 8.4: </span>List of changes administered and concerns addressed between iterations 11–14.</caption>
+<colgroup>
+<col width="6%" />
+<col width="33%" />
+<col width="59%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Iter.</th>
+<th align="left">Change Administered</th>
+<th align="left">Addressed Concern</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">Improved aesthetics</td>
+<td align="left">Player connection with artefact</td>
+</tr>
+<tr class="even">
+<td align="right">11</td>
+<td align="left">Improved character abilities</td>
+<td align="left">Player interactions</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">Redesigned item cards</td>
+<td align="left">Clarity and purpose</td>
+</tr>
+<tr class="even">
+<td align="right">11</td>
+<td align="left">Vulnerabilities mechanic</td>
+<td align="left">Counteractions that mattered in play</td>
+</tr>
+<tr class="odd">
+<td align="right">12</td>
+<td align="left">Higher level threats</td>
+<td align="left">Balance of difficulty</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">(Redacted) Scoring mechanism</td>
+<td align="left">Simplification of play</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">Resolution cards</td>
+<td align="left">Improved player interaction, purpose, and rhetoric</td>
+</tr>
+<tr class="even">
+<td align="right">13</td>
+<td align="left">Threat removal</td>
+<td align="left">Crisis management</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">Improved dice rolls</td>
+<td align="left">Interaction with game and uncertainty</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="left">Improved aesthetics</td>
+<td align="left">Player connection with artefact</td>
+</tr>
+<tr class="odd">
+<td align="right">14</td>
+<td align="left">Conditions</td>
+<td align="left">Balance of power between game and players</td>
+</tr>
+</tbody>
+</table>
+
+<p>The biggest change these iterations brought were a better understanding of how the vulnerabilities affected the network and subsequently how players could mitigate them, as well as friendlier usage of terminology that players could relate with. As the game now followed a phase based play approach, players first played out their actions then had to assess if any risks or vulnerabilities had emerged in their turn due to their actions. This was done through a dice roll according to specific player abilities making some players more capable of mitigating risk than others. Failed attempts at navigating the risk phase of play meant players had to draw from a deck of risk cards that facilitated the rhetoric of the game through storytelling. This was also presented in the new resolution cards (later called privacy cards) which players needed to successfully navigate in order to deploy the Databoxes they required to win (Fig. <a href="Chapter8.html#fig:3cards">8.15</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:3cards"></span>
+<img src="figures/ch8-3cards.png" alt="These iterations saw the cards evolve into more friendlier versions that synched better with the rhetoric of play as well as gave players something to think about during turns. The new resolution cards particularly allowed players to enact a mini-scenario that could go in either their favour or against."  />
+<p class="caption">
+Figure 8.15: These iterations saw the cards evolve into more friendlier versions that synched better with the rhetoric of play as well as gave players something to think about during turns. The new resolution cards particularly allowed players to enact a mini-scenario that could go in either their favour or against.
+</p>
+</div>
+<p>Another important aspect learnt from the reflection phase was the management of collaborative play. While players could only win the game through the single scenario of deploying a set number of Databoxes, there were multiple ways for the game to be lost. The game itself became an opponent in this manner; a common trait in cooperative/collaborative board games.</p>
+<div id="playtests-and-feedback-1" class="section level5 hasAnchor" number="8.3.3.2.1">
+<h5><span class="header-section-number">8.3.3.2.1</span> Playtests and Feedback<a href="Chapter8.html#playtests-and-feedback-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The final 4 playtests were conducted between iterations and towards the end culminating in a total of 10 playtests from the start of the carpentry process between a combined 22 players between all playtests. The general reaction from players for these end iterations was that the paradoxical nature of many mechanics made the artefact play better as a game, such as players having to take risks to achieve their victory states. Furthermore, the biggest gripe from the early versions was the complexity of scoring which was now less tedious as the status of the game board became the scoreboard itself.</p>
+<p>Players felt more involved in the game in these iterations. Since the cards referenced elements from the model as well as general understandings of IoT, players better understood the rhetoric of the game and actively engaged in obscure discussion around the present spatial configurations. IoT objects presented in the game could interact with each other and the spaces on the ‘board’ leading to different combinations of interactions becoming apparent, such as a fridge presenting a vulnerability because of lights in the garden all connected through the same Internet connection. Vulnerabilities thus became something players actively engaged with as they were designed to morph into more difficult threats if certain conditions were met.</p>
+<p>The final iteration in this process brought about mainly cosmetic changes. Player boards, cards, and tokens were redesigned to fit a unified aesthetic which players agreed helped in accepting the artefact as a ‘game’. The main task during each playtest was to have players think about security and privacy through the different vulnerabilities and resolution opportunities presented in an attempt to argue about the ontologies of these spatial configurations in IoT. How well that was managed is something I will explain in the next section but in the end, one play-testers remark summed up the efforts quite well, <em>“It plays a lot like a game now!”</em>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="discussion-1" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Discussion<a href="Chapter8.html#discussion-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This entire journey of carpentering a board game from scratch could only be realised through the iterative process afforded by RtD. Before wrapping up this chapter, some insights from this journey can be shared through the playtests. Though iterations 8–10 involved a game master, the artefacts effective use as a research tool was achieved independently considering the views by <span class="citation">Donchin (<a href="#ref-donchin1995" role="doc-biblioref">1995, 218</a>)</span> of exercising systemic control in games. The following views reflect an overarching discussion of using a board game as a carpentered artefact in this manner for design research, what was learned about carpentering in the process, how well the questions of this research have been addressed, and whether the game worked in general as a carpentered artefact for IoT that manifested an attitude of playfulness.</p>
+<p>Gameplay wise, it was a no-brainer. Players found the most recent iteration to fulfil their anticipation of play much better. The narrative approach helped in situating their actions but gave little beyond. Though this could be rectified I feel that this current format of a ‘vague’ narrative worked better as the closer the artefact approached being a playable game, the farther away it went from being a formal research artefact. Subsequently, the research had to be reworded and in some places redacted completely to accommodate the ‘game-ness’. This is something of contention and could be investigated in future iterations for finding a more homogenous balance.</p>
+<p>An aspect that made a large difference during testing of the final prototype was fidelity. Earlier attempts used basic materials such as card and paper whereas the final iteration used common board game materials, such as grey-board with wooden and plastic tokens. This raised production quality affected the experience of play as players said they felt more involved.</p>
+<p>Regarding the rhetoric of spatial configurations and philosophically viewing IoT through notions of more-than human-ness there were mixed reactions. Where it successfully translated to some players others were still seeing it as a game and less true to life, even though efforts were made in the design to keep it close to reality. Those that were aware of IoT interactions did praise the accuracy and notion of a fragile Internet. There were moments when the connection became vividly apparent, such as in one case where a player mentioned how by hearing others use phrases like, <em>“I’m about to connect the <strong>Living Room</strong> to the <strong>Kitchen</strong> with my <strong>Shoes</strong>!”</em>, it helped in imagining the premise of the game further and situating the idea of more-than humanness.</p>
+<p>Regarding the idea of a fragile IoT and the heavy assertion of privacy/security throughout the game, this slightly hindered the artefact in my opinion. The model does not necessarily argue for security and privacy within IoT. The reason for using these concepts in the game was to facilitate a procedural rhetoric of IoT and its possible that for many players that was what the game was about. Granted one of the questions this research asks is around problem areas in the design of IoT, the idea of spatial configurations made it easier to translate through this rhetoric of insecurity as it relates through human users. That said, I believe it makes the artefact (at least through play in these iterations) take an anthropocentric perspective over an object-oriented one begging the question of what are the object-oriented problems in the design of IoT?</p>
+<p>This is possibly happening because of how the philosophical arguments and perspectives in the artefact had to be reeled back in favour of playability. Besides a few moments there was little acknowledgement from players regarding the philosophy even after filling the cards with OOO related <em>Easter Eggs</em>. Translating the effectiveness of philosophical rhetoric is difficult to measure, with most players taking the philosophy at face value and disregarded it as a humorous anecdote. Those that did engage didn’t move beyond a very superficial understanding. In the end, while the game managed to both bring players closer to an understanding of IoT, it could not convey completely the underlying principles that drove the design. Most players tackled it as a strategy game with the specific context of IoT merging into a background process of play.</p>
+<p>On the negative associations of IoT one player commented how the game felt like it was <em>“out to get you”</em>. In some respects, this holds true as security requirements are constantly evolving. Rather than presenting security as a problem that could be fixed, the game highlighted the requirement for vigilance in managing your networks. Ironically, the speculative element introduced by a backstory involved a negative storyline which helped the rhetoric considerably. Players began to associate the narrative with their own lives. An earlier iteration of the privacy cards involved a card that described a scenario of data being stolen from a phone through an RFID interaction. This created a stark reaction from players, as they began relating it to events that could happen in their real lives. The game world managed to seep into reality which was a positive take away from the process. In this manner the game certainly advanced from the previous chapters model in addressing SQ1 as a means to highlight potential problematic effects emanating off IoT (albeit from an anthropocentric perspective).</p>
+<p>Returning to the idea of whether carpentry worked in this instance and what was learned in the process, one thing for certain is that this approach of designing a game did facilitate levels of learning about IoT for the players involved. Carpentry here might not have been successful in completely transferring the ideas of the philosophical lens for IoT through a game due to the redactions made, that said it did add a layer of philosophical intrigue through facilitating the different manners of interactions in the game. This is quite apparent from player reactions to them. Also, as the players would move between playing on the non-digital spaces in the board to their digital spaces on their item cards, it facilitated the argument of heterotopias coming directly from the model. Though I fear that was not immediately understood by players. What was learned about the process beyond the effectiveness of an iterative RtD process for designing systems like a game, was that carpentry might require more philosophical freedom to function better. Perhaps if removed from the context of a structured game and allowed to exist on its own then the process of carpentry might yield more fruitful results. It is after all a method of exercising philosophical debate and if the game structure required a systemic redaction of philosophical discourse then in retrospect it was probably not the most ideal of mediums for carpentry.</p>
+<p>On the subject of SQ2 and how this process manifested an attitude of playfulness, it does so in a direct manner of <em>(a)</em> creating an artefact through the act of play, and <em>(b)</em> engaging with elements from the model to translate them in a way that may be represented through storytelling. The premise of the game remains a dialogue between players’ understandings of IoT and the games representation of IoT. From what the playtests have revealed players engaged with this dialogue in different ways. The RtGD process through its iterations had to facilitate these findings, and for the most part players retained the artefact as a playful representation of the reality of IoT. Playfulness thus arose from how the players engaged with the iterations by expecting a fun and casual interaction when called upon to ‘playtest a game’. The design process in turn translated this attitude into the game through its many vignettes and micro-interactions. The process thus became playful because it had to deviate from its strict academic design research roots.</p>
+<p>As a closer artefact to IoT this could have been constructed as a programmed live system that took in formal data from participants which could have been humans and IoT objects for a fair object-oriented comparison (the next chapter explores this notion better). The fact that at the start of this process I engaged with a board game rather than any other medium for carpentry, suggests as a designer my own playful attitude was present within the design process through my own inherent love of board games. This is carried on from how the carpentry of the model was also playful by equating the use of philosophy to building blocks that formed the model itself. Here, in order to design for play I needed to experience play in the process as well. An attitude of playfulness in relation to this artefact therefore occurs from acknowledging where this artefact was situated, as either a playful game or as a formal representation of concepts relating to IoT. From the start of this thesis I have been arguing for the presence of playfulness as an attitude within my own practice of design, and this artefact perhaps embodies that most clearly.</p>
+</div>
+<div id="wrapping-up" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Wrapping Up<a href="Chapter8.html#wrapping-up" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This chapter although about an attempted carpentered artefact was presented to be in line with views of RtD as a “generative” approach <span class="citation">(<a href="#ref-gaver2012" role="doc-biblioref">Gaver 2012, 28</a>)</span>, focusing more on the process than the outcome. The iterative approach of systemic reflection and exploration in this RtGD process helped in clearly navigating a way through the complexity of representing philosophical theory, turning it into an artefact that together functioned as a means of expressing research and as an enjoyable game. The earlier identified issues with mundanity, confusion, and frustrations were replaced with collaboration, a sense of achievement, and competitiveness.</p>
+<p>Redacted of academic and philosophical jargon the infused rhetoric was more approachable in this friendlier language of play. A true expression of findings for an artefact like this cannot be adequately done in a written account as it is by playing the game that one may experience the proposed procedural rhetoric of IoT, and as much of the more-than human concepts as could be infused. As a researcher, I aimed to test the philosophical model created and see if the idea of philosophy for design of IoT could help design research in a real-world context. The game is not intended to act as a design tool for IoT per se. It is better seen as an exploration of what happens <em>under the hood</em> when using our IoT devices in an attempt at exploring their more-than human-ness.</p>
+<p>It certainly boasts the constellations metaphor for IoT in a visual manner that might provide some merit to design practice, if seen in that light. Many factors affect the usage of IoT that consumers are unaware of, which in part affects the adoption of IoT as well <span class="citation">(<a href="#ref-perlow2019" role="doc-biblioref">Perlow 2019</a>)</span>. The game brought to light these largely obfuscated elements, such as the potential consequences of privacy affecting policies even though that might have been an unanticipated by-product. To sum up, this artefact proved successful on several levels. Firstly, to visualise the constellations and ontographs present within the myriad heterotopic spaces of IoT and second, as a way to explore playfulness in the process of design. The coming chapter explores a possible approach of carpentry that may yield more closer approximations of a philosophical lens for IoT through another carpentered artefact.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-abt1970" class="csl-entry">
+Abt, Clark C. 1970. <span>“Serious Games: <span>The</span> Art and Science of Games That Simulate Life.”</span> <em>New Yorks Viking</em> 6.
+</div>
+<div id="ref-bogost2007" class="csl-entry">
+Bogost, Ian. 2007. <em>Persuasive Games: <span>The</span> Expressive Power of Videogames</em>. MIT Press.
+</div>
+<div id="ref-bogost2011" class="csl-entry">
+———. 2011. <em>How to Do Things with Videogames</em>. Electronic Mediations 38. Minneapolis: University of Minnesota Press.
+</div>
+<div id="ref-bogost2012" class="csl-entry">
+———. 2012. <em>Alien Phenomenology, or, <span>What</span> It’s Like to Be a Thing</em>. Posthumanities 20. Minneapolis: University of Minnesota Press.
+</div>
+<div id="ref-breuer2010" class="csl-entry">
+Breuer, Johannes, and Gary Bente. 2010. <span>“Why so Serious? <span>On</span> the Relation of Serious Games and Learning.”</span> <em>Journal for Computer Game Culture</em> 4: 7–24.
+</div>
+<div id="ref-buchanan1985" class="csl-entry">
+Buchanan, Richard. 1985. <span>“Declaration by Design: <span>Rhetoric</span>, Argument, and Demonstration in Design Practice.”</span> <em>Design Issues</em>, 4–22.
+</div>
+<div id="ref-cauberghe2010" class="csl-entry">
+Cauberghe, Verolien, and Patrick De Pelsmacker. 2010. <span>“Advergames.”</span> <em>Journal of Advertising</em> 39 (1): 5–18.
+</div>
+<div id="ref-costikyan2018" class="csl-entry">
+Costikyan, Greg, and Drew Davidson, eds. 2018. <em>Tabletop: <span>Analog</span> <span>Game</span> <span>Design</span></em>. Pittsburgh: ETC Press. <a href="https://figshare.com/articles/Tabletop_Analog_Game_Design/6686933">https://figshare.com/articles/Tabletop_Analog_Game_Design/6686933</a>.
+</div>
+<div id="ref-coulton2015" class="csl-entry">
+———. 2015b. <span>“The Role of Game Design in Addressing Behavioural Change.”</span> In <em>Proceedings of <span>EAD</span> 2015 <span>The</span> <span>Value</span> of <span>Design</span> <span>Research</span></em>. Boulogne, France.
+</div>
+<div id="ref-coulton2017a" class="csl-entry">
+Coulton, Paul, and Alan Hook. 2017. <span>“Games Design Research Through Game Design Practice.”</span> In <em>Game <span>Design</span> <span>Research</span></em>, edited by Petri Lankoski and Jussi Holopainen, 97–116. Pittsburgh: Carnegie Mellon University: ETC Press.
+</div>
+<div id="ref-day2008" class="csl-entry">
+Day, Jane M. 2008. <span>“Rhetoric and <span>Ethics</span> from the <span>Sophists</span> to <span>Aristotle</span>.”</span> In <em>A Companion to <span>Greek</span> Rhetoric</em>, edited by Ian Worthington, Nachdr., 107–23. Blackwell Companions to the Ancient World <span>Literature</span> and Culture. Malden, MA: Blackwell.
+</div>
+<div id="ref-deterding2011" class="csl-entry">
+Deterding, Sebastian, Miguel Sicart, Lennart Nacke, Kenton O’Hara, and Dan Dixon. 2011. <span>“Gamification. <span>Using</span> <span>Game</span>-<span>Design</span> <span>Elements</span> in <span>Non</span>-<span>Gaming</span> <span>Contexts</span>.”</span> In <em><span>CHI</span> ’11 <span>Extended</span> <span>Abstracts</span> on <span>Human</span> <span>Factors</span> in <span>Computing</span> <span>Systems</span></em>, 2425–28. <span>CHI</span> <span>EA</span> ’11. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/1979742.1979575">https://doi.org/10.1145/1979742.1979575</a>.
+</div>
+<div id="ref-donchin1995" class="csl-entry">
+Donchin, Emanuel. 1995. <span>“Video Games as Research Tools: <span>The</span> <span>Space</span> <span>Fortress</span> Game.”</span> <em>Behavior Research Methods, Instruments, &amp; Computers</em> 27 (2): 217–23.
+</div>
+<div id="ref-faste2012" class="csl-entry">
+Faste, Trygve, and Haakon Faste. 2012. <span>“Demystifying <span>‘<span>Design</span> Research’</span>: <span>Design</span> Is Not Research, Research Is Design.”</span> In <em><span>IDSA</span> <span>Education</span> <span>Symposium</span></em>, 2012:15.
+</div>
+<div id="ref-fest2016" class="csl-entry">
+Fest, Bradley J. 2016. <span>“Metaproceduralism: <span>The</span> <span>Stanley</span> <span>Parable</span> and the Legacies of Postmodern Metafiction.”</span> <em>Wide Screen</em> 6 (1): 1–23.
+</div>
+<div id="ref-fortenbaugh2008" class="csl-entry">
+Fortenbaugh, W. W. 2008. <span>“Aristotle’s <span>Art</span> of <span>Rhetoric</span>.”</span> In <em>A Companion to <span>Greek</span> Rhetoric</em>, edited by Ian Worthington, Nachdr., 107–23. Blackwell Companions to the Ancient World <span>Literature</span> and Culture. Malden, MA: Blackwell.
+</div>
+<div id="ref-frogel2005" class="csl-entry">
+Frogel, Shai. 2005. <em>The <span>Rhetoric</span> of <span>Philosophy</span></em>. Amsterdam; Philadelphia: John Benjamins Pub. Co.
+</div>
+<div id="ref-garver1982" class="csl-entry">
+Garver, Eugene. 1982. <span>“Philosophy &amp; <span>Rhetoric</span>.”</span> <em>Rhetoric Society Quarterly</em> 12 (3): 141–48.
+</div>
+<div id="ref-gaver2012" class="csl-entry">
+———. 2012. <span>“What Should We Expect from Research Through Design?”</span> In <em>Proceedings of the <span>SIGCHI</span> Conference on Human Factors in Computing Systems</em>, 937–46. ACM.
+</div>
+<div id="ref-gaver2004" class="csl-entry">
+Gaver, William, John Bowers, Andrew Boucher, Hans Gellerson, Sarah Pennington, Albrecht Schmidt, Anthony Steed, Nicholas Villars, and Brendan Walker. 2004. <span>“The Drift Table: <span>Designing</span> for Ludic Engagement.”</span> In <em><span>CHI</span>’04 Extended Abstracts on <span>Human</span> Factors in Computing Systems</em>, 885–900.
+</div>
+<div id="ref-gobet2004" class="csl-entry">
+Gobet, Fernand, Jean Retschitzki, and Alex de Voogt. 2004. <em>Moves in Mind: <span>The</span> Psychology of Board Games</em>. Psychology Press.
+</div>
+<div id="ref-grace2012" class="csl-entry">
+Grace, Lindsay D. 2012. <span>“A Topographical Study of Persuasive Play in Digital Games.”</span> In <em>Proceeding of the 16th <span>International</span> <span>Academic</span> <span>MindTrek</span> <span>Conference</span></em>, 77–82. ACM.
+</div>
+<div id="ref-gualeni2015" class="csl-entry">
+Gualeni, Stefano. 2015. <em>Virtual Worlds as Philosophical Tools: <span>How</span> to Philosophize with a Digital Hammer</em>. Springer.
+</div>
+<div id="ref-harman2011" class="csl-entry">
+———. 2011b. <em>The Quadruple Object</em>. Winchester, U.K. Washington, USA: Zero Books.
+</div>
+<div id="ref-harman2018" class="csl-entry">
+———. 2018. <em>Object-<span>Oriented</span> <span>Ontology</span>: <span>A</span> <span>New</span> <span>Theory</span> of <span>Everything</span></em>. 1st ed. Pelican Books.
+</div>
+<div id="ref-herriot2019" class="csl-entry">
+Herriot, Richard. 2019. <span>“What Kind of Research Is Research Through Design?”</span> In <em>Proceedings of <span>International</span> <span>Association</span> of <span>Societies</span> of <span>Design</span> <span>Research</span> <span>Conference</span> 2019</em>. Manchester.
+</div>
+<div id="ref-jayaswal2017" class="csl-entry">
+Jayaswal, Pragya, and N. Malati. 2017. <span>“Impact of <span>Advergames</span> on <span>Children</span>.”</span> <em>International Journal of Innovative Research and Development</em> 6 (1).
+</div>
+<div id="ref-kim2010" class="csl-entry">
+Kim, Tanyoung, and Carl DiSalvo. 2010. <span>“Speculative Visualization: <span>A</span> New Rhetoric for Communicating Public Concerns.”</span> In <em>Proceedings of the <span>Design</span> <span>Research</span> <span>Society</span> (<span>DRS</span>) International Conference Design &amp; Complexity</em>.
+</div>
+<div id="ref-kull2001" class="csl-entry">
+Kull, Kalevi. 2001. <span>“A Note on Biorhetorics.”</span> <em>Sign Systems Studies</em> 29 (2): 693–704.
+</div>
+<div id="ref-lindley2017" class="csl-entry">
+Lindley, Joseph Galen, and Paul Coulton. 2017. <span>“On the <span>Internet</span> <span>Everybody</span> <span>Knows</span> <span>You</span>’re a <span>Whatchamacallit</span> (or a <span>Thing</span>).”</span> In <em><span>CHI</span> 2017 <span>Workshop</span></em>.
+</div>
+<div id="ref-mortier2016" class="csl-entry">
+Mortier, Richard, Jianxin Zhao, Jon Crowcroft, Liang Wang, Qi Li, Hamed Haddadi, Yousef Amar, Andy Crabtree, James Colley, and Tom Lodge. 2016. <span>“Personal Data Management with the Databox: <span>What</span>’s Inside the Box?”</span> In <em>Proceedings of the 2016 <span>ACM</span> <span>Workshop</span> on <span>Cloud</span>-<span>Assisted</span> <span>Networking</span></em>, 49–54. ACM.
+</div>
+<div id="ref-perlow2019" class="csl-entry">
+Perlow, Jason. 2019. <span>“Google Is a Bald-Faced <span>IoT</span> Liar and Its <span>Nest</span> Pants Are on Fire.”</span> <a href="https://www.zdnet.com/article/google-is-a-bald-faced-iot-liar-and-its-nest-pants-are-on-fire/">https://www.zdnet.com/article/google-is-a-bald-faced-iot-liar-and-its-nest-pants-are-on-fire/</a>.
+</div>
+<div id="ref-rapp2010" class="csl-entry">
+Rapp, Christof. 2010. <span>“Aristotle’s <span>Rhetoric</span>.”</span> In <em>The <span>Stanford</span> <span>Encyclopedia</span> of <span>Philosophy</span></em>, edited by Edward N. Zalta, Spring 2010. Metaphysics Research Lab, Stanford University. <a href="https://plato.stanford.edu/archives/spr2010/entries/aristotle-rhetoric/">https://plato.stanford.edu/archives/spr2010/entries/aristotle-rhetoric/</a>.
+</div>
+<div id="ref-rocha2008" class="csl-entry">
+Rocha, José Bernardo, Samuel Mascarenhas, and Rui Prada. 2008. <span>“Game Mechanics for Cooperative Games.”</span> <em>ZON Digital Games 2008</em>, 72–80.
+</div>
+<div id="ref-roy2019" class="csl-entry">
+Roy, Robin, and James P. Warren. 2019. <span>“Card-Based Design Tools: <span>A</span> Review and Analysis of 155 Card Decks for Designers and Designing.”</span> <em>Design Studies</em> 63 (July): 125–54. <a href="https://doi.org/10.1016/j.destud.2019.04.002">https://doi.org/10.1016/j.destud.2019.04.002</a>.
+</div>
+<div id="ref-salen2004" class="csl-entry">
+Salen, Katie, and Eric Zimmerman. 2004. <em>Rules of Play: <span>Game</span> Design Fundamentals</em>. MIT press.
+</div>
+<div id="ref-sicart2014" class="csl-entry">
+Sicart, Miguel. 2014. <em>Play Matters</em>. <a href="http://site.ebrary.com/id/10904663">http://site.ebrary.com/id/10904663</a>.
+</div>
+<div id="ref-sloane2001" class="csl-entry">
+Sloane, ed. 2001. <em>Encyclopedia of <span>Rhetoric</span></em>. 1st ed. Oxford University Press. <a href="https://doi.org/10.1093/acref/9780195125955.001.0001">https://doi.org/10.1093/acref/9780195125955.001.0001</a>.
+</div>
+<div id="ref-to2016" class="csl-entry">
+To, Alexandra, Elaine Fath, Eda Zhang, Safinah Ali, Catherine Kildunne, Anny Fan, Jessica Hammer, and Geoff Kaufman. 2016. <span>“Tandem <span>Transformational</span> <span>Game</span> <span>Design</span>: <span>A</span> <span>Game</span> <span>Design</span> <span>Process</span> <span>Case</span> <span>Study</span>.”</span> In <em>Proceedings of the <span>International</span> <span>Academic</span> <span>Conference</span> on <span>Meaningful</span> <span>Play</span></em>.
+</div>
+<div id="ref-worthington2008" class="csl-entry">
+Worthington, Ian, ed. 2008. <em>A Companion to <span>Greek</span> Rhetoric</em>. Nachdr. Blackwell Companions to the Ancient World <span>Literature</span> and Culture. Malden, MA: Blackwell.
+</div>
+<div id="ref-zagal2006" class="csl-entry">
+Zagal, José P., Jochen Rick, and Idris Hsi. 2006. <span>“Collaborative Games: <span>Lessons</span> Learned from Board Games.”</span> <em>Simulation &amp; Gaming</em> 37 (1): 24–40.
+</div>
+<div id="ref-zichermann2011" class="csl-entry">
+Zichermann, Gabe, and Christopher Cunningham. 2011. <em>Gamification by Design: <span>Implementing</span> Game Mechanics in Web and Mobile Apps</em>. " O’Reilly Media, Inc.".
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="37">
+<li id="fn37"><p>Roots for this practice could be in Plato’s negative evaluation of the perception of rhetoric as argued in his <em>Gorgias</em> against rhetoric as an artform; mainly for how it was used at the time by its interlocuters <span class="citation">(<a href="#ref-frogel2005" role="doc-biblioref">Frogel 2005, 12</a>)</span>.<a href="Chapter8.html#fnref37" class="footnote-back">↩︎</a></p></li>
+<li id="fn38"><p>Being flawlessly skilled in their craft does not mean a doctor may never fail to cure someone, similarly, a well-versed orator does not necessarily captivate or persuade an audience.<a href="Chapter8.html#fnref38" class="footnote-back">↩︎</a></p></li>
+<li id="fn39"><p>Harman’s <span class="citation">(<a href="#ref-harman2018" role="doc-biblioref">2018, 91</a>)</span> OOO finds an important use for enthymeme in its philosophy by explaining how humans understand phenomenon with little ‘provided’ information. This concept of enthymeme will be further explored in the next chapter.<a href="Chapter8.html#fnref39" class="footnote-back">↩︎</a></p></li>
+<li id="fn40"><p>In light of the rhetorical model, a ‘metaphor’ is a rhetorical device or a figure of speech. However, when used in the opportune context may carry significant weightage. An exhaustive list of such devices can be found here: <a href="https://literarydevices.net/" class="uri">https://literarydevices.net/</a>.<a href="Chapter8.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p><span class="citation">Roy and Warren (<a href="#ref-roy2019" role="doc-biblioref">2019</a>)</span> have gathered a list of 155 card-based design tools as a way to document the use of play-like elements in design research.<a href="Chapter8.html#fnref41" class="footnote-back">↩︎</a></p></li>
+<li id="fn42"><p>An example of an advergame is <em>Pepsi Man</em>. Popular in the 90s, the game had players control a human embodiment of the <em>Pepsi</em> brand, subsequently presented with numerous references to the <em>Pepsi</em> product during gameplay.<a href="Chapter8.html#fnref42" class="footnote-back">↩︎</a></p></li>
+<li id="fn43"><p>In <em>Darfur is Dying</em>, players take on the role of a refugee during the war in Darfur. They are tasked with finding survival amenities such as foraging for water all while hiding from the violence of war depicted. The game is intended to give a window into the life of a refugee during war. The game can be experienced here: <a href="http://www.gamesforchange.org/game/darfur-is-dying/" class="uri">http://www.gamesforchange.org/game/darfur-is-dying/</a>.<a href="Chapter8.html#fnref43" class="footnote-back">↩︎</a></p></li>
+<li id="fn44"><p>Physical games such as board games see these versions as <em>editions</em>.<a href="Chapter8.html#fnref44" class="footnote-back">↩︎</a></p></li>
+<li id="fn45"><p>The <em>Stanley Parable</em> by Dave Wreden is a walking simulator game. Players are presented with an office space which they must traverse with no prior explanation of how to play the game. A narrator acts as a higher presence, and players are given divergent pathways. In many ways the game is not a game at all, and as a philosophical artefact has been heavily discussed <span class="citation">(<a href="#ref-fest2016" role="doc-biblioref">Fest 2016</a>)</span>.<a href="Chapter8.html#fnref45" class="footnote-back">↩︎</a></p></li>
+<li id="fn46"><p>The <em>Latour Litanizer</em> from <a href="Chapter6.html#Chapter6">Chapter 6</a> for example, may very well exist entirely in code and never be presented on a webpage.<a href="Chapter8.html#fnref46" class="footnote-back">↩︎</a></p></li>
+<li id="fn47"><p>The classifications of this rubric were taken directly from the model but reiterated to suit the purposes of embedding within play.<a href="Chapter8.html#fnref47" class="footnote-back">↩︎</a></p></li>
+<li id="fn48"><p>In this early attempt, the tokens were themed as spirit animals to create a metaphysical connection between real and digital spaces. Among many aspects of the initial designs this did little to aid the rhetoric and was quickly redacted.<a href="Chapter8.html#fnref48" class="footnote-back">↩︎</a></p></li>
+<li id="fn49"><p>Game masters are a common practice in role-playing games, their purpose is to keep players engaged by gradually revealing play.<a href="Chapter8.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<li id="fn50"><p>Though role-playing games such as <em>Dungeons &amp; Dragons (D&amp;D)</em> use this methodology of participatory gameplay effectively, they encourage an immersive experience that was lacking in these initial iterations.<a href="Chapter8.html#fnref50" class="footnote-back">↩︎</a></p></li>
+<li id="fn51"><p>For a definition of Ameritrash see <a href="AppendixA.html#AppendixA">Appendix A</a>.<a href="Chapter8.html#fnref51" class="footnote-back">↩︎</a></p></li>
+<li id="fn52"><p>Though the two terms might feel similar, in GD they are very different. <span class="citation">Zagal, Rick, and Hsi (<a href="#ref-zagal2006" role="doc-biblioref">2006, 25</a>)</span> point this difference between cooperative and collaborative play like so: cooperative play in games takes on the form of the “prisoner’s dilemma”, where players must work together for their own intrinsic goals which overlap; comparatively, in collaborative play all players work together to achieve a unified goal collectively winning or losing.<a href="Chapter8.html#fnref52" class="footnote-back">↩︎</a></p></li>
+<li id="fn53"><p>An example of this realignment can be seen in <em>Eldritch Horror</em> where players encounter monsters through dimensional portals. To stop this insurgence they enter an in-game dream state called <em>Carcosa</em>; a reference to Lovecraftian literature. <em>Carcosa</em> does not exist as a place on the board, rather the Lovecraftian rhetoric is enforced through procedurality having players enter a playground of the mind enacted through cards in the game.<a href="Chapter8.html#fnref53" class="footnote-back">↩︎</a></p></li>
+<li id="fn54"><p>A common format used in many board games, often for ease of design and mechanics but also because of the logical potential a six-sided shape presents in play. Examples of such uses are <em>Catan</em>, <em>Twilight Imperium</em>, <em>Hive</em>, <em>Castles of Burgundy</em>, etc.<a href="Chapter8.html#fnref54" class="footnote-back">↩︎</a></p></li>
+<li id="fn55"><p>This mechanic remained till the end and a detailed description of it is presented in <a href="AppendixB.html#AppendixB">Appendix B</a>.<a href="Chapter8.html#fnref55" class="footnote-back">↩︎</a></p></li>
+<li id="fn56"><p><span class="citation">Mortier et al. (<a href="#ref-mortier2016" role="doc-biblioref">2016</a>)</span> describe their Databox platform as one that provides a unique ecology for exploiting personal data in privacy-preserving ways. For example, it might enable a media provider to utilise algorithms on data about an individual’s viewing habits and those of others in the room. Doing so it may offer up bespoke content of mutual interest without disclosing personal data to the provider. Instead of distributing personal data to remote cloud servers for processing, processing takes place on-the-box, which means no personal data need leave the home or be accessed by anyone else. Databox functionality is not limited to privacy-preserving analytics but also enables actuation of IoT devices.<a href="Chapter8.html#fnref56" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Chapter7.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter9.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/018-chapter8.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
